@@ -1,0 +1,1481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		005FC457B9FB3571F95CF615 /* Pods_wtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0993F94505715A1E039331 /* Pods_wtest.framework */; };
+		0A234907227770E80016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B62277709C0016CDBC /* ViewController.swift */; };
+		0A234908227770F20016CDBC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B82277709C0016CDBC /* AppData.swift */; };
+		0A234909227770F20016CDBC /* AppDataSyncPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B92277709C0016CDBC /* AppDataSyncPull.swift */; };
+		0A23490A227770F20016CDBC /* AppDataSyncPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BA2277709C0016CDBC /* AppDataSyncPush.swift */; };
+		0A23490B227770F20016CDBC /* DiskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BB2277709C0016CDBC /* DiskStore.swift */; };
+		0A23490C227770F20016CDBC /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BC2277709C0016CDBC /* Queue.swift */; };
+		0A23490D227770F20016CDBC /* AppDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BD2277709C0016CDBC /* AppDataSync.swift */; };
+		0A23490F2277713A0016CDBC /* String+OutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C12277709C0016CDBC /* String+OutputStream.swift */; };
+		0A2349102277713A0016CDBC /* iso8601date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C22277709C0016CDBC /* iso8601date.swift */; };
+		0A2349112277713A0016CDBC /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C32277709C0016CDBC /* URLExtensions.swift */; };
+		0A2349122277713B0016CDBC /* String+OutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C12277709C0016CDBC /* String+OutputStream.swift */; };
+		0A2349132277713B0016CDBC /* iso8601date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C22277709C0016CDBC /* iso8601date.swift */; };
+		0A2349142277713B0016CDBC /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C32277709C0016CDBC /* URLExtensions.swift */; };
+		0A234915227771450016CDBC /* WuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WuProvider.swift */; };
+		0A234916227771450016CDBC /* WunderImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C62277709C0016CDBC /* WunderImport.swift */; };
+		0A234917227771450016CDBC /* WMutatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C72277709C0016CDBC /* WMutatedService.swift */; };
+		0A234918227771450016CDBC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C82277709C0016CDBC /* APIKeys.swift */; };
+		0A234919227771450016CDBC /* WunderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C92277709C0016CDBC /* WunderManager.swift */; };
+		0A23491A227771450016CDBC /* WJSONAbleCoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CA2277709C0016CDBC /* WJSONAbleCoders.swift */; };
+		0A23491B227771450016CDBC /* WunderUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CB2277709C0016CDBC /* WunderUploader.swift */; };
+		0A23491C227771450016CDBC /* WebsocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CC2277709C0016CDBC /* WebsocketIO.swift */; };
+		0A23491D227771450016CDBC /* WNetworkErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CD2277709C0016CDBC /* WNetworkErrorMessage.swift */; };
+		0A23491E227771450016CDBC /* WuWSSProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */; };
+		0A23491F227771450016CDBC /* WNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CF2277709C0016CDBC /* WNetworkError.swift */; };
+		0A234920227771450016CDBC /* WAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D02277709C0016CDBC /* WAPI.swift */; };
+		0A234921227771450016CDBC /* AvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D12277709C0016CDBC /* AvatarService.swift */; };
+		0A234922227771450016CDBC /* WunderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D22277709C0016CDBC /* WunderAPI.swift */; };
+		0A234923227771450016CDBC /* WUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D32277709C0016CDBC /* WUploadService.swift */; };
+		0A234924227771460016CDBC /* WuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WuProvider.swift */; };
+		0A234925227771460016CDBC /* WunderImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C62277709C0016CDBC /* WunderImport.swift */; };
+		0A234926227771460016CDBC /* WMutatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C72277709C0016CDBC /* WMutatedService.swift */; };
+		0A234927227771460016CDBC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C82277709C0016CDBC /* APIKeys.swift */; };
+		0A234928227771460016CDBC /* WunderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C92277709C0016CDBC /* WunderManager.swift */; };
+		0A234929227771460016CDBC /* WJSONAbleCoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CA2277709C0016CDBC /* WJSONAbleCoders.swift */; };
+		0A23492A227771460016CDBC /* WunderUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CB2277709C0016CDBC /* WunderUploader.swift */; };
+		0A23492B227771460016CDBC /* WebsocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CC2277709C0016CDBC /* WebsocketIO.swift */; };
+		0A23492C227771460016CDBC /* WNetworkErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CD2277709C0016CDBC /* WNetworkErrorMessage.swift */; };
+		0A23492D227771460016CDBC /* WuWSSProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */; };
+		0A23492E227771460016CDBC /* WNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348CF2277709C0016CDBC /* WNetworkError.swift */; };
+		0A23492F227771460016CDBC /* WAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D02277709C0016CDBC /* WAPI.swift */; };
+		0A234930227771460016CDBC /* AvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D12277709C0016CDBC /* AvatarService.swift */; };
+		0A234931227771460016CDBC /* WunderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D22277709C0016CDBC /* WunderAPI.swift */; };
+		0A234932227771460016CDBC /* WUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D32277709C0016CDBC /* WUploadService.swift */; };
+		0A234933227771540016CDBC /* WReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D62277709C0016CDBC /* WReminder.swift */; };
+		0A234934227771540016CDBC /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D72277709C0016CDBC /* JSONAble.swift */; };
+		0A234935227771540016CDBC /* WSubtaskPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D82277709C0016CDBC /* WSubtaskPosition.swift */; };
+		0A234936227771540016CDBC /* WListPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D92277709C0016CDBC /* WListPosition.swift */; };
+		0A234937227771540016CDBC /* WUnreadActivityCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */; };
+		0A234938227771540016CDBC /* WFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DB2277709C0016CDBC /* WFolder.swift */; };
+		0A234939227771540016CDBC /* WDesktopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DC2277709C0016CDBC /* WDesktopNotification.swift */; };
+		0A23493A227771540016CDBC /* WRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DD2277709C0016CDBC /* WRevision.swift */; };
+		0A23493B227771540016CDBC /* WUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DE2277709C0016CDBC /* WUser.swift */; };
+		0A23493C227771540016CDBC /* WRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DF2277709C0016CDBC /* WRoot.swift */; };
+		0A23493D227771540016CDBC /* WSubtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E02277709C0016CDBC /* WSubtask.swift */; };
+		0A23493E227771540016CDBC /* WBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E12277709C0016CDBC /* WBackup.swift */; };
+		0A23493F227771540016CDBC /* WSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E22277709C0016CDBC /* WSetting.swift */; };
+		0A234940227771540016CDBC /* WFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E32277709C0016CDBC /* WFeature.swift */; };
+		0A234941227771540016CDBC /* WObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E42277709C0016CDBC /* WObject.swift */; };
+		0A234942227771540016CDBC /* WTaskPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E52277709C0016CDBC /* WTaskPosition.swift */; };
+		0A234943227771540016CDBC /* WNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E62277709C0016CDBC /* WNote.swift */; };
+		0A234944227771540016CDBC /* WTaskComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E72277709C0016CDBC /* WTaskComment.swift */; };
+		0A234945227771540016CDBC /* WList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E82277709C0016CDBC /* WList.swift */; };
+		0A234946227771540016CDBC /* WFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E92277709C0016CDBC /* WFile.swift */; };
+		0A234947227771540016CDBC /* MappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EA2277709C0016CDBC /* MappingType.swift */; };
+		0A234948227771540016CDBC /* WMutated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EB2277709C0016CDBC /* WMutated.swift */; };
+		0A234949227771540016CDBC /* WMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EC2277709C0016CDBC /* WMembership.swift */; };
+		0A23494A227771540016CDBC /* WTaskCommentsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348ED2277709C0016CDBC /* WTaskCommentsState.swift */; };
+		0A23494B227771540016CDBC /* CreateWObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EE2277709C0016CDBC /* CreateWObject.swift */; };
+		0A23494C227771540016CDBC /* WUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EF2277709C0016CDBC /* WUpload.swift */; };
+		0A23494D227771540016CDBC /* WTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F02277709C0016CDBC /* WTask.swift */; };
+		0A23494E227771550016CDBC /* WReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D62277709C0016CDBC /* WReminder.swift */; };
+		0A23494F227771550016CDBC /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D72277709C0016CDBC /* JSONAble.swift */; };
+		0A234950227771550016CDBC /* WSubtaskPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D82277709C0016CDBC /* WSubtaskPosition.swift */; };
+		0A234951227771550016CDBC /* WListPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D92277709C0016CDBC /* WListPosition.swift */; };
+		0A234952227771550016CDBC /* WUnreadActivityCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */; };
+		0A234953227771550016CDBC /* WFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DB2277709C0016CDBC /* WFolder.swift */; };
+		0A234954227771550016CDBC /* WDesktopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DC2277709C0016CDBC /* WDesktopNotification.swift */; };
+		0A234955227771550016CDBC /* WRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DD2277709C0016CDBC /* WRevision.swift */; };
+		0A234956227771550016CDBC /* WUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DE2277709C0016CDBC /* WUser.swift */; };
+		0A234957227771550016CDBC /* WRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348DF2277709C0016CDBC /* WRoot.swift */; };
+		0A234958227771550016CDBC /* WSubtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E02277709C0016CDBC /* WSubtask.swift */; };
+		0A234959227771550016CDBC /* WBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E12277709C0016CDBC /* WBackup.swift */; };
+		0A23495A227771550016CDBC /* WSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E22277709C0016CDBC /* WSetting.swift */; };
+		0A23495B227771550016CDBC /* WFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E32277709C0016CDBC /* WFeature.swift */; };
+		0A23495C227771550016CDBC /* WObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E42277709C0016CDBC /* WObject.swift */; };
+		0A23495D227771550016CDBC /* WTaskPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E52277709C0016CDBC /* WTaskPosition.swift */; };
+		0A23495E227771550016CDBC /* WNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E62277709C0016CDBC /* WNote.swift */; };
+		0A23495F227771550016CDBC /* WTaskComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E72277709C0016CDBC /* WTaskComment.swift */; };
+		0A234960227771550016CDBC /* WList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E82277709C0016CDBC /* WList.swift */; };
+		0A234961227771550016CDBC /* WFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348E92277709C0016CDBC /* WFile.swift */; };
+		0A234962227771550016CDBC /* MappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EA2277709C0016CDBC /* MappingType.swift */; };
+		0A234963227771550016CDBC /* WMutated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EB2277709C0016CDBC /* WMutated.swift */; };
+		0A234964227771550016CDBC /* WMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EC2277709C0016CDBC /* WMembership.swift */; };
+		0A234965227771550016CDBC /* WTaskCommentsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348ED2277709C0016CDBC /* WTaskCommentsState.swift */; };
+		0A234966227771550016CDBC /* CreateWObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EE2277709C0016CDBC /* CreateWObject.swift */; };
+		0A234967227771550016CDBC /* WUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348EF2277709C0016CDBC /* WUpload.swift */; };
+		0A234968227771550016CDBC /* WTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F02277709C0016CDBC /* WTask.swift */; };
+		0A2349692277715D0016CDBC /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F22277709C0016CDBC /* Disk.swift */; };
+		0A23496A2277715D0016CDBC /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F32277709C0016CDBC /* Disk+InternalHelpers.swift */; };
+		0A23496B2277715D0016CDBC /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F42277709C0016CDBC /* Disk+Errors.swift */; };
+		0A23496C2277715D0016CDBC /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F52277709C0016CDBC /* Disk+Helpers.swift */; };
+		0A23496D2277715D0016CDBC /* Disk+VolumeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F62277709C0016CDBC /* Disk+VolumeInformation.swift */; };
+		0A23496E2277715D0016CDBC /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F72277709C0016CDBC /* Disk+Codable.swift */; };
+		0A23496F2277715E0016CDBC /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F22277709C0016CDBC /* Disk.swift */; };
+		0A2349702277715E0016CDBC /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F32277709C0016CDBC /* Disk+InternalHelpers.swift */; };
+		0A2349712277715E0016CDBC /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F42277709C0016CDBC /* Disk+Errors.swift */; };
+		0A2349722277715E0016CDBC /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F52277709C0016CDBC /* Disk+Helpers.swift */; };
+		0A2349732277715E0016CDBC /* Disk+VolumeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F62277709C0016CDBC /* Disk+VolumeInformation.swift */; };
+		0A2349742277715E0016CDBC /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F72277709C0016CDBC /* Disk+Codable.swift */; };
+		0A234975227771660016CDBC /* StreamLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F92277709C0016CDBC /* StreamLog.swift */; };
+		0A234976227771660016CDBC /* FreeMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FA2277709C0016CDBC /* FreeMethods.swift */; };
+		0A234977227771660016CDBC /* HwUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FB2277709C0016CDBC /* HwUUID.swift */; };
+		0A234978227771670016CDBC /* StreamLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348F92277709C0016CDBC /* StreamLog.swift */; };
+		0A234979227771670016CDBC /* FreeMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FA2277709C0016CDBC /* FreeMethods.swift */; };
+		0A23497A227771670016CDBC /* HwUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FB2277709C0016CDBC /* HwUUID.swift */; };
+		0A2349802277717E0016CDBC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
+		0A2349812277717E0016CDBC /* CheckDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FC2277709C0016CDBC /* CheckDataStore.swift */; };
+		0A2349822277717E0016CDBC /* CheckDiskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FD2277709C0016CDBC /* CheckDiskStore.swift */; };
+		0A2349832277717E0016CDBC /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
+		0A2349842277717E0016CDBC /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FF2277709C0016CDBC /* AppSetup.swift */; };
+		0A2349852277717E0016CDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349002277709C0016CDBC /* AppDelegate.swift */; };
+		0A234986227771930016CDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349032277709C0016CDBC /* Assets.xcassets */; };
+		0A234987227771980016CDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349042277709C0016CDBC /* Main.storyboard */; };
+		0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23498A227773850016CDBC /* AppDataSyncTests.swift */; };
+		0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23498B227773850016CDBC /* AppDataTests.swift */; };
+		0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A234989227773850016CDBC /* DiskStoreTests.swift */; };
+		0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23498E227773850016CDBC /* TestBackup.json */; };
+		0A2349B9227773E30016CDBC /* folder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234990227773850016CDBC /* folder.json */; };
+		0A2349BA227773E30016CDBC /* subtask_position-3858193502.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234991227773850016CDBC /* subtask_position-3858193502.json */; };
+		0A2349BB227773E30016CDBC /* subtask_position-3858192450.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234992227773850016CDBC /* subtask_position-3858192450.json */; };
+		0A2349BC227773E30016CDBC /* membership.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234993227773850016CDBC /* membership.json */; };
+		0A2349BD227773E30016CDBC /* task_comment-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234994227773850016CDBC /* task_comment-3858184298.json */; };
+		0A2349BE227773E30016CDBC /* file-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234995227773850016CDBC /* file-3858184298.json */; };
+		0A2349BF227773E30016CDBC /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234996227773850016CDBC /* setting.json */; };
+		0A2349C0227773E30016CDBC /* subtask-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234997227773850016CDBC /* subtask-3858184298.json */; };
+		0A2349C1227773E30016CDBC /* task_position-286646344.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234998227773850016CDBC /* task_position-286646344.json */; };
+		0A2349C2227773E30016CDBC /* reminder-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234999227773850016CDBC /* reminder-3858184298.json */; };
+		0A2349C3227773E30016CDBC /* reminder-3858192730.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499A227773850016CDBC /* reminder-3858192730.json */; };
+		0A2349C4227773E30016CDBC /* task-286646344.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499B227773850016CDBC /* task-286646344.json */; };
+		0A2349C5227773E30016CDBC /* subtask_position-3858193749.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499C227773850016CDBC /* subtask_position-3858193749.json */; };
+		0A2349C6227773E30016CDBC /* task-353279260.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499D227773850016CDBC /* task-353279260.json */; };
+		0A2349C7227773E30016CDBC /* task_position-350938884.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499E227773850016CDBC /* task_position-350938884.json */; };
+		0A2349C8227773E30016CDBC /* subtask_position-3858193179.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499F227773850016CDBC /* subtask_position-3858193179.json */; };
+		0A2349C9227773E30016CDBC /* task-350938884.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A0227773850016CDBC /* task-350938884.json */; };
+		0A2349CA227773E30016CDBC /* task_position-353279260.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A1227773850016CDBC /* task_position-353279260.json */; };
+		0A2349CB227773E30016CDBC /* subtask_position-3917606953.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A2227773850016CDBC /* subtask_position-3917606953.json */; };
+		0A2349CC227773E30016CDBC /* task-350938891.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A3227773850016CDBC /* task-350938891.json */; };
+		0A2349CD227773E30016CDBC /* subtask_position-3858192730.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A4227773850016CDBC /* subtask_position-3858192730.json */; };
+		0A2349CE227773E30016CDBC /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A5227773850016CDBC /* user.json */; };
+		0A2349CF227773E30016CDBC /* subtask_position-3917606699.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A6227773850016CDBC /* subtask_position-3917606699.json */; };
+		0A2349D0227773E30016CDBC /* task_position-350938891.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A7227773850016CDBC /* task_position-350938891.json */; };
+		0A2349D1227773E30016CDBC /* subtask_position-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A8227773850016CDBC /* subtask_position-3858184298.json */; };
+		0A2349D2227773E30016CDBC /* subtask_position-3858193360.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A9227773850016CDBC /* subtask_position-3858193360.json */; };
+		0A2349D3227773E30016CDBC /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AA227773850016CDBC /* list.json */; };
+		0A2349D4227773E30016CDBC /* subtask_position-3907272878.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AB227773850016CDBC /* subtask_position-3907272878.json */; };
+		0A2349D5227773E30016CDBC /* task-350938874.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AC227773850016CDBC /* task-350938874.json */; };
+		0A2349D6227773E30016CDBC /* task_position-350938874.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AD227773850016CDBC /* task_position-350938874.json */; };
+		0A2349D7227773E30016CDBC /* subtask_position-3858192890.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AE227773850016CDBC /* subtask_position-3858192890.json */; };
+		0A2349D8227773E30016CDBC /* task_position-352593956.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AF227773850016CDBC /* task_position-352593956.json */; };
+		0A2349D9227773E30016CDBC /* list_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B0227773850016CDBC /* list_position.json */; };
+		0A2349DA227773E30016CDBC /* root.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B1227773850016CDBC /* root.json */; };
+		0A2349DB227773E30016CDBC /* note-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B2227773850016CDBC /* note-3858184298.json */; };
+		0A2349F22277765D0016CDBC /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349E32277765C0016CDBC /* KeychainService.swift */; };
+		0A2349F32277765D0016CDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E62277765C0016CDBC /* Assets.xcassets */; };
+		0A2349F42277765D0016CDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E72277765C0016CDBC /* Main.storyboard */; };
+		0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EA2277765C0016CDBC /* DumpContent.swift */; };
+		0A2349F72277765D0016CDBC /* PrintContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EB2277765C0016CDBC /* PrintContent.swift */; };
+		0A2349F82277765D0016CDBC /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EC2277765C0016CDBC /* TestService.swift */; };
+		0A2349F92277765D0016CDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349ED2277765C0016CDBC /* AppDelegate.swift */; };
+		0A2349FA2277765D0016CDBC /* DeleteContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EE2277765D0016CDBC /* DeleteContentService.swift */; };
+		0A2349FB2277765D0016CDBC /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EF2277765D0016CDBC /* AppSetup.swift */; };
+		0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349F02277765D0016CDBC /* ViewController.swift */; };
+		0A2349FD2277765D0016CDBC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349F12277765D0016CDBC /* Logger.swift */; };
+		3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */; };
+		E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F8A7604B7A49ED6367167E /* Pods_wsync.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A234893227653ED0016CDBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A234862227642B80016CDBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A234880227653EC0016CDBC;
+			remoteInfo = wsync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A234881227653EC0016CDBC /* wsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A234892227653ED0016CDBC /* wsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2348A3227654B40016CDBC /* wtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2348B62277709C0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A2348B82277709C0016CDBC /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0A2348B92277709C0016CDBC /* AppDataSyncPull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSyncPull.swift; sourceTree = "<group>"; };
+		0A2348BA2277709C0016CDBC /* AppDataSyncPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSyncPush.swift; sourceTree = "<group>"; };
+		0A2348BB2277709C0016CDBC /* DiskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStore.swift; sourceTree = "<group>"; };
+		0A2348BC2277709C0016CDBC /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		0A2348BD2277709C0016CDBC /* AppDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSync.swift; sourceTree = "<group>"; };
+		0A2348BE2277709C0016CDBC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0A2348C12277709C0016CDBC /* String+OutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+OutputStream.swift"; sourceTree = "<group>"; };
+		0A2348C22277709C0016CDBC /* iso8601date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iso8601date.swift; sourceTree = "<group>"; };
+		0A2348C32277709C0016CDBC /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		0A2348C52277709C0016CDBC /* WuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuProvider.swift; sourceTree = "<group>"; };
+		0A2348C62277709C0016CDBC /* WunderImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderImport.swift; sourceTree = "<group>"; };
+		0A2348C72277709C0016CDBC /* WMutatedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMutatedService.swift; sourceTree = "<group>"; };
+		0A2348C82277709C0016CDBC /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		0A2348C92277709C0016CDBC /* WunderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderManager.swift; sourceTree = "<group>"; };
+		0A2348CA2277709C0016CDBC /* WJSONAbleCoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJSONAbleCoders.swift; sourceTree = "<group>"; };
+		0A2348CB2277709C0016CDBC /* WunderUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderUploader.swift; sourceTree = "<group>"; };
+		0A2348CC2277709C0016CDBC /* WebsocketIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketIO.swift; sourceTree = "<group>"; };
+		0A2348CD2277709C0016CDBC /* WNetworkErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNetworkErrorMessage.swift; sourceTree = "<group>"; };
+		0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuWSSProvider.swift; sourceTree = "<group>"; };
+		0A2348CF2277709C0016CDBC /* WNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNetworkError.swift; sourceTree = "<group>"; };
+		0A2348D02277709C0016CDBC /* WAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAPI.swift; sourceTree = "<group>"; };
+		0A2348D12277709C0016CDBC /* AvatarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarService.swift; sourceTree = "<group>"; };
+		0A2348D22277709C0016CDBC /* WunderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderAPI.swift; sourceTree = "<group>"; };
+		0A2348D32277709C0016CDBC /* WUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUploadService.swift; sourceTree = "<group>"; };
+		0A2348D62277709C0016CDBC /* WReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WReminder.swift; sourceTree = "<group>"; };
+		0A2348D72277709C0016CDBC /* JSONAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
+		0A2348D82277709C0016CDBC /* WSubtaskPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSubtaskPosition.swift; sourceTree = "<group>"; };
+		0A2348D92277709C0016CDBC /* WListPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WListPosition.swift; sourceTree = "<group>"; };
+		0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUnreadActivityCount.swift; sourceTree = "<group>"; };
+		0A2348DB2277709C0016CDBC /* WFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WFolder.swift; sourceTree = "<group>"; };
+		0A2348DC2277709C0016CDBC /* WDesktopNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDesktopNotification.swift; sourceTree = "<group>"; };
+		0A2348DD2277709C0016CDBC /* WRevision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRevision.swift; sourceTree = "<group>"; };
+		0A2348DE2277709C0016CDBC /* WUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUser.swift; sourceTree = "<group>"; };
+		0A2348DF2277709C0016CDBC /* WRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRoot.swift; sourceTree = "<group>"; };
+		0A2348E02277709C0016CDBC /* WSubtask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSubtask.swift; sourceTree = "<group>"; };
+		0A2348E12277709C0016CDBC /* WBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBackup.swift; sourceTree = "<group>"; };
+		0A2348E22277709C0016CDBC /* WSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSetting.swift; sourceTree = "<group>"; };
+		0A2348E32277709C0016CDBC /* WFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WFeature.swift; sourceTree = "<group>"; };
+		0A2348E42277709C0016CDBC /* WObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObject.swift; sourceTree = "<group>"; };
+		0A2348E52277709C0016CDBC /* WTaskPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTaskPosition.swift; sourceTree = "<group>"; };
+		0A2348E62277709C0016CDBC /* WNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNote.swift; sourceTree = "<group>"; };
+		0A2348E72277709C0016CDBC /* WTaskComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTaskComment.swift; sourceTree = "<group>"; };
+		0A2348E82277709C0016CDBC /* WList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WList.swift; sourceTree = "<group>"; };
+		0A2348E92277709C0016CDBC /* WFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WFile.swift; sourceTree = "<group>"; };
+		0A2348EA2277709C0016CDBC /* MappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingType.swift; sourceTree = "<group>"; };
+		0A2348EB2277709C0016CDBC /* WMutated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMutated.swift; sourceTree = "<group>"; };
+		0A2348EC2277709C0016CDBC /* WMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMembership.swift; sourceTree = "<group>"; };
+		0A2348ED2277709C0016CDBC /* WTaskCommentsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTaskCommentsState.swift; sourceTree = "<group>"; };
+		0A2348EE2277709C0016CDBC /* CreateWObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWObject.swift; sourceTree = "<group>"; };
+		0A2348EF2277709C0016CDBC /* WUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUpload.swift; sourceTree = "<group>"; };
+		0A2348F02277709C0016CDBC /* WTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTask.swift; sourceTree = "<group>"; };
+		0A2348F22277709C0016CDBC /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		0A2348F32277709C0016CDBC /* Disk+InternalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disk+InternalHelpers.swift"; sourceTree = "<group>"; };
+		0A2348F42277709C0016CDBC /* Disk+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disk+Errors.swift"; sourceTree = "<group>"; };
+		0A2348F52277709C0016CDBC /* Disk+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disk+Helpers.swift"; sourceTree = "<group>"; };
+		0A2348F62277709C0016CDBC /* Disk+VolumeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disk+VolumeInformation.swift"; sourceTree = "<group>"; };
+		0A2348F72277709C0016CDBC /* Disk+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disk+Codable.swift"; sourceTree = "<group>"; };
+		0A2348F92277709C0016CDBC /* StreamLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamLog.swift; sourceTree = "<group>"; };
+		0A2348FA2277709C0016CDBC /* FreeMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeMethods.swift; sourceTree = "<group>"; };
+		0A2348FB2277709C0016CDBC /* HwUUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HwUUID.swift; sourceTree = "<group>"; };
+		0A2348FC2277709C0016CDBC /* CheckDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataStore.swift; sourceTree = "<group>"; };
+		0A2348FD2277709C0016CDBC /* CheckDiskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDiskStore.swift; sourceTree = "<group>"; };
+		0A2348FE2277709C0016CDBC /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		0A2348FF2277709C0016CDBC /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
+		0A2349002277709C0016CDBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A2349022277709C0016CDBC /* wsync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wsync.entitlements; sourceTree = "<group>"; };
+		0A2349032277709C0016CDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A2349052277709C0016CDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A2349062277709C0016CDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A234989227773850016CDBC /* DiskStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStoreTests.swift; sourceTree = "<group>"; };
+		0A23498A227773850016CDBC /* AppDataSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSyncTests.swift; sourceTree = "<group>"; };
+		0A23498B227773850016CDBC /* AppDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTests.swift; sourceTree = "<group>"; };
+		0A23498C227773850016CDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A23498E227773850016CDBC /* TestBackup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestBackup.json; sourceTree = "<group>"; };
+		0A234990227773850016CDBC /* folder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = folder.json; sourceTree = "<group>"; };
+		0A234991227773850016CDBC /* subtask_position-3858193502.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193502.json"; sourceTree = "<group>"; };
+		0A234992227773850016CDBC /* subtask_position-3858192450.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192450.json"; sourceTree = "<group>"; };
+		0A234993227773850016CDBC /* membership.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = membership.json; sourceTree = "<group>"; };
+		0A234994227773850016CDBC /* task_comment-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_comment-3858184298.json"; sourceTree = "<group>"; };
+		0A234995227773850016CDBC /* file-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "file-3858184298.json"; sourceTree = "<group>"; };
+		0A234996227773850016CDBC /* setting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
+		0A234997227773850016CDBC /* subtask-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask-3858184298.json"; sourceTree = "<group>"; };
+		0A234998227773850016CDBC /* task_position-286646344.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-286646344.json"; sourceTree = "<group>"; };
+		0A234999227773850016CDBC /* reminder-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reminder-3858184298.json"; sourceTree = "<group>"; };
+		0A23499A227773850016CDBC /* reminder-3858192730.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reminder-3858192730.json"; sourceTree = "<group>"; };
+		0A23499B227773850016CDBC /* task-286646344.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-286646344.json"; sourceTree = "<group>"; };
+		0A23499C227773850016CDBC /* subtask_position-3858193749.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193749.json"; sourceTree = "<group>"; };
+		0A23499D227773850016CDBC /* task-353279260.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-353279260.json"; sourceTree = "<group>"; };
+		0A23499E227773850016CDBC /* task_position-350938884.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938884.json"; sourceTree = "<group>"; };
+		0A23499F227773850016CDBC /* subtask_position-3858193179.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193179.json"; sourceTree = "<group>"; };
+		0A2349A0227773850016CDBC /* task-350938884.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938884.json"; sourceTree = "<group>"; };
+		0A2349A1227773850016CDBC /* task_position-353279260.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-353279260.json"; sourceTree = "<group>"; };
+		0A2349A2227773850016CDBC /* subtask_position-3917606953.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3917606953.json"; sourceTree = "<group>"; };
+		0A2349A3227773850016CDBC /* task-350938891.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938891.json"; sourceTree = "<group>"; };
+		0A2349A4227773850016CDBC /* subtask_position-3858192730.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192730.json"; sourceTree = "<group>"; };
+		0A2349A5227773850016CDBC /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		0A2349A6227773850016CDBC /* subtask_position-3917606699.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3917606699.json"; sourceTree = "<group>"; };
+		0A2349A7227773850016CDBC /* task_position-350938891.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938891.json"; sourceTree = "<group>"; };
+		0A2349A8227773850016CDBC /* subtask_position-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858184298.json"; sourceTree = "<group>"; };
+		0A2349A9227773850016CDBC /* subtask_position-3858193360.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193360.json"; sourceTree = "<group>"; };
+		0A2349AA227773850016CDBC /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		0A2349AB227773850016CDBC /* subtask_position-3907272878.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3907272878.json"; sourceTree = "<group>"; };
+		0A2349AC227773850016CDBC /* task-350938874.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938874.json"; sourceTree = "<group>"; };
+		0A2349AD227773850016CDBC /* task_position-350938874.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938874.json"; sourceTree = "<group>"; };
+		0A2349AE227773850016CDBC /* subtask_position-3858192890.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192890.json"; sourceTree = "<group>"; };
+		0A2349AF227773850016CDBC /* task_position-352593956.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-352593956.json"; sourceTree = "<group>"; };
+		0A2349B0227773850016CDBC /* list_position.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list_position.json; sourceTree = "<group>"; };
+		0A2349B1227773850016CDBC /* root.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = root.json; sourceTree = "<group>"; };
+		0A2349B2227773850016CDBC /* note-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "note-3858184298.json"; sourceTree = "<group>"; };
+		0A2349DF227775FA0016CDBC /* SourceryStart.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = SourceryStart.sh; sourceTree = "<group>"; };
+		0A2349E1227775FA0016CDBC /* WObject.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = WObject.stencil; sourceTree = "<group>"; };
+		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../wutest/wutest/MyPlayground.playground; sourceTree = "<group>"; };
+		0A2349E32277765C0016CDBC /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		0A2349E52277765C0016CDBC /* wtest.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = wtest.entitlements; sourceTree = "<group>"; };
+		0A2349E62277765C0016CDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A2349E82277765C0016CDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A2349E92277765C0016CDBC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A2349EA2277765C0016CDBC /* DumpContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContent.swift; sourceTree = "<group>"; };
+		0A2349EB2277765C0016CDBC /* PrintContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintContent.swift; sourceTree = "<group>"; };
+		0A2349EC2277765C0016CDBC /* TestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
+		0A2349ED2277765C0016CDBC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
+		0A2349EF2277765D0016CDBC /* AppSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
+		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A2349F12277765D0016CDBC /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.release.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.release.xcconfig"; sourceTree = "<group>"; };
+		6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.debug.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.debug.xcconfig"; sourceTree = "<group>"; };
+		6B0993F94505715A1E039331 /* Pods_wtest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wtest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7598043D440CB6A4845DE07D /* Pods-wsyncTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsyncTests.debug.xcconfig"; path = "Target Support Files/Pods-wsyncTests/Pods-wsyncTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FD7EFE84345AB8FACDE71F7 /* Pods-wtest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wtest.release.xcconfig"; path = "Target Support Files/Pods-wtest/Pods-wtest.release.xcconfig"; sourceTree = "<group>"; };
+		842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wsyncTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F8A7604B7A49ED6367167E /* Pods_wsync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wsync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B17B2CAE59B1F9D9EAA08F3E /* Pods-wtest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wtest.debug.xcconfig"; path = "Target Support Files/Pods-wtest/Pods-wtest.debug.xcconfig"; sourceTree = "<group>"; };
+		D7A40682FFE0D279B70F8A1A /* Pods-wsyncTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsyncTests.release.xcconfig"; path = "Target Support Files/Pods-wsyncTests/Pods-wsyncTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A23487E227653EC0016CDBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A23488F227653ED0016CDBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2348A0227654B40016CDBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				005FC457B9FB3571F95CF615 /* Pods_wtest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A234861227642B80016CDBC = {
+			isa = PBXGroup;
+			children = (
+				0A2348BF2277709C0016CDBC /* Common code */,
+				0A2348B52277709C0016CDBC /* wsync */,
+				0A234895227653ED0016CDBC /* wsyncTests */,
+				0A2348A4227654B40016CDBC /* wtest */,
+				0A2349DE227775FA0016CDBC /* Scripts */,
+				0A2349E0227775FA0016CDBC /* Templates */,
+				0A2349E2227776260016CDBC /* MyPlayground.playground */,
+				0A23486B227642B80016CDBC /* Products */,
+				1E44896FE19D01DB221EE3C6 /* Pods */,
+				AD93B7594D041D788F4EF1CB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A23486B227642B80016CDBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A234881227653EC0016CDBC /* wsync.app */,
+				0A234892227653ED0016CDBC /* wsyncTests.xctest */,
+				0A2348A3227654B40016CDBC /* wtest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A234895227653ED0016CDBC /* wsyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A23498A227773850016CDBC /* AppDataSyncTests.swift */,
+				0A23498B227773850016CDBC /* AppDataTests.swift */,
+				0A234989227773850016CDBC /* DiskStoreTests.swift */,
+				0A23498C227773850016CDBC /* Info.plist */,
+				0A23498D227773850016CDBC /* JSONTestSet */,
+			);
+			path = wsyncTests;
+			sourceTree = "<group>";
+		};
+		0A2348A4227654B40016CDBC /* wtest */ = {
+			isa = PBXGroup;
+			children = (
+				0A2349ED2277765C0016CDBC /* AppDelegate.swift */,
+				0A2349EE2277765D0016CDBC /* DeleteContentService.swift */,
+				0A2349EA2277765C0016CDBC /* DumpContent.swift */,
+				0A2349E32277765C0016CDBC /* KeychainService.swift */,
+				0A2349F12277765D0016CDBC /* Logger.swift */,
+				0A2349EB2277765C0016CDBC /* PrintContent.swift */,
+				0A2349EF2277765D0016CDBC /* AppSetup.swift */,
+				0A2349EC2277765C0016CDBC /* TestService.swift */,
+				0A2349F02277765D0016CDBC /* ViewController.swift */,
+				0A2349E42277765C0016CDBC /* Resource */,
+			);
+			path = wtest;
+			sourceTree = "<group>";
+		};
+		0A2348B52277709C0016CDBC /* wsync */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348B62277709C0016CDBC /* ViewController.swift */,
+				0A2348B72277709C0016CDBC /* SyncData */,
+				0A2348BE2277709C0016CDBC /* Logger.swift */,
+				0A2348FC2277709C0016CDBC /* CheckDataStore.swift */,
+				0A2348FD2277709C0016CDBC /* CheckDiskStore.swift */,
+				0A2348FE2277709C0016CDBC /* KeychainService.swift */,
+				0A2348FF2277709C0016CDBC /* AppSetup.swift */,
+				0A2349002277709C0016CDBC /* AppDelegate.swift */,
+				0A2349012277709C0016CDBC /* Resource */,
+			);
+			path = wsync;
+			sourceTree = "<group>";
+		};
+		0A2348B72277709C0016CDBC /* SyncData */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348B82277709C0016CDBC /* AppData.swift */,
+				0A2348B92277709C0016CDBC /* AppDataSyncPull.swift */,
+				0A2348BA2277709C0016CDBC /* AppDataSyncPush.swift */,
+				0A2348BB2277709C0016CDBC /* DiskStore.swift */,
+				0A2348BC2277709C0016CDBC /* Queue.swift */,
+				0A2348BD2277709C0016CDBC /* AppDataSync.swift */,
+			);
+			path = SyncData;
+			sourceTree = "<group>";
+		};
+		0A2348BF2277709C0016CDBC /* Common code */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348C02277709C0016CDBC /* Extension */,
+				0A2348C42277709C0016CDBC /* Network */,
+				0A2348D52277709C0016CDBC /* WModel */,
+				0A2348F12277709C0016CDBC /* Disk */,
+				0A2348F82277709C0016CDBC /* Utility */,
+			);
+			path = "Common code";
+			sourceTree = "<group>";
+		};
+		0A2348C02277709C0016CDBC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348C12277709C0016CDBC /* String+OutputStream.swift */,
+				0A2348C22277709C0016CDBC /* iso8601date.swift */,
+				0A2348C32277709C0016CDBC /* URLExtensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0A2348C42277709C0016CDBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348C52277709C0016CDBC /* WuProvider.swift */,
+				0A2348C62277709C0016CDBC /* WunderImport.swift */,
+				0A2348C72277709C0016CDBC /* WMutatedService.swift */,
+				0A2348C82277709C0016CDBC /* APIKeys.swift */,
+				0A2348C92277709C0016CDBC /* WunderManager.swift */,
+				0A2348CA2277709C0016CDBC /* WJSONAbleCoders.swift */,
+				0A2348CB2277709C0016CDBC /* WunderUploader.swift */,
+				0A2348CC2277709C0016CDBC /* WebsocketIO.swift */,
+				0A2348CD2277709C0016CDBC /* WNetworkErrorMessage.swift */,
+				0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */,
+				0A2348CF2277709C0016CDBC /* WNetworkError.swift */,
+				0A2348D02277709C0016CDBC /* WAPI.swift */,
+				0A2348D12277709C0016CDBC /* AvatarService.swift */,
+				0A2348D22277709C0016CDBC /* WunderAPI.swift */,
+				0A2348D32277709C0016CDBC /* WUploadService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0A2348D52277709C0016CDBC /* WModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348D62277709C0016CDBC /* WReminder.swift */,
+				0A2348D72277709C0016CDBC /* JSONAble.swift */,
+				0A2348D82277709C0016CDBC /* WSubtaskPosition.swift */,
+				0A2348D92277709C0016CDBC /* WListPosition.swift */,
+				0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */,
+				0A2348DB2277709C0016CDBC /* WFolder.swift */,
+				0A2348DC2277709C0016CDBC /* WDesktopNotification.swift */,
+				0A2348DD2277709C0016CDBC /* WRevision.swift */,
+				0A2348DE2277709C0016CDBC /* WUser.swift */,
+				0A2348DF2277709C0016CDBC /* WRoot.swift */,
+				0A2348E02277709C0016CDBC /* WSubtask.swift */,
+				0A2348E12277709C0016CDBC /* WBackup.swift */,
+				0A2348E22277709C0016CDBC /* WSetting.swift */,
+				0A2348E32277709C0016CDBC /* WFeature.swift */,
+				0A2348E42277709C0016CDBC /* WObject.swift */,
+				0A2348E52277709C0016CDBC /* WTaskPosition.swift */,
+				0A2348E62277709C0016CDBC /* WNote.swift */,
+				0A2348E72277709C0016CDBC /* WTaskComment.swift */,
+				0A2348E82277709C0016CDBC /* WList.swift */,
+				0A2348E92277709C0016CDBC /* WFile.swift */,
+				0A2348EA2277709C0016CDBC /* MappingType.swift */,
+				0A2348EB2277709C0016CDBC /* WMutated.swift */,
+				0A2348EC2277709C0016CDBC /* WMembership.swift */,
+				0A2348ED2277709C0016CDBC /* WTaskCommentsState.swift */,
+				0A2348EE2277709C0016CDBC /* CreateWObject.swift */,
+				0A2348EF2277709C0016CDBC /* WUpload.swift */,
+				0A2348F02277709C0016CDBC /* WTask.swift */,
+			);
+			path = WModel;
+			sourceTree = "<group>";
+		};
+		0A2348F12277709C0016CDBC /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348F22277709C0016CDBC /* Disk.swift */,
+				0A2348F32277709C0016CDBC /* Disk+InternalHelpers.swift */,
+				0A2348F42277709C0016CDBC /* Disk+Errors.swift */,
+				0A2348F52277709C0016CDBC /* Disk+Helpers.swift */,
+				0A2348F62277709C0016CDBC /* Disk+VolumeInformation.swift */,
+				0A2348F72277709C0016CDBC /* Disk+Codable.swift */,
+			);
+			path = Disk;
+			sourceTree = "<group>";
+		};
+		0A2348F82277709C0016CDBC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348F92277709C0016CDBC /* StreamLog.swift */,
+				0A2348FA2277709C0016CDBC /* FreeMethods.swift */,
+				0A2348FB2277709C0016CDBC /* HwUUID.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0A2349012277709C0016CDBC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0A2349022277709C0016CDBC /* wsync.entitlements */,
+				0A2349032277709C0016CDBC /* Assets.xcassets */,
+				0A2349042277709C0016CDBC /* Main.storyboard */,
+				0A2349062277709C0016CDBC /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0A23498D227773850016CDBC /* JSONTestSet */ = {
+			isa = PBXGroup;
+			children = (
+				0A23498E227773850016CDBC /* TestBackup.json */,
+				0A23498F227773850016CDBC /* 25007 */,
+			);
+			path = JSONTestSet;
+			sourceTree = "<group>";
+		};
+		0A23498F227773850016CDBC /* 25007 */ = {
+			isa = PBXGroup;
+			children = (
+				0A234990227773850016CDBC /* folder.json */,
+				0A234991227773850016CDBC /* subtask_position-3858193502.json */,
+				0A234992227773850016CDBC /* subtask_position-3858192450.json */,
+				0A234993227773850016CDBC /* membership.json */,
+				0A234994227773850016CDBC /* task_comment-3858184298.json */,
+				0A234995227773850016CDBC /* file-3858184298.json */,
+				0A234996227773850016CDBC /* setting.json */,
+				0A234997227773850016CDBC /* subtask-3858184298.json */,
+				0A234998227773850016CDBC /* task_position-286646344.json */,
+				0A234999227773850016CDBC /* reminder-3858184298.json */,
+				0A23499A227773850016CDBC /* reminder-3858192730.json */,
+				0A23499B227773850016CDBC /* task-286646344.json */,
+				0A23499C227773850016CDBC /* subtask_position-3858193749.json */,
+				0A23499D227773850016CDBC /* task-353279260.json */,
+				0A23499E227773850016CDBC /* task_position-350938884.json */,
+				0A23499F227773850016CDBC /* subtask_position-3858193179.json */,
+				0A2349A0227773850016CDBC /* task-350938884.json */,
+				0A2349A1227773850016CDBC /* task_position-353279260.json */,
+				0A2349A2227773850016CDBC /* subtask_position-3917606953.json */,
+				0A2349A3227773850016CDBC /* task-350938891.json */,
+				0A2349A4227773850016CDBC /* subtask_position-3858192730.json */,
+				0A2349A5227773850016CDBC /* user.json */,
+				0A2349A6227773850016CDBC /* subtask_position-3917606699.json */,
+				0A2349A7227773850016CDBC /* task_position-350938891.json */,
+				0A2349A8227773850016CDBC /* subtask_position-3858184298.json */,
+				0A2349A9227773850016CDBC /* subtask_position-3858193360.json */,
+				0A2349AA227773850016CDBC /* list.json */,
+				0A2349AB227773850016CDBC /* subtask_position-3907272878.json */,
+				0A2349AC227773850016CDBC /* task-350938874.json */,
+				0A2349AD227773850016CDBC /* task_position-350938874.json */,
+				0A2349AE227773850016CDBC /* subtask_position-3858192890.json */,
+				0A2349AF227773850016CDBC /* task_position-352593956.json */,
+				0A2349B0227773850016CDBC /* list_position.json */,
+				0A2349B1227773850016CDBC /* root.json */,
+				0A2349B2227773850016CDBC /* note-3858184298.json */,
+			);
+			path = 25007;
+			sourceTree = "<group>";
+		};
+		0A2349DE227775FA0016CDBC /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0A2349DF227775FA0016CDBC /* SourceryStart.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		0A2349E0227775FA0016CDBC /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				0A2349E1227775FA0016CDBC /* WObject.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		0A2349E42277765C0016CDBC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0A2349E52277765C0016CDBC /* wtest.entitlements */,
+				0A2349E62277765C0016CDBC /* Assets.xcassets */,
+				0A2349E72277765C0016CDBC /* Main.storyboard */,
+				0A2349E92277765C0016CDBC /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1E44896FE19D01DB221EE3C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */,
+				1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */,
+				7598043D440CB6A4845DE07D /* Pods-wsyncTests.debug.xcconfig */,
+				D7A40682FFE0D279B70F8A1A /* Pods-wsyncTests.release.xcconfig */,
+				B17B2CAE59B1F9D9EAA08F3E /* Pods-wtest.debug.xcconfig */,
+				7FD7EFE84345AB8FACDE71F7 /* Pods-wtest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD93B7594D041D788F4EF1CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90F8A7604B7A49ED6367167E /* Pods_wsync.framework */,
+				842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */,
+				6B0993F94505715A1E039331 /* Pods_wtest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A234880227653EC0016CDBC /* wsync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A23489D227653ED0016CDBC /* Build configuration list for PBXNativeTarget "wsync" */;
+			buildPhases = (
+				DB30E36F0CC1B930737509B2 /* [CP] Check Pods Manifest.lock */,
+				0A23487D227653EC0016CDBC /* Sources */,
+				0A23487E227653EC0016CDBC /* Frameworks */,
+				0A23487F227653EC0016CDBC /* Resources */,
+				2A871A6C52734AC284C00C63 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wsync;
+			productName = wsync;
+			productReference = 0A234881227653EC0016CDBC /* wsync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A234891227653ED0016CDBC /* wsyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A23489E227653ED0016CDBC /* Build configuration list for PBXNativeTarget "wsyncTests" */;
+			buildPhases = (
+				AA1C0C7069FD9D550C1FC607 /* [CP] Check Pods Manifest.lock */,
+				0A23488E227653ED0016CDBC /* Sources */,
+				0A23488F227653ED0016CDBC /* Frameworks */,
+				0A234890227653ED0016CDBC /* Resources */,
+				B75114E5A55B6DF08551312B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A234894227653ED0016CDBC /* PBXTargetDependency */,
+			);
+			name = wsyncTests;
+			productName = wsyncTests;
+			productReference = 0A234892227653ED0016CDBC /* wsyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0A2348A2227654B40016CDBC /* wtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A2348B0227654B50016CDBC /* Build configuration list for PBXNativeTarget "wtest" */;
+			buildPhases = (
+				1D9F68B06A28602EB0390B40 /* [CP] Check Pods Manifest.lock */,
+				0A23489F227654B40016CDBC /* Sources */,
+				0A2348A0227654B40016CDBC /* Frameworks */,
+				0A2348A1227654B40016CDBC /* Resources */,
+				7C77E5B58D813269E38F3148 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wtest;
+			productName = wtest;
+			productReference = 0A2348A3227654B40016CDBC /* wtest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A234862227642B80016CDBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Dmitriy Borovikov";
+				TargetAttributes = {
+					0A234880227653EC0016CDBC = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					0A234891227653ED0016CDBC = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0A234880227653EC0016CDBC;
+					};
+					0A2348A2227654B40016CDBC = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 0A234865227642B80016CDBC /* Build configuration list for PBXProject "wsynctest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A234861227642B80016CDBC;
+			productRefGroup = 0A23486B227642B80016CDBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A234880227653EC0016CDBC /* wsync */,
+				0A234891227653ED0016CDBC /* wsyncTests */,
+				0A2348A2227654B40016CDBC /* wtest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A23487F227653EC0016CDBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A234986227771930016CDBC /* Assets.xcassets in Resources */,
+				0A234987227771980016CDBC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A234890227653ED0016CDBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2349C8227773E30016CDBC /* subtask_position-3858193179.json in Resources */,
+				0A2349BA227773E30016CDBC /* subtask_position-3858193502.json in Resources */,
+				0A2349C1227773E30016CDBC /* task_position-286646344.json in Resources */,
+				0A2349DA227773E30016CDBC /* root.json in Resources */,
+				0A2349C4227773E30016CDBC /* task-286646344.json in Resources */,
+				0A2349CF227773E30016CDBC /* subtask_position-3917606699.json in Resources */,
+				0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */,
+				0A2349BF227773E30016CDBC /* setting.json in Resources */,
+				0A2349C2227773E30016CDBC /* reminder-3858184298.json in Resources */,
+				0A2349C5227773E30016CDBC /* subtask_position-3858193749.json in Resources */,
+				0A2349BD227773E30016CDBC /* task_comment-3858184298.json in Resources */,
+				0A2349C7227773E30016CDBC /* task_position-350938884.json in Resources */,
+				0A2349CB227773E30016CDBC /* subtask_position-3917606953.json in Resources */,
+				0A2349D5227773E30016CDBC /* task-350938874.json in Resources */,
+				0A2349CA227773E30016CDBC /* task_position-353279260.json in Resources */,
+				0A2349C6227773E30016CDBC /* task-353279260.json in Resources */,
+				0A2349D1227773E30016CDBC /* subtask_position-3858184298.json in Resources */,
+				0A2349BB227773E30016CDBC /* subtask_position-3858192450.json in Resources */,
+				0A2349BC227773E30016CDBC /* membership.json in Resources */,
+				0A2349D4227773E30016CDBC /* subtask_position-3907272878.json in Resources */,
+				0A2349BE227773E30016CDBC /* file-3858184298.json in Resources */,
+				0A2349D9227773E30016CDBC /* list_position.json in Resources */,
+				0A2349D2227773E30016CDBC /* subtask_position-3858193360.json in Resources */,
+				0A2349CD227773E30016CDBC /* subtask_position-3858192730.json in Resources */,
+				0A2349D7227773E30016CDBC /* subtask_position-3858192890.json in Resources */,
+				0A2349D8227773E30016CDBC /* task_position-352593956.json in Resources */,
+				0A2349CE227773E30016CDBC /* user.json in Resources */,
+				0A2349D3227773E30016CDBC /* list.json in Resources */,
+				0A2349D0227773E30016CDBC /* task_position-350938891.json in Resources */,
+				0A2349D6227773E30016CDBC /* task_position-350938874.json in Resources */,
+				0A2349C3227773E30016CDBC /* reminder-3858192730.json in Resources */,
+				0A2349C9227773E30016CDBC /* task-350938884.json in Resources */,
+				0A2349B9227773E30016CDBC /* folder.json in Resources */,
+				0A2349CC227773E30016CDBC /* task-350938891.json in Resources */,
+				0A2349C0227773E30016CDBC /* subtask-3858184298.json in Resources */,
+				0A2349DB227773E30016CDBC /* note-3858184298.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A2348A1227654B40016CDBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2349F32277765D0016CDBC /* Assets.xcassets in Resources */,
+				0A2349F42277765D0016CDBC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D9F68B06A28602EB0390B40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wtest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A871A6C52734AC284C00C63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wsync/Pods-wsync-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wsync/Pods-wsync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C77E5B58D813269E38F3148 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wtest/Pods-wtest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wtest/Pods-wtest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA1C0C7069FD9D550C1FC607 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wsyncTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B75114E5A55B6DF08551312B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wsyncTests/Pods-wsyncTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wsyncTests/Pods-wsyncTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB30E36F0CC1B930737509B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wsync-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A23487D227653EC0016CDBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2349692277715D0016CDBC /* Disk.swift in Sources */,
+				0A23491B227771450016CDBC /* WunderUploader.swift in Sources */,
+				0A23491C227771450016CDBC /* WebsocketIO.swift in Sources */,
+				0A234907227770E80016CDBC /* ViewController.swift in Sources */,
+				0A234940227771540016CDBC /* WFeature.swift in Sources */,
+				0A234976227771660016CDBC /* FreeMethods.swift in Sources */,
+				0A2349802277717E0016CDBC /* Logger.swift in Sources */,
+				0A234941227771540016CDBC /* WObject.swift in Sources */,
+				0A2349832277717E0016CDBC /* KeychainService.swift in Sources */,
+				0A2349812277717E0016CDBC /* CheckDataStore.swift in Sources */,
+				0A23496D2277715D0016CDBC /* Disk+VolumeInformation.swift in Sources */,
+				0A23494C227771540016CDBC /* WUpload.swift in Sources */,
+				0A23490A227770F20016CDBC /* AppDataSyncPush.swift in Sources */,
+				0A2349122277713B0016CDBC /* String+OutputStream.swift in Sources */,
+				0A234915227771450016CDBC /* WuProvider.swift in Sources */,
+				0A234943227771540016CDBC /* WNote.swift in Sources */,
+				0A234949227771540016CDBC /* WMembership.swift in Sources */,
+				0A2349142277713B0016CDBC /* URLExtensions.swift in Sources */,
+				0A234922227771450016CDBC /* WunderAPI.swift in Sources */,
+				0A23496B2277715D0016CDBC /* Disk+Errors.swift in Sources */,
+				0A234933227771540016CDBC /* WReminder.swift in Sources */,
+				0A23491E227771450016CDBC /* WuWSSProvider.swift in Sources */,
+				0A2349842277717E0016CDBC /* AppSetup.swift in Sources */,
+				0A23491F227771450016CDBC /* WNetworkError.swift in Sources */,
+				0A234921227771450016CDBC /* AvatarService.swift in Sources */,
+				0A23493B227771540016CDBC /* WUser.swift in Sources */,
+				0A23496C2277715D0016CDBC /* Disk+Helpers.swift in Sources */,
+				0A23490C227770F20016CDBC /* Queue.swift in Sources */,
+				0A23493C227771540016CDBC /* WRoot.swift in Sources */,
+				0A23491A227771450016CDBC /* WJSONAbleCoders.swift in Sources */,
+				0A234918227771450016CDBC /* APIKeys.swift in Sources */,
+				0A234919227771450016CDBC /* WunderManager.swift in Sources */,
+				0A234977227771660016CDBC /* HwUUID.swift in Sources */,
+				0A23494D227771540016CDBC /* WTask.swift in Sources */,
+				0A234942227771540016CDBC /* WTaskPosition.swift in Sources */,
+				0A23494A227771540016CDBC /* WTaskCommentsState.swift in Sources */,
+				0A234923227771450016CDBC /* WUploadService.swift in Sources */,
+				0A23493E227771540016CDBC /* WBackup.swift in Sources */,
+				0A234947227771540016CDBC /* MappingType.swift in Sources */,
+				0A2349822277717E0016CDBC /* CheckDiskStore.swift in Sources */,
+				0A234909227770F20016CDBC /* AppDataSyncPull.swift in Sources */,
+				0A2349132277713B0016CDBC /* iso8601date.swift in Sources */,
+				0A234937227771540016CDBC /* WUnreadActivityCount.swift in Sources */,
+				0A2349852277717E0016CDBC /* AppDelegate.swift in Sources */,
+				0A23496E2277715D0016CDBC /* Disk+Codable.swift in Sources */,
+				0A23494B227771540016CDBC /* CreateWObject.swift in Sources */,
+				0A234936227771540016CDBC /* WListPosition.swift in Sources */,
+				0A23490B227770F20016CDBC /* DiskStore.swift in Sources */,
+				0A23491D227771450016CDBC /* WNetworkErrorMessage.swift in Sources */,
+				0A23493F227771540016CDBC /* WSetting.swift in Sources */,
+				0A234917227771450016CDBC /* WMutatedService.swift in Sources */,
+				0A234948227771540016CDBC /* WMutated.swift in Sources */,
+				0A234938227771540016CDBC /* WFolder.swift in Sources */,
+				0A23490D227770F20016CDBC /* AppDataSync.swift in Sources */,
+				0A234945227771540016CDBC /* WList.swift in Sources */,
+				0A234935227771540016CDBC /* WSubtaskPosition.swift in Sources */,
+				0A234920227771450016CDBC /* WAPI.swift in Sources */,
+				0A234934227771540016CDBC /* JSONAble.swift in Sources */,
+				0A234944227771540016CDBC /* WTaskComment.swift in Sources */,
+				0A23493A227771540016CDBC /* WRevision.swift in Sources */,
+				0A234916227771450016CDBC /* WunderImport.swift in Sources */,
+				0A23496A2277715D0016CDBC /* Disk+InternalHelpers.swift in Sources */,
+				0A234908227770F20016CDBC /* AppData.swift in Sources */,
+				0A234975227771660016CDBC /* StreamLog.swift in Sources */,
+				0A234946227771540016CDBC /* WFile.swift in Sources */,
+				0A234939227771540016CDBC /* WDesktopNotification.swift in Sources */,
+				0A23493D227771540016CDBC /* WSubtask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A23488E227653ED0016CDBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */,
+				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
+				0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A23489F227654B40016CDBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A23496F2277715E0016CDBC /* Disk.swift in Sources */,
+				0A23495F227771550016CDBC /* WTaskComment.swift in Sources */,
+				0A234966227771550016CDBC /* CreateWObject.swift in Sources */,
+				0A234930227771460016CDBC /* AvatarService.swift in Sources */,
+				0A2349FD2277765D0016CDBC /* Logger.swift in Sources */,
+				0A234928227771460016CDBC /* WunderManager.swift in Sources */,
+				0A234929227771460016CDBC /* WJSONAbleCoders.swift in Sources */,
+				0A234931227771460016CDBC /* WunderAPI.swift in Sources */,
+				0A2349732277715E0016CDBC /* Disk+VolumeInformation.swift in Sources */,
+				0A2349FB2277765D0016CDBC /* AppSetup.swift in Sources */,
+				0A234979227771670016CDBC /* FreeMethods.swift in Sources */,
+				0A23492F227771460016CDBC /* WAPI.swift in Sources */,
+				0A2349702277715E0016CDBC /* Disk+InternalHelpers.swift in Sources */,
+				0A2349F82277765D0016CDBC /* TestService.swift in Sources */,
+				0A234978227771670016CDBC /* StreamLog.swift in Sources */,
+				0A234968227771550016CDBC /* WTask.swift in Sources */,
+				0A234954227771550016CDBC /* WDesktopNotification.swift in Sources */,
+				0A23495B227771550016CDBC /* WFeature.swift in Sources */,
+				0A234950227771550016CDBC /* WSubtaskPosition.swift in Sources */,
+				0A2349102277713A0016CDBC /* iso8601date.swift in Sources */,
+				0A23495D227771550016CDBC /* WTaskPosition.swift in Sources */,
+				0A234956227771550016CDBC /* WUser.swift in Sources */,
+				0A234961227771550016CDBC /* WFile.swift in Sources */,
+				0A23492A227771460016CDBC /* WunderUploader.swift in Sources */,
+				0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */,
+				0A2349722277715E0016CDBC /* Disk+Helpers.swift in Sources */,
+				0A234960227771550016CDBC /* WList.swift in Sources */,
+				0A234963227771550016CDBC /* WMutated.swift in Sources */,
+				0A23492B227771460016CDBC /* WebsocketIO.swift in Sources */,
+				0A234924227771460016CDBC /* WuProvider.swift in Sources */,
+				0A234964227771550016CDBC /* WMembership.swift in Sources */,
+				0A234965227771550016CDBC /* WTaskCommentsState.swift in Sources */,
+				0A234957227771550016CDBC /* WRoot.swift in Sources */,
+				0A2349F72277765D0016CDBC /* PrintContent.swift in Sources */,
+				0A2349742277715E0016CDBC /* Disk+Codable.swift in Sources */,
+				0A23494E227771550016CDBC /* WReminder.swift in Sources */,
+				0A23495E227771550016CDBC /* WNote.swift in Sources */,
+				0A234927227771460016CDBC /* APIKeys.swift in Sources */,
+				0A2349712277715E0016CDBC /* Disk+Errors.swift in Sources */,
+				0A2349112277713A0016CDBC /* URLExtensions.swift in Sources */,
+				0A234952227771550016CDBC /* WUnreadActivityCount.swift in Sources */,
+				0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */,
+				0A23497A227771670016CDBC /* HwUUID.swift in Sources */,
+				0A2349FA2277765D0016CDBC /* DeleteContentService.swift in Sources */,
+				0A234953227771550016CDBC /* WFolder.swift in Sources */,
+				0A234951227771550016CDBC /* WListPosition.swift in Sources */,
+				0A234962227771550016CDBC /* MappingType.swift in Sources */,
+				0A23494F227771550016CDBC /* JSONAble.swift in Sources */,
+				0A23495C227771550016CDBC /* WObject.swift in Sources */,
+				0A234959227771550016CDBC /* WBackup.swift in Sources */,
+				0A23492E227771460016CDBC /* WNetworkError.swift in Sources */,
+				0A234958227771550016CDBC /* WSubtask.swift in Sources */,
+				0A234955227771550016CDBC /* WRevision.swift in Sources */,
+				0A234926227771460016CDBC /* WMutatedService.swift in Sources */,
+				0A234925227771460016CDBC /* WunderImport.swift in Sources */,
+				0A2349F22277765D0016CDBC /* KeychainService.swift in Sources */,
+				0A23492D227771460016CDBC /* WuWSSProvider.swift in Sources */,
+				0A234967227771550016CDBC /* WUpload.swift in Sources */,
+				0A234932227771460016CDBC /* WUploadService.swift in Sources */,
+				0A23490F2277713A0016CDBC /* String+OutputStream.swift in Sources */,
+				0A23492C227771460016CDBC /* WNetworkErrorMessage.swift in Sources */,
+				0A2349F92277765D0016CDBC /* AppDelegate.swift in Sources */,
+				0A23495A227771550016CDBC /* WSetting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A234894227653ED0016CDBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A234880227653EC0016CDBC /* wsync */;
+			targetProxy = 0A234893227653ED0016CDBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A2349042277709C0016CDBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2349052277709C0016CDBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0A2349E72277765C0016CDBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2349E82277765C0016CDBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A234878227642B80016CDBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A234879227642B80016CDBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0A234899227653ED0016CDBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wsync/Resource/wsync.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wsync/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wsync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0A23489A227653ED0016CDBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wsync/Resource/wsync.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wsync/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wsync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0A23489B227653ED0016CDBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7598043D440CB6A4845DE07D /* Pods-wsyncTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wsyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wsyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wsync.app/Contents/MacOS/wsync";
+			};
+			name = Debug;
+		};
+		0A23489C227653ED0016CDBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A40682FFE0D279B70F8A1A /* Pods-wsyncTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wsyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wsyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wsync.app/Contents/MacOS/wsync";
+			};
+			name = Release;
+		};
+		0A2348B1227654B50016CDBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B17B2CAE59B1F9D9EAA08F3E /* Pods-wtest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wtest/Resource/wtest.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wtest/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wtest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0A2348B2227654B50016CDBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD7EFE84345AB8FACDE71F7 /* Pods-wtest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wtest/Resource/wtest.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9BEQ8V4XH9;
+				INFOPLIST_FILE = wtest/Resource/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = me.borovikov.wtest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A234865227642B80016CDBC /* Build configuration list for PBXProject "wsynctest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A234878227642B80016CDBC /* Debug */,
+				0A234879227642B80016CDBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A23489D227653ED0016CDBC /* Build configuration list for PBXNativeTarget "wsync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A234899227653ED0016CDBC /* Debug */,
+				0A23489A227653ED0016CDBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A23489E227653ED0016CDBC /* Build configuration list for PBXNativeTarget "wsyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A23489B227653ED0016CDBC /* Debug */,
+				0A23489C227653ED0016CDBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A2348B0227654B50016CDBC /* Build configuration list for PBXNativeTarget "wtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2348B1227654B50016CDBC /* Debug */,
+				0A2348B2227654B50016CDBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A234862227642B80016CDBC /* Project object */;
+}

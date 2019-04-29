@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (4.8.2)
+  - KeychainAccess (3.2.0)
+  - Keys (1.0.1)
+  - Moya (13.0.0):
+    - Moya/Core (= 13.0.0)
+  - Moya/Core (13.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - OAuthSwift (1.4.0)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/Alamofire (6.8.4):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - Result (4.1.0)
+  - Starscream (3.1.0)
+
+DEPENDENCIES:
+  - KeychainAccess (= 3.2.0)
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - Moya (= 13.0.0)
+  - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`, commit `86b6d6d`)
+  - PromiseKit (= 6.8.4)
+  - PromiseKit/Alamofire (= 6.8.4)
+  - Starscream (= 3.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - KeychainAccess
+    - Moya
+    - PromiseKit
+    - Result
+    - Starscream
+
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+  OAuthSwift:
+    :commit: 86b6d6d
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
+CHECKOUT OPTIONS:
+  OAuthSwift:
+    :commit: 86b6d6d
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  Moya: 161263550064ff8a4948e8ff63137fd72a876292
+  OAuthSwift: 120c21d9437e0aa09e509c7d4378a34dd760c13d
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+
+PODFILE CHECKSUM: d72a773a733a9080562b7a3a584c3e6592d3b133
+
+COCOAPODS: 1.6.1

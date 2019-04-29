@@ -1,0 +1,20 @@
+[
+  {
+    "revision" : 1029,
+    "id" : 41027896,
+    "created_at" : "2017-01-17T17:08:17.000Z",
+    "email" : "wunderlist@looksnvisions.com",
+    "updated_at" : "2018-06-07T16:29:46.000Z",
+    "type" : "user",
+    "name" : "Test User"
+  },
+  {
+    "revision" : 167,
+    "id" : 84504316,
+    "created_at" : "2018-06-07T16:24:17.000Z",
+    "email" : "plemu2005@gmail.com",
+    "updated_at" : "2018-06-07T16:29:09.000Z",
+    "type" : "user",
+    "name" : "Test user B"
+  }
+]

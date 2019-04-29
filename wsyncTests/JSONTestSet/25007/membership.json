@@ -1,0 +1,56 @@
+[
+  {
+    "revision" : 2,
+    "owner" : false,
+    "id" : 312567240,
+    "list_id" : 353279260,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  },
+  {
+    "revision" : 1,
+    "owner" : true,
+    "id" : 311808970,
+    "list_id" : 352593956,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  },
+  {
+    "revision" : 2,
+    "owner" : true,
+    "id" : 309955455,
+    "list_id" : 350938874,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  },
+  {
+    "revision" : 1,
+    "owner" : true,
+    "id" : 309955475,
+    "list_id" : 350938891,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  },
+  {
+    "revision" : 1,
+    "owner" : true,
+    "id" : 309955466,
+    "list_id" : 350938884,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  },
+  {
+    "revision" : 20,
+    "owner" : true,
+    "id" : 206338424,
+    "list_id" : 286646344,
+    "user_id" : 41027896,
+    "type" : "membership",
+    "state" : "accepted"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "revision" : 1,
+    "author" : {
+      "id" : 41027896,
+      "name" : "Test User",
+      "avatar" : "https:\/\/a.wunderlist.com\/api\/v1\/avatar?user_id=41027896"
+    },
+    "id" : 97442892,
+    "created_at" : "2018-05-19T07:49:12.000Z",
+    "local_created_at" : "2018-05-19T07:49:11.198Z",
+    "task_id" : 3858184298,
+    "text" : "Comment",
+    "type" : "task_comment"
+  },
+  {
+    "revision" : 1,
+    "author" : {
+      "id" : 41027896,
+      "name" : "Test User",
+      "avatar" : "https:\/\/a.wunderlist.com\/api\/v1\/avatar?user_id=41027896"
+    },
+    "id" : 97442895,
+    "created_at" : "2018-05-19T07:49:15.000Z",
+    "local_created_at" : "2018-05-19T07:49:14.494Z",
+    "task_id" : 3858184298,
+    "text" : "Reply",
+    "type" : "task_comment"
+  }
+]

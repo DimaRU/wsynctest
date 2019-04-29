@@ -1,0 +1,6 @@
+framework module Pods_wsync {
+  umbrella header "Pods-wsync-umbrella.h"
+
+  export *
+  module * { export * }
+}

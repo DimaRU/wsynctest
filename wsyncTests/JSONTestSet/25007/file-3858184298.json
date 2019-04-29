@@ -1,0 +1,16 @@
+[
+  {
+    "id" : 42266102,
+    "created_at" : "2018-05-19T07:50:30.727Z",
+    "content_type" : "text\/plain; charset=utf-8",
+    "revision" : 1,
+    "url" : "https:\/\/download.wunderlist.io\/39009e20-3d67-0136-d4d3-22000a5bc116-1526716228-964346?AWSAccessKeyId=AKIAJEN6W4AO3LJODOAA&Expires=1529394630&Signature=jp%2B%2Fee1AeXr6%2FcdvFrwgdYGcIGA%3D",
+    "user_id" : 41027896,
+    "type" : "file",
+    "task_id" : 3858184298,
+    "file_name" : "test_file.txt",
+    "updated_at" : "2018-05-19T07:50:30.813Z",
+    "file_size" : 11,
+    "local_created_at" : "2018-05-19T07:50:28.000Z"
+  }
+]

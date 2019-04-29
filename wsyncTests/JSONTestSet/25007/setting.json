@@ -1,0 +1,485 @@
+[
+  {
+    "revision" : 4,
+    "id" : 383658098,
+    "key" : "accountLocale",
+    "value" : "en_US",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659127,
+    "key" : "automaticReminders",
+    "value" : "on",
+    "type" : "setting"
+  },
+  {
+    "revision" : 5,
+    "id" : 383659126,
+    "key" : "background",
+    "value" : "wlbackground03",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659053,
+    "key" : "behaviorStarTasksToTop",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659054,
+    "key" : "confirmDeleteEntity",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659056,
+    "key" : "migratedWunderlistOneUser",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659139,
+    "key" : "newsletterSubscriptionEnabled",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659045,
+    "key" : "newTaskLocation",
+    "value" : "top",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659130,
+    "key" : "notificationsDesktopEnabled",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659131,
+    "key" : "notificationsEmailEnabled",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659132,
+    "key" : "notificationsPushEnabled",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659060,
+    "key" : "printCompletedItems",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659137,
+    "key" : "showCompletedItems",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659140,
+    "key" : "showSubtaskProgress",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659128,
+    "key" : "smartDates",
+    "value" : "on",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659129,
+    "key" : "smartDatesRemoveFromTodo",
+    "value" : "on",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659110,
+    "key" : "smartlistVisibilityAll",
+    "value" : "hidden",
+    "type" : "setting"
+  },
+  {
+    "revision" : 2,
+    "id" : 383659125,
+    "key" : "smartlistVisibilityAssignedToMe",
+    "value" : "hidden",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659121,
+    "key" : "smartlistVisibilityDone",
+    "value" : "hidden",
+    "type" : "setting"
+  },
+  {
+    "revision" : 3,
+    "id" : 383659113,
+    "key" : "smartlistVisibilityStarred",
+    "value" : "visible",
+    "type" : "setting"
+  },
+  {
+    "revision" : 3,
+    "id" : 383659122,
+    "key" : "smartlistVisibilityToday",
+    "value" : "visible",
+    "type" : "setting"
+  },
+  {
+    "revision" : 5,
+    "id" : 383659124,
+    "key" : "smartlistVisibilityWeek",
+    "value" : "visible",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659134,
+    "key" : "soundCheckoffEnabled",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659133,
+    "key" : "soundNotificationEnabled",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659043,
+    "key" : "startOfWeek",
+    "value" : "sun",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659123,
+    "key" : "todaySmartListVisibleTasks",
+    "value" : "all",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659058,
+    "key" : "webAddToChrome",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659057,
+    "key" : "webAddToFirefox",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 6,
+    "id" : 383659068,
+    "key" : "webAppFirstUsed",
+    "value" : "1527454800000",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659074,
+    "key" : "webChromeAppRatingLater",
+    "value" : "undefined",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659072,
+    "key" : "webChromeRatingLater",
+    "value" : "undefined",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659044,
+    "key" : "webDateFormat",
+    "value" : "DD.MM.YYYY",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659143,
+    "key" : "webEnableHtmlContextMenus",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659042,
+    "key" : "webEnableNaturalDateRecognition",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659039,
+    "key" : "webId",
+    "value" : "userSettings",
+    "type" : "setting"
+  },
+  {
+    "revision" : 2,
+    "id" : 383659041,
+    "key" : "webLanguage",
+    "value" : "en_US",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659070,
+    "key" : "webLastOpenAppDate",
+    "value" : "0",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659142,
+    "key" : "webLocale",
+    "value" : "ru",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659073,
+    "key" : "webNewInstallation",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 2,
+    "id" : 383659141,
+    "key" : "webOnboardingAddTodo",
+    "value" : "true",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659144,
+    "key" : "webOnboardingClickCreateList",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659145,
+    "key" : "webOnboardingClickShareList",
+    "value" : "false",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659135,
+    "key" : "webProTrialLimitAssigning",
+    "value" : "3",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659136,
+    "key" : "webProTrialLimitComments",
+    "value" : "10",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659138,
+    "key" : "webProTrialLimitFiles",
+    "value" : "3",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659088,
+    "key" : "webShortcutAddNewList",
+    "value" : "CTRL + SHIFT + L",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659086,
+    "key" : "webShortcutAddNewTask",
+    "value" : "CTRL + N",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659114,
+    "key" : "webShortcutCopyTasks",
+    "value" : "CTRL + C",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659069,
+    "key" : "webShortcutDelete",
+    "value" : "CTRL + BACKSPACE",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659102,
+    "key" : "webShortcutGotoFilterAll",
+    "value" : "CTRL + 5",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659087,
+    "key" : "webShortcutGotoFilterAssigned",
+    "value" : "CTRL + 1",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659098,
+    "key" : "webShortcutGotoFilterCompleted",
+    "value" : "CTRL + 6",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659099,
+    "key" : "webShortcutGotoFilterStarred",
+    "value" : "CTRL + 2",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659101,
+    "key" : "webShortcutGotoFilterToday",
+    "value" : "CTRL + 3",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659096,
+    "key" : "webShortcutGotoFilterWeek",
+    "value" : "CTRL + 4",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659085,
+    "key" : "webShortcutGotoInbox",
+    "value" : "CTRL + I",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659097,
+    "key" : "webShortcutGotoPreferences",
+    "value" : "CTRL + P",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659082,
+    "key" : "webShortcutGotoSearch",
+    "value" : "CTRL + F",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659083,
+    "key" : "webShortcutMarkTaskDone",
+    "value" : "CTRL + D",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659084,
+    "key" : "webShortcutMarkTaskStarred",
+    "value" : "CTRL + S",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659116,
+    "key" : "webShortcutPasteTasks",
+    "value" : "CTRL + V",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659112,
+    "key" : "webShortcutSelectAllTasks",
+    "value" : "CTRL + A",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659115,
+    "key" : "webShortcutSendViaEmail",
+    "value" : "CTRL + E",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659100,
+    "key" : "webShortcutShowNotifications",
+    "value" : "CTRL + SHIFT + A",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659111,
+    "key" : "webShortcutSync",
+    "value" : "R",
+    "type" : "setting"
+  },
+  {
+    "revision" : 8,
+    "id" : 383659071,
+    "key" : "webSignificantEventCount",
+    "value" : "7",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659055,
+    "key" : "webTimeFormat",
+    "value" : "24 hour",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 383659040,
+    "key" : "webType",
+    "value" : "userSettings",
+    "type" : "setting"
+  },
+  {
+    "revision" : 1,
+    "id" : 405405885,
+    "key" : "webWebappSidebarFolderGuideDidShow",
+    "value" : "true",
+    "type" : "setting"
+  }
+]
