@@ -170,7 +170,6 @@
 		0A2349D9227773E30016CDBC /* list_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B0227773850016CDBC /* list_position.json */; };
 		0A2349DA227773E30016CDBC /* root.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B1227773850016CDBC /* root.json */; };
 		0A2349DB227773E30016CDBC /* note-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B2227773850016CDBC /* note-3858184298.json */; };
-		0A2349F22277765D0016CDBC /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349E32277765C0016CDBC /* KeychainService.swift */; };
 		0A2349F32277765D0016CDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E62277765C0016CDBC /* Assets.xcassets */; };
 		0A2349F42277765D0016CDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E72277765C0016CDBC /* Main.storyboard */; };
 		0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EA2277765C0016CDBC /* DumpContent.swift */; };
@@ -178,9 +177,10 @@
 		0A2349F82277765D0016CDBC /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EC2277765C0016CDBC /* TestService.swift */; };
 		0A2349F92277765D0016CDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349ED2277765C0016CDBC /* AppDelegate.swift */; };
 		0A2349FA2277765D0016CDBC /* DeleteContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EE2277765D0016CDBC /* DeleteContentService.swift */; };
-		0A2349FB2277765D0016CDBC /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EF2277765D0016CDBC /* AppSetup.swift */; };
 		0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349F02277765D0016CDBC /* ViewController.swift */; };
-		0A2349FD2277765D0016CDBC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349F12277765D0016CDBC /* Logger.swift */; };
+		0A37A70F227798FA003FCDE4 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FF2277709C0016CDBC /* AppSetup.swift */; };
+		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
+		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */; };
 		E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F8A7604B7A49ED6367167E /* Pods_wsync.framework */; };
 /* End PBXBuildFile section */
@@ -313,7 +313,6 @@
 		0A2349DF227775FA0016CDBC /* SourceryStart.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = SourceryStart.sh; sourceTree = "<group>"; };
 		0A2349E1227775FA0016CDBC /* WObject.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = WObject.stencil; sourceTree = "<group>"; };
 		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../wutest/wutest/MyPlayground.playground; sourceTree = "<group>"; };
-		0A2349E32277765C0016CDBC /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		0A2349E52277765C0016CDBC /* wtest.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = wtest.entitlements; sourceTree = "<group>"; };
 		0A2349E62277765C0016CDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2349E82277765C0016CDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -323,9 +322,7 @@
 		0A2349EC2277765C0016CDBC /* TestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		0A2349ED2277765C0016CDBC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
-		0A2349EF2277765D0016CDBC /* AppSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A2349F12277765D0016CDBC /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.release.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.release.xcconfig"; sourceTree = "<group>"; };
 		6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.debug.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.debug.xcconfig"; sourceTree = "<group>"; };
 		6B0993F94505715A1E039331 /* Pods_wtest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wtest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,15 +403,12 @@
 		0A2348A4227654B40016CDBC /* wtest */ = {
 			isa = PBXGroup;
 			children = (
-				0A2349ED2277765C0016CDBC /* AppDelegate.swift */,
 				0A2349EE2277765D0016CDBC /* DeleteContentService.swift */,
 				0A2349EA2277765C0016CDBC /* DumpContent.swift */,
-				0A2349E32277765C0016CDBC /* KeychainService.swift */,
-				0A2349F12277765D0016CDBC /* Logger.swift */,
 				0A2349EB2277765C0016CDBC /* PrintContent.swift */,
-				0A2349EF2277765D0016CDBC /* AppSetup.swift */,
 				0A2349EC2277765C0016CDBC /* TestService.swift */,
 				0A2349F02277765D0016CDBC /* ViewController.swift */,
+				0A2349ED2277765C0016CDBC /* AppDelegate.swift */,
 				0A2349E42277765C0016CDBC /* Resource */,
 			);
 			path = wtest;
@@ -423,13 +417,10 @@
 		0A2348B52277709C0016CDBC /* wsync */ = {
 			isa = PBXGroup;
 			children = (
-				0A2348B62277709C0016CDBC /* ViewController.swift */,
 				0A2348B72277709C0016CDBC /* SyncData */,
-				0A2348BE2277709C0016CDBC /* Logger.swift */,
 				0A2348FC2277709C0016CDBC /* CheckDataStore.swift */,
 				0A2348FD2277709C0016CDBC /* CheckDiskStore.swift */,
-				0A2348FE2277709C0016CDBC /* KeychainService.swift */,
-				0A2348FF2277709C0016CDBC /* AppSetup.swift */,
+				0A2348B62277709C0016CDBC /* ViewController.swift */,
 				0A2349002277709C0016CDBC /* AppDelegate.swift */,
 				0A2349012277709C0016CDBC /* Resource */,
 			);
@@ -457,6 +448,7 @@
 				0A2348D52277709C0016CDBC /* WModel */,
 				0A2348F12277709C0016CDBC /* Disk */,
 				0A2348F82277709C0016CDBC /* Utility */,
+				0A37A70E22779873003FCDE4 /* Testing */,
 			);
 			path = "Common code";
 			sourceTree = "<group>";
@@ -637,6 +629,16 @@
 				0A2349E92277765C0016CDBC /* Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		0A37A70E22779873003FCDE4 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				0A2348BE2277709C0016CDBC /* Logger.swift */,
+				0A2348FE2277709C0016CDBC /* KeychainService.swift */,
+				0A2348FF2277709C0016CDBC /* AppSetup.swift */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 		1E44896FE19D01DB221EE3C6 /* Pods */ = {
@@ -1094,15 +1096,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A23496F2277715E0016CDBC /* Disk.swift in Sources */,
+				0A37A71122779901003FCDE4 /* Logger.swift in Sources */,
 				0A23495F227771550016CDBC /* WTaskComment.swift in Sources */,
 				0A234966227771550016CDBC /* CreateWObject.swift in Sources */,
 				0A234930227771460016CDBC /* AvatarService.swift in Sources */,
-				0A2349FD2277765D0016CDBC /* Logger.swift in Sources */,
 				0A234928227771460016CDBC /* WunderManager.swift in Sources */,
 				0A234929227771460016CDBC /* WJSONAbleCoders.swift in Sources */,
 				0A234931227771460016CDBC /* WunderAPI.swift in Sources */,
 				0A2349732277715E0016CDBC /* Disk+VolumeInformation.swift in Sources */,
-				0A2349FB2277765D0016CDBC /* AppSetup.swift in Sources */,
 				0A234979227771670016CDBC /* FreeMethods.swift in Sources */,
 				0A23492F227771460016CDBC /* WAPI.swift in Sources */,
 				0A2349702277715E0016CDBC /* Disk+InternalHelpers.swift in Sources */,
@@ -1120,11 +1121,13 @@
 				0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */,
 				0A2349722277715E0016CDBC /* Disk+Helpers.swift in Sources */,
 				0A234960227771550016CDBC /* WList.swift in Sources */,
+				0A37A70F227798FA003FCDE4 /* AppSetup.swift in Sources */,
 				0A234963227771550016CDBC /* WMutated.swift in Sources */,
 				0A23492B227771460016CDBC /* WebsocketIO.swift in Sources */,
 				0A234924227771460016CDBC /* WuProvider.swift in Sources */,
 				0A234964227771550016CDBC /* WMembership.swift in Sources */,
 				0A234965227771550016CDBC /* WTaskCommentsState.swift in Sources */,
+				0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */,
 				0A234957227771550016CDBC /* WRoot.swift in Sources */,
 				0A2349F72277765D0016CDBC /* PrintContent.swift in Sources */,
 				0A2349742277715E0016CDBC /* Disk+Codable.swift in Sources */,
@@ -1148,7 +1151,6 @@
 				0A234955227771550016CDBC /* WRevision.swift in Sources */,
 				0A234926227771460016CDBC /* WMutatedService.swift in Sources */,
 				0A234925227771460016CDBC /* WunderImport.swift in Sources */,
-				0A2349F22277765D0016CDBC /* KeychainService.swift in Sources */,
 				0A23492D227771460016CDBC /* WuWSSProvider.swift in Sources */,
 				0A234967227771550016CDBC /* WUpload.swift in Sources */,
 				0A234932227771460016CDBC /* WUploadService.swift in Sources */,
