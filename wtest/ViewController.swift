@@ -25,7 +25,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
 
         loadDefaults()
-        setAvatarImage()
+        if KeychainService.shared[.token] != nil {
+            setAvatarImage()
+        }
     }
     
     override func viewWillDisappear() {
@@ -68,8 +70,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             scope: "",
             state: state,
             success: { credential, response, parameters in
-                KeychainService.shared[.token] = credential.oauthToken
                 log("Success: \(credential.oauthToken)")
+                KeychainService.shared[.token] = credential.oauthToken
+                self.token.stringValue = credential.oauthToken
+                self.setAvatarImage()
 
         },
             failure: { error in
