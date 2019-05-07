@@ -40,11 +40,11 @@ struct WAPI {
     }
     
     static func getRevision<T: WObject>(_ type: T.Type, listId: Int, completed: Bool = false) -> Promise<Set<WRevision>> {
-        return WProvider.shared.request(WunderAPI.loadRevisionsListId(type: type, listId: listId, completed: completed))
+        return WProvider.shared.request(WunderAPI.loadRevisionsByListId(type: type, listId: listId, completed: completed))
     }
     
     static func getRevision<T: WObject>(_ type: T.Type, taskId: Int) -> Promise<Set<WRevision>> {
-        return WProvider.shared.request(WunderAPI.loadRevisionsTaskId(type: type, taskId: taskId))
+        return WProvider.shared.request(WunderAPI.loadRevisionsByTaskId(type: type, taskId: taskId))
     }
     
     static func create<T: WObject>(_ type: T.Type, params: [String:Any]) -> Promise<T> {

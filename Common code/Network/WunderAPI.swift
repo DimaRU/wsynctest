@@ -31,8 +31,8 @@ public enum WunderAPI: TargetType {
     case loadWObjectByListId(type: JSONAble.Type, listId: Int, completed: Bool)
 
     case loadRevisions(type: JSONAble.Type)
-    case loadRevisionsTaskId(type: JSONAble.Type, taskId: Int)
-    case loadRevisionsListId(type: JSONAble.Type, listId: Int, completed: Bool)
+    case loadRevisionsByTaskId(type: JSONAble.Type, taskId: Int)
+    case loadRevisionsByListId(type: JSONAble.Type, listId: Int, completed: Bool)
 
     case createWObject(type: JSONAble.Type, params: [String: Any])
     case updateWObject(type: JSONAble.Type, id: Int, params: [String: Any])
@@ -100,8 +100,8 @@ public enum WunderAPI: TargetType {
              .updateWObject(let type, _, _):
             return MappingType(object: type)
         case .loadRevisions(let type),
-             .loadRevisionsTaskId(let type, _),
-             .loadRevisionsListId(let type, _, _):
+             .loadRevisionsByTaskId(let type, _),
+             .loadRevisionsByListId(let type, _, _):
             return MappingType(revisionType: type)
         }
     }
@@ -127,8 +127,8 @@ extension WunderAPI {
              .loadWObjectByTaskId,
              .loadWObjectByListId,
              .loadRevisions,
-             .loadRevisionsTaskId,
-             .loadRevisionsListId:
+             .loadRevisionsByTaskId,
+             .loadRevisionsByListId:
             return .get
         case .createWObject:
             return .post
@@ -173,8 +173,8 @@ extension WunderAPI {
         case .deleteWObject(let type, let id, _):
             return requestPath(type: type) + "/\(id)"
         case .loadRevisions(let type),
-             .loadRevisionsTaskId(let type, _),
-             .loadRevisionsListId(let type, _, _):
+             .loadRevisionsByTaskId(let type, _),
+             .loadRevisionsByListId(let type, _, _):
             return requestRevisionsPath(type: type)
         }
     }
@@ -193,8 +193,8 @@ extension WunderAPI {
              .updateWObject(let type, _, _),
              .deleteWObject(let type, _, _),
              .loadRevisions(let type),
-             .loadRevisionsTaskId(let type, _),
-             .loadRevisionsListId(let type, _, _):
+             .loadRevisionsByTaskId(let type, _),
+             .loadRevisionsByListId(let type, _, _):
             if type is WFile.Type {
                 apiVersion = "/api/v2/"
             }
@@ -229,7 +229,7 @@ extension WunderAPI {
                 "local_created_at" : Date().iso8601
             ], encoding: JSONEncoding.default)
         case .loadWObjectByListId( let type, let listId, let completed),
-             .loadRevisionsListId( let type, let listId, let completed):
+             .loadRevisionsByListId( let type, let listId, let completed):
             var params: [String: Any] = ["list_id" : listId]
             
             if completed {
@@ -240,7 +240,7 @@ extension WunderAPI {
                 }
             }
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
-        case .loadRevisionsTaskId( _, let taskId),
+        case .loadRevisionsByTaskId( _, let taskId),
              .loadWObjectByTaskId( _, let taskId):
             return .requestParameters(parameters: ["task_id" : taskId], encoding: URLEncoding.default)
         case .createWObject( _, let params):
