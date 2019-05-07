@@ -36,7 +36,7 @@ class AppDataSyncTests: XCTestCase {
     func testDiff() {
         let appData = AppData()
         let appDataSync = AppDataSync(appData: appData)
-        let (removed, changed) = appDataSync.diffWobjectSets(local: local, remote: remote)
+        let (removed, changed) = appDataSync.diffWobjectSets(old: local, remote: remote)
         XCTAssertEqual(removed, [1], "Incorrect removed ids")
         XCTAssertEqual(changed, [3,4], "Incorrect changed ids")
     }

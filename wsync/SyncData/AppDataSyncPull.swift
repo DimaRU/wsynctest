@@ -20,16 +20,16 @@ extension AppDataSync {
     /// - Returns: tuple (removedIds: [Int], changedIds: [Int]) where:
     ///         removedIds - no more exist ids, must be removed
     ///         changedIds = changed and new ids
-    func diffWobjectSets<T: WObject, K: WObject>(local: Set<T>?, remote: Set<K>) -> (removedIds: Set<Int>, changedIds: Set<Int>) {
+    func diffWobjectSets<T: WObject, K: WObject>(old: Set<T>?, new: Set<K>) -> (removedIds: Set<Int>, changedIds: Set<Int>) {
         var removedIds = Set<Int>()
-        var changedIds = Set<Int>(remote.map {$0.id})
-        for localObject in local ?? [] {
-            guard let remoteObject = remote[localObject.id] else {
-                removedIds.insert(localObject.id)       // no remote with that id, removed
+        var changedIds = Set<Int>(new.map {$0.id})
+        for oldObject in old ?? [] {
+            guard let newObject = new[oldObject.id] else {
+                removedIds.insert(oldObject.id)       // no remote with that id, removed
                 continue
             }
-            if remoteObject.revision == localObject.revision {
-                changedIds.remove(localObject.id)       // not changed or new
+            if newObject.revision == oldObject.revision {
+                changedIds.remove(oldObject.id)       // not changed or new
             }
         }
         print("Diff:", T.self, "removed:", removedIds, "changed:", changedIds)
@@ -48,19 +48,19 @@ extension AppDataSync {
             self.get(WNote.self, taskId: taskId),
             self.get(WTaskComment.self, taskId: taskId))
             .done { subtasks, subtaskPositions, files, notes, taskComments in
-                var (removedId, changedId) = self.diffWobjectSets(local: self.appData.subtasks[taskId], remote: subtasks)
+                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.subtasks[taskId], new: subtasks)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.subtasks[taskId] = subtasks }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.subtaskPositions[taskId], remote: subtaskPositions)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.subtaskPositions[taskId], new: subtaskPositions)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.subtaskPositions[taskId] = subtaskPositions }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.notes[taskId], remote: notes)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.notes[taskId], new: notes)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.notes[taskId] = notes }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.files[taskId], remote: files)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.files[taskId], new: files)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.files[taskId] = files }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.taskComments[taskId], remote: taskComments)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.taskComments[taskId], new: taskComments)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.taskComments[taskId] = taskComments }
         }
     }
@@ -73,7 +73,7 @@ extension AppDataSync {
                     WAPI.getRevision(WTask.self, listId: listId, completed: true))
             .then { taskURevisions, taskCRevisions -> Promise<Void> in
                 let taskRevisions = taskURevisions.union(taskCRevisions)
-                let (removedId, changedId) = self.diffWobjectSets(local: self.appData.tasks[listId], remote: taskRevisions)
+                let (removedId, changedId) = self.diffWobjectSets(old: self.appData.tasks[listId], new: taskRevisions)
                 removedId.forEach { self.appData.removeTaskLeaf(listId: listId, taskId: $0) }
                 switch changedId.count {
                 case 0:
@@ -110,10 +110,10 @@ extension AppDataSync {
                     self.get(WMembership.self, listId: listId),
                     self.get(WTaskPosition.self, listId: listId))
             }.done { memberships, taskPositions in
-                var (removedId, changedId) = self.diffWobjectSets(local: self.appData.memberships[listId], remote: memberships)
+                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.memberships[listId], new: memberships)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.memberships[listId] = memberships }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.taskPositions[listId], remote: taskPositions)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.taskPositions[listId], new: taskPositions)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.taskPositions[listId] = taskPositions }
         }
     }
@@ -124,7 +124,7 @@ extension AppDataSync {
     private func pullLists() -> Promise<Void> {
         return WAPI.getRevision(WList.self)
             .then { listRevisions -> Promise<Void> in
-                let (removedId, changedId) = self.diffWobjectSets(local: self.appData.lists, remote: listRevisions)
+                let (removedId, changedId) = self.diffWobjectSets(old: self.appData.lists, new: listRevisions)
                 removedId.forEach { self.appData.removeListLeaf(listId: $0) }
                 switch changedId.count {
                 case 0:
@@ -156,7 +156,7 @@ extension AppDataSync {
     private func pullSettings() -> Promise<Void> {
         return WAPI.getRevision(WSetting.self)
             .then { settingResvisions -> Promise<Void> in
-                let (removedId, changedId) = self.diffWobjectSets(local: self.appData.settings, remote: settingResvisions)
+                let (removedId, changedId) = self.diffWobjectSets(old: self.appData.settings, new: settingResvisions)
                 assert(removedId.isEmpty)
                 switch changedId.count {
                 case 0:
@@ -195,13 +195,13 @@ extension AppDataSync {
                      self.get(WReminder.self),
                      self.get(WFolder.self))
             }.done { listPositions, reminders, folders in
-                var (removedId, changedId) = self.diffWobjectSets(local: self.appData.folders, remote: folders)
+                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.folders, new: folders)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.folders = folders }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.listPositions, remote: listPositions)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.listPositions, new: listPositions)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.listPositions = listPositions }
                 
-                (removedId, changedId) = self.diffWobjectSets(local: self.appData.reminders, remote: reminders)
+                (removedId, changedId) = self.diffWobjectSets(old: self.appData.reminders, new: reminders)
                 if !removedId.isEmpty || !changedId.isEmpty { self.appData.reminders = reminders }
         }
     }
