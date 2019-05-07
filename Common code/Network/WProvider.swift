@@ -1,5 +1,5 @@
 //
-//  WunderProvider.swift
+//  WProvider.swift
 //  wutest
 //
 //  Created by Dmitriy Borovikov on 03.08.17.
@@ -10,12 +10,13 @@ import Result
 import Alamofire
 import PromiseKit
 
-class WuProvider {
+class WProvider {
     typealias ErrorBlock = (Error) -> Void
     typealias RequestFuture = (target: WunderAPI, resolve: (Any) -> Void, reject: ErrorBlock)
 
-    static var moya: WuProvider = WuProvider()
-    
+    static let shared = WProvider()
+//    static var shared: WProvider = WProvider()
+
     static func endpointClosure(_ target: WunderAPI) -> Endpoint {
         let endpoint = Endpoint(url: url(target),
                                            sampleResponseClosure: { return target.stubbedNetworkResponse },
@@ -25,22 +26,25 @@ class WuProvider {
         return endpoint
     }
     
-    fileprivate static let instance = MoyaProvider<WunderAPI>(endpointClosure: WuProvider.endpointClosure,
-//                                                                   requestClosure: requestMapping,
-                                                                   manager: WunderManager.manager
-                                                                   ,plugins: [NetworkLoggerPlugin(verbose: true)]
-                                                                  )
+    static func DefaultProvider() -> MoyaProvider<WunderAPI> {
+        return MoyaProvider<WunderAPI>(endpointClosure: WProvider.endpointClosure,
+                                       manager: WunderManager.manager,
+                                       plugins: [
+                                        NetworkLoggerPlugin(verbose: true)
+            ])
+    }
 
-//    static func requestMapping(for endpoint: Endpoint, closure: MoyaProvider<WunderAPI>.RequestResultClosure) {
-//        if var urlRequest = try? endpoint.urlRequest() {
-//            var headers = urlRequest.allHTTPHeaderFields
-//            headers?["X-Access-Token"] = KeychainService.shared[.token]
-//            urlRequest.allHTTPHeaderFields = headers
-//            closure(.success(urlRequest))
-//        } else {
-//            closure(.failure(MoyaError.requestMapping(endpoint.url)))
-//        }
-//    }
+
+    static var defaultProvider: MoyaProvider<WunderAPI> = WProvider.DefaultProvider()
+    static var moya: MoyaProvider<WunderAPI> {
+        get {
+            return defaultProvider
+        }
+
+        set {
+            defaultProvider = newValue
+        }
+    }
 
     // MARK: - Public
     func request(_ target: WunderAPI) -> Promise<Data> {
@@ -93,7 +97,7 @@ class WuProvider {
     
     private func sendRestRequest(_ request: RequestFuture) {
         print("Request:", request.target)
-        WuProvider.instance.request(request.target) { (result) in
+        WProvider.moya.request(request.target) { (result) in
             self.handleRequest(request: request, result: result)
         }
     }
@@ -101,7 +105,7 @@ class WuProvider {
     private func sendRequest(_ request: RequestFuture) {
         if WuWSSProvider.isConnected {
             print("Request:", request.target)
-            WuWSSProvider.request(request.target, endpoint: WuProvider.instance.endpoint(request.target)) { (result) in
+            WuWSSProvider.request(request.target, endpoint: WProvider.moya.endpoint(request.target)) { (result) in
                 self.handleRequest(request: request, result: result)
             }
         } else {
@@ -112,7 +116,7 @@ class WuProvider {
 
 
 // MARK: wunderRequest implementation
-extension WuProvider {
+extension WProvider {
     
     // MARK: - Private
     

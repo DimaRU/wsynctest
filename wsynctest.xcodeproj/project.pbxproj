@@ -21,7 +21,7 @@
 		0A2349122277713B0016CDBC /* String+OutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C12277709C0016CDBC /* String+OutputStream.swift */; };
 		0A2349132277713B0016CDBC /* iso8601date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C22277709C0016CDBC /* iso8601date.swift */; };
 		0A2349142277713B0016CDBC /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C32277709C0016CDBC /* URLExtensions.swift */; };
-		0A234915227771450016CDBC /* WuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WuProvider.swift */; };
+		0A234915227771450016CDBC /* WProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WProvider.swift */; };
 		0A234916227771450016CDBC /* WunderImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C62277709C0016CDBC /* WunderImport.swift */; };
 		0A234917227771450016CDBC /* WMutatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C72277709C0016CDBC /* WMutatedService.swift */; };
 		0A234918227771450016CDBC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C82277709C0016CDBC /* APIKeys.swift */; };
@@ -36,7 +36,7 @@
 		0A234921227771450016CDBC /* AvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D12277709C0016CDBC /* AvatarService.swift */; };
 		0A234922227771450016CDBC /* WunderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D22277709C0016CDBC /* WunderAPI.swift */; };
 		0A234923227771450016CDBC /* WUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348D32277709C0016CDBC /* WUploadService.swift */; };
-		0A234924227771460016CDBC /* WuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WuProvider.swift */; };
+		0A234924227771460016CDBC /* WProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C52277709C0016CDBC /* WProvider.swift */; };
 		0A234925227771460016CDBC /* WunderImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C62277709C0016CDBC /* WunderImport.swift */; };
 		0A234926227771460016CDBC /* WMutatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C72277709C0016CDBC /* WMutatedService.swift */; };
 		0A234927227771460016CDBC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348C82277709C0016CDBC /* APIKeys.swift */; };
@@ -210,7 +210,7 @@
 		0A2348C12277709C0016CDBC /* String+OutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+OutputStream.swift"; sourceTree = "<group>"; };
 		0A2348C22277709C0016CDBC /* iso8601date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iso8601date.swift; sourceTree = "<group>"; };
 		0A2348C32277709C0016CDBC /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
-		0A2348C52277709C0016CDBC /* WuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuProvider.swift; sourceTree = "<group>"; };
+		0A2348C52277709C0016CDBC /* WProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WProvider.swift; sourceTree = "<group>"; };
 		0A2348C62277709C0016CDBC /* WunderImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderImport.swift; sourceTree = "<group>"; };
 		0A2348C72277709C0016CDBC /* WMutatedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMutatedService.swift; sourceTree = "<group>"; };
 		0A2348C82277709C0016CDBC /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 				0A2348C92277709C0016CDBC /* WunderManager.swift */,
 				0A2348CB2277709C0016CDBC /* WunderUploader.swift */,
 				0A2348D32277709C0016CDBC /* WUploadService.swift */,
-				0A2348C52277709C0016CDBC /* WuProvider.swift */,
+				0A2348C52277709C0016CDBC /* WProvider.swift */,
 				0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */,
 			);
 			path = Network;
@@ -1025,7 +1025,7 @@
 				0A23494C227771540016CDBC /* WUpload.swift in Sources */,
 				0A23490A227770F20016CDBC /* AppDataSyncPush.swift in Sources */,
 				0A2349122277713B0016CDBC /* String+OutputStream.swift in Sources */,
-				0A234915227771450016CDBC /* WuProvider.swift in Sources */,
+				0A234915227771450016CDBC /* WProvider.swift in Sources */,
 				0A234943227771540016CDBC /* WNote.swift in Sources */,
 				0A234949227771540016CDBC /* WMembership.swift in Sources */,
 				0A2349142277713B0016CDBC /* URLExtensions.swift in Sources */,
@@ -1124,7 +1124,7 @@
 				0A37A70F227798FA003FCDE4 /* AppSetup.swift in Sources */,
 				0A234963227771550016CDBC /* WMutated.swift in Sources */,
 				0A23492B227771460016CDBC /* WebsocketIO.swift in Sources */,
-				0A234924227771460016CDBC /* WuProvider.swift in Sources */,
+				0A234924227771460016CDBC /* WProvider.swift in Sources */,
 				0A234964227771550016CDBC /* WMembership.swift in Sources */,
 				0A234965227771550016CDBC /* WTaskCommentsState.swift in Sources */,
 				0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */,
