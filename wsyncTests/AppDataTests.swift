@@ -108,7 +108,7 @@ class AppDataTests: XCTestCase {
         updatedTask.title = title
         appData.update(updatedTask)
         let task = appData.tasks[parentId][updatedTask.id]!
-        XCTAssertTrue(task.objectState == .localModified, "Object state is not correct")
+        XCTAssertTrue(task.storedSyncState == .modified, "Object state is not correct")
         XCTAssertEqual(task, updatedTask, "tasks not equal after mutation")
         XCTAssertEqual(task.title, title, "Title not modified")
     }

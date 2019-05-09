@@ -11,15 +11,15 @@ import XCTest
 
 class AppDataSyncTests: XCTestCase {
     let local: Set<WListPosition> = [
-        WListPosition(uObjectState: .inSync, id: 1, revision: 1, userId: 1, values: []),
-        WListPosition(uObjectState: .inSync, id: 2, revision: 1, userId: 1, values: []),
-        WListPosition(uObjectState: .inSync, id: 3, revision: 1, userId: 1, values: [])
+        WListPosition(storedSyncState: .synced, id: 1, revision: 1, userId: 1, values: []),
+        WListPosition(storedSyncState: .synced, id: 2, revision: 1, userId: 1, values: []),
+        WListPosition(storedSyncState: .synced, id: 3, revision: 1, userId: 1, values: [])
     ]
 
     let remote: Set<WListPosition> = [
-        WListPosition(uObjectState: .inSync, id: 2, revision: 1, userId: 1, values: []),
-        WListPosition(uObjectState: .inSync, id: 3, revision: 2, userId: 1, values: []),
-        WListPosition(uObjectState: .inSync, id: 4, revision: 1, userId: 1, values: [])
+        WListPosition(storedSyncState: .synced, id: 2, revision: 1, userId: 1, values: []),
+        WListPosition(storedSyncState: .synced, id: 3, revision: 2, userId: 1, values: []),
+        WListPosition(storedSyncState: .synced, id: 4, revision: 1, userId: 1, values: [])
     ]
 
 

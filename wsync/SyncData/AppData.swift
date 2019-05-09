@@ -174,7 +174,7 @@ extension AppData {
 extension AppData {
     func update<T>(_ wobject: T) where T : WObject {
         var markedObj = wobject
-        markedObj.objectState = ObjectState.localModified
+        markedObj.storedSyncState = .modified
 
         switch markedObj {
         case is ListChild:

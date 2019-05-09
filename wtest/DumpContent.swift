@@ -161,7 +161,7 @@ class DumpContent {
         
         let wobjStripped: [T] = wobject.map {
             var stripped = $0
-            stripped.uObjectState = nil
+            stripped.storedSyncState = nil
             return stripped
         }
         let obj = wobject.first!
@@ -181,7 +181,7 @@ class DumpContent {
     
     func dumpContent<T: WObject>(_ wobject: T) {
         var wobjStripped = wobject
-        wobjStripped.uObjectState = nil
+        wobjStripped.storedSyncState = nil
         let fileName = "\(directory)\(wobject.type.rawValue).json"
         try! Disk.save(wobject, to: Disk.Directory.developer, as: fileName)
     }

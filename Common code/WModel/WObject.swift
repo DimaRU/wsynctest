@@ -4,26 +4,27 @@
 
 import Foundation
 
-public enum ObjectState: String, Codable {
-    case inSync
-    case localModified
-    case localCreated
+public enum WSyncState: String, Codable {
+    case synced
+    case modified
+    case created
+    case deleted
 }
 
 public protocol WObject: JSONAble, Hashable {
-    var uObjectState: ObjectState? { get set }
+    var storedSyncState: WSyncState? { get set }
     var revision: Int { get }
     static var storedProperty: [String:PartialKeyPath<Self>] { get }
     static var mutableProperty: [String:PartialKeyPath<Self>] { get }
 }
 
 public extension WObject {
-    var objectState: ObjectState {
+    var syncState: WSyncState {
         get {
-            return uObjectState ?? .inSync
+            return storedSyncState ?? .synced
         }
         set {
-            uObjectState = newValue
+            storedSyncState = newValue
         }
     }
 }

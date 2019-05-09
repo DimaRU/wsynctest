@@ -5,7 +5,7 @@
 import Foundation
 
 public struct WRevision: WObject {
-    public var uObjectState: ObjectState?
+    public var storedSyncState: WSyncState?
     public let id: Int
     public let revision: Int
     public let type: MappingType

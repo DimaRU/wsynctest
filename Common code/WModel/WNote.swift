@@ -5,7 +5,7 @@
 import Foundation
 
 public struct WNote: WObject, TaskChild {
-    public var uObjectState: ObjectState? = .localCreated
+    public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .Note
