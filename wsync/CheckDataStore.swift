@@ -11,11 +11,11 @@ struct CheckDataStore {
         return fileId + ".json"
     }
 
-    func compareWobjectSets<T: WObject>(setA: Set<T>, setB: Set<T>?, parentId: Int? = nil) {
+    func compareWobjectSets<T: WObject>(setA: Set<T>, setB: Set<T>, parentId: Int? = nil) {
         let fileName = fileFrom(T.self, parentId: parentId)
         log("Check \(fileName)")
-        if setA != (setB ?? []) {
-            let diff = setA.symmetricDifference(setB ?? [])
+        if setA != setB {
+            let diff = setA.symmetricDifference(setB)
             log("Error: Not equal: \(T.self), difference elements: \(diff.count)")
             diff.forEach{ log("\($0)") }
         }
