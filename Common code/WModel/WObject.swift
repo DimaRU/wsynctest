@@ -133,7 +133,7 @@ func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
         if compareAny(a: oldValue, b: newValue) {
             continue
         }
-        if (newValue as AnyObject) is NSNull {
+        if case Optional<Any>.none = newValue {
             deletedList.append(key)
         } else {
             dict[key] = filterDates(param: newValue)
@@ -149,13 +149,13 @@ func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
 }
 
 func wobjectCreateParams<T: WObject & WCreatable>(from wobject: T) -> [String:Any] {
-    let fieldList = type(of: wobject).createFieldList
+    let fieldList = T.createFieldList
     var params: [String: Any] = [:]
     
     for path in fieldList {
-        let key = type(of: wobject).storedProperty[path]!
+        let key = T.storedProperty[path]!
         let value = wobject[keyPath: path]
-        if (value as AnyObject) is NSNull {
+        if case Optional<Any>.none = value {
             continue
         }
         params[key] = filterDates(param: value)

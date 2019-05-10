@@ -181,6 +181,7 @@
 		0A37A70F227798FA003FCDE4 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FF2277709C0016CDBC /* AppSetup.swift */; };
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
+		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
 		3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */; };
 		E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F8A7604B7A49ED6367167E /* Pods_wsync.framework */; };
 /* End PBXBuildFile section */
@@ -323,6 +324,7 @@
 		0A2349ED2277765C0016CDBC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
 		1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.release.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.release.xcconfig"; sourceTree = "<group>"; };
 		6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.debug.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.debug.xcconfig"; sourceTree = "<group>"; };
 		6B0993F94505715A1E039331 /* Pods_wtest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wtest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,6 +393,7 @@
 		0A234895227653ED0016CDBC /* wsyncTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A404EE52286225A0048E591 /* WObjectTests.swift */,
 				0A23498A227773850016CDBC /* AppDataSyncTests.swift */,
 				0A23498B227773850016CDBC /* AppDataTests.swift */,
 				0A234989227773850016CDBC /* DiskStoreTests.swift */,
@@ -1103,6 +1106,7 @@
 			files = (
 				0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */,
 				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
+				0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */,
 				0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
