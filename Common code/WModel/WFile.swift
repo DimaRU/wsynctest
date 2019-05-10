@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct WFile: WObject, TaskChild, WCreatable {
+public struct WFile: WObject, TaskChild {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int

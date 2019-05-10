@@ -16,6 +16,11 @@ public struct WReminder: WObject, WCreatable {
     public let createdAt: Date?
     public let updatedAt: Date?
 
+    public static let createFieldList: [PartialKeyPath<WReminder>] = [
+        \WReminder.taskId,
+        \WReminder.date
+    ]
+
 // sourcery:inline:auto:WReminder.property
 public static let storedProperty: [PartialKeyPath<WReminder>:String] = [
         \WReminder.id :"id",

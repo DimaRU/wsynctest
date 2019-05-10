@@ -39,9 +39,6 @@ public protocol TaskChild {
 
 public protocol WCreatable {
     var createdByRequestId: String? { get }
-}
-
-public protocol CreateWObject {
     static var createFieldList: [PartialKeyPath<Self>] { get }
 }
 
@@ -151,7 +148,7 @@ func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
     return dict
 }
 
-func wobjectCreateParams<T: WObject & CreateWObject>(from wobject: T) -> [String:Any] {
+func wobjectCreateParams<T: WObject & WCreatable>(from wobject: T) -> [String:Any] {
     let fieldList = type(of: wobject).createFieldList
     var params: [String: Any] = [:]
     

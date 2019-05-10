@@ -23,6 +23,12 @@ public struct WTaskComment: WObject, TaskChild, WCreatable {
         public let avatar: URL?
     }
 
+    public static let createFieldList: [PartialKeyPath<WTaskComment>] = [
+        \WTaskComment.taskId,
+        \WTaskComment.text,
+        \WTaskComment.localCreatedAt
+    ]
+
 // sourcery:inline:auto:WTaskComment.property
 public static let storedProperty: [PartialKeyPath<WTaskComment>:String] = [
         \WTaskComment.id :"id",

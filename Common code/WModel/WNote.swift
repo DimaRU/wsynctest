@@ -14,6 +14,11 @@ public struct WNote: WObject, TaskChild, WCreatable {
     public let taskId: Int
     public var content: String
 
+    public static let createFieldList: [PartialKeyPath<WNote>] = [
+        \WNote.taskId,
+        \WNote.content
+    ]
+
 // sourcery:inline:auto:WNote.property
 public static let storedProperty: [PartialKeyPath<WNote>:String] = [
         \WNote.id :"id",

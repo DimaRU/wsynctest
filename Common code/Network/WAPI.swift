@@ -66,7 +66,7 @@ struct WAPI {
         return WAPI.update(T.self, id: from.id, params: params)
     }
 
-    static func create<T: WObject & CreateWObject>(from wobject: T) throws -> Promise<T> {
+    static func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
         let params = wobjectCreateParams(from: wobject)
         let newObjbect = WAPI.create(T.self, params: params)
         

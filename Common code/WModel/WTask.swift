@@ -25,6 +25,12 @@ public struct WTask: WObject, ListChild, WCreatable {
     public let createdAt: Date
     public let createdById: Int?
 
+    public static let createFieldList: [PartialKeyPath<WTask>] = [
+        \WTask.listId,
+        \WTask.title,
+        \WTask.starred
+    ]
+
 // sourcery:inline:auto:WTask.property
 public static let storedProperty: [PartialKeyPath<WTask>:String] = [
         \WTask.id :"id",

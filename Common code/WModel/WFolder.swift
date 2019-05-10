@@ -18,6 +18,11 @@ public struct WFolder: WObject, WCreatable {
     public let createdById: Int?
     public let updatedAt: Date?
 
+    public static let createFieldList: [PartialKeyPath<WFolder>] = [
+        \WFolder.title,
+        \WFolder.listIds
+    ]
+
 // sourcery:inline:auto:WFolder.property
 public static let storedProperty: [PartialKeyPath<WFolder>:String] = [
         \WFolder.id :"id",

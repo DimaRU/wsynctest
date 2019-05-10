@@ -17,6 +17,11 @@ public struct WSubtask: WObject, TaskChild, WCreatable {
     public let createdAt: Date?
     public let createdById: Int?
 
+    public static let createFieldList: [PartialKeyPath<WSubtask>] = [
+        \WSubtask.taskId,
+        \WSubtask.title
+    ]
+
 // sourcery:inline:auto:WSubtask.property
 public static let storedProperty: [PartialKeyPath<WSubtask>:String] = [
         \WSubtask.id :"id",

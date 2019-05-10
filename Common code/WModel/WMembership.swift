@@ -13,9 +13,15 @@ public struct WMembership: WObject, ListChild, WCreatable {
 
     public let listId: Int
     public let owner: Bool
-    public let muted: Bool?
+    public var muted: Bool?
     public let state: String
     public let userId: Int
+
+    public static let createFieldList: [PartialKeyPath<WMembership>] = [
+        \WMembership.listId,
+        \WMembership.userId,
+        \WMembership.muted
+    ]
 
 // sourcery:inline:auto:WMembership.property
 public static let storedProperty: [PartialKeyPath<WMembership>:String] = [
@@ -31,7 +37,7 @@ public static let storedProperty: [PartialKeyPath<WMembership>:String] = [
     ]
 
 public static let mutableProperty: [PartialKeyPath<WMembership>:String] = [
-    :
+        \WMembership.muted :"muted"
     ]
 // sourcery:end
 }

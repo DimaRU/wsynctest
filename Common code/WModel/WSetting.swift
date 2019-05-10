@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct WSetting: WObject, WCreatable {
+public struct WSetting: WObject {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int

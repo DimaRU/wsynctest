@@ -21,6 +21,8 @@ public struct WList: WObject, WCreatable {
     var isPublic: Bool? {
         return `public`
     }
+    
+public static let createFieldList: [PartialKeyPath<WList>] = [\WList.title]
 
 // sourcery:inline:auto:WList.property
 public static let storedProperty: [PartialKeyPath<WList>:String] = [

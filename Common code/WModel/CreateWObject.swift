@@ -6,7 +6,7 @@ import Foundation
 import PromiseKit
 
 
-extension WList: CreateWObject {
+extension WList {
     public init(title: String) {
         self.id = -1
         self.revision = 0
@@ -19,10 +19,9 @@ extension WList: CreateWObject {
         self.createdByRequestId = UUID().uuidString
     }
     
-    public static let createFieldList: [PartialKeyPath<WList>] = [\WList.title]
 }
 
-extension WTask: CreateWObject {
+extension WTask {
     public init(listId: Int, title: String, starred: Bool = false) {
         self.id = -1
         self.revision = 0
@@ -41,14 +40,9 @@ extension WTask: CreateWObject {
         self.createdAt = Date()
         self.createdByRequestId = UUID().uuidString
     }
-    public static let createFieldList: [PartialKeyPath<WTask>] = [
-        \WTask.listId,
-        \WTask.title,
-        \WTask.starred
-    ]
 }
 
-extension WSubtask: CreateWObject {
+extension WSubtask {
     public init(taskId: Int, title: String) {
         self.id = -1
         self.revision = 0
@@ -60,13 +54,9 @@ extension WSubtask: CreateWObject {
         self.createdByRequestId = UUID().uuidString
     }
 
-    public static let createFieldList: [PartialKeyPath<WSubtask>] = [
-        \WSubtask.taskId,
-        \WSubtask.title
-    ]
 }
 
-extension WNote: CreateWObject {
+extension WNote {
     public init(taskId: Int, content: String) {
         self.id = -1
         self.revision = 0
@@ -75,13 +65,9 @@ extension WNote: CreateWObject {
         self.createdByRequestId = UUID().uuidString
     }
 
-    public static let createFieldList: [PartialKeyPath<WNote>] = [
-        \WNote.taskId,
-        \WNote.content
-    ]
 }
 
-extension WTaskComment: CreateWObject {
+extension WTaskComment {
     public init(taskId: Int, text: String) {
         self.id = -1
         self.revision = 0
@@ -93,10 +79,5 @@ extension WTaskComment: CreateWObject {
         self.createdByRequestId = UUID().uuidString
     }
     
-    public static let createFieldList: [PartialKeyPath<WTaskComment>] = [
-        \WTaskComment.taskId,
-        \WTaskComment.text,
-        \WTaskComment.localCreatedAt
-    ]
 }
 
