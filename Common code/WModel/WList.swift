@@ -4,12 +4,13 @@
 
 import Foundation
 
-public struct WList: WObject {
+public struct WList: WObject, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .List
-    
+    public let createdByRequestId: String?
+
     public var title: String
     public let ownerId: Int?
     public let ownerType: String?

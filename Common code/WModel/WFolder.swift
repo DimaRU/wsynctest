@@ -4,11 +4,12 @@
 
 import Foundation
 
-public struct WFolder: WObject {
+public struct WFolder: WObject, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .Folder
+    public let createdByRequestId: String?
 
     public var title: String
     public var listIds: [Int]

@@ -4,11 +4,12 @@
 
 import Foundation
 
-public struct WSetting: WObject {
+public struct WSetting: WObject, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .Setting
+    public let createdByRequestId: String?
 
     public let key: SettingsKey
     public var value: String

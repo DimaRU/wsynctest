@@ -16,6 +16,7 @@ extension WList: CreateWObject {
         self.listType = nil
         self.`public` = nil
         self.createdAt = Date()
+        self.createdByRequestId = UUID().uuidString
     }
     
     public static let createFieldList = ["title"]
@@ -38,6 +39,7 @@ extension WTask: CreateWObject {
         self.completedById = nil
         self.createdById = nil
         self.createdAt = Date()
+        self.createdByRequestId = UUID().uuidString
     }
 
     public static let createFieldList = ["list_id", "title", "starred"]
@@ -52,17 +54,19 @@ extension WSubtask: CreateWObject {
         self.completed = false
         self.createdAt = Date()
         self.createdById = nil
+        self.createdByRequestId = UUID().uuidString
     }
 
     public static let createFieldList = ["task_id", "title"]
 }
 
-extension WNote {
+extension WNote: CreateWObject {
     public init(taskId: Int, content: String) {
         self.id = -1
         self.revision = 0
         self.taskId = taskId
         self.content = content
+        self.createdByRequestId = UUID().uuidString
     }
 
     public static let createFieldList = ["task_id", "content"]
@@ -77,6 +81,7 @@ extension WTaskComment: CreateWObject {
         self.author = WTaskComment.WAuthor.init(id: -2, name: "Dmitry", avatar: nil)
         self.localCreatedAt = Date()
         self.createdAt = Date()
+        self.createdByRequestId = UUID().uuidString
     }
     
     public static let createFieldList = ["task_id", "text", "local_created_at"]

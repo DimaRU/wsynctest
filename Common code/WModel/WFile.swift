@@ -4,11 +4,12 @@
 
 import Foundation
 
-public struct WFile: WObject, TaskChild {
+public struct WFile: WObject, TaskChild, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .File
+    public let createdByRequestId: String?
 
     public let taskId: Int
     public let userId: Int

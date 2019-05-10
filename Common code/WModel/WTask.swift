@@ -4,11 +4,12 @@
 
 import Foundation
 
-public struct WTask: WObject, ListChild {
+public struct WTask: WObject, ListChild, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .Task
+    public let createdByRequestId: String?
 
     public var title: String
     public var completed: Bool

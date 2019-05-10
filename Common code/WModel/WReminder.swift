@@ -4,11 +4,12 @@
 
 import Foundation
 
-public struct WReminder: WObject {
+public struct WReminder: WObject, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public let revision: Int
     public let type: MappingType = .Reminder
+    public let createdByRequestId: String?
 
     public let taskId: Int
     public let date: Date

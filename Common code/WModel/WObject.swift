@@ -37,6 +37,10 @@ public protocol TaskChild {
     var taskId: Int { get }
 }
 
+public protocol WCreatable {
+    var createdByRequestId: String? { get }
+}
+
 public protocol CreateWObject {
     static var createFieldList: [String] { get }
 }
