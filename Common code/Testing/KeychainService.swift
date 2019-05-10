@@ -17,6 +17,7 @@ class KeychainService {
     }
 
     let keychain: Keychain
+    let sharedKeychain: Keychain
     
     static let shared = KeychainService()
     
@@ -24,16 +25,25 @@ class KeychainService {
         // Init keychain access
         let bundle = Bundle.main
         let bundleId = bundle.bundleIdentifier!
-        keychain = Keychain(service: bundleId).synchronizable(true)
+        keychain = Keychain(service: bundleId)
+        sharedKeychain = Keychain(service: "in.ioshack.wsynctest", accessGroup: "9BEQ8V4XH9.in.ioshack.wsynctest").synchronizable(true)
     }
     
     subscript(key: KeychainKeys) -> String? {
         get {
-            return keychain[key.rawValue]
+            switch key {
+            case .token,
+                 .backupFile:
+                return sharedKeychain[key.rawValue]
+            }
         }
         
         set {
-            keychain[key.rawValue] = newValue
+            switch key {
+            case .token,
+                 .backupFile:
+                sharedKeychain[key.rawValue] = newValue
+            }
         }
     }
     
