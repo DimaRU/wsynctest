@@ -15,16 +15,16 @@ public struct WTaskCommentsState: WObject, TaskChild {
     public let lastReadId: Int?
 
 // sourcery:inline:auto:WTaskCommentsState.property
-    public static let storedProperty: [String:PartialKeyPath<WTaskCommentsState>] = [
-        "id": \WTaskCommentsState.id,
-        "revision": \WTaskCommentsState.revision,
-        "type": \WTaskCommentsState.type,
-        "task_id": \WTaskCommentsState.taskId,
-        "unread_count": \WTaskCommentsState.unreadCount,
-        "last_read_id": \WTaskCommentsState.lastReadId
+public static let storedProperty: [PartialKeyPath<WTaskCommentsState>:String] = [
+        \WTaskCommentsState.id :"id",
+        \WTaskCommentsState.revision :"revision",
+        \WTaskCommentsState.type :"type",
+        \WTaskCommentsState.taskId :"task_id",
+        \WTaskCommentsState.unreadCount :"unread_count",
+        \WTaskCommentsState.lastReadId :"last_read_id"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WTaskCommentsState>] = [
+public static let mutableProperty: [PartialKeyPath<WTaskCommentsState>:String] = [
     :
     ]
 // sourcery:end

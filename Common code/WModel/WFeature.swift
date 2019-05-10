@@ -15,16 +15,16 @@ public struct WFeature: WObject {
     public let variant: String
 
 // sourcery:inline:auto:WFeature.property
-    public static let storedProperty: [String:PartialKeyPath<WFeature>] = [
-        "id": \WFeature.id,
-        "revision": \WFeature.revision,
-        "type": \WFeature.type,
-        "created_by_request_id": \WFeature.createdByRequestId,
-        "name": \WFeature.name,
-        "variant": \WFeature.variant
+public static let storedProperty: [PartialKeyPath<WFeature>:String] = [
+        \WFeature.id :"id",
+        \WFeature.revision :"revision",
+        \WFeature.type :"type",
+        \WFeature.createdByRequestId :"created_by_request_id",
+        \WFeature.name :"name",
+        \WFeature.variant :"variant"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WFeature>] = [
+public static let mutableProperty: [PartialKeyPath<WFeature>:String] = [
     :
     ]
 // sourcery:end

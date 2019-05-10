@@ -18,19 +18,19 @@ public struct WMembership: WObject, ListChild, WCreatable {
     public let userId: Int
 
 // sourcery:inline:auto:WMembership.property
-    public static let storedProperty: [String:PartialKeyPath<WMembership>] = [
-        "id": \WMembership.id,
-        "revision": \WMembership.revision,
-        "type": \WMembership.type,
-        "created_by_request_id": \WMembership.createdByRequestId,
-        "list_id": \WMembership.listId,
-        "owner": \WMembership.owner,
-        "muted": \WMembership.muted,
-        "state": \WMembership.state,
-        "user_id": \WMembership.userId
+public static let storedProperty: [PartialKeyPath<WMembership>:String] = [
+        \WMembership.id :"id",
+        \WMembership.revision :"revision",
+        \WMembership.type :"type",
+        \WMembership.createdByRequestId :"created_by_request_id",
+        \WMembership.listId :"list_id",
+        \WMembership.owner :"owner",
+        \WMembership.muted :"muted",
+        \WMembership.state :"state",
+        \WMembership.userId :"user_id"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WMembership>] = [
+public static let mutableProperty: [PartialKeyPath<WMembership>:String] = [
     :
     ]
 // sourcery:end

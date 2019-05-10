@@ -14,8 +14,8 @@ public enum WSyncState: String, Codable {
 public protocol WObject: JSONAble, Hashable {
     var storedSyncState: WSyncState? { get set }
     var revision: Int { get }
-    static var storedProperty: [String:PartialKeyPath<Self>] { get }
-    static var mutableProperty: [String:PartialKeyPath<Self>] { get }
+    static var storedProperty: [PartialKeyPath<Self>:String] { get }
+    static var mutableProperty: [PartialKeyPath<Self>:String] { get }
 }
 
 public extension WObject {
@@ -42,7 +42,7 @@ public protocol WCreatable {
 }
 
 public protocol CreateWObject {
-    static var createFieldList: [String] { get }
+    static var createFieldList: [PartialKeyPath<Self>] { get }
 }
 
 public extension WObject {
@@ -84,7 +84,7 @@ public extension WObject {
     }
     
     static func ==== (lhs: Self, rhs: Self) -> Bool {
-        for (key, path) in Self.storedProperty {
+        for (path, key) in Self.storedProperty {
             if "\(lhs[keyPath: path])" != "\(rhs[keyPath: path])" {
                 print("Not equal:", key)
                 return false
@@ -130,7 +130,7 @@ func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
     var deletedList: [String] = []
     
     let pathList = T.mutableProperty
-    for (key, path) in pathList {
+    for (path, key) in pathList {
         let oldValue = from[keyPath: path]
         let newValue = to[keyPath: path]
         if compareAny(a: oldValue, b: newValue) {
@@ -151,12 +151,12 @@ func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
     return dict
 }
 
-func wobjectCreateParams<T: WObject>(from wobject: T) -> [String:Any] {
-    let fieldList = type(of: (wobject as! CreateWObject)).createFieldList
+func wobjectCreateParams<T: WObject & CreateWObject>(from wobject: T) -> [String:Any] {
+    let fieldList = type(of: wobject).createFieldList
     var params: [String: Any] = [:]
     
-    for key in fieldList {
-        let path = type(of: wobject).storedProperty[key]!
+    for path in fieldList {
+        let key = type(of: wobject).storedProperty[path]!
         let value = wobject[keyPath: path]
         if (value as AnyObject) is NSNull {
             continue

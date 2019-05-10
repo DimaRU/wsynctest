@@ -15,17 +15,17 @@ public struct WSetting: WObject, WCreatable {
     public var value: String
 
 // sourcery:inline:auto:WSetting.property
-    public static let storedProperty: [String:PartialKeyPath<WSetting>] = [
-        "id": \WSetting.id,
-        "revision": \WSetting.revision,
-        "type": \WSetting.type,
-        "created_by_request_id": \WSetting.createdByRequestId,
-        "key": \WSetting.key,
-        "value": \WSetting.value
+public static let storedProperty: [PartialKeyPath<WSetting>:String] = [
+        \WSetting.id :"id",
+        \WSetting.revision :"revision",
+        \WSetting.type :"type",
+        \WSetting.createdByRequestId :"created_by_request_id",
+        \WSetting.key :"key",
+        \WSetting.value :"value"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WSetting>] = [
-        "value": \WSetting.value
+public static let mutableProperty: [PartialKeyPath<WSetting>:String] = [
+        \WSetting.value :"value"
     ]
 // sourcery:end
 }

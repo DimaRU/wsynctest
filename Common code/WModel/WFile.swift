@@ -24,25 +24,25 @@ public struct WFile: WObject, TaskChild, WCreatable {
     public let updatedAt: Date
 
 // sourcery:inline:auto:WFile.property
-    public static let storedProperty: [String:PartialKeyPath<WFile>] = [
-        "id": \WFile.id,
-        "revision": \WFile.revision,
-        "type": \WFile.type,
-        "created_by_request_id": \WFile.createdByRequestId,
-        "task_id": \WFile.taskId,
-        "user_id": \WFile.userId,
-        "url": \WFile.url,
-        "content_type": \WFile.contentType,
-        "file_name": \WFile.fileName,
-        "file_size": \WFile.fileSize,
-        "file_icon": \WFile.fileIcon,
-        "file_provider": \WFile.fileProvider,
-        "local_created_at": \WFile.localCreatedAt,
-        "created_at": \WFile.createdAt,
-        "updated_at": \WFile.updatedAt
+public static let storedProperty: [PartialKeyPath<WFile>:String] = [
+        \WFile.id :"id",
+        \WFile.revision :"revision",
+        \WFile.type :"type",
+        \WFile.createdByRequestId :"created_by_request_id",
+        \WFile.taskId :"task_id",
+        \WFile.userId :"user_id",
+        \WFile.url :"url",
+        \WFile.contentType :"content_type",
+        \WFile.fileName :"file_name",
+        \WFile.fileSize :"file_size",
+        \WFile.fileIcon :"file_icon",
+        \WFile.fileProvider :"file_provider",
+        \WFile.localCreatedAt :"local_created_at",
+        \WFile.createdAt :"created_at",
+        \WFile.updatedAt :"updated_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WFile>] = [
+public static let mutableProperty: [PartialKeyPath<WFile>:String] = [
     :
     ]
 // sourcery:end

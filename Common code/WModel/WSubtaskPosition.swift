@@ -14,16 +14,16 @@ public struct WSubtaskPosition: WObject, TaskChild {
     public var values: [Int]
 
 // sourcery:inline:auto:WSubtaskPosition.property
-    public static let storedProperty: [String:PartialKeyPath<WSubtaskPosition>] = [
-        "id": \WSubtaskPosition.id,
-        "revision": \WSubtaskPosition.revision,
-        "type": \WSubtaskPosition.type,
-        "task_id": \WSubtaskPosition.taskId,
-        "values": \WSubtaskPosition.values
+public static let storedProperty: [PartialKeyPath<WSubtaskPosition>:String] = [
+        \WSubtaskPosition.id :"id",
+        \WSubtaskPosition.revision :"revision",
+        \WSubtaskPosition.type :"type",
+        \WSubtaskPosition.taskId :"task_id",
+        \WSubtaskPosition.values :"values"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WSubtaskPosition>] = [
-        "values": \WSubtaskPosition.values
+public static let mutableProperty: [PartialKeyPath<WSubtaskPosition>:String] = [
+        \WSubtaskPosition.values :"values"
     ]
 // sourcery:end
 }

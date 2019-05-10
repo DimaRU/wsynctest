@@ -1,16 +1,16 @@
 {% for type in types.implementing.WObject %}
 // sourcery:inline:auto:{{ type.name }}.property
-    public static let storedProperty: [String:PartialKeyPath<{{ type.name }}>] = [
+public static let storedProperty: [PartialKeyPath<{{ type.name }}>:String] = [
 {% for variable in type.storedVariables where variable.name != "storedSyncState" %}
-        "{{ variable.name|replace:"`",""|camelToSnakeCase }}": \{{type.name}}.{{ variable.name }}{% if not forloop.last %},{% endif %}
+        \{{type.name}}.{{ variable.name }} :"{{ variable.name|replace:"`",""|camelToSnakeCase }}"{% if not forloop.last %},{% endif %}
 {% empty %}
     :
 {% endfor %}
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<{{ type.name }}>] = [
+public static let mutableProperty: [PartialKeyPath<{{ type.name }}>:String] = [
 {% for variable in type.storedVariables where variable.isMutable and variable.name != "storedSyncState" %}
-        "{{ variable.name|replace:"`",""|camelToSnakeCase }}": \{{type.name}}.{{ variable.name }}{% if not forloop.last %},{% endif %}
+        \{{type.name}}.{{ variable.name }} :"{{ variable.name|replace:"`",""|camelToSnakeCase }}"{% if not forloop.last %},{% endif %}
 {% empty %}
     :
 {% endfor %}

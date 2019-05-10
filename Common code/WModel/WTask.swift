@@ -26,36 +26,36 @@ public struct WTask: WObject, ListChild, WCreatable {
     public let createdById: Int?
 
 // sourcery:inline:auto:WTask.property
-    public static let storedProperty: [String:PartialKeyPath<WTask>] = [
-        "id": \WTask.id,
-        "revision": \WTask.revision,
-        "type": \WTask.type,
-        "created_by_request_id": \WTask.createdByRequestId,
-        "title": \WTask.title,
-        "completed": \WTask.completed,
-        "starred": \WTask.starred,
-        "list_id": \WTask.listId,
-        "recurrence_type": \WTask.recurrenceType,
-        "recurrence_count": \WTask.recurrenceCount,
-        "assignee_id": \WTask.assigneeId,
-        "assigner_id": \WTask.assignerId,
-        "due_date": \WTask.dueDate,
-        "completed_at": \WTask.completedAt,
-        "completed_by_id": \WTask.completedById,
-        "created_at": \WTask.createdAt,
-        "created_by_id": \WTask.createdById
+public static let storedProperty: [PartialKeyPath<WTask>:String] = [
+        \WTask.id :"id",
+        \WTask.revision :"revision",
+        \WTask.type :"type",
+        \WTask.createdByRequestId :"created_by_request_id",
+        \WTask.title :"title",
+        \WTask.completed :"completed",
+        \WTask.starred :"starred",
+        \WTask.listId :"list_id",
+        \WTask.recurrenceType :"recurrence_type",
+        \WTask.recurrenceCount :"recurrence_count",
+        \WTask.assigneeId :"assignee_id",
+        \WTask.assignerId :"assigner_id",
+        \WTask.dueDate :"due_date",
+        \WTask.completedAt :"completed_at",
+        \WTask.completedById :"completed_by_id",
+        \WTask.createdAt :"created_at",
+        \WTask.createdById :"created_by_id"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WTask>] = [
-        "title": \WTask.title,
-        "completed": \WTask.completed,
-        "starred": \WTask.starred,
-        "list_id": \WTask.listId,
-        "recurrence_type": \WTask.recurrenceType,
-        "recurrence_count": \WTask.recurrenceCount,
-        "assignee_id": \WTask.assigneeId,
-        "assigner_id": \WTask.assignerId,
-        "due_date": \WTask.dueDate
+public static let mutableProperty: [PartialKeyPath<WTask>:String] = [
+        \WTask.title :"title",
+        \WTask.completed :"completed",
+        \WTask.starred :"starred",
+        \WTask.listId :"list_id",
+        \WTask.recurrenceType :"recurrence_type",
+        \WTask.recurrenceCount :"recurrence_count",
+        \WTask.assigneeId :"assignee_id",
+        \WTask.assignerId :"assigner_id",
+        \WTask.dueDate :"due_date"
     ]
 // sourcery:end
 }

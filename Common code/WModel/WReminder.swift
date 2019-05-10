@@ -17,19 +17,19 @@ public struct WReminder: WObject, WCreatable {
     public let updatedAt: Date?
 
 // sourcery:inline:auto:WReminder.property
-    public static let storedProperty: [String:PartialKeyPath<WReminder>] = [
-        "id": \WReminder.id,
-        "revision": \WReminder.revision,
-        "type": \WReminder.type,
-        "created_by_request_id": \WReminder.createdByRequestId,
-        "task_id": \WReminder.taskId,
-        "date": \WReminder.date,
-        "created_at": \WReminder.createdAt,
-        "updated_at": \WReminder.updatedAt
+public static let storedProperty: [PartialKeyPath<WReminder>:String] = [
+        \WReminder.id :"id",
+        \WReminder.revision :"revision",
+        \WReminder.type :"type",
+        \WReminder.createdByRequestId :"created_by_request_id",
+        \WReminder.taskId :"task_id",
+        \WReminder.date :"date",
+        \WReminder.createdAt :"created_at",
+        \WReminder.updatedAt :"updated_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WReminder>] = [
-        "date": \WReminder.date
+public static let mutableProperty: [PartialKeyPath<WReminder>:String] = [
+        \WReminder.date :"date"
     ]
 // sourcery:end
 }

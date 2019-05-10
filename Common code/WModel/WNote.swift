@@ -15,17 +15,17 @@ public struct WNote: WObject, TaskChild, WCreatable {
     public var content: String
 
 // sourcery:inline:auto:WNote.property
-    public static let storedProperty: [String:PartialKeyPath<WNote>] = [
-        "id": \WNote.id,
-        "revision": \WNote.revision,
-        "type": \WNote.type,
-        "created_by_request_id": \WNote.createdByRequestId,
-        "task_id": \WNote.taskId,
-        "content": \WNote.content
+public static let storedProperty: [PartialKeyPath<WNote>:String] = [
+        \WNote.id :"id",
+        \WNote.revision :"revision",
+        \WNote.type :"type",
+        \WNote.createdByRequestId :"created_by_request_id",
+        \WNote.taskId :"task_id",
+        \WNote.content :"content"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WNote>] = [
-        "content": \WNote.content
+public static let mutableProperty: [PartialKeyPath<WNote>:String] = [
+        \WNote.content :"content"
     ]
 // sourcery:end
 }

@@ -23,21 +23,21 @@ public struct WList: WObject, WCreatable {
     }
 
 // sourcery:inline:auto:WList.property
-    public static let storedProperty: [String:PartialKeyPath<WList>] = [
-        "id": \WList.id,
-        "revision": \WList.revision,
-        "type": \WList.type,
-        "created_by_request_id": \WList.createdByRequestId,
-        "title": \WList.title,
-        "owner_id": \WList.ownerId,
-        "owner_type": \WList.ownerType,
-        "list_type": \WList.listType,
-        "public": \WList.`public`,
-        "created_at": \WList.createdAt
+public static let storedProperty: [PartialKeyPath<WList>:String] = [
+        \WList.id :"id",
+        \WList.revision :"revision",
+        \WList.type :"type",
+        \WList.createdByRequestId :"created_by_request_id",
+        \WList.title :"title",
+        \WList.ownerId :"owner_id",
+        \WList.ownerType :"owner_type",
+        \WList.listType :"list_type",
+        \WList.`public` :"public",
+        \WList.createdAt :"created_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WList>] = [
-        "title": \WList.title
+public static let mutableProperty: [PartialKeyPath<WList>:String] = [
+        \WList.title :"title"
     ]
 // sourcery:end
 }

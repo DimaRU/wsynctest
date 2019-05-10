@@ -11,13 +11,13 @@ public struct WRevision: WObject {
     public let type: MappingType
     
 // sourcery:inline:auto:WRevision.property
-    public static let storedProperty: [String:PartialKeyPath<WRevision>] = [
-        "id": \WRevision.id,
-        "revision": \WRevision.revision,
-        "type": \WRevision.type
+public static let storedProperty: [PartialKeyPath<WRevision>:String] = [
+        \WRevision.id :"id",
+        \WRevision.revision :"revision",
+        \WRevision.type :"type"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WRevision>] = [
+public static let mutableProperty: [PartialKeyPath<WRevision>:String] = [
     :
     ]
 // sourcery:end

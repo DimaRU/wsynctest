@@ -19,22 +19,22 @@ public struct WFolder: WObject, WCreatable {
     public let updatedAt: Date?
 
 // sourcery:inline:auto:WFolder.property
-    public static let storedProperty: [String:PartialKeyPath<WFolder>] = [
-        "id": \WFolder.id,
-        "revision": \WFolder.revision,
-        "type": \WFolder.type,
-        "created_by_request_id": \WFolder.createdByRequestId,
-        "title": \WFolder.title,
-        "list_ids": \WFolder.listIds,
-        "user_id": \WFolder.userId,
-        "created_at": \WFolder.createdAt,
-        "created_by_id": \WFolder.createdById,
-        "updated_at": \WFolder.updatedAt
+public static let storedProperty: [PartialKeyPath<WFolder>:String] = [
+        \WFolder.id :"id",
+        \WFolder.revision :"revision",
+        \WFolder.type :"type",
+        \WFolder.createdByRequestId :"created_by_request_id",
+        \WFolder.title :"title",
+        \WFolder.listIds :"list_ids",
+        \WFolder.userId :"user_id",
+        \WFolder.createdAt :"created_at",
+        \WFolder.createdById :"created_by_id",
+        \WFolder.updatedAt :"updated_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WFolder>] = [
-        "title": \WFolder.title,
-        "list_ids": \WFolder.listIds
+public static let mutableProperty: [PartialKeyPath<WFolder>:String] = [
+        \WFolder.title :"title",
+        \WFolder.listIds :"list_ids"
     ]
 // sourcery:end
 }

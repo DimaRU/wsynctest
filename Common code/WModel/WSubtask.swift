@@ -18,21 +18,21 @@ public struct WSubtask: WObject, TaskChild, WCreatable {
     public let createdById: Int?
 
 // sourcery:inline:auto:WSubtask.property
-    public static let storedProperty: [String:PartialKeyPath<WSubtask>] = [
-        "id": \WSubtask.id,
-        "revision": \WSubtask.revision,
-        "type": \WSubtask.type,
-        "created_by_request_id": \WSubtask.createdByRequestId,
-        "task_id": \WSubtask.taskId,
-        "title": \WSubtask.title,
-        "completed": \WSubtask.completed,
-        "created_at": \WSubtask.createdAt,
-        "created_by_id": \WSubtask.createdById
+public static let storedProperty: [PartialKeyPath<WSubtask>:String] = [
+        \WSubtask.id :"id",
+        \WSubtask.revision :"revision",
+        \WSubtask.type :"type",
+        \WSubtask.createdByRequestId :"created_by_request_id",
+        \WSubtask.taskId :"task_id",
+        \WSubtask.title :"title",
+        \WSubtask.completed :"completed",
+        \WSubtask.createdAt :"created_at",
+        \WSubtask.createdById :"created_by_id"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WSubtask>] = [
-        "title": \WSubtask.title,
-        "completed": \WSubtask.completed
+public static let mutableProperty: [PartialKeyPath<WSubtask>:String] = [
+        \WSubtask.title :"title",
+        \WSubtask.completed :"completed"
     ]
 // sourcery:end
 }

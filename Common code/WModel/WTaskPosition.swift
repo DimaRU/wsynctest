@@ -14,16 +14,16 @@ public struct WTaskPosition: WObject, ListChild {
     public var values: [Int]
 
 // sourcery:inline:auto:WTaskPosition.property
-    public static let storedProperty: [String:PartialKeyPath<WTaskPosition>] = [
-        "id": \WTaskPosition.id,
-        "revision": \WTaskPosition.revision,
-        "type": \WTaskPosition.type,
-        "list_id": \WTaskPosition.listId,
-        "values": \WTaskPosition.values
+public static let storedProperty: [PartialKeyPath<WTaskPosition>:String] = [
+        \WTaskPosition.id :"id",
+        \WTaskPosition.revision :"revision",
+        \WTaskPosition.type :"type",
+        \WTaskPosition.listId :"list_id",
+        \WTaskPosition.values :"values"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WTaskPosition>] = [
-        "values": \WTaskPosition.values
+public static let mutableProperty: [PartialKeyPath<WTaskPosition>:String] = [
+        \WTaskPosition.values :"values"
     ]
 // sourcery:end
 }

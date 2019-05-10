@@ -24,20 +24,20 @@ public struct WTaskComment: WObject, TaskChild, WCreatable {
     }
 
 // sourcery:inline:auto:WTaskComment.property
-    public static let storedProperty: [String:PartialKeyPath<WTaskComment>] = [
-        "id": \WTaskComment.id,
-        "revision": \WTaskComment.revision,
-        "type": \WTaskComment.type,
-        "created_by_request_id": \WTaskComment.createdByRequestId,
-        "text": \WTaskComment.text,
-        "task_id": \WTaskComment.taskId,
-        "local_created_at": \WTaskComment.localCreatedAt,
-        "author": \WTaskComment.author,
-        "created_at": \WTaskComment.createdAt
+public static let storedProperty: [PartialKeyPath<WTaskComment>:String] = [
+        \WTaskComment.id :"id",
+        \WTaskComment.revision :"revision",
+        \WTaskComment.type :"type",
+        \WTaskComment.createdByRequestId :"created_by_request_id",
+        \WTaskComment.text :"text",
+        \WTaskComment.taskId :"task_id",
+        \WTaskComment.localCreatedAt :"local_created_at",
+        \WTaskComment.author :"author",
+        \WTaskComment.createdAt :"created_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WTaskComment>] = [
-        "text": \WTaskComment.text
+public static let mutableProperty: [PartialKeyPath<WTaskComment>:String] = [
+        \WTaskComment.text :"text"
     ]
 // sourcery:end
 }

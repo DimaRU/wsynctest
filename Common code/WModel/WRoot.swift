@@ -19,14 +19,14 @@ public struct WRoot: WObject {
     }
 
 // sourcery:inline:auto:WRoot.property
-    public static let storedProperty: [String:PartialKeyPath<WRoot>] = [
-        "id": \WRoot.id,
-        "revision": \WRoot.revision,
-        "type": \WRoot.type,
-        "user_id": \WRoot.userId
+public static let storedProperty: [PartialKeyPath<WRoot>:String] = [
+        \WRoot.id :"id",
+        \WRoot.revision :"revision",
+        \WRoot.type :"type",
+        \WRoot.userId :"user_id"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WRoot>] = [
+public static let mutableProperty: [PartialKeyPath<WRoot>:String] = [
     :
     ]
 // sourcery:end

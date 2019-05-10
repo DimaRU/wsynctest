@@ -16,17 +16,17 @@ public struct WUser: WObject {
     public let updatedAt: Date
 
 // sourcery:inline:auto:WUser.property
-    public static let storedProperty: [String:PartialKeyPath<WUser>] = [
-        "id": \WUser.id,
-        "revision": \WUser.revision,
-        "type": \WUser.type,
-        "name": \WUser.name,
-        "email": \WUser.email,
-        "created_at": \WUser.createdAt,
-        "updated_at": \WUser.updatedAt
+public static let storedProperty: [PartialKeyPath<WUser>:String] = [
+        \WUser.id :"id",
+        \WUser.revision :"revision",
+        \WUser.type :"type",
+        \WUser.name :"name",
+        \WUser.email :"email",
+        \WUser.createdAt :"created_at",
+        \WUser.updatedAt :"updated_at"
     ]
 
-    public static let mutableProperty: [String:PartialKeyPath<WUser>] = [
+public static let mutableProperty: [PartialKeyPath<WUser>:String] = [
     :
     ]
 // sourcery:end
