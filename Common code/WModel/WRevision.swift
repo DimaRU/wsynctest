@@ -10,6 +10,15 @@ public struct WRevision: WObject {
     public let revision: Int
     public let type: MappingType
     
-    public static let storedProperty: [String : PartialKeyPath<WRevision>] = [:]
-    public static let mutableProperty: [String : PartialKeyPath<WRevision>] = [:]
+// sourcery:inline:auto:WRevision.property
+    public static let storedProperty: [String:PartialKeyPath<WRevision>] = [
+        "id": \WRevision.id,
+        "revision": \WRevision.revision,
+        "type": \WRevision.type
+    ]
+
+    public static let mutableProperty: [String:PartialKeyPath<WRevision>] = [
+    :
+    ]
+// sourcery:end
 }

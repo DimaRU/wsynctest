@@ -28,11 +28,12 @@ public struct WTaskComment: WObject, TaskChild, WCreatable {
         "id": \WTaskComment.id,
         "revision": \WTaskComment.revision,
         "type": \WTaskComment.type,
+        "created_by_request_id": \WTaskComment.createdByRequestId,
+        "text": \WTaskComment.text,
         "task_id": \WTaskComment.taskId,
         "local_created_at": \WTaskComment.localCreatedAt,
-        "created_at": \WTaskComment.createdAt,
         "author": \WTaskComment.author,
-        "text": \WTaskComment.text
+        "created_at": \WTaskComment.createdAt
     ]
 
     public static let mutableProperty: [String:PartialKeyPath<WTaskComment>] = [

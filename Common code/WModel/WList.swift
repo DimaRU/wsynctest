@@ -27,9 +27,10 @@ public struct WList: WObject, WCreatable {
         "id": \WList.id,
         "revision": \WList.revision,
         "type": \WList.type,
+        "created_by_request_id": \WList.createdByRequestId,
+        "title": \WList.title,
         "owner_id": \WList.ownerId,
         "owner_type": \WList.ownerType,
-        "title": \WList.title,
         "list_type": \WList.listType,
         "public": \WList.`public`,
         "created_at": \WList.createdAt

@@ -19,6 +19,7 @@ public struct WFeature: WObject {
         "id": \WFeature.id,
         "revision": \WFeature.revision,
         "type": \WFeature.type,
+        "created_by_request_id": \WFeature.createdByRequestId,
         "name": \WFeature.name,
         "variant": \WFeature.variant
     ]

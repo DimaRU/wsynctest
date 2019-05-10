@@ -19,6 +19,7 @@ public struct WNote: WObject, TaskChild, WCreatable {
         "id": \WNote.id,
         "revision": \WNote.revision,
         "type": \WNote.type,
+        "created_by_request_id": \WNote.createdByRequestId,
         "task_id": \WNote.taskId,
         "content": \WNote.content
     ]

@@ -23,9 +23,10 @@ public struct WFolder: WObject, WCreatable {
         "id": \WFolder.id,
         "revision": \WFolder.revision,
         "type": \WFolder.type,
-        "user_id": \WFolder.userId,
+        "created_by_request_id": \WFolder.createdByRequestId,
         "title": \WFolder.title,
         "list_ids": \WFolder.listIds,
+        "user_id": \WFolder.userId,
         "created_at": \WFolder.createdAt,
         "created_by_id": \WFolder.createdById,
         "updated_at": \WFolder.updatedAt

@@ -19,6 +19,7 @@ public struct WSetting: WObject, WCreatable {
         "id": \WSetting.id,
         "revision": \WSetting.revision,
         "type": \WSetting.type,
+        "created_by_request_id": \WSetting.createdByRequestId,
         "key": \WSetting.key,
         "value": \WSetting.value
     ]

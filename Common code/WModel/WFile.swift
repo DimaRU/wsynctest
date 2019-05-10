@@ -28,6 +28,7 @@ public struct WFile: WObject, TaskChild, WCreatable {
         "id": \WFile.id,
         "revision": \WFile.revision,
         "type": \WFile.type,
+        "created_by_request_id": \WFile.createdByRequestId,
         "task_id": \WFile.taskId,
         "user_id": \WFile.userId,
         "url": \WFile.url,

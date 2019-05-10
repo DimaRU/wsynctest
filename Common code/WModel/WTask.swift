@@ -30,15 +30,16 @@ public struct WTask: WObject, ListChild, WCreatable {
         "id": \WTask.id,
         "revision": \WTask.revision,
         "type": \WTask.type,
-        "list_id": \WTask.listId,
+        "created_by_request_id": \WTask.createdByRequestId,
         "title": \WTask.title,
+        "completed": \WTask.completed,
+        "starred": \WTask.starred,
+        "list_id": \WTask.listId,
         "recurrence_type": \WTask.recurrenceType,
         "recurrence_count": \WTask.recurrenceCount,
-        "due_date": \WTask.dueDate,
-        "starred": \WTask.starred,
-        "completed": \WTask.completed,
         "assignee_id": \WTask.assigneeId,
         "assigner_id": \WTask.assignerId,
+        "due_date": \WTask.dueDate,
         "completed_at": \WTask.completedAt,
         "completed_by_id": \WTask.completedById,
         "created_at": \WTask.createdAt,
@@ -46,13 +47,15 @@ public struct WTask: WObject, ListChild, WCreatable {
     ]
 
     public static let mutableProperty: [String:PartialKeyPath<WTask>] = [
-        "list_id": \WTask.listId,
         "title": \WTask.title,
+        "completed": \WTask.completed,
+        "starred": \WTask.starred,
+        "list_id": \WTask.listId,
         "recurrence_type": \WTask.recurrenceType,
         "recurrence_count": \WTask.recurrenceCount,
-        "due_date": \WTask.dueDate,
-        "starred": \WTask.starred,
-        "completed": \WTask.completed
+        "assignee_id": \WTask.assigneeId,
+        "assigner_id": \WTask.assignerId,
+        "due_date": \WTask.dueDate
     ]
 // sourcery:end
 }

@@ -12,7 +12,7 @@ public struct WReminder: WObject, WCreatable {
     public let createdByRequestId: String?
 
     public let taskId: Int
-    public let date: Date
+    public var date: Date
     public let createdAt: Date?
     public let updatedAt: Date?
 
@@ -21,6 +21,7 @@ public struct WReminder: WObject, WCreatable {
         "id": \WReminder.id,
         "revision": \WReminder.revision,
         "type": \WReminder.type,
+        "created_by_request_id": \WReminder.createdByRequestId,
         "task_id": \WReminder.taskId,
         "date": \WReminder.date,
         "created_at": \WReminder.createdAt,
@@ -28,7 +29,7 @@ public struct WReminder: WObject, WCreatable {
     ]
 
     public static let mutableProperty: [String:PartialKeyPath<WReminder>] = [
-    :
+        "date": \WReminder.date
     ]
 // sourcery:end
 }

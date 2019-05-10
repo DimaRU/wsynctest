@@ -22,6 +22,7 @@ public struct WSubtask: WObject, TaskChild, WCreatable {
         "id": \WSubtask.id,
         "revision": \WSubtask.revision,
         "type": \WSubtask.type,
+        "created_by_request_id": \WSubtask.createdByRequestId,
         "task_id": \WSubtask.taskId,
         "title": \WSubtask.title,
         "completed": \WSubtask.completed,

@@ -22,6 +22,7 @@ public struct WMembership: WObject, ListChild, WCreatable {
         "id": \WMembership.id,
         "revision": \WMembership.revision,
         "type": \WMembership.type,
+        "created_by_request_id": \WMembership.createdByRequestId,
         "list_id": \WMembership.listId,
         "owner": \WMembership.owner,
         "muted": \WMembership.muted,

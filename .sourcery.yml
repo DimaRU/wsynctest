@@ -1,0 +1,7 @@
+sources:
+  - Common code/
+templates:
+  - Templates/
+output:
+  out/
+args:
