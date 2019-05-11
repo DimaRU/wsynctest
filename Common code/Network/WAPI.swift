@@ -61,13 +61,13 @@ struct WAPI {
     
     static func update<T: WObject>(from: T, to: T) -> Promise<T> {
         assert(from.id == to.id, "Update object id is't equal")
-        let params = wobjectDiff(from: from, to: to)
+        let params = to.updateParams(from: from)
         log("Update \(T.typeName()), id: \(from.id) revision: \(from.revision) params: \(params)")
         return WAPI.update(T.self, id: from.id, params: params)
     }
 
     static func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
-        let params = wobjectCreateParams(from: wobject)
+        let params = wobject.createParams()
         let newObjbect = WAPI.create(T.self, params: params)
         
         log("\(T.typeName()) created")

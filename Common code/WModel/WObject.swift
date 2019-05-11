@@ -92,7 +92,6 @@ public extension WObject {
 }
 
 fileprivate func compareAny(a: Any, b: Any) -> Bool {
-//    let valueType = type(of: a)
     switch type(of: a) {
     case is String?.Type,
          is String.Type:
@@ -122,45 +121,48 @@ fileprivate func filterDates(param: Any) -> Any {
     }
 }
 
-func wobjectDiff<T: WObject>(from: T, to: T) -> [String: Any] {
-    var dict: [String: Any] = [:]
-    var deletedList: [String] = []
-    
-    let pathList = T.mutableProperty
-    for (path, key) in pathList {
-        let oldValue = from[keyPath: path]
-        let newValue = to[keyPath: path]
-        if compareAny(a: oldValue, b: newValue) {
-            continue
+extension WObject {
+    public func updateParams(from: Self) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        var deletedList: [String] = []
+
+        let pathList = Self.mutableProperty
+        for (path, key) in pathList {
+            let oldValue = from[keyPath: path]
+            let newValue = self[keyPath: path]
+            if compareAny(a: oldValue, b: newValue) {
+                continue
+            }
+            if case Optional<Any>.none = newValue {
+                deletedList.append(key)
+            } else {
+                dict[key] = filterDates(param: newValue)
+            }
         }
-        if case Optional<Any>.none = newValue {
-            deletedList.append(key)
-        } else {
-            dict[key] = filterDates(param: newValue)
+        if !deletedList.isEmpty {
+            dict["remove"] = deletedList
         }
+        if !dict.isEmpty {
+            dict["revision"] = from.revision
+        }
+        return dict
     }
-    if !deletedList.isEmpty {
-        dict["remove"] = deletedList
-    }
-    if !dict.isEmpty {
-        dict["revision"] = from.revision
-    }
-    return dict
 }
 
-func wobjectCreateParams<T: WObject & WCreatable>(from wobject: T) -> [String:Any] {
-    let fieldList = T.createFieldList
-    var params: [String: Any] = [:]
-    
-    for path in fieldList {
-        let key = T.storedProperty[path]!
-        let value = wobject[keyPath: path]
-        if case Optional<Any>.none = value {
-            continue
+extension WObject where Self: WCreatable {
+    public func createParams() -> [String:Any] {
+        var params: [String: Any] = [:]
+
+        for path in Self.createFieldList {
+            let key = Self.storedProperty[path]!
+            let value = self[keyPath: path]
+            if case Optional<Any>.none = value {
+                continue
+            }
+            params[key] = filterDates(param: value)
         }
-        params[key] = filterDates(param: value)
+        return params
     }
-    return params
 }
 
 public extension Set where Element: WObject {

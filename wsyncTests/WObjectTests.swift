@@ -11,15 +11,6 @@ import XCTest
 
 class WObjectTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-
     func testwobjectDiff() {
         let folder = WFolder(storedSyncState: nil,
                              id: 1,
@@ -32,14 +23,32 @@ class WObjectTests: XCTestCase {
                              createdById: nil,
                              updatedAt: nil)
         var folder1 = folder
-        let diff = wobjectDiff(from: folder, to: folder1)
+        let diff = folder1.updateParams(from: folder)
         XCTAssertTrue(diff.isEmpty, "Wobjects not equal:, \(diff)")
 
         folder1.title = "TitleNew"
-        let diff1 = wobjectDiff(from: folder, to: folder1)
-        XCTAssertFalse(diff1.isEmpty, "wobjectDiff must return difference")
-        print(diff1)
+        let params = folder1.updateParams(from: folder)
+        XCTAssertEqual(params.count, 2, "Invalid params: \(params)")
+        XCTAssertTrue(params["revision"] as! Int == 2, "Invalid params: \(params)")
+        XCTAssertTrue(params["title"] as! String == "TitleNew", "Invalid params: \(params)")
 
     }
 
+    func testWCreate() {
+        let folder = WFolder(storedSyncState: nil,
+                             id: 1,
+                             revision: 2,
+                             createdByRequestId: nil,
+                             title: "Title",
+                             listIds: [1,2],
+                             userId: 1,
+                             createdAt: nil,
+                             createdById: nil,
+                             updatedAt: nil)
+
+        let params = folder.createParams()
+        XCTAssertEqual(params.count, 2, "Invalid params: \(params)")
+        XCTAssertTrue(params["list_ids"] as! Array<Int> == [1,2], "Invalid params: \(params)")
+        XCTAssertTrue(params["title"] as! String == "Title", "Invalid params: \(params)")
+    }
 }
