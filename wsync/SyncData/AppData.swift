@@ -151,7 +151,7 @@ extension AppData {
 }
 
 extension AppData {
-    func removeTaskLeaf(listId: ListId, taskId: TaskId) {
+    func removeTaskLeaf(taskId: TaskId) {
         subtasks[taskId] = []
         subtaskPositions[taskId] = []
         notes[taskId] = []
@@ -163,7 +163,7 @@ extension AppData {
     
     func removeListLeaf(listId: ListId) {
         tasks[listId].forEach {
-            removeTaskLeaf(listId: listId, taskId: $0.id)
+            removeTaskLeaf(taskId: $0.id)
         }
         tasks[listId] = []
         taskPositions[listId] = []
