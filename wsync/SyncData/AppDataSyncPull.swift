@@ -74,7 +74,7 @@ extension AppDataSync {
             .then { taskURevisions, taskCRevisions -> Promise<Void> in
                 let taskRevisions = taskURevisions.union(taskCRevisions)
                 let (removedId, changedId) = self.diffWobjectSets(old: self.appData.tasks[listId], new: taskRevisions)
-                removedId.forEach { self.appData.removeTaskLeaf(listId: listId, taskId: $0) }
+                removedId.forEach { self.appData.removeTaskLeaf(taskId: $0) }
                 switch changedId.count {
                 case 0:
                     return .value(())
