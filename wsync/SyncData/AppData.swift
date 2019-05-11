@@ -41,6 +41,10 @@ class AppData {
             self.diskStore = diskStore
         }
         
+        public mutating func load(parentId: Int) {
+            dictionary[parentId] = diskStore?.load([T].self, parentId: parentId)
+        }
+        
     }
     
     var diskStore: DiskStore?
@@ -134,19 +138,19 @@ extension AppData {
     }
     
     func loadListLeaf(from diskStore: DiskStore, listId: ListId) {
-        memberships.dictionary[listId] = diskStore.load([WMembership].self, parentId: listId)
-        tasks.dictionary[listId] = diskStore.load([WTask].self, parentId: listId)
-        taskPositions.dictionary[listId] = diskStore.load([WTaskPosition].self, parentId: listId)
+        memberships.load(parentId: listId)
+        tasks.load(parentId: listId)
+        taskPositions.load(parentId: listId)
         
         tasks[listId].forEach{ loadTaskLeaf(from: diskStore, taskId: $0.id) }
     }
     
     func loadTaskLeaf(from diskStore: DiskStore, taskId: TaskId) {
-        subtasks.dictionary[taskId] = diskStore.load([WSubtask].self, parentId: taskId)
-        subtaskPositions.dictionary[taskId] = diskStore.load([WSubtaskPosition].self, parentId: taskId)
-        notes.dictionary[taskId] = diskStore.load([WNote].self, parentId: taskId)
-        files.dictionary[taskId] = diskStore.load([WFile].self, parentId: taskId)
-        taskComments.dictionary[taskId] = diskStore.load([WTaskComment].self, parentId: taskId)
+        subtasks.load(parentId: taskId)
+        subtaskPositions.load(parentId: taskId)
+        notes.load(parentId: taskId)
+        files.load(parentId: taskId)
+        taskComments.load(parentId: taskId)
     }
 }
 
