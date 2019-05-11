@@ -25,9 +25,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
 
         loadDefaults()
-        if KeychainService.shared[.token] != nil {
-            setAvatarImage()
-        }
+        setAvatarImage()
     }
     
     override func viewWillDisappear() {
@@ -46,6 +44,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func saveDefaults() {
         KeychainService.shared[.token]        = token.stringValue
         KeychainService.shared[.backupFile]   = backupFile.stringValue
+        setAvatarImage()
     }
     
     func controlTextDidEndEditing(_ obj: Notification) {
@@ -165,6 +164,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func setAvatarImage() {
+        guard !token.stringValue.isEmpty else {
+            return
+        }
         WAvatar.loadCurrent { image in
             self.avatarImageView.image = image
             log("Download avatar ok")
