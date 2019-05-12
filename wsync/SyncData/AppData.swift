@@ -175,23 +175,39 @@ extension AppData {
     }
 }
 
+// MARK: External accessors
 extension AppData {
-    func update<T>(_ wobject: T) where T : WObject {
-        var markedObj = wobject
-        markedObj.storedSyncState = .modified
-
-        switch markedObj {
-        case is ListChild:
-            let parentId = (markedObj as! ListChild).listId
+    private func updateObject<T: WObject>(_ wobject: T){
+        switch wobject {
+        case let listChild as ListChild:
+            let parentId = listChild.listId
             let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].update(with: markedObj)
-        case is TaskChild:
-            let parentId = (markedObj as! TaskChild).taskId
+            self[keyPath: path][parentId].update(with: wobject)
+        case let taskChild as TaskChild:
+            let parentId = taskChild.taskId
             let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].update(with: markedObj)
+            self[keyPath: path][parentId].update(with: wobject)
         default:
             let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
-            self[keyPath: path].update(with: markedObj)
+            self[keyPath: path].update(with: wobject)
         }
+    }
+
+    public func update<T: WObject>(modified wobject: T){
+        var modified = wobject
+        modified.storedSyncState = .modified
+        updateObject(modified)
+    }
+    
+    public func delete<T: WObject>(_ wobject: T) {
+        var deleted = wobject
+        deleted.storedSyncState = .deleted
+        updateObject(deleted)
+    }
+    
+    public func add<T: WObject>(created wobject: T) {
+        var created = wobject
+        created.storedSyncState = .created
+        updateObject(created)
     }
 }

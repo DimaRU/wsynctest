@@ -106,7 +106,7 @@ class AppDataTests: XCTestCase {
 
         let title = "Mutated tite 1"
         updatedTask.title = title
-        appData.update(updatedTask)
+        appData.update(modified: updatedTask)
         let task = appData.tasks[parentId][updatedTask.id]!
         XCTAssertTrue(task.storedSyncState == .modified, "Object state is not correct")
         XCTAssertEqual(task, updatedTask, "tasks not equal after mutation")
