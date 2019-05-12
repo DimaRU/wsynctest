@@ -134,7 +134,7 @@ extension AppDataSync {
                         .then { list in
                             self.pullListLeaf(listId: list.id).map { list }
                         }.done { list in
-                            self.appData.update(list)
+                            self.appData.lists.update(with: list)
                     }
                 default:
                     return self.get(WList.self)
