@@ -234,9 +234,9 @@ extension WunderAPI {
             
             if completed {
                 if type is WTask.Type {
-                    params["completed"] = "true"
+                    params["completed"] = completed
                 } else {
-                    params["completed_tasks"] = "true"
+                    params["completed_tasks"] = completed
                 }
             }
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
@@ -288,6 +288,8 @@ extension WunderAPI {
 
         return assigned
     }
+
+    static let urlEncoding = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .literal)
 }
 
 // MARK: - Provider support
