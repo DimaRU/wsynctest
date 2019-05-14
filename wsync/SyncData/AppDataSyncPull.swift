@@ -36,6 +36,21 @@ extension AppDataSync {
         return (removedIds: removedIds, changedIds: changedIds)
     }
     
+    func setDiffWobjectSet<T: WObject>(new: Set<T>, parentId: Int) {
+        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
+        let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path][parentId], new: new)
+        if !removedId.isEmpty || !changedId.isEmpty {
+            appData.self[keyPath: path][parentId] = new
+        }
+    }
+    
+    func setDiffWobjectSet<T: WObject>(new: Set<T>) {
+        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+        let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path], new: new)
+        if !removedId.isEmpty || !changedId.isEmpty {
+            appData.self[keyPath: path] = new
+        }
+    }
 
     /// Pull leafs of task.
     ///
@@ -48,20 +63,11 @@ extension AppDataSync {
             self.get(WNote.self, taskId: taskId),
             self.get(WTaskComment.self, taskId: taskId))
             .done { subtasks, subtaskPositions, files, notes, taskComments in
-                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.subtasks[taskId], new: subtasks)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.subtasks[taskId] = subtasks }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.subtaskPositions[taskId], new: subtaskPositions)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.subtaskPositions[taskId] = subtaskPositions }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.notes[taskId], new: notes)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.notes[taskId] = notes }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.files[taskId], new: files)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.files[taskId] = files }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.taskComments[taskId], new: taskComments)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.taskComments[taskId] = taskComments }
+                self.setDiffWobjectSet(new: subtasks, parentId: taskId)
+                self.setDiffWobjectSet(new: subtaskPositions, parentId: taskId)
+                self.setDiffWobjectSet(new: files, parentId: taskId)
+                self.setDiffWobjectSet(new: notes, parentId: taskId)
+                self.setDiffWobjectSet(new: taskComments, parentId: taskId)
         }
     }
     
@@ -93,11 +99,8 @@ extension AppDataSync {
                         }.done { tasks in
                             self.appData.tasks[listId] = tasks
                     }
-                    
                 }
-
         }
-
     }
     
     /// Pull leafs of list.
@@ -110,11 +113,8 @@ extension AppDataSync {
                     self.get(WMembership.self, listId: listId),
                     self.get(WTaskPosition.self, listId: listId))
             }.done { memberships, taskPositions in
-                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.memberships[listId], new: memberships)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.memberships[listId] = memberships }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.taskPositions[listId], new: taskPositions)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.taskPositions[listId] = taskPositions }
+                self.setDiffWobjectSet(new: memberships, parentId: listId)
+                self.setDiffWobjectSet(new: taskPositions, parentId: listId)
         }
     }
     
@@ -195,14 +195,9 @@ extension AppDataSync {
                      self.get(WReminder.self),
                      self.get(WFolder.self))
             }.done { listPositions, reminders, folders in
-                var (removedId, changedId) = self.diffWobjectSets(old: self.appData.folders, new: folders)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.folders = folders }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.listPositions, new: listPositions)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.listPositions = listPositions }
-                
-                (removedId, changedId) = self.diffWobjectSets(old: self.appData.reminders, new: reminders)
-                if !removedId.isEmpty || !changedId.isEmpty { self.appData.reminders = reminders }
+                self.setDiffWobjectSet(new: listPositions)
+                self.setDiffWobjectSet(new: reminders)
+                self.setDiffWobjectSet(new: folders)
         }
     }
     
