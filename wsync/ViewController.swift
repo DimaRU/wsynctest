@@ -19,17 +19,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     let diskStore = DiskStore.init(filePath: "logs/wstore/", directory: .developer)
     var appDataStore: AppData!
     
-    private func isTesting() -> Bool {
-        return NSClassFromString("XCTest") != nil
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if !isTesting() {
-            loadDefaults()
-            setAvatarImage()
-        }
+
+        loadDefaults()
+        setAvatarImage()
     }
     
     override func viewWillDisappear() {
