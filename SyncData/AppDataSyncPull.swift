@@ -36,7 +36,7 @@ extension AppDataSync {
         return (removedIds: removedIds, changedIds: changedIds)
     }
     
-    func setDiffWobjectSet<T: WObject>(new: Set<T>, parentId: Int) {
+    func syncWObjectSets<T: WObject>(new: Set<T>, parentId: Int) {
         let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
         let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path][parentId], new: new)
         if !removedId.isEmpty || !changedId.isEmpty {
@@ -44,12 +44,22 @@ extension AppDataSync {
         }
     }
     
-    func setDiffWobjectSet<T: WObject>(new: Set<T>) {
+    func syncWObjectSets<T: WObject>(new: Set<T>) {
         let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
         let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path], new: new)
         if !removedId.isEmpty || !changedId.isEmpty {
             appData.self[keyPath: path] = new
         }
+    }
+
+    func syncWObjects<T: WObject>(new: T, parentId: Int) {
+        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
+        appData.self[keyPath: path][parentId].update(with: new)
+    }
+
+    func syncWObjects<T: WObject>(new: T) {
+        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+        appData.self[keyPath: path].update(with: new)
     }
 
     /// Pull leafs of task.
@@ -63,11 +73,11 @@ extension AppDataSync {
             self.get(WNote.self, taskId: taskId),
             self.get(WTaskComment.self, taskId: taskId))
             .done { subtasks, subtaskPositions, files, notes, taskComments in
-                self.setDiffWobjectSet(new: subtasks, parentId: taskId)
-                self.setDiffWobjectSet(new: subtaskPositions, parentId: taskId)
-                self.setDiffWobjectSet(new: files, parentId: taskId)
-                self.setDiffWobjectSet(new: notes, parentId: taskId)
-                self.setDiffWobjectSet(new: taskComments, parentId: taskId)
+                self.syncWObjectSets(new: subtasks, parentId: taskId)
+                self.syncWObjectSets(new: subtaskPositions, parentId: taskId)
+                self.syncWObjectSets(new: files, parentId: taskId)
+                self.syncWObjectSets(new: notes, parentId: taskId)
+                self.syncWObjectSets(new: taskComments, parentId: taskId)
         }
     }
     
@@ -89,7 +99,7 @@ extension AppDataSync {
                         .then { task in
                             self.pullTaskLeaf(taskId: task.id).map { task }
                         }.done { task in
-                            self.appData.tasks[listId].update(with: task)
+                            self.syncWObjects(new: task, parentId: listId)
                     }
                 default:
                     return when(fulfilled: self.get(WTask.self, listId: listId, completed: false),
@@ -97,7 +107,7 @@ extension AppDataSync {
                         .then { tasksUncompleted, tasksCompleted in
                             when(fulfilled: changedId.map{ self.pullTaskLeaf(taskId: $0) }).map { tasksUncompleted.union(tasksCompleted) }
                         }.done { tasks in
-                            self.appData.tasks[listId] = tasks
+                            self.syncWObjectSets(new: tasks, parentId: listId)
                     }
                 }
         }
@@ -113,8 +123,8 @@ extension AppDataSync {
                     self.get(WMembership.self, listId: listId),
                     self.get(WTaskPosition.self, listId: listId))
             }.done { memberships, taskPositions in
-                self.setDiffWobjectSet(new: memberships, parentId: listId)
-                self.setDiffWobjectSet(new: taskPositions, parentId: listId)
+                self.syncWObjectSets(new: memberships, parentId: listId)
+                self.syncWObjectSets(new: taskPositions, parentId: listId)
         }
     }
     
@@ -134,14 +144,14 @@ extension AppDataSync {
                         .then { list in
                             self.pullListLeaf(listId: list.id).map { list }
                         }.done { list in
-                            self.appData.lists.update(with: list)
+                            self.syncWObjects(new: list)
                     }
                 default:
                     return self.get(WList.self)
                         .then { lists in
                             when(fulfilled: changedId.map{ self.pullListLeaf(listId: $0) }).map { lists }
                         }.done { lists in
-                            self.appData.lists = lists
+                            self.syncWObjectSets(new: lists)
                     }
                     
                 }
@@ -164,12 +174,12 @@ extension AppDataSync {
                 case 1:
                     return self.get(WSetting.self, id: changedId.first!)
                         .done { setting in
-                            self.appData.settings.update(with: setting)
+                            self.syncWObjects(new: setting)
                     }
                 default:
                     return self.get(WSetting.self)
                         .done { settings in
-                            self.appData.settings = settings
+                            self.syncWObjectSets(new: settings)
                     }
                 }
         }
@@ -195,9 +205,9 @@ extension AppDataSync {
                      self.get(WReminder.self),
                      self.get(WFolder.self))
             }.done { listPositions, reminders, folders in
-                self.setDiffWobjectSet(new: listPositions)
-                self.setDiffWobjectSet(new: reminders)
-                self.setDiffWobjectSet(new: folders)
+                self.syncWObjectSets(new: listPositions)
+                self.syncWObjectSets(new: reminders)
+                self.syncWObjectSets(new: folders)
         }
     }
     
