@@ -135,41 +135,6 @@
 		0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23498B227773850016CDBC /* AppDataTests.swift */; };
 		0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A234989227773850016CDBC /* DiskStoreTests.swift */; };
 		0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23498E227773850016CDBC /* TestBackup.json */; };
-		0A2349B9227773E30016CDBC /* folder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234990227773850016CDBC /* folder.json */; };
-		0A2349BA227773E30016CDBC /* subtask_position-3858193502.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234991227773850016CDBC /* subtask_position-3858193502.json */; };
-		0A2349BB227773E30016CDBC /* subtask_position-3858192450.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234992227773850016CDBC /* subtask_position-3858192450.json */; };
-		0A2349BC227773E30016CDBC /* membership.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234993227773850016CDBC /* membership.json */; };
-		0A2349BD227773E30016CDBC /* task_comment-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234994227773850016CDBC /* task_comment-3858184298.json */; };
-		0A2349BE227773E30016CDBC /* file-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234995227773850016CDBC /* file-3858184298.json */; };
-		0A2349BF227773E30016CDBC /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234996227773850016CDBC /* setting.json */; };
-		0A2349C0227773E30016CDBC /* subtask-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234997227773850016CDBC /* subtask-3858184298.json */; };
-		0A2349C1227773E30016CDBC /* task_position-286646344.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234998227773850016CDBC /* task_position-286646344.json */; };
-		0A2349C2227773E30016CDBC /* reminder-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A234999227773850016CDBC /* reminder-3858184298.json */; };
-		0A2349C3227773E30016CDBC /* reminder-3858192730.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499A227773850016CDBC /* reminder-3858192730.json */; };
-		0A2349C4227773E30016CDBC /* task-286646344.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499B227773850016CDBC /* task-286646344.json */; };
-		0A2349C5227773E30016CDBC /* subtask_position-3858193749.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499C227773850016CDBC /* subtask_position-3858193749.json */; };
-		0A2349C6227773E30016CDBC /* task-353279260.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499D227773850016CDBC /* task-353279260.json */; };
-		0A2349C7227773E30016CDBC /* task_position-350938884.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499E227773850016CDBC /* task_position-350938884.json */; };
-		0A2349C8227773E30016CDBC /* subtask_position-3858193179.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23499F227773850016CDBC /* subtask_position-3858193179.json */; };
-		0A2349C9227773E30016CDBC /* task-350938884.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A0227773850016CDBC /* task-350938884.json */; };
-		0A2349CA227773E30016CDBC /* task_position-353279260.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A1227773850016CDBC /* task_position-353279260.json */; };
-		0A2349CB227773E30016CDBC /* subtask_position-3917606953.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A2227773850016CDBC /* subtask_position-3917606953.json */; };
-		0A2349CC227773E30016CDBC /* task-350938891.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A3227773850016CDBC /* task-350938891.json */; };
-		0A2349CD227773E30016CDBC /* subtask_position-3858192730.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A4227773850016CDBC /* subtask_position-3858192730.json */; };
-		0A2349CE227773E30016CDBC /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A5227773850016CDBC /* user.json */; };
-		0A2349CF227773E30016CDBC /* subtask_position-3917606699.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A6227773850016CDBC /* subtask_position-3917606699.json */; };
-		0A2349D0227773E30016CDBC /* task_position-350938891.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A7227773850016CDBC /* task_position-350938891.json */; };
-		0A2349D1227773E30016CDBC /* subtask_position-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A8227773850016CDBC /* subtask_position-3858184298.json */; };
-		0A2349D2227773E30016CDBC /* subtask_position-3858193360.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349A9227773850016CDBC /* subtask_position-3858193360.json */; };
-		0A2349D3227773E30016CDBC /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AA227773850016CDBC /* list.json */; };
-		0A2349D4227773E30016CDBC /* subtask_position-3907272878.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AB227773850016CDBC /* subtask_position-3907272878.json */; };
-		0A2349D5227773E30016CDBC /* task-350938874.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AC227773850016CDBC /* task-350938874.json */; };
-		0A2349D6227773E30016CDBC /* task_position-350938874.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AD227773850016CDBC /* task_position-350938874.json */; };
-		0A2349D7227773E30016CDBC /* subtask_position-3858192890.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AE227773850016CDBC /* subtask_position-3858192890.json */; };
-		0A2349D8227773E30016CDBC /* task_position-352593956.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349AF227773850016CDBC /* task_position-352593956.json */; };
-		0A2349D9227773E30016CDBC /* list_position.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B0227773850016CDBC /* list_position.json */; };
-		0A2349DA227773E30016CDBC /* root.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B1227773850016CDBC /* root.json */; };
-		0A2349DB227773E30016CDBC /* note-3858184298.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349B2227773850016CDBC /* note-3858184298.json */; };
 		0A2349F32277765D0016CDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E62277765C0016CDBC /* Assets.xcassets */; };
 		0A2349F42277765D0016CDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E72277765C0016CDBC /* Main.storyboard */; };
 		0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EA2277765C0016CDBC /* DumpContent.swift */; };
@@ -277,41 +242,6 @@
 		0A23498B227773850016CDBC /* AppDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTests.swift; sourceTree = "<group>"; };
 		0A23498C227773850016CDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A23498E227773850016CDBC /* TestBackup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestBackup.json; sourceTree = "<group>"; };
-		0A234990227773850016CDBC /* folder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = folder.json; sourceTree = "<group>"; };
-		0A234991227773850016CDBC /* subtask_position-3858193502.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193502.json"; sourceTree = "<group>"; };
-		0A234992227773850016CDBC /* subtask_position-3858192450.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192450.json"; sourceTree = "<group>"; };
-		0A234993227773850016CDBC /* membership.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = membership.json; sourceTree = "<group>"; };
-		0A234994227773850016CDBC /* task_comment-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_comment-3858184298.json"; sourceTree = "<group>"; };
-		0A234995227773850016CDBC /* file-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "file-3858184298.json"; sourceTree = "<group>"; };
-		0A234996227773850016CDBC /* setting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
-		0A234997227773850016CDBC /* subtask-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask-3858184298.json"; sourceTree = "<group>"; };
-		0A234998227773850016CDBC /* task_position-286646344.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-286646344.json"; sourceTree = "<group>"; };
-		0A234999227773850016CDBC /* reminder-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reminder-3858184298.json"; sourceTree = "<group>"; };
-		0A23499A227773850016CDBC /* reminder-3858192730.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reminder-3858192730.json"; sourceTree = "<group>"; };
-		0A23499B227773850016CDBC /* task-286646344.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-286646344.json"; sourceTree = "<group>"; };
-		0A23499C227773850016CDBC /* subtask_position-3858193749.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193749.json"; sourceTree = "<group>"; };
-		0A23499D227773850016CDBC /* task-353279260.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-353279260.json"; sourceTree = "<group>"; };
-		0A23499E227773850016CDBC /* task_position-350938884.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938884.json"; sourceTree = "<group>"; };
-		0A23499F227773850016CDBC /* subtask_position-3858193179.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193179.json"; sourceTree = "<group>"; };
-		0A2349A0227773850016CDBC /* task-350938884.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938884.json"; sourceTree = "<group>"; };
-		0A2349A1227773850016CDBC /* task_position-353279260.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-353279260.json"; sourceTree = "<group>"; };
-		0A2349A2227773850016CDBC /* subtask_position-3917606953.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3917606953.json"; sourceTree = "<group>"; };
-		0A2349A3227773850016CDBC /* task-350938891.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938891.json"; sourceTree = "<group>"; };
-		0A2349A4227773850016CDBC /* subtask_position-3858192730.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192730.json"; sourceTree = "<group>"; };
-		0A2349A5227773850016CDBC /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
-		0A2349A6227773850016CDBC /* subtask_position-3917606699.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3917606699.json"; sourceTree = "<group>"; };
-		0A2349A7227773850016CDBC /* task_position-350938891.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938891.json"; sourceTree = "<group>"; };
-		0A2349A8227773850016CDBC /* subtask_position-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858184298.json"; sourceTree = "<group>"; };
-		0A2349A9227773850016CDBC /* subtask_position-3858193360.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858193360.json"; sourceTree = "<group>"; };
-		0A2349AA227773850016CDBC /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
-		0A2349AB227773850016CDBC /* subtask_position-3907272878.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3907272878.json"; sourceTree = "<group>"; };
-		0A2349AC227773850016CDBC /* task-350938874.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task-350938874.json"; sourceTree = "<group>"; };
-		0A2349AD227773850016CDBC /* task_position-350938874.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-350938874.json"; sourceTree = "<group>"; };
-		0A2349AE227773850016CDBC /* subtask_position-3858192890.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "subtask_position-3858192890.json"; sourceTree = "<group>"; };
-		0A2349AF227773850016CDBC /* task_position-352593956.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "task_position-352593956.json"; sourceTree = "<group>"; };
-		0A2349B0227773850016CDBC /* list_position.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list_position.json; sourceTree = "<group>"; };
-		0A2349B1227773850016CDBC /* root.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = root.json; sourceTree = "<group>"; };
-		0A2349B2227773850016CDBC /* note-3858184298.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "note-3858184298.json"; sourceTree = "<group>"; };
 		0A2349DF227775FA0016CDBC /* SourceryStart.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = SourceryStart.sh; sourceTree = "<group>"; };
 		0A2349E1227775FA0016CDBC /* WObject.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = WObject.stencil; sourceTree = "<group>"; };
 		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../wutest/wutest/MyPlayground.playground; sourceTree = "<group>"; };
@@ -565,51 +495,8 @@
 			isa = PBXGroup;
 			children = (
 				0A23498E227773850016CDBC /* TestBackup.json */,
-				0A23498F227773850016CDBC /* 25007 */,
 			);
 			path = JSONTestSet;
-			sourceTree = "<group>";
-		};
-		0A23498F227773850016CDBC /* 25007 */ = {
-			isa = PBXGroup;
-			children = (
-				0A234990227773850016CDBC /* folder.json */,
-				0A234991227773850016CDBC /* subtask_position-3858193502.json */,
-				0A234992227773850016CDBC /* subtask_position-3858192450.json */,
-				0A234993227773850016CDBC /* membership.json */,
-				0A234994227773850016CDBC /* task_comment-3858184298.json */,
-				0A234995227773850016CDBC /* file-3858184298.json */,
-				0A234996227773850016CDBC /* setting.json */,
-				0A234997227773850016CDBC /* subtask-3858184298.json */,
-				0A234998227773850016CDBC /* task_position-286646344.json */,
-				0A234999227773850016CDBC /* reminder-3858184298.json */,
-				0A23499A227773850016CDBC /* reminder-3858192730.json */,
-				0A23499B227773850016CDBC /* task-286646344.json */,
-				0A23499C227773850016CDBC /* subtask_position-3858193749.json */,
-				0A23499D227773850016CDBC /* task-353279260.json */,
-				0A23499E227773850016CDBC /* task_position-350938884.json */,
-				0A23499F227773850016CDBC /* subtask_position-3858193179.json */,
-				0A2349A0227773850016CDBC /* task-350938884.json */,
-				0A2349A1227773850016CDBC /* task_position-353279260.json */,
-				0A2349A2227773850016CDBC /* subtask_position-3917606953.json */,
-				0A2349A3227773850016CDBC /* task-350938891.json */,
-				0A2349A4227773850016CDBC /* subtask_position-3858192730.json */,
-				0A2349A5227773850016CDBC /* user.json */,
-				0A2349A6227773850016CDBC /* subtask_position-3917606699.json */,
-				0A2349A7227773850016CDBC /* task_position-350938891.json */,
-				0A2349A8227773850016CDBC /* subtask_position-3858184298.json */,
-				0A2349A9227773850016CDBC /* subtask_position-3858193360.json */,
-				0A2349AA227773850016CDBC /* list.json */,
-				0A2349AB227773850016CDBC /* subtask_position-3907272878.json */,
-				0A2349AC227773850016CDBC /* task-350938874.json */,
-				0A2349AD227773850016CDBC /* task_position-350938874.json */,
-				0A2349AE227773850016CDBC /* subtask_position-3858192890.json */,
-				0A2349AF227773850016CDBC /* task_position-352593956.json */,
-				0A2349B0227773850016CDBC /* list_position.json */,
-				0A2349B1227773850016CDBC /* root.json */,
-				0A2349B2227773850016CDBC /* note-3858184298.json */,
-			);
-			path = 25007;
 			sourceTree = "<group>";
 		};
 		0A2349DE227775FA0016CDBC /* Scripts */ = {
@@ -805,42 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2349C8227773E30016CDBC /* subtask_position-3858193179.json in Resources */,
-				0A2349BA227773E30016CDBC /* subtask_position-3858193502.json in Resources */,
-				0A2349C1227773E30016CDBC /* task_position-286646344.json in Resources */,
-				0A2349DA227773E30016CDBC /* root.json in Resources */,
-				0A2349C4227773E30016CDBC /* task-286646344.json in Resources */,
-				0A2349CF227773E30016CDBC /* subtask_position-3917606699.json in Resources */,
 				0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */,
-				0A2349BF227773E30016CDBC /* setting.json in Resources */,
-				0A2349C2227773E30016CDBC /* reminder-3858184298.json in Resources */,
-				0A2349C5227773E30016CDBC /* subtask_position-3858193749.json in Resources */,
-				0A2349BD227773E30016CDBC /* task_comment-3858184298.json in Resources */,
-				0A2349C7227773E30016CDBC /* task_position-350938884.json in Resources */,
-				0A2349CB227773E30016CDBC /* subtask_position-3917606953.json in Resources */,
-				0A2349D5227773E30016CDBC /* task-350938874.json in Resources */,
-				0A2349CA227773E30016CDBC /* task_position-353279260.json in Resources */,
-				0A2349C6227773E30016CDBC /* task-353279260.json in Resources */,
-				0A2349D1227773E30016CDBC /* subtask_position-3858184298.json in Resources */,
-				0A2349BB227773E30016CDBC /* subtask_position-3858192450.json in Resources */,
-				0A2349BC227773E30016CDBC /* membership.json in Resources */,
-				0A2349D4227773E30016CDBC /* subtask_position-3907272878.json in Resources */,
-				0A2349BE227773E30016CDBC /* file-3858184298.json in Resources */,
-				0A2349D9227773E30016CDBC /* list_position.json in Resources */,
-				0A2349D2227773E30016CDBC /* subtask_position-3858193360.json in Resources */,
-				0A2349CD227773E30016CDBC /* subtask_position-3858192730.json in Resources */,
-				0A2349D7227773E30016CDBC /* subtask_position-3858192890.json in Resources */,
-				0A2349D8227773E30016CDBC /* task_position-352593956.json in Resources */,
-				0A2349CE227773E30016CDBC /* user.json in Resources */,
-				0A2349D3227773E30016CDBC /* list.json in Resources */,
-				0A2349D0227773E30016CDBC /* task_position-350938891.json in Resources */,
-				0A2349D6227773E30016CDBC /* task_position-350938874.json in Resources */,
-				0A2349C3227773E30016CDBC /* reminder-3858192730.json in Resources */,
-				0A2349C9227773E30016CDBC /* task-350938884.json in Resources */,
-				0A2349B9227773E30016CDBC /* folder.json in Resources */,
-				0A2349CC227773E30016CDBC /* task-350938891.json in Resources */,
-				0A2349C0227773E30016CDBC /* subtask-3858184298.json in Resources */,
-				0A2349DB227773E30016CDBC /* note-3858184298.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
