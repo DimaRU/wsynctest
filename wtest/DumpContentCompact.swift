@@ -50,9 +50,7 @@ class DumpContentComapact {
 
     func dumpRoot() -> Promise<Void> {
             return WAPI.getRoot()
-            .then { root in
-                WAPI.getUser().map { ($0, root) }
-            }.done { user, root in
+            .done { root in
                 self.dump.root = root
         }
     }
@@ -80,26 +78,28 @@ class DumpContentComapact {
     
     func dumpLists() -> Promise<Void> {
         return WAPI.get(WList.self)
-            .then { lists -> Promise<Void> in
+            .then { lists -> Promise<[Void]> in
                 self.dump.lists = lists
-                return when(fulfilled: lists.map { self.dumpTasks($0.id) })
+                return when(fulfilled: (lists.map{ self.dumpTasks($0.id) }).makeIterator(), concurrently: 2)
+            }.done { _ in
         }
     }
     
     func dumpTaskLeaf(taskId: Int) -> Promise<Void> {
         return when(fulfilled:
-            WAPI.get(WSubtask.self, taskId: taskId),
-             WAPI.get(WFile.self, taskId: taskId),
-             WAPI.get(WTaskComment.self, taskId: taskId),
-             WAPI.get(WNote.self, taskId: taskId)
+                    WAPI.get(WSubtask.self, taskId: taskId),
+                    WAPI.get(WFile.self, taskId: taskId),
+                    WAPI.get(WTaskComment.self, taskId: taskId),
+                    WAPI.get(WNote.self, taskId: taskId)
             )
             .then { (subtasks, files, comments, notes) -> Promise<(Set<WSubtaskPosition>, Set<WTaskCommentsState>)> in
                 self.dump.subtasks.formUnion(subtasks)
                 self.dump.files.formUnion(files)
                 self.dump.taskComments.formUnion(comments)
                 self.dump.notes.formUnion(notes)
-                return when(fulfilled: WAPI.get(WSubtaskPosition.self, taskId: taskId),
-                            WAPI.get(WTaskCommentsState.self, taskId: taskId))
+                return when(fulfilled:
+                    WAPI.get(WSubtaskPosition.self, taskId: taskId),
+                    WAPI.get(WTaskCommentsState.self, taskId: taskId))
             }.done { subtaskPositions, commentsStates in
                 self.dump.subtaskPositions.formUnion(subtaskPositions)
                 self.dump.taskCommentStates.formUnion(commentsStates)
@@ -113,12 +113,13 @@ class DumpContentComapact {
             WAPI.get(WTask.self, listId: listId, completed: false),
             WAPI.get(WTask.self, listId: listId, completed: true),
             WAPI.get(WTaskPosition.self, listId: listId))
-            .then { (memberships, tasks, tasksCompleted, taskPositions) -> Promise<Void> in
+            .then { (memberships, tasks, tasksCompleted, taskPositions) -> Promise<[Void]> in
                 self.dump.memberships.formUnion(memberships)
                 let taskAll = tasks.union(tasksCompleted)
                 self.dump.tasks.formUnion(taskAll)
                 self.dump.taskPositions.formUnion(taskPositions)
-                return when(fulfilled: taskAll.map { self.dumpTaskLeaf(taskId: $0.id) })
+                return when(fulfilled: taskAll.map { self.dumpTaskLeaf(taskId: $0.id) }.makeIterator(), concurrently: 1)
+            }.done { _ in
         }
     }
     
