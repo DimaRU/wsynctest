@@ -53,14 +53,14 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBAction func CheckDiskStoreButtonPress(_ sender: NSButton) {
         if appDataStore == nil { return }
-        log("Check DiskStore file consistence")
+        log("Check DiskStore file consistency")
         let checkStore = CheckDiskStore()
         checkStore.checkFileConsistency(appStore: appDataStore)
     }
 
     @IBAction func CheckDataStoreButtonPress(_ sender: NSButton) {
         if appDataStore == nil { return }
-        log("Check DataStore consistence")
+        log("Check DataStore consistency")
         let checkStore = CheckDataStore()
         checkStore.checkDataConsistency(appStore: appDataStore)
     }
