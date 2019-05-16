@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -430,15 +431,24 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hv5-ZK-Wqt">
+                                <rect key="frame" x="171" y="431" width="77" height="18"/>
+                                <buttonCell key="cell" type="check" title="Compact" bezelStyle="regularSquare" imagePosition="left" inset="2" id="a3a-cX-UHr">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="3Fi-Wl-2nt" firstAttribute="leading" secondItem="Sei-EB-zXl" secondAttribute="leading" id="OxV-pR-f7S"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X2o-d1-APu" secondAttribute="trailing" constant="20" symbolic="YES" id="P1T-o6-ZW4"/>
                             <constraint firstItem="Sei-EB-zXl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="PDc-qR-QsT"/>
                             <constraint firstItem="Sei-EB-zXl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="80" id="UOD-SI-XTx"/>
                             <constraint firstItem="Sei-EB-zXl" firstAttribute="leading" secondItem="X2o-d1-APu" secondAttribute="leading" id="VyV-8u-h0D"/>
                             <constraint firstItem="X2o-d1-APu" firstAttribute="top" secondItem="OS8-de-ZoW" secondAttribute="bottom" constant="8" id="h9y-ay-E5N"/>
+                            <constraint firstItem="Hv5-ZK-Wqt" firstAttribute="leading" secondItem="X2o-d1-APu" secondAttribute="trailing" constant="27" id="hOg-0G-psj"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hv5-ZK-Wqt" secondAttribute="trailing" constant="20" symbolic="YES" id="sE5-tM-8tQ"/>
                             <constraint firstItem="3Fi-Wl-2nt" firstAttribute="top" secondItem="X2o-d1-APu" secondAttribute="bottom" constant="8" id="uL5-tO-3GH"/>
+                            <constraint firstItem="X2o-d1-APu" firstAttribute="centerY" secondItem="Hv5-ZK-Wqt" secondAttribute="centerY" id="umU-nL-lcf"/>
                             <constraint firstAttribute="bottom" secondItem="3Fi-Wl-2nt" secondAttribute="bottom" constant="20" symbolic="YES" id="wD1-Ar-bzH"/>
                             <constraint firstAttribute="trailing" secondItem="3Fi-Wl-2nt" secondAttribute="trailing" constant="20" symbolic="YES" id="ySZ-GS-glo"/>
                         </constraints>
@@ -448,6 +458,7 @@
                         <outlet property="backupFile" destination="8Dq-Pw-DCB" id="6FM-Hd-pM9"/>
                         <outlet property="clientId" destination="9ie-E9-0h3" id="V9X-gi-eZn"/>
                         <outlet property="clientSecret" destination="mhb-b4-eMK" id="JyP-p1-KB0"/>
+                        <outlet property="compactDump" destination="Hv5-ZK-Wqt" id="3Cv-aY-o0w"/>
                         <outlet property="printSettingsCheckBox" destination="X2o-d1-APu" id="Lb9-MT-D2Z"/>
                         <outlet property="token" destination="9a3-nh-lMS" id="sfF-gF-ItL"/>
                     </connections>

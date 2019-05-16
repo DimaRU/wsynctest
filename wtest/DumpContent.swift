@@ -183,6 +183,6 @@ class DumpContent {
         var wobjStripped = wobject
         wobjStripped.storedSyncState = nil
         let fileName = "\(directory)\(wobject.type.rawValue).json"
-        try! Disk.save(wobject, to: Disk.Directory.developer, as: fileName)
+        try! Disk.save(wobjStripped, to: Disk.Directory.developer, as: fileName)
     }
 }

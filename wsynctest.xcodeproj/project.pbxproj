@@ -147,6 +147,7 @@
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
+		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
 		3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */; };
 		E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F8A7604B7A49ED6367167E /* Pods_wsync.framework */; };
@@ -257,6 +258,7 @@
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
 		0ADC186C228728ED005B07DD /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = wsynctest.xcworkspace/xcshareddata/IDETemplateMacros.plist; sourceTree = "<group>"; };
+		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.release.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.release.xcconfig"; sourceTree = "<group>"; };
 		6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.debug.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.debug.xcconfig"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				0A2349EE2277765D0016CDBC /* DeleteContentService.swift */,
 				0A2349EA2277765C0016CDBC /* DumpContent.swift */,
+				0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */,
 				0A2349EB2277765C0016CDBC /* PrintContent.swift */,
 				0A2349EC2277765C0016CDBC /* TestService.swift */,
 				0A2349F02277765D0016CDBC /* ViewController.swift */,
@@ -1016,6 +1019,7 @@
 				0A2349112277713A0016CDBC /* URLExtensions.swift in Sources */,
 				0A234952227771550016CDBC /* WUnreadActivityCount.swift in Sources */,
 				0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */,
+				0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */,
 				0A23497A227771670016CDBC /* HwUUID.swift in Sources */,
 				0A2349FA2277765D0016CDBC /* DeleteContentService.swift in Sources */,
 				0A234953227771550016CDBC /* WFolder.swift in Sources */,

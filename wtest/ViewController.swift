@@ -18,12 +18,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var backupFile: NSTextField!
     @IBOutlet weak var avatarImageView: NSImageView!
     @IBOutlet weak var printSettingsCheckBox: NSButton!
-    
+    @IBOutlet weak var compactDump: NSButton!
+
     var oauthswift: OAuthSwift?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        compactDump.state = .on
         loadDefaults()
         setAvatarImage()
     }
@@ -42,9 +43,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     /// Save text fiels values to keychain
     func saveDefaults() {
-        KeychainService.shared[.token]        = token.stringValue
-        KeychainService.shared[.backupFile]   = backupFile.stringValue
-        setAvatarImage()
+        KeychainService.shared[.backupFile] = backupFile.stringValue
+        if KeychainService.shared[.token] != token.stringValue {
+            KeychainService.shared[.token] = token.stringValue
+            setAvatarImage()
+        }
     }
     
     func controlTextDidEndEditing(_ obj: Notification) {
@@ -82,8 +85,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         )
     }
 
-    
-    
     @IBAction func authorizeButtonPress(_ sender: Any) {
         log("\nAuthorize\n")
         doOAuthWunderlist(clientId: APIKeys.shared.clientId,
@@ -99,8 +100,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBAction func DumpButtonPress(_ sender: Any) {
         log("\nDump content\n")
-        let dumpContent = DumpContent()
-        dumpContent.all()
+        if compactDump.state == .on {
+            let dumpContent = DumpContentComapact()
+            dumpContent.all()
+        } else {
+            let dumpContent = DumpContent()
+            dumpContent.all()
+        }
     }
 
     @IBAction func runtestsButtonPress(_ sender: Any) {
@@ -164,7 +170,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func setAvatarImage() {
-        guard !token.stringValue.isEmpty else {
+        guard KeychainService.shared[.token] != nil else {
             return
         }
         WAvatar.loadCurrent { image in
