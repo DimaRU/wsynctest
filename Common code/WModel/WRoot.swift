@@ -31,3 +31,11 @@ public static let mutableProperty: [PartialKeyPath<WRoot>:String] = [
     ]
 // sourcery:end
 }
+
+extension WRoot {
+    public init() {
+        id = 0
+        revision = 0
+        userId = 0
+    }
+}

@@ -101,7 +101,7 @@ class AppData {
 
 
     init(diskStore: DiskStore? = nil) {
-        root              = WRoot(id : 0, revision : 0)
+        root              = WRoot()
         memberships       = WObjectSetDictionary<WMembership>(diskStore)
         tasks             = WObjectSetDictionary<WTask>(diskStore)
         taskPositions     = WObjectSetDictionary<WTaskPosition>(diskStore)
