@@ -15,15 +15,13 @@ class WProvider {
     typealias RequestFuture = (target: WunderAPI, resolve: (Any) -> Void, reject: ErrorBlock)
 
     static let shared = WProvider()
-//    static var shared: WProvider = WProvider()
 
     static func endpointClosure(_ target: WunderAPI) -> Endpoint {
-        let endpoint = Endpoint(url: url(target),
-                                           sampleResponseClosure: { return target.stubbedNetworkResponse },
-                                           method: target.method,
-                                           task: target.task,
-                                           httpHeaderFields: target.headers)
-        return endpoint
+        return Endpoint(url: url(target),
+                        sampleResponseClosure: { return target.stubbedNetworkResponse },
+                        method: target.method,
+                        task: target.task,
+                        httpHeaderFields: target.headers)
     }
     
     static func DefaultProvider() -> MoyaProvider<WunderAPI> {
