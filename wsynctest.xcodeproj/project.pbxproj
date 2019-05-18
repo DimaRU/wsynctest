@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		005FC457B9FB3571F95CF615 /* Pods_wtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0993F94505715A1E039331 /* Pods_wtest.framework */; };
+		0A128990229013D700435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
+		0A128991229013DC00435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
+		0A1289952290140E00435677 /* WProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1289942290140D00435677 /* WProviderTests.swift */; };
+		0A1289972290144200435677 /* 25798-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A1289962290144200435677 /* 25798-dump.json */; };
+		0A128999229021BC00435677 /* ChechAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A128998229021BC00435677 /* ChechAppStore.swift */; };
 		0A234907227770E80016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B62277709C0016CDBC /* ViewController.swift */; };
 		0A234908227770F20016CDBC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B82277709C0016CDBC /* AppData.swift */; };
 		0A234909227770F20016CDBC /* AppDataSyncPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B92277709C0016CDBC /* AppDataSyncPull.swift */; };
@@ -166,6 +171,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A12898F229013D700435677 /* WDumpProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDumpProvider.swift; sourceTree = "<group>"; };
+		0A1289942290140D00435677 /* WProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WProviderTests.swift; sourceTree = "<group>"; };
+		0A1289962290144200435677 /* 25798-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25798-dump.json"; sourceTree = "<group>"; };
+		0A128998229021BC00435677 /* ChechAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChechAppStore.swift; sourceTree = "<group>"; };
 		0A234881227653EC0016CDBC /* wsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A234892227653ED0016CDBC /* wsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2348A3227654B40016CDBC /* wtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +346,8 @@
 				0A23498A227773850016CDBC /* AppDataSyncTests.swift */,
 				0A23498B227773850016CDBC /* AppDataTests.swift */,
 				0A234989227773850016CDBC /* DiskStoreTests.swift */,
+				0A1289942290140D00435677 /* WProviderTests.swift */,
+				0A128998229021BC00435677 /* ChechAppStore.swift */,
 				0A23498C227773850016CDBC /* Info.plist */,
 				0A23498D227773850016CDBC /* JSONTestSet */,
 			);
@@ -425,6 +436,7 @@
 				0A2348D32277709C0016CDBC /* WUploadService.swift */,
 				0A2348C52277709C0016CDBC /* WProvider.swift */,
 				0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */,
+				0A12898F229013D700435677 /* WDumpProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -501,6 +513,7 @@
 		0A23498D227773850016CDBC /* JSONTestSet */ = {
 			isa = PBXGroup;
 			children = (
+				0A1289962290144200435677 /* 25798-dump.json */,
 				0A23498E227773850016CDBC /* TestBackup.json */,
 			);
 			path = JSONTestSet;
@@ -700,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */,
+				0A1289972290144200435677 /* 25798-dump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,6 +954,7 @@
 				0A234937227771540016CDBC /* WUnreadActivityCount.swift in Sources */,
 				0A2349852277717E0016CDBC /* AppDelegate.swift in Sources */,
 				0A23496E2277715D0016CDBC /* Disk+Codable.swift in Sources */,
+				0A128990229013D700435677 /* WDumpProvider.swift in Sources */,
 				0A23494B227771540016CDBC /* CreateWObject.swift in Sources */,
 				0A234936227771540016CDBC /* WListPosition.swift in Sources */,
 				0A23490B227770F20016CDBC /* DiskStore.swift in Sources */,
@@ -971,6 +986,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */,
+				0A128999229021BC00435677 /* ChechAppStore.swift in Sources */,
+				0A1289952290140E00435677 /* WProviderTests.swift in Sources */,
 				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
 				0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */,
 				0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */,
@@ -1021,6 +1038,7 @@
 				0A23495E227771550016CDBC /* WNote.swift in Sources */,
 				0A234927227771460016CDBC /* APIKeys.swift in Sources */,
 				0A2349712277715E0016CDBC /* Disk+Errors.swift in Sources */,
+				0A128991229013DC00435677 /* WDumpProvider.swift in Sources */,
 				0A2349112277713A0016CDBC /* URLExtensions.swift in Sources */,
 				0A234952227771550016CDBC /* WUnreadActivityCount.swift in Sources */,
 				0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */,
