@@ -47,9 +47,7 @@ class WProviderTests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5)
-        let expectation1 = XCTestExpectation(description: "Load test dump data")
 
-        CheckAppStore.checkDataConsistency(appStore: appData, expectation: expectation1)
-        wait(for: [expectation1], timeout: 5)
+        CheckAppStore.compareAppData(appData: appData, wdump: wdump)
     }
 }

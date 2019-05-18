@@ -10,7 +10,7 @@ typealias ListId = Int
 
 class AppData {
     
-    struct WObjectSetDictionary<T: WObject> {
+    public struct WObjectSetDictionary<T: WObject> {
         var dictionary: [Int:Set<T>]
         private weak var diskStore: DiskStore?
 
@@ -44,7 +44,10 @@ class AppData {
         public mutating func load(parentId: Int) {
             dictionary[parentId] = diskStore?.load([T].self, parentId: parentId)
         }
-        
+
+        public var set: Set<T> {
+            return dictionary.reduce([], { $0.union($1.value) })
+        }
     }
     
     var diskStore: DiskStore?

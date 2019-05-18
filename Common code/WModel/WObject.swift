@@ -173,9 +173,8 @@ public extension Set where Element: WObject {
     }
     
     static func ==== (lhs: Set<Element>, rhs: Set<Element>) -> Bool {
-        let ids: [Int] = lhs.map{ $0.id }
-        for id in ids {
-            guard let lhsValue = lhs[id], let rhsValue = rhs[id], lhsValue ==== rhsValue else {
+        for lhsValue in lhs {
+            guard let rhsValue = rhs[lhsValue.id], lhsValue ==== rhsValue else {
                 return false
             }
         }
