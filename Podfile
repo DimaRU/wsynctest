@@ -3,11 +3,11 @@ platform :osx, '10.13'
 project 'wsynctest'
 
 def common_pods
-  pod 'Moya', '13.0.0'
+  pod 'Moya', '13.0.1'
   pod 'PromiseKit', '6.8.4'
   pod 'PromiseKit/Alamofire', '6.8.4'
   pod 'KeychainAccess', '3.2.0'
-  pod 'OAuthSwift', :git => 'https://github.com/OAuthSwift/OAuthSwift.git', :commit => '86b6d6d'
+  pod 'OAuthSwift', :git => 'https://github.com/DimaRU/OAuthSwift.git', :commit => 'f8ee2b1'
   pod 'Starscream', '3.1.0'
 end
 
