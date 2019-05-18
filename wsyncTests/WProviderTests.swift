@@ -6,24 +6,8 @@ import XCTest
 @testable import wsync
 
 class WProviderTests: XCTestCase {
-    func loadDump(resource: String) -> WDump {
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "\(resource)", withExtension: "json") else {
-            fatalError("Missing file: \(resource).json")
-        }
-        let json = try! Data(contentsOf: url)
-        let decoder = WJSONAbleCoders.decoder
-        do {
-            return try decoder.decode(WDump.self, from: json)
-        } catch {
-            XCTFail(error.localizedDescription)
-            return WDump()
-        }
-    }
-
-
     func testWProviderLoad() {
-        let wdump = loadDump(resource: "25798-dump")
+        let wdump = loadDump(for: type(of: self), resource: "25798-dump")
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump)
         let expectation = XCTestExpectation(description: "Fetch root")
         WAPI.getRoot()
@@ -36,18 +20,4 @@ class WProviderTests: XCTestCase {
         }
     }
 
-    func testWProviderPull() {
-        let wdump = loadDump(resource: "25798-dump")
-
-        WProvider.moya = WProvider.WDumpProvider(wdump: wdump)
-        let appData = AppData(diskStore: nil)
-        let appDataSync = AppDataSync(appData: appData)
-        let expectation = XCTestExpectation(description: "Sync pull")
-        appDataSync.pull() {
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5)
-
-        CheckAppStore.compareAppData(appData: appData, wdump: wdump)
-    }
 }

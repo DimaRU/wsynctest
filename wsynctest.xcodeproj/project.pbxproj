@@ -152,6 +152,9 @@
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
+		0AAD9CE822907E4C0036CA95 /* 25824-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE722907E4B0036CA95 /* 25824-dump.json */; };
+		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
+		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
 		0AF44A50228DD85A009694B4 /* WDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF44A4F228DD85A009694B4 /* WDump.swift */; };
@@ -268,6 +271,9 @@
 		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
+		0AAD9CE722907E4B0036CA95 /* 25824-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25824-dump.json"; sourceTree = "<group>"; };
+		0AAD9CE9229082B30036CA95 /* LoadDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDump.swift; sourceTree = "<group>"; };
+		0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPullTests.swift; sourceTree = "<group>"; };
 		0ADC186C228728ED005B07DD /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = wsynctest.xcworkspace/xcshareddata/IDETemplateMacros.plist; sourceTree = "<group>"; };
 		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -344,9 +350,11 @@
 			children = (
 				0A404EE52286225A0048E591 /* WObjectTests.swift */,
 				0A23498A227773850016CDBC /* AppDataSyncTests.swift */,
+				0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */,
 				0A23498B227773850016CDBC /* AppDataTests.swift */,
 				0A234989227773850016CDBC /* DiskStoreTests.swift */,
 				0A1289942290140D00435677 /* WProviderTests.swift */,
+				0AAD9CE9229082B30036CA95 /* LoadDump.swift */,
 				0A128998229021BC00435677 /* CheckAppStore.swift */,
 				0A23498C227773850016CDBC /* Info.plist */,
 				0A23498D227773850016CDBC /* JSONTestSet */,
@@ -514,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1289962290144200435677 /* 25798-dump.json */,
+				0AAD9CE722907E4B0036CA95 /* 25824-dump.json */,
 				0A23498E227773850016CDBC /* TestBackup.json */,
 			);
 			path = JSONTestSet;
@@ -714,6 +723,7 @@
 			files = (
 				0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */,
 				0A1289972290144200435677 /* 25798-dump.json in Resources */,
+				0AAD9CE822907E4C0036CA95 /* 25824-dump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,7 +999,9 @@
 				0A128999229021BC00435677 /* CheckAppStore.swift in Sources */,
 				0A1289952290140E00435677 /* WProviderTests.swift in Sources */,
 				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
+				0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */,
 				0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */,
+				0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */,
 				0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
