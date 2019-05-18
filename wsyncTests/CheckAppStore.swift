@@ -15,7 +15,7 @@ struct CheckAppStore {
         }
         XCTAssertEqual(exist, must, "Not equal: \(T.self), difference elements: \(exist.symmetricDifference(must))")
         XCTAssertTrue(exist ==== must, "Contents not equal")
-        must.forEach { XCTAssertTrue($0.syncState == .synced, "Not .synced state: \($0)") }
+        exist.forEach { XCTAssertTrue($0.syncState == .synced, "Not .synced state: \($0)") }
     }
 
     public static func compareAppData(appData: AppData, wdump: WDump) {

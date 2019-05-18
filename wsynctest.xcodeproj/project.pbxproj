@@ -11,7 +11,6 @@
 		0A128990229013D700435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
 		0A128991229013DC00435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
 		0A1289952290140E00435677 /* WProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1289942290140D00435677 /* WProviderTests.swift */; };
-		0A1289972290144200435677 /* 25798-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A1289962290144200435677 /* 25798-dump.json */; };
 		0A128999229021BC00435677 /* CheckAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A128998229021BC00435677 /* CheckAppStore.swift */; };
 		0A234907227770E80016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B62277709C0016CDBC /* ViewController.swift */; };
 		0A234908227770F20016CDBC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B82277709C0016CDBC /* AppData.swift */; };
@@ -151,7 +150,10 @@
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
-		0AAD9CE822907E4C0036CA95 /* 25824-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE722907E4B0036CA95 /* 25824-dump.json */; };
+		0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */; };
+		0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */; };
+		0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */; };
+		0A8FF5EB2290BD4D003C55D6 /* 25837-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E72290BD4C003C55D6 /* 25837-dump.json */; };
 		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
 		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
@@ -175,7 +177,6 @@
 /* Begin PBXFileReference section */
 		0A12898F229013D700435677 /* WDumpProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDumpProvider.swift; sourceTree = "<group>"; };
 		0A1289942290140D00435677 /* WProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WProviderTests.swift; sourceTree = "<group>"; };
-		0A1289962290144200435677 /* 25798-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25798-dump.json"; sourceTree = "<group>"; };
 		0A128998229021BC00435677 /* CheckAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStore.swift; sourceTree = "<group>"; };
 		0A234881227653EC0016CDBC /* wsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A234892227653ED0016CDBC /* wsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,7 +270,10 @@
 		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
-		0AAD9CE722907E4B0036CA95 /* 25824-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25824-dump.json"; sourceTree = "<group>"; };
+		0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25833-dump.json"; sourceTree = "<group>"; };
+		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
+		0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25830-dump.json"; sourceTree = "<group>"; };
+		0A8FF5E72290BD4C003C55D6 /* 25837-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25837-dump.json"; sourceTree = "<group>"; };
 		0AAD9CE9229082B30036CA95 /* LoadDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDump.swift; sourceTree = "<group>"; };
 		0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPullTests.swift; sourceTree = "<group>"; };
 		0ADC186C228728ED005B07DD /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = wsynctest.xcworkspace/xcshareddata/IDETemplateMacros.plist; sourceTree = "<group>"; };
@@ -519,8 +523,10 @@
 		0A23498D227773850016CDBC /* JSONTestSet */ = {
 			isa = PBXGroup;
 			children = (
-				0A1289962290144200435677 /* 25798-dump.json */,
-				0AAD9CE722907E4B0036CA95 /* 25824-dump.json */,
+				0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */,
+				0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */,
+				0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */,
+				0A8FF5E72290BD4C003C55D6 /* 25837-dump.json */,
 			);
 			path = JSONTestSet;
 			sourceTree = "<group>";
@@ -718,8 +724,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1289972290144200435677 /* 25798-dump.json in Resources */,
-				0AAD9CE822907E4C0036CA95 /* 25824-dump.json in Resources */,
+				0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */,
+				0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */,
+				0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */,
+				0A8FF5EB2290BD4D003C55D6 /* 25837-dump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
