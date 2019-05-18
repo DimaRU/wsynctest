@@ -209,7 +209,7 @@ extension WunderAPI {
     public var task: Task {
         switch self {
         case .avatar(let userId):
-            return .requestParameters(parameters: ["user_id" : userId], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["user_id" : userId], encoding: WunderAPI.urlEncoding)
         case .root,
              .unreadActivityCounts,
              .user:
@@ -239,16 +239,16 @@ extension WunderAPI {
                     params["completed_tasks"] = completed
                 }
             }
-            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            return .requestParameters(parameters: params, encoding: WunderAPI.urlEncoding)
         case .loadRevisionsByTaskId( _, let taskId),
              .loadWObjectByTaskId( _, let taskId):
-            return .requestParameters(parameters: ["task_id" : taskId], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["task_id" : taskId], encoding: WunderAPI.urlEncoding)
         case .createWObject( _, let params):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .updateWObject( _, _, let params):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .deleteWObject( _,  _, let revision):
-            return .requestParameters(parameters: ["revision" : revision], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["revision" : revision], encoding: WunderAPI.urlEncoding)
         case .loadWObject,
              .loadWObjectById,
              .loadRevisions:
