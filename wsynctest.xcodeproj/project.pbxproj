@@ -139,7 +139,6 @@
 		0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23498A227773850016CDBC /* AppDataSyncTests.swift */; };
 		0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23498B227773850016CDBC /* AppDataTests.swift */; };
 		0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A234989227773850016CDBC /* DiskStoreTests.swift */; };
-		0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A23498E227773850016CDBC /* TestBackup.json */; };
 		0A2349F32277765D0016CDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E62277765C0016CDBC /* Assets.xcassets */; };
 		0A2349F42277765D0016CDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2349E72277765C0016CDBC /* Main.storyboard */; };
 		0A2349F62277765D0016CDBC /* DumpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EA2277765C0016CDBC /* DumpContent.swift */; };
@@ -256,7 +255,6 @@
 		0A23498A227773850016CDBC /* AppDataSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSyncTests.swift; sourceTree = "<group>"; };
 		0A23498B227773850016CDBC /* AppDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTests.swift; sourceTree = "<group>"; };
 		0A23498C227773850016CDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A23498E227773850016CDBC /* TestBackup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestBackup.json; sourceTree = "<group>"; };
 		0A2349DF227775FA0016CDBC /* SourceryStart.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = SourceryStart.sh; sourceTree = "<group>"; };
 		0A2349E1227775FA0016CDBC /* WObject.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = WObject.stencil; sourceTree = "<group>"; };
 		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../wutest/wutest/MyPlayground.playground; sourceTree = "<group>"; };
@@ -523,7 +521,6 @@
 			children = (
 				0A1289962290144200435677 /* 25798-dump.json */,
 				0AAD9CE722907E4B0036CA95 /* 25824-dump.json */,
-				0A23498E227773850016CDBC /* TestBackup.json */,
 			);
 			path = JSONTestSet;
 			sourceTree = "<group>";
@@ -721,7 +718,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2349B8227773DB0016CDBC /* TestBackup.json in Resources */,
 				0A1289972290144200435677 /* 25798-dump.json in Resources */,
 				0AAD9CE822907E4C0036CA95 /* 25824-dump.json in Resources */,
 			);

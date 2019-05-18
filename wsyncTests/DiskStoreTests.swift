@@ -10,22 +10,13 @@ import XCTest
 @testable import wsync
 
 class DiskStoreTests: XCTestCase {
-    var wbackup: WBackup!
+    var wdump: WDump!
     var diskStore: DiskStore!
     
     override func setUp() {
         super.setUp()
-        
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "TestBackup", withExtension: "json") else {
-            XCTFail("Missing file: TestBackup")
-            return
-        }
-        
-        let json = try! Data(contentsOf: url)
-        let decoder = WJSONAbleCoders.decoder
 
-        wbackup = try! decoder.decode(WBackup.self, from: json)
+        wdump = loadDump(for: type(of: self), resource: "25798-dump")
         diskStore = DiskStore(filePath: "logs/testStore/", directory: .developer)
 
     }
@@ -35,8 +26,8 @@ class DiskStoreTests: XCTestCase {
     }
     
     func testJsonLoaded() {
-        XCTAssertEqual(wbackup.user, 41027896)
-        XCTAssertEqual(wbackup.data.lists.count, 4)
+        XCTAssertEqual(wdump.root.userId, 41027896)
+        XCTAssertEqual(wdump.lists.count, 2)
     }
 
     func testPersistSingle() {
@@ -55,7 +46,7 @@ class DiskStoreTests: XCTestCase {
     }
 
     func testPersistSet() {
-        let lists = Set<WList>(wbackup.data.lists)
+        let lists = wdump.lists
         
         diskStore.persist(lists)
         diskStore.persistQueue.sync(flags: .barrier) {}
@@ -68,7 +59,7 @@ class DiskStoreTests: XCTestCase {
     }
 
     func testPersistChildSet() {
-        let tasks = Set<WTask>(wbackup.data.tasks)
+        let tasks = wdump.tasks
         let parentId = tasks.first!.listId
         
         diskStore.persist(tasks, parentId: parentId)
