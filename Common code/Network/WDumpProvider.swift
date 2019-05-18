@@ -21,15 +21,15 @@ extension WProvider {
                 } else {
                     data = nil
                 }
-            case .loadWObjectByTaskId(let type , let taskId):
-                if type is TaskChild {
+            case .loadWObjectByTaskId(_ , let taskId):
+                if wobjectSet.first is TaskChild {
                     let subset = wobjectSet.filter{ ($0 as! TaskChild).taskId == taskId }
                     data = try! encoder.encode(subset)
                 } else {
                     fatalError()
                 }
-            case .loadWObjectByListId(let type, let listId, let completed):
-                switch type {
+            case .loadWObjectByListId(_ , let listId, let completed):
+                switch wobjectSet.first {
                 case is WTask.Type:
                     let subset = wobjectSet.filter{ ($0 as! WTask).listId == listId && ($0 as! WTask).completed == completed }
                     data = try! encoder.encode(subset)
@@ -45,16 +45,16 @@ extension WProvider {
             case .loadRevisions:
                 let revisions = wobjectSet.map{ WRevision(storedSyncState: nil, id: $0.id, revision: $0.revision, type: .init(revisionType: T.self))}
                 data = try! encoder.encode(revisions)
-            case .loadRevisionsByTaskId(let type , let taskId):
-                if type is TaskChild {
+            case .loadRevisionsByTaskId(_ , let taskId):
+                if wobjectSet.first is TaskChild {
                     let subset = wobjectSet.filter{ ($0 as! TaskChild).taskId == taskId }
                         .map{ WRevision(storedSyncState: nil, id: $0.id, revision: $0.revision, type: .init(revisionType: T.self))}
                     data = try! encoder.encode(subset)
                 } else {
                     fatalError()
                 }
-            case .loadRevisionsByListId(let type , let listId, let completed):
-                switch type {
+            case .loadRevisionsByListId(_ , let listId, let completed):
+                switch wobjectSet.first {
                 case is WTask.Type:
                     let subset = wobjectSet.filter{ ($0 as! WTask).listId == listId && ($0 as! WTask).completed == completed }
                     data = try! encoder.encode(subset)

@@ -60,8 +60,7 @@ struct CheckAppStore {
         }
     }
 
-    static func checkDataConsistency(appStore: AppData) {
-        let expectation = XCTestExpectation(description: "Load test dump data")
+    static func checkDataConsistency(appStore: AppData, expectation: XCTestExpectation) {
 
         WAPI.getRoot()
             .then { (root: WRoot) -> Promise<Set<WUser>> in

@@ -80,7 +80,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         guard appDataStore != nil else { return }
         log("Start pull data")
         let appDataSync = AppDataSync(appData: appDataStore)
-        appDataSync.pull()
+        appDataSync.pull {}
     }
 
     @IBAction func clearStoreButtonPress(_ sender: NSButton) {

@@ -42,7 +42,14 @@ class WProviderTests: XCTestCase {
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump)
         let appData = AppData(diskStore: nil)
         let appDataSync = AppDataSync(appData: appData)
-        appDataSync.pull()
-        CheckAppStore.checkDataConsistency(appStore: appData)
+        let expectation = XCTestExpectation(description: "Sync pull")
+        appDataSync.pull() {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+        let expectation1 = XCTestExpectation(description: "Load test dump data")
+
+        CheckAppStore.checkDataConsistency(appStore: appData, expectation: expectation1)
+        wait(for: [expectation1], timeout: 5)
     }
 }

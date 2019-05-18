@@ -212,7 +212,7 @@ extension AppDataSync {
     }
     
     
-    public func pull() {
+    public func pull(completion: @escaping () -> Void) {
         var newRoot: WRoot!
         firstly {
             WAPI.getRoot()
@@ -244,6 +244,9 @@ extension AppDataSync {
             }.ensure {
                 if self.syncState == .pull {
                     self.syncState = .idle
+                }
+                DispatchQueue.main.async {
+                    completion()
                 }
             }.catch { (error) -> Void in
                 log("Sync error", color: .red)
