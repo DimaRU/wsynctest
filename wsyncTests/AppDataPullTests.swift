@@ -26,6 +26,21 @@ class AppDataPullTests: XCTestCase {
         let appDataSync = AppDataSync(appData: appData)
 
         pull(from: "25798-dump", appDataSync: appDataSync)
+
+    }
+
+    func testPull2() {
+        let appData = AppData(diskStore: nil)
+        let appDataSync = AppDataSync(appData: appData)
+
+        pull(from: "25824-dump", appDataSync: appDataSync)
+    }
+
+    func testPull3() {
+        let appData = AppData(diskStore: nil)
+        let appDataSync = AppDataSync(appData: appData)
+
+        pull(from: "25798-dump", appDataSync: appDataSync)
         pull(from: "25824-dump", appDataSync: appDataSync)
     }
 
