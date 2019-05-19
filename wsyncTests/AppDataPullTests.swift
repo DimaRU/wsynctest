@@ -24,7 +24,7 @@ class AppDataPullTests: XCTestCase {
         appDataSync.pull() {
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 5000)
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump)
     }
 
@@ -38,18 +38,18 @@ class AppDataPullTests: XCTestCase {
         pull(from: "25835-dump", appDataSync: appDataSync)
     }
     func testPull4() {
-        pull(from: "25837-dump", appDataSync: appDataSync)
+        pull(from: "25847-dump", appDataSync: appDataSync)
     }
 
     func testPullByStep() {
         pull(from: "25830-dump", appDataSync: appDataSync)
         pull(from: "25833-dump", appDataSync: appDataSync)
         pull(from: "25835-dump", appDataSync: appDataSync)
-        pull(from: "25837-dump", appDataSync: appDataSync)
+        pull(from: "25847-dump", appDataSync: appDataSync)
     }
 
     func testPullThru() {
         pull(from: "25830-dump", appDataSync: appDataSync)
-        pull(from: "25837-dump", appDataSync: appDataSync)
+        pull(from: "25847-dump", appDataSync: appDataSync)
     }
 }

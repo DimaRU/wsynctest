@@ -83,7 +83,7 @@ public extension WObject {
     static func ==== (lhs: Self, rhs: Self) -> Bool {
         for (path, key) in Self.storedProperty {
             if "\(lhs[keyPath: path])" != "\(rhs[keyPath: path])" {
-                print("Not equal:", key)
+                print("\(lhs.type):\(lhs.id) Not equal:", key, "\(lhs[keyPath: path]) != \(rhs[keyPath: path])")
                 return false
             }
         }
