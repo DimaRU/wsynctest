@@ -77,7 +77,7 @@ struct PrintContent {
             ).wait()
             
             let (reminders, notes, comments, commentsStates) = try when(fulfilled:
-                WAPI.get(WReminder.self, listId: list.id, completed: completed),
+                WAPI.get(WReminder.self),
                 WAPI.get(WNote.self, listId: list.id, completed: completed),
                 WAPI.get(WTaskComment.self, listId: list.id, completed: completed),
                 WAPI.get(WTaskCommentsState.self, listId: list.id, completed: completed)
