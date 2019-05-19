@@ -176,10 +176,7 @@ extension AppData {
         taskPositions[listId] = []
         memberships[listId] = []
     }
-}
 
-// MARK: External accessors
-extension AppData {
     private func updateObject<T: WObject>(_ wobject: T){
         switch wobject {
         case let listChild as ListChild:
@@ -195,7 +192,10 @@ extension AppData {
             self[keyPath: path].update(with: wobject)
         }
     }
+}
 
+// MARK: External accessors
+extension AppData {
     public func update<T: WObject>(modified wobject: T){
         var modified = wobject
         modified.storedSyncState = .modified
