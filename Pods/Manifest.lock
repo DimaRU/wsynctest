@@ -28,7 +28,7 @@ DEPENDENCIES:
   - OAuthSwift (from `https://github.com/DimaRU/OAuthSwift.git`, commit `f8ee2b1`)
   - PromiseKit (= 6.8.4)
   - PromiseKit/Alamofire (= 6.8.4)
-  - Starscream (= 3.1.0)
+  - Starscream (from `https://github.com/DimaRU/Starscream.git`, commit `1dc60d8`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,7 +37,6 @@ SPEC REPOS:
     - Moya
     - PromiseKit
     - Result
-    - Starscream
 
 EXTERNAL SOURCES:
   Keys:
@@ -45,11 +44,17 @@ EXTERNAL SOURCES:
   OAuthSwift:
     :commit: f8ee2b1
     :git: https://github.com/DimaRU/OAuthSwift.git
+  Starscream:
+    :commit: 1dc60d8
+    :git: https://github.com/DimaRU/Starscream.git
 
 CHECKOUT OPTIONS:
   OAuthSwift:
     :commit: f8ee2b1
     :git: https://github.com/DimaRU/OAuthSwift.git
+  Starscream:
+    :commit: 1dc60d8
+    :git: https://github.com/DimaRU/Starscream.git
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -61,6 +66,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
 
-PODFILE CHECKSUM: 4e9dac756102449dd3bc883615b17733c3794a26
+PODFILE CHECKSUM: 097bea9f839172ecd80e511defde32157c5b2dd8
 
 COCOAPODS: 1.6.2

@@ -8,7 +8,7 @@ def common_pods
   pod 'PromiseKit/Alamofire', '6.8.4'
   pod 'KeychainAccess', '3.2.0'
   pod 'OAuthSwift', :git => 'https://github.com/DimaRU/OAuthSwift.git', :commit => 'f8ee2b1'
-  pod 'Starscream', '3.1.0'
+  pod 'Starscream', :git => 'https://github.com/DimaRU/Starscream.git', :commit => '1dc60d8'
 end
 
 target 'wsync' do
