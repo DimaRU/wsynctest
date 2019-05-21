@@ -11,21 +11,21 @@ import XCTest
 
 class AppDataTests: XCTestCase {
 
-    var wbackup: WBackup!
+    var wdump: WDump!
     
     override func setUp() {
         super.setUp()
         
         let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "TestBackup", withExtension: "json") else {
-            XCTFail("Missing file: TestBackup")
+        guard let url = bundle.url(forResource: "25830-dump", withExtension: "json") else {
+            XCTFail("Missing file: 25830-dump.json")
             return
         }
 
         let json = try! Data(contentsOf: url)
         let decoder = WJSONAbleCoders.decoder
 
-        wbackup = try! decoder.decode(WBackup.self, from: json)
+        wdump = try! decoder.decode(WDump.self, from: json)
 
     }
     
@@ -43,13 +43,13 @@ class AppDataTests: XCTestCase {
     func testJsonLoaded() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(wbackup.user, 41027896)
-        XCTAssertEqual(wbackup.data.lists.count, 4)
+        XCTAssertEqual(wdump.root.userId, 41027896)
+        XCTAssertEqual(wdump.lists.count, 4)
     }
     
     func testSetGetLists() {
         let appData = AppData()
-        let lists = Set<WList>(wbackup.data.lists)
+        let lists = Set<WList>(wdump.lists)
         
         appData.lists = lists
         XCTAssertEqual(appData.lists.count, 4, "bad appData list count")
@@ -61,7 +61,7 @@ class AppDataTests: XCTestCase {
     
     func testSetGetTasks() {
         let appData = AppData()
-        let tasks = Set<WTask>(wbackup.data.tasks)
+        let tasks = Set<WTask>(wdump.tasks)
         
         appData.tasks[1] = tasks
         let tasksNew = appData.tasks[1]
@@ -72,7 +72,7 @@ class AppDataTests: XCTestCase {
     
     func testUpdateNewWObjectSet() {
         let appData = AppData()
-        let tasks = Set<WTask>(wbackup.data.tasks)
+        let tasks = Set<WTask>(wdump.tasks)
 
         let updatedTask = tasks.first!
         let parentId = updatedTask.listId
@@ -83,7 +83,7 @@ class AppDataTests: XCTestCase {
 
     func testUpdateWObjectSet() {
         let appData = AppData()
-        let tasks = Set<WTask>(wbackup.data.tasks)
+        let tasks = Set<WTask>(wdump.tasks)
 
         var updatedTask = tasks.first!
         let parentId = updatedTask.listId
@@ -98,7 +98,7 @@ class AppDataTests: XCTestCase {
     
     func testAppDataUpdate() {
         let appData = AppData()
-        let tasks = Set<WTask>(wbackup.data.tasks)
+        let tasks = Set<WTask>(wdump.tasks)
         
         var updatedTask = tasks.first!
         let parentId = updatedTask.listId
