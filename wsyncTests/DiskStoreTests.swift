@@ -16,7 +16,7 @@ class DiskStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        wdump = loadDump(for: type(of: self), resource: "25798-dump")
+        wdump = loadDump(for: type(of: self), resource: "25830-dump")
         diskStore = DiskStore(filePath: "logs/testStore/", directory: .developer)
 
     }
@@ -26,8 +26,9 @@ class DiskStoreTests: XCTestCase {
     }
     
     func testJsonLoaded() {
+        print(wdump.root, wdump.lists.count)
         XCTAssertEqual(wdump.root.userId, 41027896)
-        XCTAssertEqual(wdump.lists.count, 2)
+        XCTAssertEqual(wdump.lists.count, 4)
     }
 
     func testPersistSingle() {
