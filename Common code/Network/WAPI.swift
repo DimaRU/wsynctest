@@ -47,8 +47,8 @@ struct WAPI {
         return WProvider.shared.request(WunderAPI.loadRevisionsByTaskId(type: type, taskId: taskId))
     }
     
-    static func create<T: WObject>(_ type: T.Type, params: [String:Any]) -> Promise<T> {
-        return WProvider.shared.request(WunderAPI.createWObject(type: type, params: params))
+    static func create<T: WObject>(_ type: T.Type, params: [String:Any], requestId: String) -> Promise<T> {
+        return WProvider.shared.request(WunderAPI.createWObject(type: type, params: params, requestId: requestId))
     }
     
     static func update<T: WObject>(_ type: T.Type, id: Int, params: [String:Any]) -> Promise<T> {
@@ -68,7 +68,7 @@ struct WAPI {
 
     static func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
         let params = wobject.createParams()
-        let newObjbect = WAPI.create(T.self, params: params)
+        let newObjbect = WAPI.create(T.self, params: params, requestId: UUID().uuidString.lowercased())
         
         log("\(T.typeName()) created")
         return newObjbect
