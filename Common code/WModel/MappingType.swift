@@ -107,8 +107,67 @@ public enum MappingType: String, Codable {
             return WRevision.self
         }
     }
-    
-    init(object: JSONAble.Type) {
+
+    var revisionableClass: Revisionable.Type {
+        switch self {
+        case .Feature:
+            return WFeature.self
+        case .File:
+            return WFile.self
+        case .Folder:
+            return WFolder.self
+        case .List:
+            return WList.self
+        case .ListPosition:
+            return WListPosition.self
+        case .Membership,
+             .ListMembership:
+            return WMembership.self
+        case .Note:
+            return WNote.self
+        case .Reminder:
+            return WReminder.self
+        case .Root:
+            return WRoot.self
+        case .Setting:
+            return WSetting.self
+        case .Subtask:
+            return WSubtask.self
+        case .SubtaskPosition:
+            return WSubtaskPosition.self
+        case .Task:
+            return WTask.self
+        case .TaskComment:
+            return WTaskComment.self
+        case .TaskCommentsState:
+            return WTaskCommentsState.self
+        case .TaskPosition:
+            return WTaskPosition.self
+        case .User:
+            return WUser.self
+        case .SettingRevision,
+             .FolderRevision,
+             .ListRevision,
+             .TaskRevision,
+             .SubtaskRevision,
+             .ListPositionRevision,
+             .TaskPositionRevision,
+             .FileRevision,
+             .NoteRevision,
+             .TaskCommentRevision,
+             .ReminderRevision,
+             .SubtaskPositionRevision,
+             .TaskCommentsStateRevision,
+             .FeatureRevision,
+             .MembershipRevision,
+             .UserRevision:
+            return WRevision.self
+        default:
+            fatalError()
+        }
+    }
+
+    init(object: Revisionable.Type) {
         switch object {
         case is WFeature.Type              : self = .Feature
         case is WFile.Type                 : self = .File
@@ -131,7 +190,7 @@ public enum MappingType: String, Codable {
         }
     }
     
-    init(revisionType type: JSONAble.Type) {
+    init(revisionType type: Revisionable.Type) {
         switch type {
         case is WFeature.Type              : self = .FeatureRevision
         case is WFile.Type                 : self = .FileRevision

@@ -13,7 +13,7 @@ struct TestService {
 
     func createList(title: String) throws -> WList {
         let listProto = WList.init(title: title)
-        let list = try WAPI.create(from: listProto).wait()
+        let list = try create(from: listProto).wait()
         log("List created:")
         PrintContent.wprint(list)
         return list
@@ -21,7 +21,7 @@ struct TestService {
     
     func createTask(title: String, for listId: Int, starred: Bool = false) throws -> WTask {
         let taskProto = WTask.init(listId: listId, title: title, starred: starred)
-        let task = try WAPI.create(from: taskProto).wait()
+        let task = try create(from: taskProto).wait()
         log("Task created:")
         PrintContent.wprint(task)
         return task
@@ -29,7 +29,7 @@ struct TestService {
     
     func createSubtask(title: String, for taskId: Int) throws -> WSubtask {
         let subtaskProto = WSubtask.init(taskId: taskId, title: title)
-        let subtask = try WAPI.create(from: subtaskProto).wait()
+        let subtask = try create(from: subtaskProto).wait()
         log("Subtask created:")
         PrintContent.wprint([subtask], for: taskId)
         return subtask
@@ -68,7 +68,7 @@ struct TestService {
         list = try createList(title: "Test list")
         var newList = list
         newList.title = "Test list new title"
-        list = try WAPI.update(from: list, to: newList).wait()
+        list = try update(from: list, to: newList).wait()
         try delete(list)
     }
 
@@ -80,13 +80,13 @@ struct TestService {
         task = try createTask(title: "Test task", for: list.id)
         var new = task
         new.title = "Test task new title"
-        task = try WAPI.update(from: task, to: new).wait()
+        task = try update(from: task, to: new).wait()
         new = task
         new.starred = true
-        task = try WAPI.update(from: task, to: new).wait()
+        task = try update(from: task, to: new).wait()
         new = task
         new.completed = true
-        task = try WAPI.update(from: task, to: new).wait()
+        task = try update(from: task, to: new).wait()
 
         try delete(task)
         list = try WAPI.get(WList.self, id: list.id).wait()
@@ -104,10 +104,10 @@ struct TestService {
         subtask = try createSubtask(title: "Test subtask", for: task.id)
         var new = subtask
         new.title = "Test subtask new title"
-        subtask = try WAPI.update(from: subtask, to: new).wait()
+        subtask = try update(from: subtask, to: new).wait()
         new = subtask
         subtask.completed = true
-        subtask = try WAPI.update(from: subtask, to: new).wait()
+        subtask = try update(from: subtask, to: new).wait()
         try delete(subtask)
         
         task = try WAPI.get(WTask.self, id: task.id).wait()
@@ -133,7 +133,7 @@ struct TestService {
         
         let commentText = "Test comment"
         let commentProto = WTaskComment.init(taskId: task.id, text: commentText)
-        let comment = try WAPI.create(from: commentProto).wait()
+        let comment = try create(from: commentProto).wait()
         let commentState = try WAPI.get(WTaskCommentsState.self, taskId: task.id).wait()
         PrintContent.wprint([comment], commentState, for: task.id)
         try! delete(comment)
@@ -142,6 +142,19 @@ struct TestService {
         try delete(task)
         list = try WAPI.get(WList.self, id: list.id).wait()
         try delete(list)
+    }
+
+    func update<T: WObject>(from: T, to: T) -> Promise<T> {
+        assert(from.id == to.id, "Update object id is't equal")
+        let params = to.updateParams(from: from)
+        log("Update \(T.typeName()), id: \(from.id) revision: \(from.revision) params: \(params)")
+        return WAPI.update(T.self, id: from.id, params: params)
+    }
+
+    func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
+        let params = wobject.createParams()
+        log("\(T.typeName()) created")
+        return WAPI.create(T.self, params: params, requestId: UUID().uuidString.lowercased())
     }
 
 

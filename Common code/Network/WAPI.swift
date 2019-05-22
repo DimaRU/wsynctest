@@ -55,24 +55,7 @@ struct WAPI {
         return WProvider.shared.request(WunderAPI.updateWObject(type: type, id: id, params: params))
     }
     
-    static func delete<T: WObject>(_ type: T.Type, id: Int, revision: Int) -> Promise<Void> {
+    static func delete(_ type: Revisionable.Type, id: Int, revision: Int) -> Promise<Void> {
         return WProvider.shared.request(WunderAPI.deleteWObject(type: type, id: id, revision: revision))
     }
-    
-    static func update<T: WObject>(from: T, to: T) -> Promise<T> {
-        assert(from.id == to.id, "Update object id is't equal")
-        let params = to.updateParams(from: from)
-        log("Update \(T.typeName()), id: \(from.id) revision: \(from.revision) params: \(params)")
-        return WAPI.update(T.self, id: from.id, params: params)
-    }
-
-    static func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
-        let params = wobject.createParams()
-        let newObjbect = WAPI.create(T.self, params: params, requestId: UUID().uuidString.lowercased())
-        
-        log("\(T.typeName()) created")
-        return newObjbect
-    }
-
-    
 }
