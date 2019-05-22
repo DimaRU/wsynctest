@@ -85,7 +85,7 @@ class AppData {
      var taskComments: WObjectSetDictionary<WTaskComment>
     
     
-    static let keyPathSet: [String: PartialKeyPath<AppData>] = [
+    private static let keyPathSet: [String: PartialKeyPath<AppData>] = [
         WUser.typeName(): \AppData.users,
         WFolder.typeName(): \AppData.folders,
         WList.typeName(): \AppData.lists,
@@ -102,6 +102,26 @@ class AppData {
         WTaskComment.typeName(): \AppData.taskComments
     ]
 
+    private func keyPath<T: WObject>(_ type: T.Type) -> PartialKeyPath<AppData> {
+        switch type {
+            case is WUser.Type: return \AppData.users
+            case is WFolder.Type: return \AppData.folders
+            case is WList.Type: return \AppData.lists
+            case is WListPosition.Type: return \AppData.listPositions
+            case is WMembership.Type: return \AppData.memberships
+            case is WSetting.Type: return \AppData.settings
+            case is WTask.Type: return \AppData.tasks
+            case is WTaskPosition.Type: return \AppData.taskPositions
+            case is WSubtask.Type: return \AppData.subtasks
+            case is WSubtaskPosition.Type: return \AppData.subtaskPositions
+            case is WNote.Type: return \AppData.notes
+            case is WFile.Type: return \AppData.files
+            case is WReminder.Type: return \AppData.reminders
+            case is WTaskComment.Type: return \AppData.taskComments
+        default:
+            fatalError()
+        }
+    }
 
     init(diskStore: DiskStore? = nil) {
         root              = WRoot()
@@ -184,14 +204,14 @@ extension AppData {
         switch wobject {
         case let listChild as ListChild:
             let parentId = listChild.listId
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
             self[keyPath: path][parentId].update(with: wobject)
         case let taskChild as TaskChild:
             let parentId = taskChild.taskId
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
             self[keyPath: path][parentId].update(with: wobject)
         default:
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
             self[keyPath: path].update(with: wobject)
         }
     }
@@ -200,15 +220,56 @@ extension AppData {
         switch wobject {
         case let listChild as ListChild:
             let parentId = listChild.listId
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
             return self[keyPath: path][parentId][wobject.id]
         case let taskChild as TaskChild:
             let parentId = taskChild.taskId
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
             return self[keyPath: path][parentId][wobject.id]
         default:
-            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
             return self[keyPath: path][wobject.id]
+        }
+    }
+
+    func replaceObject<T: WObject>(wobject: T, to: T) {
+        switch wobject {
+        case let listChild as ListChild:
+            let parentId = listChild.listId
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            self[keyPath: path][parentId].remove(wobject)
+            self[keyPath: path][parentId].update(with: to)
+        case let taskChild as TaskChild:
+            let parentId = taskChild.taskId
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            self[keyPath: path][parentId].remove(wobject)
+            self[keyPath: path][parentId].update(with: to)
+        default:
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
+            self[keyPath: path].remove(wobject)
+            self[keyPath: path].update(with: to)
+        }
+    }
+
+    func deleteObject<T: WObject>(wobject: T) {
+        switch wobject {
+        case let list as WList:
+            lists.remove(list)
+            removeListLeaf(listId: list.id)
+        case let task as WTask:
+            tasks.remove(parentId: task.listId, id: task.id)
+            removeTaskLeaf(taskId: task.id)
+        case let listChild as ListChild:
+            let parentId = listChild.listId
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            self[keyPath: path][parentId].remove(wobject)
+        case let taskChild as TaskChild:
+            let parentId = taskChild.taskId
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            self[keyPath: path][parentId].remove(wobject)
+        default:
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
+            self[keyPath: path].remove(wobject)
         }
     }
 }

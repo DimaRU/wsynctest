@@ -22,7 +22,8 @@ public struct Queue<T: Codable> {
     public mutating func enqueue(_ element: T) {
         array.append(element)
     }
-    
+
+    @discardableResult
     public mutating func dequeue() -> T? {
         if isEmpty {
             return nil
