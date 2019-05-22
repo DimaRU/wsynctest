@@ -11,9 +11,8 @@ public enum WSyncState: String, Codable {
     case deleted
 }
 
-public protocol WObject: JSONAble, Hashable {
+public protocol WObject: Revisionable, Hashable {
     var storedSyncState: WSyncState? { get set }
-    var revision: Int { get }
     static var storedProperty: [PartialKeyPath<Self>:String] { get }
     static var mutableProperty: [PartialKeyPath<Self>:String] { get }
 }

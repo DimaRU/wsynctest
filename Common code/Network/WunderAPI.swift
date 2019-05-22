@@ -25,20 +25,20 @@ public enum WunderAPI: TargetType {
     case upload(fileName: String, fileSize: Int, contentType: String)
     case uploadFinish(uploadId: Int)
 
-    case loadWObject(type: JSONAble.Type)
-    case loadWObjectById(type: JSONAble.Type, id: Int)
-    case loadWObjectByTaskId(type: JSONAble.Type, taskId: Int)
-    case loadWObjectByListId(type: JSONAble.Type, listId: Int, completed: Bool)
+    case loadWObject(type: Revisionable.Type)
+    case loadWObjectById(type: Revisionable.Type, id: Int)
+    case loadWObjectByTaskId(type: Revisionable.Type, taskId: Int)
+    case loadWObjectByListId(type: Revisionable.Type, listId: Int, completed: Bool)
 
-    case loadRevisions(type: JSONAble.Type)
-    case loadRevisionsByTaskId(type: JSONAble.Type, taskId: Int)
-    case loadRevisionsByListId(type: JSONAble.Type, listId: Int, completed: Bool)
+    case loadRevisions(type: Revisionable.Type)
+    case loadRevisionsByTaskId(type: Revisionable.Type, taskId: Int)
+    case loadRevisionsByListId(type: Revisionable.Type, listId: Int, completed: Bool)
 
-    case createWObject(type: JSONAble.Type, params: [String: Any], requestId: String)
-    case updateWObject(type: JSONAble.Type, id: Int, params: [String: Any])
-    case deleteWObject(type: JSONAble.Type, id: Int, revision: Int)
+    case createWObject(type: Revisionable.Type, params: [String: Any], requestId: String)
+    case updateWObject(type: Revisionable.Type, id: Int, params: [String: Any])
+    case deleteWObject(type: Revisionable.Type, id: Int, revision: Int)
     
-    func requestPath(type: JSONAble.Type) -> String {
+    func requestPath(type: Revisionable.Type) -> String {
         switch type {
         case is WFeature.Type              : return "features"
         case is WFile.Type                 : return "files"
@@ -60,7 +60,7 @@ public enum WunderAPI: TargetType {
         }
     }
 
-    func requestRevisionsPath(type: JSONAble.Type) -> String {
+    func requestRevisionsPath(type: Revisionable.Type) -> String {
         switch type {
         case is WFeature.Type              : return "feature_revisions"
         case is WFile.Type                 : return "file_revisions"

@@ -32,7 +32,7 @@ struct WMutatedService {
     }
     
     
-    static func decodeData(_ type: MappingType, from data: Data) -> JSONAble? {
+    static func decodeData(_ type: MappingType, from data: Data) -> Revisionable? {
         let decoder = WJSONAbleCoders.decoder
         
         do {
@@ -95,7 +95,7 @@ struct WMutatedService {
         
         switch operation {
         case .create:
-            if let object: JSONAble = WMutatedService.decodeData(mappingType, from: objectData) {
+            if let object = WMutatedService.decodeData(mappingType, from: objectData) {
                 print(object)
             }
         case .update:

@@ -6,9 +6,9 @@
 import Foundation
 
 public enum WRequest {
-    case create(object: JSONAble)
-    case delete(object: JSONAble)
-    case modify(object: JSONAble, modified: JSONAble)
+    case create(object: Revisionable)
+    case delete(object: Revisionable)
+    case modify(object: Revisionable, modified: Revisionable)
 
     enum CodingKeys: String, CodingKey {
         case create
@@ -80,7 +80,7 @@ extension KeyedEncodingContainer {
 }
 
 extension KeyedDecodingContainer {
-    func decodeWobject(keyedBy type: K.Type, forKey key: K, typeKey: K) throws -> JSONAble {
+    func decodeWobject(keyedBy type: K.Type, forKey key: K, typeKey: K) throws -> Revisionable {
         let objContainer = try nestedContainer(keyedBy: type, forKey: key)
         let mappingType = try objContainer.decode(MappingType.self, forKey: typeKey)
         switch mappingType {
