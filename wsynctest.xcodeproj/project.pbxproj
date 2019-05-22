@@ -157,7 +157,7 @@
 		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
 		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0ABD385D2294838200FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
-		0ABD386122948FD800FAAA74 /* WrequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD386022948FD800FAAA74 /* WrequestTests.swift */; };
+		0ABD386122948FD800FAAA74 /* WRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD386022948FD800FAAA74 /* WRequestTests.swift */; };
 		0ABD38622294923E00FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
 		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
@@ -280,7 +280,7 @@
 		0AAD9CE9229082B30036CA95 /* LoadDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDump.swift; sourceTree = "<group>"; };
 		0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPullTests.swift; sourceTree = "<group>"; };
 		0ABD385C2294838200FAAA74 /* WRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequest.swift; sourceTree = "<group>"; };
-		0ABD386022948FD800FAAA74 /* WrequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrequestTests.swift; sourceTree = "<group>"; };
+		0ABD386022948FD800FAAA74 /* WRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequestTests.swift; sourceTree = "<group>"; };
 		0ADC186C228728ED005B07DD /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = wsynctest.xcworkspace/xcshareddata/IDETemplateMacros.plist; sourceTree = "<group>"; };
 		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 				0A23498B227773850016CDBC /* AppDataTests.swift */,
 				0A234989227773850016CDBC /* DiskStoreTests.swift */,
 				0A1289942290140D00435677 /* WProviderTests.swift */,
-				0ABD386022948FD800FAAA74 /* WrequestTests.swift */,
+				0ABD386022948FD800FAAA74 /* WRequestTests.swift */,
 				0AAD9CE9229082B30036CA95 /* LoadDump.swift */,
 				0A128998229021BC00435677 /* CheckAppStore.swift */,
 				0A23498C227773850016CDBC /* Info.plist */,
@@ -440,19 +440,19 @@
 				0A2348C82277709C0016CDBC /* APIKeys.swift */,
 				0A2348D12277709C0016CDBC /* AvatarService.swift */,
 				0A2348D02277709C0016CDBC /* WAPI.swift */,
+				0A12898F229013D700435677 /* WDumpProvider.swift */,
 				0A2348CC2277709C0016CDBC /* WebsocketIO.swift */,
 				0A2348CA2277709C0016CDBC /* WJSONAbleCoders.swift */,
 				0A2348C72277709C0016CDBC /* WMutatedService.swift */,
 				0A2348CF2277709C0016CDBC /* WNetworkError.swift */,
 				0A2348CD2277709C0016CDBC /* WNetworkErrorMessage.swift */,
+				0A2348C52277709C0016CDBC /* WProvider.swift */,
 				0A2348D22277709C0016CDBC /* WunderAPI.swift */,
 				0A2348C62277709C0016CDBC /* WunderImport.swift */,
 				0A2348C92277709C0016CDBC /* WunderManager.swift */,
 				0A2348CB2277709C0016CDBC /* WunderUploader.swift */,
 				0A2348D32277709C0016CDBC /* WUploadService.swift */,
-				0A2348C52277709C0016CDBC /* WProvider.swift */,
 				0A2348CE2277709C0016CDBC /* WuWSSProvider.swift */,
-				0A12898F229013D700435677 /* WDumpProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -465,6 +465,7 @@
 				0A2348EA2277709C0016CDBC /* MappingType.swift */,
 				0A2348E12277709C0016CDBC /* WBackup.swift */,
 				0A2348DC2277709C0016CDBC /* WDesktopNotification.swift */,
+				0AF44A4F228DD85A009694B4 /* WDump.swift */,
 				0A2348E32277709C0016CDBC /* WFeature.swift */,
 				0A2348E92277709C0016CDBC /* WFile.swift */,
 				0A2348DB2277709C0016CDBC /* WFolder.swift */,
@@ -475,6 +476,7 @@
 				0A2348E62277709C0016CDBC /* WNote.swift */,
 				0A2348E42277709C0016CDBC /* WObject.swift */,
 				0A2348D62277709C0016CDBC /* WReminder.swift */,
+				0ABD385C2294838200FAAA74 /* WRequest.swift */,
 				0A2348DD2277709C0016CDBC /* WRevision.swift */,
 				0A2348DF2277709C0016CDBC /* WRoot.swift */,
 				0A2348E22277709C0016CDBC /* WSetting.swift */,
@@ -487,8 +489,6 @@
 				0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */,
 				0A2348EF2277709C0016CDBC /* WUpload.swift */,
 				0A2348DE2277709C0016CDBC /* WUser.swift */,
-				0AF44A4F228DD85A009694B4 /* WDump.swift */,
-				0ABD385C2294838200FAAA74 /* WRequest.swift */,
 			);
 			path = WModel;
 			sourceTree = "<group>";
@@ -1009,7 +1009,7 @@
 			files = (
 				0A2349B4227773970016CDBC /* AppDataSyncTests.swift in Sources */,
 				0A128999229021BC00435677 /* CheckAppStore.swift in Sources */,
-				0ABD386122948FD800FAAA74 /* WrequestTests.swift in Sources */,
+				0ABD386122948FD800FAAA74 /* WRequestTests.swift in Sources */,
 				0A1289952290140E00435677 /* WProviderTests.swift in Sources */,
 				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
 				0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */,

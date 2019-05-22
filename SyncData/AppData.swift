@@ -42,7 +42,7 @@ class AppData {
         }
         
         public mutating func load(parentId: Int) {
-            dictionary[parentId] = diskStore?.load([T].self, parentId: parentId)
+            dictionary[parentId] = diskStore?.load(Set<T>.self, parentId: parentId)
         }
 
         public var set: Set<T> {
@@ -129,12 +129,12 @@ extension AppData {
         guard let root = diskStore.load(WRoot.self) else { return }
         self.root = root
         
-         users         = diskStore.load([WUser].self) ?? []
-         folders       = diskStore.load([WFolder].self) ?? []
-         lists         = diskStore.load([WList].self) ?? []
-         listPositions = diskStore.load([WListPosition].self) ?? []
-         settings      = diskStore.load([WSetting].self) ?? []
-         reminders     = diskStore.load([WReminder].self) ?? []
+         users         = diskStore.load(Set<WUser>.self) ?? []
+         folders       = diskStore.load(Set<WFolder>.self) ?? []
+         lists         = diskStore.load(Set<WList>.self) ?? []
+         listPositions = diskStore.load(Set<WListPosition>.self) ?? []
+         settings      = diskStore.load(Set<WSetting>.self) ?? []
+         reminders     = diskStore.load(Set<WReminder>.self) ?? []
 
         // load leafs
         lists.forEach{ loadListLeaf(from: diskStore, listId: $0.id) }

@@ -3,8 +3,13 @@
 //
 
 
-public struct Queue<T> {
-    fileprivate var array = [T]()
+public struct Queue<T: Codable> {
+    fileprivate var array = [T]() {
+        didSet {
+            diskStore?.persist(array)
+        }
+    }
+    private weak var diskStore: DiskStore?
     
     public var count: Int {
         return array.count
@@ -28,5 +33,10 @@ public struct Queue<T> {
     
     public var front: T? {
         return array.first
+    }
+
+    init(_ diskStore: DiskStore?) {
+        self.diskStore = diskStore
+        array = diskStore?.load([T].self) ?? []
     }
 }

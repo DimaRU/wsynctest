@@ -18,7 +18,6 @@ class DiskStoreTests: XCTestCase {
 
         wdump = loadDump(for: type(of: self), resource: "25830-dump")
         diskStore = DiskStore(filePath: "logs/testStore/", directory: .developer)
-
     }
     
     override func tearDown() {
@@ -51,7 +50,7 @@ class DiskStoreTests: XCTestCase {
         
         diskStore.persist(lists)
         diskStore.persistQueue.sync(flags: .barrier) {}
-        let listsNew = diskStore.load([WList].self) ?? []
+        let listsNew = diskStore.load(Set<WList>.self) ?? []
         XCTAssertTrue(lists ==== listsNew, "Retrived wobject is not valid")
 
         XCTAssertTrue(diskStore.exists(WList.self), "wobject must exist")
@@ -65,7 +64,7 @@ class DiskStoreTests: XCTestCase {
         
         diskStore.persist(tasks, parentId: parentId)
         diskStore.persistQueue.sync(flags: .barrier) {}
-        let tasksNew = diskStore.load([WTask].self, parentId: parentId) ?? []
+        let tasksNew = diskStore.load(Set<WTask>.self, parentId: parentId) ?? []
         XCTAssertTrue(tasks ==== tasksNew, "Retrived wobject is not valid")
         
         XCTAssertTrue(diskStore.exists([WTask].self, parentId: parentId), "wobject must exist")

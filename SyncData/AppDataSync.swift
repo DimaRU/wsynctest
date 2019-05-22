@@ -17,11 +17,15 @@ class AppDataSync {
         case pull
     }
     
-    internal var appData: AppData
-    internal var syncState = SyncState.idle
+    var appData: AppData
+    var diskStore: DiskStore?
+    var syncState = SyncState.idle
+    var requestQueue: Queue<WRequest>
 
     init(appData: AppData) {
         self.appData = appData
+        self.diskStore = appData.diskStore
+        self.requestQueue = Queue<WRequest>(diskStore)
     }
     
     func get<T: WObject>(_ type: T.Type, id: Int) -> Promise<T> {
