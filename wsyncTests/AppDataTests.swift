@@ -95,21 +95,4 @@ class AppDataTests: XCTestCase {
         XCTAssertEqual(task, updatedTask, "tasks not equal after mutation")
         XCTAssertEqual(task.title, title, "Title not modified")
     }
-    
-    func testAppDataUpdate() {
-        let appData = AppData()
-        let tasks = Set<WTask>(wdump.tasks)
-        
-        var updatedTask = tasks.first!
-        let parentId = updatedTask.listId
-        appData.tasks[parentId] = tasks
-
-        let title = "Mutated tite 1"
-        updatedTask.title = title
-        appData.update(modified: updatedTask)
-        let task = appData.tasks[parentId][updatedTask.id]!
-        XCTAssertTrue(task.storedSyncState == .modified, "Object state is not correct")
-        XCTAssertEqual(task, updatedTask, "tasks not equal after mutation")
-        XCTAssertEqual(task.title, title, "Title not modified")
-    }
 }

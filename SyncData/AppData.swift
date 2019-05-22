@@ -176,8 +176,11 @@ extension AppData {
         taskPositions[listId] = []
         memberships[listId] = []
     }
+}
 
-    private func updateObject<T: WObject>(_ wobject: T){
+// MARK: Accessors
+extension AppData {
+    func updateObject<T: WObject>(_ wobject: T){
         switch wobject {
         case let listChild as ListChild:
             let parentId = listChild.listId
@@ -192,25 +195,20 @@ extension AppData {
             self[keyPath: path].update(with: wobject)
         }
     }
-}
 
-// MARK: External accessors
-extension AppData {
-    public func update<T: WObject>(modified wobject: T){
-        var modified = wobject
-        modified.storedSyncState = .modified
-        updateObject(modified)
-    }
-    
-    public func delete<T: WObject>(_ wobject: T) {
-        var deleted = wobject
-        deleted.storedSyncState = .deleted
-        updateObject(deleted)
-    }
-    
-    public func add<T: WObject>(created wobject: T) {
-        var created = wobject
-        created.storedSyncState = .created
-        updateObject(created)
+    func getSource<T: WObject>(for wobject: T) -> T? {
+        switch wobject {
+        case let listChild as ListChild:
+            let parentId = listChild.listId
+            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            return self[keyPath: path][parentId][wobject.id]
+        case let taskChild as TaskChild:
+            let parentId = taskChild.taskId
+            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            return self[keyPath: path][parentId][wobject.id]
+        default:
+            let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+            return self[keyPath: path][wobject.id]
+        }
     }
 }
