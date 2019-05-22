@@ -154,8 +154,9 @@ extension WProvider {
                 request.reject(wError)
             }
             
-        case .failure(_):
-            handleNetworkFailure(request: request)
+        case .failure(let error):
+            let wError = WNetworkError.unreachable(underlying: error)
+            request.reject(wError)
         }
     }
     
@@ -177,14 +178,6 @@ extension WProvider {
         delay(0.01) {
             print("Retry bad request")
             self.sendRestRequest(request)
-        }
-    }
-    
-    // just retry request
-    fileprivate func handleNetworkFailure(request: RequestFuture) {
-        delay(1) {
-            print("Retry request")
-            self.sendRequest(request)
         }
     }
     

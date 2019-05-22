@@ -13,4 +13,5 @@ enum WNetworkError: Error {
     case networkError(underlying: Error)
     case replyDataError(underlying: Error)
     case upload(code: Int)
+    case unreachable(underlying: Error)
 }
