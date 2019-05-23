@@ -141,7 +141,7 @@ extension WProvider {
                 request.reject(WNetworkError.conflict)
             case 400, 405, 422:
                 let errorMessage = WNetworkErrorMessage(data: data)
-                request.reject(WNetworkError.replyError(code: statusCode, message: errorMessage!))
+                request.reject(WNetworkError.replyError(code: statusCode, message: errorMessage))
             case 500, 502, 504:
                 if !contentType.contains("application/json") {
                     self.retryBadResponce(request: request)
