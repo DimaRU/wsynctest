@@ -28,7 +28,7 @@ class AppDataPushTests: XCTestCase {
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump)
     }
 
-    func testCreate() {
+    func testCreateDelete() {
         pull(from: "25852-dump", appDataSync: appDataSync)
 
         let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
@@ -42,6 +42,18 @@ class AppDataPushTests: XCTestCase {
         XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
         appDataSync.syncState = .idle
         pull(from: "25853-dump", appDataSync: appDataSync)
-    }
 
+        let task = appDataSync.appData.tasks[286646344][5046774217]
+        XCTAssertNotNil(task, "Task id=5046774217 must exist")
+        appDataSync.delete(task!)
+        XCTAssertEqual(appDataSync.requestQueue.count, 1, "Queue length must be 1")
+        let expectation1 = XCTestExpectation(description: "Sync push")
+        appDataSync.pushNext {
+            expectation1.fulfill()
+        }
+        wait(for: [expectation1], timeout: 5000)
+        XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
+        appDataSync.syncState = .idle
+        pull(from: "25854-dump", appDataSync: appDataSync)
+    }
 }

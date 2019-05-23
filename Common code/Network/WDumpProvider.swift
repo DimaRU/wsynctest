@@ -149,7 +149,7 @@ extension WProvider {
                     let data = try! Data(contentsOf: url)
                     return .networkResponse(200, data)
                 case .deleteWObject:
-                    return .networkResponse(422, Data())
+                    return .networkResponse(204, Data())
 
                 }
             }
