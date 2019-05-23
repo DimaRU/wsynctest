@@ -102,7 +102,7 @@ class AppData {
         WTaskComment.typeName(): \AppData.taskComments
     ]
 
-    private func keyPath<T: WObject>(_ type: T.Type) -> PartialKeyPath<AppData> {
+    func keyPath<T: WObject>(_ type: T.Type) -> PartialKeyPath<AppData> {
         switch type {
             case is WUser.Type: return \AppData.users
             case is WFolder.Type: return \AppData.folders

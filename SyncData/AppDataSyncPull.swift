@@ -37,7 +37,7 @@ extension AppDataSync {
     }
     
     func syncWObjectSets<T: WObject>(new: Set<T>, parentId: Int) {
-        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
+        let path = appData.keyPath(T.self) as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
         let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path][parentId], new: new)
         if !removedId.isEmpty || !changedId.isEmpty {
             appData.self[keyPath: path][parentId] = new
@@ -45,7 +45,7 @@ extension AppDataSync {
     }
     
     func syncWObjectSets<T: WObject>(new: Set<T>) {
-        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+        let path = appData.keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
         let (removedId, changedId) = diffWobjectSets(old: appData[keyPath: path], new: new)
         if !removedId.isEmpty || !changedId.isEmpty {
             appData.self[keyPath: path] = new
@@ -53,12 +53,12 @@ extension AppDataSync {
     }
 
     func syncWObjects<T: WObject>(new: T, parentId: Int) {
-        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
+        let path = appData.keyPath(T.self) as! ReferenceWritableKeyPath<AppData, AppData.WObjectSetDictionary<T>>
         appData.self[keyPath: path][parentId].update(with: new)
     }
 
     func syncWObjects<T: WObject>(new: T) {
-        let path = AppData.keyPathSet[T.typeName()]! as! ReferenceWritableKeyPath<AppData, Set<T>>
+        let path = appData.keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
         appData.self[keyPath: path].update(with: new)
     }
 
