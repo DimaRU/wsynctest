@@ -16,7 +16,7 @@ class DiskStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        wdump = loadDump(for: type(of: self), resource: "25830-dump")
+        wdump = loadDump(bundle: Bundle(for: type(of: self)), resource: "25830-dump")
         diskStore = DiskStore(filePath: "logs/testStore/", directory: .developer)
     }
     

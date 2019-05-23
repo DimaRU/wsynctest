@@ -10,7 +10,7 @@ class WRequestTests: XCTestCase {
     var diskStore: DiskStore!
 
     override func setUp() {
-        wdump = loadDump(for: type(of: self), resource: "25830-dump")
+        wdump = loadDump(bundle: Bundle(for: type(of: self)), resource: "25830-dump")
         diskStore = DiskStore(filePath: "logs/testStore/", directory: .developer)
     }
 

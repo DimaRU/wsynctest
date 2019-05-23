@@ -17,8 +17,9 @@ class AppDataPullTests: XCTestCase {
 
 
     func pull(from dump: String, appDataSync: AppDataSync) {
-        let wdump = loadDump(for: type(of: self), resource: dump)
-        WProvider.moya = WProvider.WDumpProvider(wdump: wdump)
+        let bundle = Bundle(for: type(of: self))
+        let wdump = loadDump(bundle: bundle, resource: dump)
+        WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
         let expectation = XCTestExpectation(description: "Sync pull \(dump)")
         appDataSync.pull() {

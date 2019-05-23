@@ -10,6 +10,7 @@ struct CheckAppStore {
         if exist != must {
             let revisionsExist = exist.sorted{ $0.id < $1.id }.map { ($0.id, $0.revision)}
             let revisionsMust = must.sorted{ $0.id < $1.id }.map { ($0.id, $0.revision)}
+            print("\(T.self):")
             print("Revisions exist:", revisionsExist)
             print("Revisions must:", revisionsMust)
         }

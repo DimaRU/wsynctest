@@ -5,8 +5,7 @@
 import XCTest
 @testable import wsync
 
-func loadDump(for: AnyObject.Type, resource: String) -> WDump {
-    let bundle = Bundle(for: `for`)
+func loadDump(bundle: Bundle, resource: String) -> WDump {
     guard let url = bundle.url(forResource: "\(resource)", withExtension: "json") else {
         XCTFail("Missing file: \(resource).json")
         return WDump()

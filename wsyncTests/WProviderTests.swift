@@ -7,8 +7,8 @@ import XCTest
 
 class WProviderTests: XCTestCase {
     func testWProviderLoad() {
-        let wdump = loadDump(for: type(of: self), resource: "25830-dump")
-        WProvider.moya = WProvider.WDumpProvider(wdump: wdump)
+        let wdump = loadDump(bundle: Bundle(for: type(of: self)), resource: "25830-dump")
+        WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: Bundle(for: type(of: self)))
         let expectation = XCTestExpectation(description: "Fetch root")
         WAPI.getRoot()
             .done { root in

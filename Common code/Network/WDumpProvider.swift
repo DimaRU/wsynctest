@@ -7,7 +7,7 @@ import Moya
 
 extension WProvider {
 
-    fileprivate static func testableClosure(_ wdump: WDump)  -> (_ target: WunderAPI) -> Endpoint {
+    fileprivate static func testableClosure(_ wdump: WDump, bundle: Bundle)  -> (_ target: WunderAPI) -> Endpoint {
         func getWObjectData<T: WObject>(from wobjectSet: Set<T>, target: WunderAPI) -> Data? {
             let encoder = WJSONAbleCoders.encoder
 
@@ -128,17 +128,29 @@ extension WProvider {
                     if let data = data {
                         return .networkResponse(200, data)
                     } else {
-                        return .networkResponse(404, Data())
+                        return .networkResponse(422, Data())
                     }
-                case .createWObject,
-                     .updateWObject,
-                     .deleteWObject,
-                     .unreadActivityCounts,
+                case .unreadActivityCounts,
                      .avatar,
                      .createFile,
                      .upload,
                      .uploadFinish:
-                    return .networkResponse(404, Data())
+                    return .networkResponse(422, Data())
+                case .createWObject(let type, _, _):
+                    guard let url = bundle.url(forResource: "create\(type)", withExtension: "json") else {
+                        return .networkResponse(422, Data())
+                    }
+                    let data = try! Data(contentsOf: url)
+                    return .networkResponse(200, data)
+                case .updateWObject(let type, _, _):
+                    guard let url = bundle.url(forResource: "update\(type)", withExtension: "json") else {
+                        return .networkResponse(422, Data())
+                    }
+                    let data = try! Data(contentsOf: url)
+                    return .networkResponse(200, data)
+                case .deleteWObject:
+                    return .networkResponse(422, Data())
+
                 }
             }
 
@@ -151,8 +163,8 @@ extension WProvider {
     }
 
 
-    static func WDumpProvider(wdump: WDump) -> MoyaProvider<WunderAPI> {
-        return MoyaProvider<WunderAPI>(endpointClosure: WProvider.testableClosure(wdump),
+    static func WDumpProvider(wdump: WDump, bundle: Bundle) -> MoyaProvider<WunderAPI> {
+        return MoyaProvider<WunderAPI>(endpointClosure: WProvider.testableClosure(wdump, bundle: bundle),
                                        stubClosure: MoyaProvider.immediatelyStub)
     }
 }

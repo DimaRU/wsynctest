@@ -1,9 +1,5 @@
-//
-//  AppDataSyncPush.swift
-//  wsync
-//
-//  Created by Dmitriy Borovikov on 29.06.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  AppDataSyncPush.swift
 //
 
 import Foundation
@@ -41,7 +37,117 @@ extension AppDataSync {
 
 
     // Push
-    public func pushNext() {
+    public func pushNext(completion: (() -> Void)? = nil) {
+        func create(_ object: Revisionable) {
+            switch object.self {
+            case let object as WFolder: sendCreateReques(object)
+            case let object as WList: sendCreateReques(object)
+            case let object as WTask: sendCreateReques(object)
+            case let object as WMembership: sendCreateReques(object)
+            case let object as WNote: sendCreateReques(object)
+            case let object as WReminder: sendCreateReques(object)
+            case let object as WSubtask: sendCreateReques(object)
+            case let object as WTaskComment: sendCreateReques(object)
+            default:
+                fatalError()
+            }
+        }
+
+        func modify(object: Revisionable, modified: Revisionable) {
+            switch object.self {
+            case let object as WFile: sendUpdateReques(object: object, modified: modified as! WFile)
+            case let object as WFolder: sendUpdateReques(object: object, modified: modified as! WFolder)
+            case let object as WList: sendUpdateReques(object: object, modified: modified as! WList)
+            case let object as WTask: sendUpdateReques(object: object, modified: modified as! WTask)
+            case let object as WMembership: sendUpdateReques(object: object, modified: modified as! WMembership)
+            case let object as WNote: sendUpdateReques(object: object, modified: modified as! WNote)
+            case let object as WReminder: sendUpdateReques(object: object, modified: modified as! WReminder)
+            case let object as WSetting: sendUpdateReques(object: object, modified: modified as! WSetting)
+            case let object as WSubtask: sendUpdateReques(object: object, modified: modified as! WSubtask)
+            case let object as WTaskComment: sendUpdateReques(object: object, modified: modified as! WTaskComment)
+            case let object as WTaskCommentsState: sendUpdateReques(object: object, modified: modified as! WTaskCommentsState)
+            case let object as WListPosition: sendUpdateReques(object: object, modified: modified as! WListPosition)
+            case let object as WTaskPosition: sendUpdateReques(object: object, modified: modified as! WTaskPosition)
+            case let object as WSubtaskPosition: sendUpdateReques(object: object, modified: modified as! WSubtaskPosition)
+            case let object as WUser: sendUpdateReques(object: object, modified: modified as! WUser)
+            default:
+                fatalError()
+            }
+        }
+
+        func delete(_ object: Revisionable) {
+            switch object.self {
+            case let object as WFile: sendDeleteRequest(object)
+            case let object as WFolder: sendDeleteRequest(object)
+            case let object as WList: sendDeleteRequest(object)
+            case let object as WTask: sendDeleteRequest(object)
+            case let object as WMembership: sendDeleteRequest(object)
+            case let object as WNote: sendDeleteRequest(object)
+            case let object as WReminder: sendDeleteRequest(object)
+            case let object as WSetting: sendDeleteRequest(object)
+            case let object as WSubtask: sendDeleteRequest(object)
+            case let object as WTaskComment: sendDeleteRequest(object)
+            case let object as WTaskCommentsState: sendDeleteRequest(object)
+            case let object as WListPosition: sendDeleteRequest(object)
+            case let object as WTaskPosition: sendDeleteRequest(object)
+            case let object as WSubtaskPosition: sendDeleteRequest(object)
+            case let object as WUser: sendDeleteRequest(object)
+            default:
+                fatalError()
+            }
+        }
+
+        func sendCreateReques<T: WObject & WCreatable>(_ wobject: T) {
+            let requestId = UUID().uuidString.lowercased()
+            let params = wobject.createParams()
+
+            WAPI.create(T.self, params: params, requestId: requestId)
+                .done { created in
+                    self.appData.replaceObject(wobject: wobject, to: created)
+                    self.requestQueue.dequeue()
+                    switch created {
+                    case let task as WTask:
+                        let subtaskPosition = WSubtaskPosition(storedSyncState: nil, id: task.id, revision: 0, taskId: task.id, values: [])
+                        print(subtaskPosition)
+                        self.appData.subtaskPositions[task.id].update(with: subtaskPosition)
+                    default:
+                        break
+                    }
+                }.ensure {
+                    completion?()
+                }.catch { error in
+                    print(error)
+            }
+        }
+
+        func sendUpdateReques<T: WObject>(object: T, modified: T) {
+            let params = modified.updateParams(from: object)
+
+            WAPI.update(T.self, id: object.id, params: params)
+                .done { updated in
+                    self.appData.updateObject(updated)
+                    self.requestQueue.dequeue()
+                }.ensure {
+                    completion?()
+                }.catch { error in
+                    print(error)
+            }
+        }
+
+        func sendDeleteRequest<T: WObject>(_ object: T) {
+            WAPI.delete(object.type.revisionableClass, id: object.id, revision: object.revision)
+                .done {
+                    self.appData.deleteObject(wobject: object)
+                    self.requestQueue.dequeue()
+                }.ensure {
+                    completion?()
+                }.catch { error in
+                    print(error)
+            }
+        }
+
+        // MARK: Body
+
         self.syncState = .push
 
         guard let request = requestQueue.front else {
@@ -59,100 +165,4 @@ extension AppDataSync {
             modify(object: object, modified: modified)
         }
     }
-
-    private func create(_ object: Revisionable) {
-        switch object.self {
-        case let object as WFolder: sendCreateReques(object)
-        case let object as WList: sendCreateReques(object)
-        case let object as WTask: sendCreateReques(object)
-        case let object as WMembership: sendCreateReques(object)
-        case let object as WNote: sendCreateReques(object)
-        case let object as WReminder: sendCreateReques(object)
-        case let object as WSubtask: sendCreateReques(object)
-        case let object as WTaskComment: sendCreateReques(object)
-        default:
-            fatalError()
-        }
-    }
-
-    private func modify(object: Revisionable, modified: Revisionable) {
-        switch object.self {
-        case let object as WFile: sendUpdateReques(object: object, modified: modified as! WFile)
-        case let object as WFolder: sendUpdateReques(object: object, modified: modified as! WFolder)
-        case let object as WList: sendUpdateReques(object: object, modified: modified as! WList)
-        case let object as WTask: sendUpdateReques(object: object, modified: modified as! WTask)
-        case let object as WMembership: sendUpdateReques(object: object, modified: modified as! WMembership)
-        case let object as WNote: sendUpdateReques(object: object, modified: modified as! WNote)
-        case let object as WReminder: sendUpdateReques(object: object, modified: modified as! WReminder)
-        case let object as WSetting: sendUpdateReques(object: object, modified: modified as! WSetting)
-        case let object as WSubtask: sendUpdateReques(object: object, modified: modified as! WSubtask)
-        case let object as WTaskComment: sendUpdateReques(object: object, modified: modified as! WTaskComment)
-        case let object as WTaskCommentsState: sendUpdateReques(object: object, modified: modified as! WTaskCommentsState)
-        case let object as WListPosition: sendUpdateReques(object: object, modified: modified as! WListPosition)
-        case let object as WTaskPosition: sendUpdateReques(object: object, modified: modified as! WTaskPosition)
-        case let object as WSubtaskPosition: sendUpdateReques(object: object, modified: modified as! WSubtaskPosition)
-        case let object as WUser: sendUpdateReques(object: object, modified: modified as! WUser)
-        default:
-            fatalError()
-        }
-    }
-
-    private func delete(_ object: Revisionable) {
-        switch object.self {
-        case let object as WFile: sendDeleteRequest(object)
-        case let object as WFolder: sendDeleteRequest(object)
-        case let object as WList: sendDeleteRequest(object)
-        case let object as WTask: sendDeleteRequest(object)
-        case let object as WMembership: sendDeleteRequest(object)
-        case let object as WNote: sendDeleteRequest(object)
-        case let object as WReminder: sendDeleteRequest(object)
-        case let object as WSetting: sendDeleteRequest(object)
-        case let object as WSubtask: sendDeleteRequest(object)
-        case let object as WTaskComment: sendDeleteRequest(object)
-        case let object as WTaskCommentsState: sendDeleteRequest(object)
-        case let object as WListPosition: sendDeleteRequest(object)
-        case let object as WTaskPosition: sendDeleteRequest(object)
-        case let object as WSubtaskPosition: sendDeleteRequest(object)
-        case let object as WUser: sendDeleteRequest(object)
-        default:
-            fatalError()
-        }
-    }
-
-    private func sendCreateReques<T: WObject & WCreatable>(_ wobject: T) {
-        let requestId = UUID().uuidString.lowercased()
-        let params = wobject.createParams()
-
-        WAPI.create(T.self, params: params, requestId: requestId)
-            .done { created in
-                self.appData.replaceObject(wobject: wobject, to: created)
-                self.requestQueue.dequeue()
-            }.catch { error in
-                print(error)
-        }
-    }
-
-    private func sendUpdateReques<T: WObject>(object: T, modified: T) {
-        let params = modified.updateParams(from: object)
-
-        WAPI.update(T.self, id: object.id, params: params)
-            .done { updated in
-                self.appData.updateObject(updated)
-                self.requestQueue.dequeue()
-            }.catch { error in
-                print(error)
-        }
-    }
-
-    private func sendDeleteRequest<T: WObject>(_ object: T) {
-        WAPI.delete(object.type.revisionableClass, id: object.id, revision: object.revision)
-            .done {
-                self.appData.deleteObject(wobject: object)
-                self.requestQueue.dequeue()
-            }.catch { error in
-                print(error)
-        }
-
-    }
-
 }

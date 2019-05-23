@@ -146,6 +146,11 @@
 		0A2349F92277765D0016CDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349ED2277765C0016CDBC /* AppDelegate.swift */; };
 		0A2349FA2277765D0016CDBC /* DeleteContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349EE2277765D0016CDBC /* DeleteContentService.swift */; };
 		0A2349FC2277765D0016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2349F02277765D0016CDBC /* ViewController.swift */; };
+		0A3599DE2296EBED00EC7E1E /* AppDataPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */; };
+		0A3599E02296F38C00EC7E1E /* createWTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A3599DF2296F38C00EC7E1E /* createWTask.json */; };
+		0A3599E42296F8AC00EC7E1E /* 25852-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A3599E12296F8AC00EC7E1E /* 25852-dump.json */; };
+		0A3599E52296F8AC00EC7E1E /* 25854-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A3599E22296F8AC00EC7E1E /* 25854-dump.json */; };
+		0A3599E62296F8AC00EC7E1E /* 25853-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A3599E32296F8AC00EC7E1E /* 25853-dump.json */; };
 		0A37A70F227798FA003FCDE4 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FF2277709C0016CDBC /* AppSetup.swift */; };
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
@@ -272,6 +277,11 @@
 		0A2349ED2277765C0016CDBC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A2349EE2277765D0016CDBC /* DeleteContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteContentService.swift; sourceTree = "<group>"; };
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPushTests.swift; sourceTree = "<group>"; };
+		0A3599DF2296F38C00EC7E1E /* createWTask.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createWTask.json; sourceTree = "<group>"; };
+		0A3599E12296F8AC00EC7E1E /* 25852-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25852-dump.json"; sourceTree = "<group>"; };
+		0A3599E22296F8AC00EC7E1E /* 25854-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25854-dump.json"; sourceTree = "<group>"; };
+		0A3599E32296F8AC00EC7E1E /* 25853-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25853-dump.json"; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
 		0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25833-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
@@ -358,6 +368,7 @@
 				0A404EE52286225A0048E591 /* WObjectTests.swift */,
 				0A23498A227773850016CDBC /* AppDataSyncTests.swift */,
 				0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */,
+				0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */,
 				0A23498B227773850016CDBC /* AppDataTests.swift */,
 				0A234989227773850016CDBC /* DiskStoreTests.swift */,
 				0A1289942290140D00435677 /* WProviderTests.swift */,
@@ -534,6 +545,10 @@
 				0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */,
 				0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */,
 				0A8FF5F022916353003C55D6 /* 25847-dump.json */,
+				0A3599E12296F8AC00EC7E1E /* 25852-dump.json */,
+				0A3599E32296F8AC00EC7E1E /* 25853-dump.json */,
+				0A3599E22296F8AC00EC7E1E /* 25854-dump.json */,
+				0A3599DF2296F38C00EC7E1E /* createWTask.json */,
 			);
 			path = JSONTestSet;
 			sourceTree = "<group>";
@@ -731,7 +746,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3599E52296F8AC00EC7E1E /* 25854-dump.json in Resources */,
+				0A3599E62296F8AC00EC7E1E /* 25853-dump.json in Resources */,
 				0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */,
+				0A3599E02296F38C00EC7E1E /* createWTask.json in Resources */,
+				0A3599E42296F8AC00EC7E1E /* 25852-dump.json in Resources */,
 				0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */,
 				0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */,
 				0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */,
@@ -1014,6 +1033,7 @@
 				0A2349B52277739A0016CDBC /* AppDataTests.swift in Sources */,
 				0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */,
 				0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */,
+				0A3599DE2296EBED00EC7E1E /* AppDataPushTests.swift in Sources */,
 				0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */,
 				0A2349B62277739D0016CDBC /* DiskStoreTests.swift in Sources */,
 			);
