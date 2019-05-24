@@ -6,13 +6,14 @@
 import Foundation
 
 public enum WRequest {
-    case create(object: Revisionable)
-    case delete(object: Revisionable)
-    case modify(object: Revisionable, modified: Revisionable)
+    case create(uuid: String, object: Revisionable)
+    case delete(uuid: String, object: Revisionable)
+    case modify(uuid: String, object: Revisionable, modified: Revisionable)
 
     enum CodingKeys: String, CodingKey {
         case create
         case delete
+        case uuid
         case modify
         case object
         case modified
@@ -24,14 +25,17 @@ extension WRequest: Codable {
     public func encode(to encoder: Encoder) throws {
         var containerTop = encoder.container(keyedBy: CodingKeys.self)
         switch self {
-        case .create(let object):
+        case .create(let uuid, let object):
             var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .create)
+            try container.encode(uuid, forKey: .uuid)
             try container.encodeJSONAble(object as AnyObject, forKey: .object)
-        case .delete(let object):
+        case .delete(let uuid, let object):
             var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .delete)
+            try container.encode(uuid, forKey: .uuid)
             try container.encodeJSONAble(object as AnyObject, forKey: .object)
-        case .modify(let object, let modified):
+        case .modify(let uuid, let object, let modified):
             var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .modify)
+            try container.encode(uuid, forKey: .uuid)
             try container.encodeJSONAble(object as AnyObject, forKey: .object)
             try container.encodeJSONAble(modified as AnyObject, forKey: .modified)
         }
@@ -40,15 +44,18 @@ extension WRequest: Codable {
     public init(from decoder: Decoder) throws {
         let topContainer = try decoder.container(keyedBy: CodingKeys.self)
         if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .create) {
+            let uuid = try container.decode(String.self, forKey: .uuid)
             let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
-            self = WRequest.create(object: object)
+            self = WRequest.create(uuid: uuid, object: object)
         } else if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .delete) {
+            let uuid = try container.decode(String.self, forKey: .uuid)
             let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
-            self = WRequest.delete(object: object)
+            self = WRequest.delete(uuid: uuid, object: object)
         } else if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .modify) {
+            let uuid = try container.decode(String.self, forKey: .uuid)
             let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
             let modified = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .modified, typeKey: .type)
-            self = WRequest.modify(object: object, modified: modified)
+            self = WRequest.modify(uuid: uuid, object: object, modified: modified)
         } else {
             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: topContainer.codingPath, debugDescription: "No WRequest key found"))
         }

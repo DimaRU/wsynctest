@@ -16,7 +16,7 @@ extension WList {
         self.listType = nil
         self.`public` = nil
         self.createdAt = Date()
-        self.createdByRequestId = UUID().uuidString
+        self.createdByRequestId = nil
     }
     
 }
@@ -38,7 +38,7 @@ extension WTask {
         self.completedById = nil
         self.createdById = nil
         self.createdAt = Date()
-        self.createdByRequestId = UUID().uuidString
+        self.createdByRequestId = nil
     }
 }
 
@@ -51,7 +51,7 @@ extension WSubtask {
         self.completed = false
         self.createdAt = Date()
         self.createdById = nil
-        self.createdByRequestId = UUID().uuidString
+        self.createdByRequestId = nil
     }
 
 }
@@ -62,7 +62,7 @@ extension WNote {
         self.revision = 0
         self.taskId = taskId
         self.content = content
-        self.createdByRequestId = UUID().uuidString
+        self.createdByRequestId = nil
     }
 
 }
@@ -76,7 +76,7 @@ extension WTaskComment {
         self.author = WTaskComment.WAuthor.init(id: -2, name: "Dmitry", avatar: nil)
         self.localCreatedAt = Date()
         self.createdAt = Date()
-        self.createdByRequestId = UUID().uuidString
+        self.createdByRequestId = nil
     }
     
 }

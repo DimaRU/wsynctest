@@ -15,7 +15,8 @@ extension AppDataSync {
         var modified = wobject
         modified.storedSyncState = .modified
         appData.updateObject(modified)
-        let request = WRequest.modify(object: source, modified: modified)
+        let uuid = UUID().uuidString.lowercased()
+        let request = WRequest.modify(uuid: uuid, object: source, modified: modified)
         requestQueue.enqueue(request)
     }
 
@@ -23,7 +24,8 @@ extension AppDataSync {
         var deleted = wobject
         deleted.storedSyncState = .deleted
         appData.updateObject(deleted)
-        let request = WRequest.delete(object: deleted)
+        let uuid = UUID().uuidString.lowercased()
+        let request = WRequest.delete(uuid: uuid, object: deleted)
         requestQueue.enqueue(request)
     }
 
@@ -31,23 +33,24 @@ extension AppDataSync {
         var created = wobject
         created.storedSyncState = .created
         appData.updateObject(created)
-        let request = WRequest.create(object: created)
+        let uuid = UUID().uuidString.lowercased()
+        let request = WRequest.create(uuid: uuid, object: created)
         requestQueue.enqueue(request)
     }
 
 
     // Push
     public func pushNext(completion: (() -> Void)? = nil) {
-        func create(_ object: Revisionable) {
+        func create(_ object: Revisionable, uuid: String) {
             switch object.self {
-            case let object as WFolder: sendCreateReques(object)
-            case let object as WList: sendCreateReques(object)
-            case let object as WTask: sendCreateReques(object)
-            case let object as WMembership: sendCreateReques(object)
-            case let object as WNote: sendCreateReques(object)
-            case let object as WReminder: sendCreateReques(object)
-            case let object as WSubtask: sendCreateReques(object)
-            case let object as WTaskComment: sendCreateReques(object)
+            case let object as WFolder: sendCreateReques(object, uuid: uuid)
+            case let object as WList: sendCreateReques(object, uuid: uuid)
+            case let object as WTask: sendCreateReques(object, uuid: uuid)
+            case let object as WMembership: sendCreateReques(object, uuid: uuid)
+            case let object as WNote: sendCreateReques(object, uuid: uuid)
+            case let object as WReminder: sendCreateReques(object, uuid: uuid)
+            case let object as WSubtask: sendCreateReques(object, uuid: uuid)
+            case let object as WTaskComment: sendCreateReques(object, uuid: uuid)
             default:
                 fatalError()
             }
@@ -97,11 +100,10 @@ extension AppDataSync {
             }
         }
 
-        func sendCreateReques<T: WObject & WCreatable>(_ wobject: T) {
-            let requestId = UUID().uuidString.lowercased()
+        func sendCreateReques<T: WObject & WCreatable>(_ wobject: T, uuid: String) {
             let params = wobject.createParams()
 
-            WAPI.create(T.self, params: params, requestId: requestId)
+            WAPI.create(T.self, params: params, requestId: uuid)
                 .done { created in
                     self.appData.replaceObject(wobject: wobject, to: created)
                     self.requestQueue.dequeue()
@@ -157,11 +159,11 @@ extension AppDataSync {
         }
 
         switch request {
-        case .create(let object):
-            create(object)
-        case .delete(let object):
+        case .create(let uuid, let object):
+            create(object, uuid: uuid)
+        case .delete(_, let object):
             delete(object)
-        case .modify(let object, let modified):
+        case .modify(_, let object, let modified):
             modify(object: object, modified: modified)
         }
     }
