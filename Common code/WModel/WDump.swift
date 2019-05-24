@@ -23,6 +23,7 @@ public struct WDump: Codable {
     var files: Set<WFile>
     var taskComments: Set<WTaskComment>
     var taskCommentStates: Set<WTaskCommentsState>
+    var comment: String?
 
     init() {
         root = WRoot()

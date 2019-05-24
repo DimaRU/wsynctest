@@ -102,7 +102,17 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         log("\nDump content\n")
         if compactDump.state == .on {
             let dumpContent = DumpContentComapact()
-            dumpContent.all()
+            let alert = NSAlert()
+            let frame = NSRect(x: 0, y: 0, width: 200, height: 20)
+            let textField = NSTextField(frame: frame)
+            textField.drawsBackground = false
+            alert.messageText = "Dump content"
+            alert.informativeText = "Please enter dump comment"
+            alert.accessoryView = textField
+            alert.addButton(withTitle: "OK")
+            let responce = alert.runModal()
+            let comment = textField.stringValue
+            dumpContent.all(comment: comment)
         } else {
             let dumpContent = DumpContent()
             dumpContent.all()

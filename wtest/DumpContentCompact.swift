@@ -98,7 +98,8 @@ class DumpContentComapact {
         }
     }
     
-    public func all() {
+    public func all(comment: String) {
+        self.dump.comment = comment
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .formatted(Date.iso8601FullFormatter)
         encoder.keyEncodingStrategy = .convertToSnakeCase
