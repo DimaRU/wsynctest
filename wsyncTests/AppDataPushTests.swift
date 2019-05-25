@@ -28,32 +28,46 @@ class AppDataPushTests: XCTestCase {
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump)
     }
 
-    func testCreateDelete() {
-        pull(from: "25852-dump", appDataSync: appDataSync)
-
-        let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
-        appDataSync.add(created: newTask)
-        XCTAssertEqual(appDataSync.requestQueue.count, 1, "Queue length must be 1")
+    func push(appDataSync: AppDataSync) {
+        let queueCount = appDataSync.requestQueue.count
         let expectation = XCTestExpectation(description: "Sync push")
         appDataSync.pushNext {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5000)
-        XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
         appDataSync.syncState = .idle
-        pull(from: "25853-dump", appDataSync: appDataSync)
+        XCTAssertEqual(appDataSync.requestQueue.count, queueCount - 1, "Queue length must be \(queueCount - 1) ")
+    }
 
-        let task = appDataSync.appData.tasks[286646344][5046774217]
-        XCTAssertNotNil(task, "Task id=5046774217 must exist")
-        appDataSync.delete(task!)
-        XCTAssertEqual(appDataSync.requestQueue.count, 1, "Queue length must be 1")
-        let expectation1 = XCTestExpectation(description: "Sync push")
-        appDataSync.pushNext {
-            expectation1.fulfill()
-        }
-        wait(for: [expectation1], timeout: 5000)
+    func testPush() {
+        pull(from: "25866-dump", appDataSync: appDataSync)
+
         XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
-        appDataSync.syncState = .idle
-        pull(from: "25854-dump", appDataSync: appDataSync)
+
+        let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
+        appDataSync.add(created: newTask)
+        push(appDataSync: appDataSync)
+
+        let newSubtask = WSubtask(taskId: 5051112471, title: "Test create task")
+        appDataSync.add(created: newSubtask)
+        push(appDataSync: appDataSync)
+
+        guard var preModifiedTask = appDataSync.appData.tasks[286646344][5051112471] else {
+            XCTFail("Task 5051112471 not exist")
+            return
+        }
+        preModifiedTask.title = "Test create task modified"
+        appDataSync.update(modified: preModifiedTask)
+        push(appDataSync: appDataSync)
+
+        guard let modifiedTask = appDataSync.appData.tasks[286646344][5051112471] else {
+            XCTFail("Task 5051112471 not exist")
+            return
+        }
+        appDataSync.delete(modifiedTask)
+        push(appDataSync: appDataSync)
+
+        XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
+        pull(from: "25871-dump", appDataSync: appDataSync)
     }
 }
