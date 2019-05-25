@@ -2,7 +2,6 @@
 ///  WBackup.swift
 //
 
-import Cocoa
 import Alamofire
 
 // MARK: Import/export whole content

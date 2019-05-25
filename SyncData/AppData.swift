@@ -3,7 +3,7 @@
 //
 
 
-import Cocoa
+import Foundation
 
 typealias TaskId = Int
 typealias ListId = Int

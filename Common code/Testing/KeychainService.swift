@@ -6,7 +6,7 @@
 //  Copyright © 2017 Dmitriy Borovikov. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import KeychainAccess
 
 class KeychainService {

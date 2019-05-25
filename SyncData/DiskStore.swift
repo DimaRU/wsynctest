@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Cocoa
 
 public enum DiskStoreStoreErrors: Error {
     case CannotUseProvidedItem(item: Any, includedError: NSError)

@@ -110,7 +110,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             alert.informativeText = "Please enter dump comment"
             alert.accessoryView = textField
             alert.addButton(withTitle: "OK")
-            let responce = alert.runModal()
+            let _ = alert.runModal()
             let comment = textField.stringValue
             dumpContent.all(comment: comment)
         } else {
@@ -183,8 +183,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         guard KeychainService.shared[.token] != nil else {
             return
         }
-        WAvatar.loadCurrent { image in
-            self.avatarImageView.image = image
+        WAvatar.loadCurrent { data in
+            self.avatarImageView.image = NSImage(data: data)
             log("Download avatar ok")
             WuWSSProvider.websocketInit()
         }

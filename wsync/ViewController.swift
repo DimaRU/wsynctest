@@ -113,8 +113,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         guard !token.stringValue.isEmpty else {
             return
         }
-        WAvatar.loadCurrent { image in
-            self.avatarImageView.image = image
+        WAvatar.loadCurrent { data in
+            self.avatarImageView.image = NSImage(data: data)
             log("Download avatar ok")
             WuWSSProvider.websocketInit()
         }
