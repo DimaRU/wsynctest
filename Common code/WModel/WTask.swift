@@ -18,7 +18,7 @@ public struct WTask: WObject, ListChild, WCreatable {
     public var recurrenceType: String?
     public var recurrenceCount: Int?
     public var assigneeId: Int?
-    public var assignerId: Int?
+    public let assignerId: Int?
     public var dueDate: String?
     public let completedAt: Date?
     public let completedById: Int?
@@ -44,7 +44,6 @@ public static let storedProperty: [PartialKeyPath<WTask>:String] = [
         \WTask.recurrenceType :"recurrence_type",
         \WTask.recurrenceCount :"recurrence_count",
         \WTask.assigneeId :"assignee_id",
-        \WTask.assignerId :"assigner_id",
         \WTask.dueDate :"due_date",
         \WTask.completedAt :"completed_at",
         \WTask.completedById :"completed_by_id",
