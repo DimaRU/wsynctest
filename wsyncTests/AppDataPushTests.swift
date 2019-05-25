@@ -70,4 +70,27 @@ class AppDataPushTests: XCTestCase {
         XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
         pull(from: "25871-dump", appDataSync: appDataSync)
     }
+
+    func testPushLocal() {
+        pull(from: "25866-dump", appDataSync: appDataSync)
+
+        XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
+
+        let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
+        appDataSync.add(created: newTask)
+
+        let newSubtask = WSubtask(taskId: newTask.id, title: "Test create task")
+        appDataSync.add(created: newSubtask)
+
+        var modifiedTask = newTask
+        modifiedTask.title = "Test create task modified"
+        appDataSync.update(modified: modifiedTask)
+
+        push(appDataSync: appDataSync)
+        push(appDataSync: appDataSync)
+        push(appDataSync: appDataSync)
+
+        XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
+        pull(from: "25869-dump", appDataSync: appDataSync)
+    }
 }
