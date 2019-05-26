@@ -7,16 +7,15 @@ import PromiseKit
 
 // MARK: External accessors
 extension AppDataSync {
-    public func update<T: WObject>(modified wobject: T){
+    public func update<T: WObject>(updated wobject: T){
         guard let source = appData.getSource(for: wobject) else {
             assertionFailure("No source for modified wobject \(wobject)")
             return
         }
-        var modified = wobject
-        modified.storedSyncState = .modified
-        appData.updateObject(modified)
-        let uuid = UUID().uuidString.lowercased()
-        let request = WRequest.modify(uuid: uuid, object: source, modified: modified)
+        var updated = wobject
+        updated.storedSyncState = .modified
+        appData.updateObject(updated)
+        let request = WRequest.update(wobject: source, updated: updated)
         requestQueue.enqueue(request)
     }
 
@@ -24,88 +23,89 @@ extension AppDataSync {
         var deleted = wobject
         deleted.storedSyncState = .deleted
         appData.updateObject(deleted)
-        let uuid = UUID().uuidString.lowercased()
-        let request = WRequest.delete(uuid: uuid, object: deleted)
+
+        let request = WRequest.delete(wobject: wobject)
         requestQueue.enqueue(request)
     }
 
-    public func add<T: WObject>(created wobject: T) {
+    public func add<T: WObject & WCreatable>(created wobject: T) {
         var created = wobject
         created.storedSyncState = .created
         appData.updateObject(created)
-        let uuid = UUID().uuidString.lowercased()
-        let request = WRequest.create(uuid: uuid, object: created)
+
+        let request = WRequest.create(wobject: created)
         requestQueue.enqueue(request)
     }
 
 
     // Push
     public func pushNext(completion: (() -> Void)? = nil) {
-        func create(_ object: Revisionable, uuid: String) {
-            switch object.self {
-            case let object as WFolder: sendCreateReques(object, uuid: uuid)
-            case let object as WList: sendCreateReques(object, uuid: uuid)
-            case let object as WTask: sendCreateReques(object, uuid: uuid)
-            case let object as WMembership: sendCreateReques(object, uuid: uuid)
-            case let object as WNote: sendCreateReques(object, uuid: uuid)
-            case let object as WReminder: sendCreateReques(object, uuid: uuid)
-            case let object as WSubtask: sendCreateReques(object, uuid: uuid)
-            case let object as WTaskComment: sendCreateReques(object, uuid: uuid)
+
+        func create(request: WRequest) {
+            switch request.type.revisionableClass.self {
+            case let type as WFolder.Type: sendCreateRequest(type, request: request)
+            case let type as WList.Type: sendCreateRequest(type, request: request)
+            case let type as WTask.Type: sendCreateRequest(type, request: request)
+            case let type as WMembership.Type: sendCreateRequest(type, request: request)
+            case let type as WNote.Type: sendCreateRequest(type, request: request)
+            case let type as WReminder.Type: sendCreateRequest(type, request: request)
+            case let type as WSubtask.Type: sendCreateRequest(type, request: request)
+            case let type as WTaskComment.Type: sendCreateRequest(type, request: request)
             default:
                 fatalError()
             }
         }
 
-        func modify(object: Revisionable, modified: Revisionable) {
-            switch object.self {
-            case let object as WFile: sendUpdateReques(object: object, modified: modified as! WFile)
-            case let object as WFolder: sendUpdateReques(object: object, modified: modified as! WFolder)
-            case let object as WList: sendUpdateReques(object: object, modified: modified as! WList)
-            case let object as WTask: sendUpdateReques(object: object, modified: modified as! WTask)
-            case let object as WMembership: sendUpdateReques(object: object, modified: modified as! WMembership)
-            case let object as WNote: sendUpdateReques(object: object, modified: modified as! WNote)
-            case let object as WReminder: sendUpdateReques(object: object, modified: modified as! WReminder)
-            case let object as WSetting: sendUpdateReques(object: object, modified: modified as! WSetting)
-            case let object as WSubtask: sendUpdateReques(object: object, modified: modified as! WSubtask)
-            case let object as WTaskComment: sendUpdateReques(object: object, modified: modified as! WTaskComment)
-            case let object as WTaskCommentsState: sendUpdateReques(object: object, modified: modified as! WTaskCommentsState)
-            case let object as WListPosition: sendUpdateReques(object: object, modified: modified as! WListPosition)
-            case let object as WTaskPosition: sendUpdateReques(object: object, modified: modified as! WTaskPosition)
-            case let object as WSubtaskPosition: sendUpdateReques(object: object, modified: modified as! WSubtaskPosition)
-            case let object as WUser: sendUpdateReques(object: object, modified: modified as! WUser)
+        func update(request: WRequest) {
+            switch request.type.revisionableClass.self {
+            case let type as WFile.Type: sendUpdateRequest(type, request: request)
+            case let type as WFolder.Type: sendUpdateRequest(type, request: request)
+            case let type as WList.Type: sendUpdateRequest(type, request: request)
+            case let type as WTask.Type: sendUpdateRequest(type, request: request)
+            case let type as WMembership.Type: sendUpdateRequest(type, request: request)
+            case let type as WNote.Type: sendUpdateRequest(type, request: request)
+            case let type as WReminder.Type: sendUpdateRequest(type, request: request)
+            case let type as WSetting.Type: sendUpdateRequest(type, request: request)
+            case let type as WSubtask.Type: sendUpdateRequest(type, request: request)
+            case let type as WTaskComment.Type: sendUpdateRequest(type, request: request)
+            case let type as WTaskCommentsState.Type: sendUpdateRequest(type, request: request)
+            case let type as WListPosition.Type: sendUpdateRequest(type, request: request)
+            case let type as WTaskPosition.Type: sendUpdateRequest(type, request: request)
+            case let type as WSubtaskPosition.Type: sendUpdateRequest(type, request: request)
+            case let type as WUser.Type: sendUpdateRequest(type, request: request)
             default:
                 fatalError()
             }
         }
 
-        func delete(_ object: Revisionable) {
-            switch object.self {
-            case let object as WFile: sendDeleteRequest(object)
-            case let object as WFolder: sendDeleteRequest(object)
-            case let object as WList: sendDeleteRequest(object)
-            case let object as WTask: sendDeleteRequest(object)
-            case let object as WMembership: sendDeleteRequest(object)
-            case let object as WNote: sendDeleteRequest(object)
-            case let object as WReminder: sendDeleteRequest(object)
-            case let object as WSetting: sendDeleteRequest(object)
-            case let object as WSubtask: sendDeleteRequest(object)
-            case let object as WTaskComment: sendDeleteRequest(object)
-            case let object as WTaskCommentsState: sendDeleteRequest(object)
-            case let object as WListPosition: sendDeleteRequest(object)
-            case let object as WTaskPosition: sendDeleteRequest(object)
-            case let object as WSubtaskPosition: sendDeleteRequest(object)
-            case let object as WUser: sendDeleteRequest(object)
+        func delete(request: WRequest) {
+            switch request.type.revisionableClass.self {
+            case let type as WFile.Type: sendDeleteRequest(type, request: request)
+            case let type as WFolder.Type: sendDeleteRequest(type, request: request)
+            case let type as WList.Type: sendDeleteRequest(type, request: request)
+            case let type as WTask.Type: sendDeleteRequest(type, request: request)
+            case let type as WMembership.Type: sendDeleteRequest(type, request: request)
+            case let type as WNote.Type: sendDeleteRequest(type, request: request)
+            case let type as WReminder.Type: sendDeleteRequest(type, request: request)
+            case let type as WSetting.Type: sendDeleteRequest(type, request: request)
+            case let type as WSubtask.Type: sendDeleteRequest(type, request: request)
+            case let type as WTaskComment.Type: sendDeleteRequest(type, request: request)
+            case let type as WTaskCommentsState.Type: sendDeleteRequest(type, request: request)
+            case let type as WListPosition.Type: sendDeleteRequest(type, request: request)
+            case let type as WTaskPosition.Type: sendDeleteRequest(type, request: request)
+            case let type as WSubtaskPosition.Type: sendDeleteRequest(type, request: request)
+            case let type as WUser.Type: sendDeleteRequest(type, request: request)
             default:
                 fatalError()
             }
         }
 
-        func sendCreateReques<T: WObject & WCreatable>(_ wobject: T, uuid: String) {
-            let params = wobject.createParams()
+        func sendCreateRequest<T: WObject & WCreatable>(_ type: T.Type, request: WRequest) {
+            let params = request.params.container
 
-            WAPI.create(T.self, params: params, requestId: uuid)
+            WAPI.create(T.self, params: params, requestId: request.uuid)
                 .done { created in
-                    self.appData.replaceObject(wobject: wobject, to: created)
+                    self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.requestQueue.dequeue()
                     switch created {
                     case let task as WTask:
@@ -122,10 +122,10 @@ extension AppDataSync {
             }
         }
 
-        func sendUpdateReques<T: WObject>(object: T, modified: T) {
-            let params = modified.updateParams(from: object)
+        func sendUpdateRequest<T: WObject>(_ type: T.Type, request: WRequest) {
+            let params = request.params.container
 
-            WAPI.update(T.self, id: object.id, params: params)
+            WAPI.update(type, id: request.id, params: params, requestId: request.uuid)
                 .done { updated in
                     self.appData.updateObject(updated)
                     self.requestQueue.dequeue()
@@ -136,10 +136,10 @@ extension AppDataSync {
             }
         }
 
-        func sendDeleteRequest<T: WObject>(_ object: T) {
-            WAPI.delete(object.type.revisionableClass, id: object.id, revision: object.revision)
+        func sendDeleteRequest<T: WObject>(_ type: T.Type, request: WRequest) {
+            WAPI.delete(type, id: request.id, revision: request.revision)
                 .done {
-                    self.appData.deleteObject(wobject: object)
+                    self.appData.deleteObject(type: type, id: request.id, parentId: request.parentId)
                     self.requestQueue.dequeue()
                 }.ensure {
                     completion?()
@@ -158,13 +158,13 @@ extension AppDataSync {
             return
         }
 
-        switch request {
-        case .create(let uuid, let object):
-            create(object, uuid: uuid)
-        case .delete(_, let object):
-            delete(object)
-        case .modify(_, let object, let modified):
-            modify(object: object, modified: modified)
+        switch request.requestType {
+        case .create:
+            create(request: request)
+        case .update:
+            update(request: request)
+        case .delete:
+            delete(request: request)
         }
     }
 }

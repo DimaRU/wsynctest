@@ -57,7 +57,7 @@ class AppDataPushTests: XCTestCase {
             return
         }
         preModifiedTask.title = "Test create task modified"
-        appDataSync.update(modified: preModifiedTask)
+        appDataSync.update(updated: preModifiedTask)
         push(appDataSync: appDataSync)
 
         guard let modifiedTask = appDataSync.appData.tasks[286646344][5051112471] else {
@@ -84,7 +84,7 @@ class AppDataPushTests: XCTestCase {
 
         var modifiedTask = newTask
         modifiedTask.title = "Test create task modified"
-        appDataSync.update(modified: modifiedTask)
+        appDataSync.update(updated: modifiedTask)
 
         push(appDataSync: appDataSync)
         push(appDataSync: appDataSync)

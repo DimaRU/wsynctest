@@ -232,44 +232,38 @@ extension AppData {
         }
     }
 
-    func replaceObject<T: WObject>(wobject: T, to: T) {
-        switch wobject {
-        case let listChild as ListChild:
-            let parentId = listChild.listId
+    func replaceObject<T: WObject>(type: T.Type, id: Int, parentId: Int?, to: T) {
+        switch type {
+        case is ListChild.Type:
             let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].remove(wobject)
-            self[keyPath: path][parentId].update(with: to)
-        case let taskChild as TaskChild:
-            let parentId = taskChild.taskId
+            self[keyPath: path].remove(parentId: parentId!, id: id)
+            self[keyPath: path][parentId!].update(with: to)
+        case is TaskChild.Type:
             let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].remove(wobject)
-            self[keyPath: path][parentId].update(with: to)
+            self[keyPath: path].remove(parentId: parentId!, id: id)
+            self[keyPath: path][parentId!].update(with: to)
         default:
             let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
-            self[keyPath: path].remove(wobject)
+            self[keyPath: path].remove(id: id)
             self[keyPath: path].update(with: to)
         }
     }
 
-    func deleteObject<T: WObject>(wobject: T) {
-        switch wobject {
-        case let list as WList:
-            lists.remove(list)
-            removeListLeaf(listId: list.id)
-        case let task as WTask:
-            tasks.remove(parentId: task.listId, id: task.id)
-            removeTaskLeaf(taskId: task.id)
-        case let listChild as ListChild:
-            let parentId = listChild.listId
+    func deleteObject<T: WObject>(type: T.Type, id: Int, parentId: Int?) {
+        switch type {
+        case is WList.Type:
+            lists.remove(id: id)
+            removeListLeaf(listId: id)
+        case is WTask.Type:
+            tasks.remove(parentId: parentId!, id: id)
+            removeTaskLeaf(taskId: id)
+        case is ListChild.Type,
+             is TaskChild.Type:
             let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].remove(wobject)
-        case let taskChild as TaskChild:
-            let parentId = taskChild.taskId
-            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
-            self[keyPath: path][parentId].remove(wobject)
+            self[keyPath: path].remove(parentId: parentId!, id: id)
         default:
             let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
-            self[keyPath: path].remove(wobject)
+            self[keyPath: path].remove(id: id)
         }
     }
 }

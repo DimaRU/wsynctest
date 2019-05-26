@@ -67,7 +67,7 @@ public extension WObject {
         hasher.combine(id)
     }
 
-    
+
     /// Compare id
     ///
     /// - Returns: true if id equal
@@ -180,4 +180,9 @@ public extension Set where Element: WObject {
         return true
     }
 
+    mutating func remove(id: Int) {
+        if let member = self[id] {
+            self.remove(member)
+        }
+    }
 }

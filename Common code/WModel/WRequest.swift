@@ -5,109 +5,65 @@
 
 import Foundation
 
-public enum WRequest {
-    case create(uuid: String, object: Revisionable)
-    case delete(uuid: String, object: Revisionable)
-    case modify(uuid: String, object: Revisionable, modified: Revisionable)
+struct WParams: Codable {
+    var container: [String: Any]
 
-    enum CodingKeys: String, CodingKey {
-        case create
-        case delete
-        case uuid
-        case modify
-        case object
-        case modified
-        case type
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: DynamicKey.self)
+        self.container = try container.decode([String: Any].self)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: DynamicKey.self)
+        try container.encode(self.container)
+    }
+
+    init(_ dict: [String: Any]) {
+        container = dict
     }
 }
 
-extension WRequest: Codable {
-    public func encode(to encoder: Encoder) throws {
-        var containerTop = encoder.container(keyedBy: CodingKeys.self)
-        switch self {
-        case .create(let uuid, let object):
-            var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .create)
-            try container.encode(uuid, forKey: .uuid)
-            try container.encodeJSONAble(object as AnyObject, forKey: .object)
-        case .delete(let uuid, let object):
-            var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .delete)
-            try container.encode(uuid, forKey: .uuid)
-            try container.encodeJSONAble(object as AnyObject, forKey: .object)
-        case .modify(let uuid, let object, let modified):
-            var container = containerTop.nestedContainer(keyedBy: CodingKeys.self, forKey: .modify)
-            try container.encode(uuid, forKey: .uuid)
-            try container.encodeJSONAble(object as AnyObject, forKey: .object)
-            try container.encodeJSONAble(modified as AnyObject, forKey: .modified)
-        }
+struct WRequest: Codable {
+    enum RequestType: String, Codable {
+        case create, update, delete
     }
-
-    public init(from decoder: Decoder) throws {
-        let topContainer = try decoder.container(keyedBy: CodingKeys.self)
-        if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .create) {
-            let uuid = try container.decode(String.self, forKey: .uuid)
-            let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
-            self = WRequest.create(uuid: uuid, object: object)
-        } else if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .delete) {
-            let uuid = try container.decode(String.self, forKey: .uuid)
-            let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
-            self = WRequest.delete(uuid: uuid, object: object)
-        } else if let container = try? topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .modify) {
-            let uuid = try container.decode(String.self, forKey: .uuid)
-            let object = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .object, typeKey: .type)
-            let modified = try container.decodeWobject(keyedBy: CodingKeys.self, forKey: .modified, typeKey: .type)
-            self = WRequest.modify(uuid: uuid, object: object, modified: modified)
-        } else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: topContainer.codingPath, debugDescription: "No WRequest key found"))
-        }
-    }
+    let requestType: RequestType
+    var id: Int
+    var parentId: Int?
+    var revision: Int
+    let uuid: String = UUID().uuidString.lowercased()
+    var type: MappingType
+    var params: WParams
 }
 
-extension KeyedEncodingContainer {
-    mutating func encodeJSONAble(_ value: AnyObject, forKey key: K) throws {
-        switch value.self {
-        case let value as WFile: try encode(value, forKey: key)
-        case let value as WFolder: try encode(value, forKey: key)
-        case let value as WList: try encode(value, forKey: key)
-        case let value as WTask: try encode(value, forKey: key)
-        case let value as WMembership: try encode(value, forKey: key)
-        case let value as WNote: try encode(value, forKey: key)
-        case let value as WReminder: try encode(value, forKey: key)
-        case let value as WSetting: try encode(value, forKey: key)
-        case let value as WSubtask: try encode(value, forKey: key)
-        case let value as WTaskComment: try encode(value, forKey: key)
-        case let value as WTaskCommentsState: try encode(value, forKey: key)
-        case let value as WListPosition: try encode(value, forKey: key)
-        case let value as WTaskPosition: try encode(value, forKey: key)
-        case let value as WSubtaskPosition: try encode(value, forKey: key)
-        case let value as WUser: try encode(value, forKey: key)
+extension WRequest {
+    private init<T: WObject>(_ requestType: WRequest.RequestType, wobject: T, params: [String: Any]) {
+        self.requestType = requestType
+        self.id = wobject.id
+        self.params = WParams(params)
+        self.type = wobject.type
+        self.revision = wobject.revision
+        switch wobject {
+        case let wobject as ListChild:
+            parentId = wobject.listId
+        case let wobject as TaskChild:
+            parentId = wobject.taskId
         default:
-            throw EncodingError.invalidValue(value, EncodingError.Context(codingPath: codingPath, debugDescription: "Unsupported type \(type(of: value))"))
+            parentId = nil
         }
     }
-}
 
-extension KeyedDecodingContainer {
-    func decodeWobject(keyedBy type: K.Type, forKey key: K, typeKey: K) throws -> Revisionable {
-        let objContainer = try nestedContainer(keyedBy: type, forKey: key)
-        let mappingType = try objContainer.decode(MappingType.self, forKey: typeKey)
-        switch mappingType {
-        case .File: return try decode(WFile.self, forKey: key)
-        case .Folder: return try decode(WFolder.self, forKey: key)
-        case .List: return try decode(WList.self, forKey: key)
-        case .Task: return try decode(WTask.self, forKey: key)
-        case .Membership: return try decode(WMembership.self, forKey: key)
-        case .Note: return try decode(WNote.self, forKey: key)
-        case .Reminder: return try decode(WReminder.self, forKey: key)
-        case .Setting: return try decode(WSetting.self, forKey: key)
-        case .Subtask: return try decode(WSubtask.self, forKey: key)
-        case .TaskComment: return try decode(WTaskComment.self, forKey: key)
-        case .TaskCommentsState: return try decode(WTaskCommentsState.self, forKey: key)
-        case .ListPosition: return try decode(WListPosition.self, forKey: key)
-        case .TaskPosition: return try decode(WTaskPosition.self, forKey: key)
-        case .SubtaskPosition: return try decode(WSubtaskPosition.self, forKey: key)
-        case .User: return try decode(WUser.self, forKey: key)
-        default:
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: objContainer.codingPath, debugDescription: "Unsuported object type \(mappingType.rawValue)"))
-        }
+    static func create<T: WObject & WCreatable>(wobject: T) -> WRequest {
+        let params = wobject.createParams()
+        return WRequest(.create, wobject: wobject, params: params)
+    }
+
+    static func delete<T: WObject>(wobject: T) -> WRequest {
+        return WRequest(.delete, wobject: wobject, params: [:])
+    }
+
+    static func update<T: WObject>(wobject: T, updated: T) -> WRequest {
+        let params = updated.updateParams(from: wobject)
+        return WRequest(.update, wobject: wobject, params: params)
     }
 }

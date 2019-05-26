@@ -35,7 +35,7 @@ public enum WunderAPI: TargetType {
     case loadRevisionsByListId(type: Revisionable.Type, listId: Int, completed: Bool)
 
     case createWObject(type: Revisionable.Type, params: [String: Any], requestId: String)
-    case updateWObject(type: Revisionable.Type, id: Int, params: [String: Any])
+    case updateWObject(type: Revisionable.Type, id: Int, params: [String: Any], requestId: String)
     case deleteWObject(type: Revisionable.Type, id: Int, revision: Int)
     
     func requestPath(type: Revisionable.Type) -> String {
@@ -97,7 +97,7 @@ public enum WunderAPI: TargetType {
              .loadWObjectByTaskId(let type, _),
              .loadWObjectByListId(let type, _, _),
              .createWObject(let type, _, _),
-             .updateWObject(let type, _, _):
+             .updateWObject(let type, _, _, _):
             return MappingType(object: type)
         case .loadRevisions(let type),
              .loadRevisionsByTaskId(let type, _),
@@ -168,7 +168,7 @@ extension WunderAPI {
             return requestPath(type: type)
         case .createWObject(let type, _, _):
             return requestPath(type: type)
-        case .updateWObject(let type, let id, _):
+        case .updateWObject(let type, let id, _, _):
             return requestPath(type: type) + "/\(id)"
         case .deleteWObject(let type, let id, _):
             return requestPath(type: type) + "/\(id)"
@@ -190,7 +190,7 @@ extension WunderAPI {
              .loadWObjectByTaskId(let type, _),
              .loadWObjectByListId(let type, _, _),
              .createWObject(let type, _, _),
-             .updateWObject(let type, _, _),
+             .updateWObject(let type, _, _, _),
              .deleteWObject(let type, _, _),
              .loadRevisions(let type),
              .loadRevisionsByTaskId(let type, _),
@@ -245,7 +245,7 @@ extension WunderAPI {
             return .requestParameters(parameters: ["task_id" : taskId], encoding: WunderAPI.urlEncoding)
         case .createWObject( _, let params, _):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .updateWObject( _, _, let params):
+        case .updateWObject( _, _, let params, _):
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .deleteWObject( _,  _, let revision):
             return .requestParameters(parameters: ["revision" : revision], encoding: WunderAPI.urlEncoding)
@@ -285,9 +285,11 @@ extension WunderAPI {
 
         assigned["X-Access-Token"] = KeychainService.shared[.token]
 
-        if case .createWObject(_, _, let requestId) = self {
+        switch self {
+        case .createWObject( _, _, let requestId),
+             .updateWObject( _, _, _, let requestId):
             assigned["x-client-request-id"] = requestId
-        } else {
+        default:
             assigned["x-client-request-id"] = UUID().uuidString.lowercased()
         }
 

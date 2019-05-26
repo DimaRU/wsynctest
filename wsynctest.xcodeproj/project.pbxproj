@@ -20,6 +20,7 @@
 		0A128991229013DC00435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
 		0A1289952290140E00435677 /* WProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1289942290140D00435677 /* WProviderTests.swift */; };
 		0A128999229021BC00435677 /* CheckAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A128998229021BC00435677 /* CheckAppStore.swift */; };
+		0A1799EA229AA0C80013D679 /* AnyDictionaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1799E9229AA0C70013D679 /* AnyDictionaryCodable.swift */; };
 		0A234907227770E80016CDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B62277709C0016CDBC /* ViewController.swift */; };
 		0A234908227770F20016CDBC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B82277709C0016CDBC /* AppData.swift */; };
 		0A234909227770F20016CDBC /* AppDataSyncPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348B92277709C0016CDBC /* AppDataSyncPull.swift */; };
@@ -198,6 +199,7 @@
 		0A12898F229013D700435677 /* WDumpProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDumpProvider.swift; sourceTree = "<group>"; };
 		0A1289942290140D00435677 /* WProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WProviderTests.swift; sourceTree = "<group>"; };
 		0A128998229021BC00435677 /* CheckAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStore.swift; sourceTree = "<group>"; };
+		0A1799E9229AA0C70013D679 /* AnyDictionaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDictionaryCodable.swift; sourceTree = "<group>"; };
 		0A234881227653EC0016CDBC /* wsync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wsync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A234892227653ED0016CDBC /* wsyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wsyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2348A3227654B40016CDBC /* wtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -462,6 +464,7 @@
 		0A2348C02277709C0016CDBC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0A1799E9229AA0C70013D679 /* AnyDictionaryCodable.swift */,
 				0A2348C22277709C0016CDBC /* iso8601date.swift */,
 				0A2348C12277709C0016CDBC /* String+OutputStream.swift */,
 				0A2348C32277709C0016CDBC /* URLExtensions.swift */,
@@ -1009,6 +1012,7 @@
 				0A234977227771660016CDBC /* HwUUID.swift in Sources */,
 				0A23494D227771540016CDBC /* WTask.swift in Sources */,
 				0A234942227771540016CDBC /* WTaskPosition.swift in Sources */,
+				0A1799EA229AA0C80013D679 /* AnyDictionaryCodable.swift in Sources */,
 				0A23494A227771540016CDBC /* WTaskCommentsState.swift in Sources */,
 				0A234923227771450016CDBC /* WUploadService.swift in Sources */,
 				0A23493E227771540016CDBC /* WBackup.swift in Sources */,
