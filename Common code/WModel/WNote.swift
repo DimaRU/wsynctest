@@ -11,7 +11,7 @@ public struct WNote: WObject, TaskChild, WCreatable {
     public let type: MappingType = .Note
     public let createdByRequestId: String?
 
-    public let taskId: Int
+    public var taskId: Int
     public var content: String
 
     public static let createFieldList: [PartialKeyPath<WNote>] = [

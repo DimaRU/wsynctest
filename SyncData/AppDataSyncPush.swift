@@ -32,6 +32,10 @@ extension AppDataSync {
         var created = wobject
         created.storedSyncState = .created
         appData.updateObject(created)
+        if let task = created as? WTask {
+            let subtaskPosition = WSubtaskPosition(storedSyncState: .created, id: task.id, revision: 0, taskId: task.id, values: [])
+            self.appData.subtaskPositions[task.id].update(with: subtaskPosition)
+        }
 
         let request = WRequest.create(wobject: created)
         requestQueue.enqueue(request)
@@ -107,14 +111,7 @@ extension AppDataSync {
                 .done { created in
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.requestQueue.dequeue()
-                    switch created {
-                    case let task as WTask:
-                        let subtaskPosition = WSubtaskPosition(storedSyncState: nil, id: task.id, revision: 0, taskId: task.id, values: [])
-                        print(subtaskPosition)
-                        self.appData.subtaskPositions[task.id].update(with: subtaskPosition)
-                    default:
-                        break
-                    }
+                    self.appData.replaceId(for: type, fakeId: request.id, id: created.id)
                 }.ensure {
                     completion?()
                 }.catch { error in

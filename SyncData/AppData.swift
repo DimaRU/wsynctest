@@ -196,6 +196,70 @@ extension AppData {
         taskPositions[listId] = []
         memberships[listId] = []
     }
+
+    func replaceId<T: WObject & WCreatable>(for type: T.Type, fakeId: Int, id: Int) {
+        if type is WList.Type {
+            // task, taskPositions, memberships
+            let childTasks: [WTask] = self.tasks[fakeId].map {
+                var task = $0
+                task.listId = id
+                return task
+            }
+            self.tasks[fakeId] = []
+            self.tasks[id] = Set<WTask>(childTasks)
+
+            if let taskPosition = self.taskPositions[fakeId].first {
+                let newTaskPosition = WTaskPosition(storedSyncState: taskPosition.storedSyncState,
+                                             id: id,
+                                             revision: taskPosition.revision,
+                                             listId: id,
+                                             values: taskPosition.values)
+                taskPositions[id].update(with: newTaskPosition)
+            }
+
+            if var membership = self.memberships[fakeId].first {
+                membership.listId = id
+                memberships[fakeId] = []
+                memberships[id].update(with: membership)
+            }
+        }
+        if type is WTask.Type {
+            let subtasks: [WSubtask] = self.subtasks[fakeId].map {
+                var subtask = $0
+                subtask.taskId = id
+                return subtask
+            }
+            self.subtasks[fakeId] = []
+            self.subtasks[id] = Set<WSubtask>(subtasks)
+
+            let notes: [WNote] = self.notes[fakeId].map {
+                var note = $0
+                note.taskId = id
+                return note
+            }
+            self.notes[fakeId] = []
+            self.notes[id] = Set<WNote>(notes)
+
+            let taskComments: [WTaskComment] = self.taskComments[fakeId].map {
+                var taskComment = $0
+                taskComment.taskId = id
+                return taskComment
+            }
+            self.taskComments[fakeId] = []
+            self.taskComments[id] = Set<WTaskComment>(taskComments)
+
+
+            if let subtaskPosition = self.subtaskPositions[fakeId].first {
+                let newSubtaskPosition = WSubtaskPosition(storedSyncState: .modified,
+                                                          id: id,
+                                                          revision: subtaskPosition.revision,
+                                                          taskId: id,
+                                                          values: subtaskPosition.values)
+                self.subtaskPositions[fakeId] = []
+                self.subtaskPositions[id].update(with: newSubtaskPosition)
+            }
+        }
+    }
 }
 
 // MARK: Accessors

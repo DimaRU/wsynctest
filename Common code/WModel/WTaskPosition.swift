@@ -10,7 +10,7 @@ public struct WTaskPosition: WObject, ListChild {
     public let revision: Int
     public let type: MappingType = .TaskPosition
 
-    public let listId: Int
+    public var listId: Int
     public var values: [Int]
 
 // sourcery:inline:auto:WTaskPosition.property

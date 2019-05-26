@@ -10,7 +10,7 @@ public struct WTaskCommentsState: WObject, TaskChild {
     public let revision: Int
     public let type: MappingType = .TaskCommentsState
 
-    public let taskId: Int
+    public var taskId: Int
     public let unreadCount: Int
     public let lastReadId: Int?
 

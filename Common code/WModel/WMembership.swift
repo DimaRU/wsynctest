@@ -11,7 +11,7 @@ public struct WMembership: WObject, ListChild, WCreatable {
     public let type: MappingType = .Membership
     public let createdByRequestId: String?
 
-    public let listId: Int
+    public var listId: Int
     public let owner: Bool
     public var muted: Bool?
     public let state: String

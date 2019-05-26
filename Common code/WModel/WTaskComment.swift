@@ -12,7 +12,7 @@ public struct WTaskComment: WObject, TaskChild, WCreatable {
     public let createdByRequestId: String?
 
     public var text: String
-    public let taskId: Int
+    public var taskId: Int
     public let localCreatedAt: Date?
     public let author: WAuthor
     public let createdAt: Date?

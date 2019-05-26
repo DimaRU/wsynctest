@@ -11,7 +11,7 @@ public struct WSubtask: WObject, TaskChild, WCreatable {
     public let type: MappingType = .Subtask
     public let createdByRequestId: String?
 
-    public let taskId: Int
+    public var taskId: Int
     public var title: String
     public var completed: Bool
     public let createdAt: Date?
