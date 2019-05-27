@@ -100,5 +100,8 @@ class AppDataSync {
     public func makeWFolder(title: String, listIds: [Int]) -> WFolder {
         return WFolder(id: fakeId, title: title, listIds: listIds)
     }
-
+    public func makeWReminder(taskId: Int, date: Date) -> WReminder {
+        return .init(id: fakeId, taskId: taskId, date: date)
+    }
+    
 }

@@ -236,6 +236,11 @@ extension AppData {
         }
 
         if type is WTask.Type {
+            if var reminder = self.reminders.first(where: { $0.taskId == fakeId}) {
+                reminder.taskId = id
+                self.reminders.update(with: reminder)
+            }
+            
             if var taskPosition = taskPositions[parentId!].first {
                 taskPosition.values = taskPosition.values.map{ $0 == fakeId ? id: $0 }
                 taskPositions[parentId!].update(with: taskPosition)

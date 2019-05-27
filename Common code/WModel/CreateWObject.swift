@@ -93,3 +93,15 @@ extension WFolder {
         self.userId = nil
     }
 }
+
+extension WReminder {
+    public init(id: Int, taskId: Int, date: Date) {
+        self.id = id
+        self.revision = 0
+        self.taskId = taskId
+        self.date = date
+        self.createdAt = nil
+        self.updatedAt = nil
+        self.createdByRequestId = nil
+    }
+}

@@ -11,7 +11,7 @@ public struct WReminder: WObject, WCreatable {
     public let type: MappingType = .Reminder
     public let createdByRequestId: String?
 
-    public let taskId: Int
+    public var taskId: Int
     public var date: Date
     public let createdAt: Date?
     public let updatedAt: Date?

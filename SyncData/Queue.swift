@@ -66,17 +66,11 @@ extension Queue where T == WRequest {
                 request.id = id
             }
             request.parentId = request.parentId == fakeId ? id: parentId
-            switch wtype {
-            case is WList.Type:
-                if (request.params.container["list_id"] as? Int) == fakeId {
-                    request.params.container["list_id"] = id
-                }
-            case is WTask.Type:
-                if (request.params.container["task_id"] as? Int) == fakeId {
-                    request.params.container["task_id"] = id
-                }
-            default:
-                break
+            if (request.params.container["list_id"] as? Int) == fakeId {
+                request.params.container["list_id"] = id
+            }
+            if (request.params.container["task_id"] as? Int) == fakeId {
+                request.params.container["task_id"] = id
             }
             if let values = request.params.container["values"] as? [Int] {
                 request.params.container["values"] = values.map { $0 == fakeId ? id: fakeId }
