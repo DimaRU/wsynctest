@@ -164,6 +164,7 @@
 		0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */; };
 		0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */; };
 		0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5F022916353003C55D6 /* 25847-dump.json */; };
+		0A995D1A229BFB2D0049BD60 /* AnyDictionaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1799E9229AA0C70013D679 /* AnyDictionaryCodable.swift */; };
 		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
 		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0ABD385D2294838200FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
@@ -1072,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A23496F2277715E0016CDBC /* Disk.swift in Sources */,
+				0A995D1A229BFB2D0049BD60 /* AnyDictionaryCodable.swift in Sources */,
 				0A37A71122779901003FCDE4 /* Logger.swift in Sources */,
 				0A23495F227771550016CDBC /* WTaskComment.swift in Sources */,
 				0A234966227771550016CDBC /* CreateWObject.swift in Sources */,

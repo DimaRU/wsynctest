@@ -148,7 +148,7 @@ struct TestService {
         assert(from.id == to.id, "Update object id is't equal")
         let params = to.updateParams(from: from)
         log("Update \(T.typeName()), id: \(from.id) revision: \(from.revision) params: \(params)")
-        return WAPI.update(T.self, id: from.id, params: params)
+        return WAPI.update(T.self, id: from.id, params: params, requestId: UUID().uuidString.lowercased())
     }
 
     func create<T: WObject & WCreatable>(from wobject: T) throws -> Promise<T> {
