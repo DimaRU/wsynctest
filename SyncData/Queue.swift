@@ -55,7 +55,7 @@ public struct Queue<T: Codable> {
 }
 
 extension Queue where T == WRequest {
-    mutating func replaceId<E: WObject>(for wtype: E.Type, fakeId: Int, id: Int) {
+    mutating func replaceId<E: WObject>(for wtype: E.Type, fakeId: Int, id: Int, parentId: Int?) {
         guard !array.isEmpty else { return }
         var newArray: [T] = []
         newArray.reserveCapacity(array.count)
@@ -71,6 +71,9 @@ extension Queue where T == WRequest {
             if wtype is WTask.Type, (request.params.container["task_id"] as? Int) == fakeId {
                 request.params.container["task_id"] = id
             }
+
+            #warning("Todo: list_positions, task_positions, subtask_positions, folder")
+
             newArray.append(request)
         }
         array = newArray

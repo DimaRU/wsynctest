@@ -197,9 +197,9 @@ extension AppData {
         memberships[listId] = []
     }
 
-    func replaceId<T: WObject & WCreatable>(for type: T.Type, fakeId: Int, id: Int) {
+    func replaceId<T: WObject & WCreatable>(for type: T.Type, fakeId: Int, id: Int, parentId: Int?) {
         if type is WList.Type {
-            // task, taskPositions, memberships
+            // task, taskPositions, memberships, listPostitions, folders
             let childTasks: [WTask] = self.tasks[fakeId].map {
                 var task = $0
                 task.listId = id
@@ -222,8 +222,25 @@ extension AppData {
                 memberships[fakeId] = []
                 memberships[id].update(with: membership)
             }
+
+            if var listPostion = self.listPositions.first {
+                listPostion.values = listPostion.values.map{ $0 == fakeId ? id: $0 }
+            }
+
+            for folderSrc in folders {
+                var folder = folderSrc
+                folder.listIds = folderSrc.listIds.map{ $0 == fakeId ? id: $0 }
+                folders.update(with: folder)
+            }
+
         }
+
         if type is WTask.Type {
+            if var taskPosition = taskPositions[parentId!].first {
+                taskPosition.values = taskPosition.values.map{ $0 == fakeId ? id: $0 }
+                taskPositions[parentId!].update(with: taskPosition)
+            }
+
             let subtasks: [WSubtask] = self.subtasks[fakeId].map {
                 var subtask = $0
                 subtask.taskId = id
@@ -248,7 +265,6 @@ extension AppData {
             self.taskComments[fakeId] = []
             self.taskComments[id] = Set<WTaskComment>(taskComments)
 
-
             if let subtaskPosition = self.subtaskPositions[fakeId].first {
                 let newSubtaskPosition = WSubtaskPosition(storedSyncState: .modified,
                                                           id: id,
@@ -259,7 +275,16 @@ extension AppData {
                 self.subtaskPositions[id].update(with: newSubtaskPosition)
             }
         }
+
+        if type is WSubtask.Type {
+            if var subtaskPosition = subtaskPositions[parentId!].first {
+                subtaskPosition.values = subtaskPosition.values.map{ $0 == fakeId ? id: $0 }
+                subtaskPositions[parentId!].update(with: subtaskPosition)
+            }
+        }
+
     }
+
 }
 
 // MARK: Accessors

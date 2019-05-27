@@ -110,9 +110,9 @@ extension AppDataSync {
             WAPI.create(T.self, params: params, requestId: request.uuid)
                 .done { created in
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
+                    self.appData.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
+                    self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
                     self.requestQueue.dequeue()
-                    self.appData.replaceId(for: type, fakeId: request.id, id: created.id)
-                    self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id)
                 }.ensure {
                     completion?()
                 }.catch { error in

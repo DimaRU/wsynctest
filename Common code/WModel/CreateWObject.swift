@@ -78,6 +78,18 @@ extension WTaskComment {
         self.createdAt = Date()
         self.createdByRequestId = nil
     }
-    
 }
 
+extension WFolder {
+    public init(title: String, listIds: [Int]) {
+        self.id = -1
+        self.revision = 0
+        self.title = title
+        self.listIds = listIds
+        self.createdAt = Date()
+        self.createdById = nil
+        self.createdByRequestId = nil
+        self.updatedAt = nil
+        self.userId = nil
+    }
+}
