@@ -209,7 +209,7 @@ extension AppData {
             self.tasks[id] = Set<WTask>(childTasks)
 
             if let taskPosition = self.taskPositions[fakeId].first {
-                let newTaskPosition = WTaskPosition(storedSyncState: taskPosition.storedSyncState,
+                let newTaskPosition = WTaskPosition(storedSyncState: .synced,
                                              id: id,
                                              revision: taskPosition.revision,
                                              listId: id,
@@ -266,7 +266,7 @@ extension AppData {
             self.taskComments[id] = Set<WTaskComment>(taskComments)
 
             if let subtaskPosition = self.subtaskPositions[fakeId].first {
-                let newSubtaskPosition = WSubtaskPosition(storedSyncState: .modified,
+                let newSubtaskPosition = WSubtaskPosition(storedSyncState: .synced,
                                                           id: id,
                                                           revision: subtaskPosition.revision,
                                                           taskId: id,

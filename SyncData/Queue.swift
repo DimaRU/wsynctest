@@ -65,11 +65,18 @@ extension Queue where T == WRequest {
             if request.type == mappingType, request.id == fakeId {
                 request.id = id
             }
-            if wtype is WList.Type, (request.params.container["list_id"] as? Int) == fakeId {
-                request.params.container["list_id"] = id
-            }
-            if wtype is WTask.Type, (request.params.container["task_id"] as? Int) == fakeId {
-                request.params.container["task_id"] = id
+            request.parentId = request.parentId == fakeId ? id: parentId
+            switch wtype {
+            case is WList.Type:
+                if (request.params.container["list_id"] as? Int) == fakeId {
+                    request.params.container["list_id"] = id
+                }
+            case is WTask.Type:
+                if (request.params.container["task_id"] as? Int) == fakeId {
+                    request.params.container["task_id"] = id
+                }
+            default:
+                break
             }
 
             #warning("Todo: list_positions, task_positions, subtask_positions, folder")
