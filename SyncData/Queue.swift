@@ -4,7 +4,7 @@
 
 
 public struct Queue<T: Codable> {
-    fileprivate var array = [T]() {
+    fileprivate var array: [T] = [] {
         didSet {
             diskStore?.persist(array)
         }
@@ -23,6 +23,18 @@ public struct Queue<T: Codable> {
         array.append(element)
     }
 
+    public mutating func enqueueFirst(_ element: T) {
+        array.insert(element, at: 0)
+    }
+
+    public mutating func replaceFirst(_ element: T) {
+        if array.isEmpty {
+            array.insert(element, at: 0)
+        } else {
+            array[0] = element
+        }
+    }
+
     @discardableResult
     public mutating func dequeue() -> T? {
         if isEmpty {
@@ -39,5 +51,28 @@ public struct Queue<T: Codable> {
     init(_ diskStore: DiskStore?) {
         self.diskStore = diskStore
         array = diskStore?.load([T].self) ?? []
+    }
+}
+
+extension Queue where T == WRequest {
+    mutating func replaceId<E: WObject>(for wtype: E.Type, fakeId: Int, id: Int) {
+        guard !array.isEmpty else { return }
+        var newArray: [T] = []
+        newArray.reserveCapacity(array.count)
+        let mappingType = MappingType(object: wtype)
+        for index in array.indices {
+            var request = array[index]
+            if request.type == mappingType, request.id == fakeId {
+                request.id = id
+            }
+            if wtype is WList.Type, (request.params.container["list_id"] as? Int) == fakeId {
+                request.params.container["list_id"] = id
+            }
+            if wtype is WTask.Type, (request.params.container["task_id"] as? Int) == fakeId {
+                request.params.container["task_id"] = id
+            }
+            newArray.append(request)
+        }
+        array = newArray
     }
 }

@@ -112,6 +112,7 @@ extension AppDataSync {
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.requestQueue.dequeue()
                     self.appData.replaceId(for: type, fakeId: request.id, id: created.id)
+                    self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id)
                 }.ensure {
                     completion?()
                 }.catch { error in
