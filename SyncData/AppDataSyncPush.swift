@@ -7,40 +7,6 @@ import PromiseKit
 
 // MARK: External accessors
 extension AppDataSync {
-    public func update<T: WObject>(updated wobject: T){
-        guard let source = appData.getSource(for: wobject) else {
-            assertionFailure("No source for modified wobject \(wobject)")
-            return
-        }
-        var updated = wobject
-        updated.storedSyncState = .modified
-        appData.updateObject(updated)
-        let request = WRequest.update(wobject: source, updated: updated)
-        requestQueue.enqueue(request)
-    }
-
-    public func delete<T: WObject>(_ wobject: T) {
-        var deleted = wobject
-        deleted.storedSyncState = .deleted
-        appData.updateObject(deleted)
-
-        let request = WRequest.delete(wobject: wobject)
-        requestQueue.enqueue(request)
-    }
-
-    public func add<T: WObject & WCreatable>(created wobject: T) {
-        var created = wobject
-        created.storedSyncState = .created
-        appData.updateObject(created)
-        if let task = created as? WTask {
-            let subtaskPosition = WSubtaskPosition(storedSyncState: .created, id: task.id, revision: 0, taskId: task.id, values: [])
-            self.appData.subtaskPositions[task.id].update(with: subtaskPosition)
-        }
-
-        let request = WRequest.create(wobject: created)
-        requestQueue.enqueue(request)
-    }
-
 
     // Push
     public func pushNext(completion: (() -> Void)? = nil) {

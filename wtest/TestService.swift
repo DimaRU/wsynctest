@@ -12,7 +12,7 @@ struct TestService {
     private let queue = DispatchQueue(label: "wtest", qos: .background, attributes: [.concurrent])
 
     func createList(title: String) throws -> WList {
-        let listProto = WList.init(title: title)
+        let listProto = WList.init(id: -1, title: title)
         let list = try create(from: listProto).wait()
         log("List created:")
         PrintContent.wprint(list)
@@ -20,7 +20,7 @@ struct TestService {
     }
     
     func createTask(title: String, for listId: Int, starred: Bool = false) throws -> WTask {
-        let taskProto = WTask.init(listId: listId, title: title, starred: starred)
+        let taskProto = WTask.init(id: -1, listId: listId, title: title, starred: starred)
         let task = try create(from: taskProto).wait()
         log("Task created:")
         PrintContent.wprint(task)
@@ -28,7 +28,7 @@ struct TestService {
     }
     
     func createSubtask(title: String, for taskId: Int) throws -> WSubtask {
-        let subtaskProto = WSubtask.init(taskId: taskId, title: title)
+        let subtaskProto = WSubtask.init(id: -1, taskId: taskId, title: title)
         let subtask = try create(from: subtaskProto).wait()
         log("Subtask created:")
         PrintContent.wprint([subtask], for: taskId)
@@ -132,7 +132,7 @@ struct TestService {
         try delete(file)
         
         let commentText = "Test comment"
-        let commentProto = WTaskComment.init(taskId: task.id, text: commentText)
+        let commentProto = WTaskComment.init(id: -1, taskId: task.id, text: commentText)
         let comment = try create(from: commentProto).wait()
         let commentState = try WAPI.get(WTaskCommentsState.self, taskId: task.id).wait()
         PrintContent.wprint([comment], commentState, for: task.id)

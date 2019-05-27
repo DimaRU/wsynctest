@@ -48,10 +48,17 @@ class DiskStore {
         }
     }
 
-    func persist<T: Codable>(_ wobject: [T]) {
+    func persist<T: Codable>(_ object: T) {
         let path = createPathFrom(T.self)
         persistQueue.async {
-            try? Disk.save(wobject, to: self.directory, as: path)
+            try? Disk.save(object, to: self.directory, as: path)
+        }
+    }
+
+    func persist<T: Codable>(_ object: [T]) {
+        let path = createPathFrom(T.self)
+        persistQueue.async {
+            try? Disk.save(object, to: self.directory, as: path)
         }
     }
 
@@ -89,7 +96,12 @@ class DiskStore {
         return Set<T>(wobject)
     }
 
-    func load<T>(_ type: [T].Type) -> [T]? where T : Codable {
+    func load<T: Codable>(_ type: T.Type) -> T? {
+        let path = createPathFrom(T.self)
+        return try? Disk.retrieve(path, from: directory, as: T.self)
+    }
+
+    func load<T: Codable>(_ type: [T].Type) -> [T]? {
         let path = createPathFrom(T.self)
         return try? Disk.retrieve(path, from: directory, as: [T].self)
     }

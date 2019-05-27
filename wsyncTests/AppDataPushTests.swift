@@ -44,11 +44,11 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
 
-        let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
+        let newTask = appDataSync.makeWTask(listId: 286646344, title: "Test create task", starred: false)
         appDataSync.add(created: newTask)
         push(appDataSync: appDataSync)
 
-        let newSubtask = WSubtask(taskId: 5051112471, title: "Test create task")
+        let newSubtask = appDataSync.makeWSubtask(taskId: 5051112471, title: "Test create task")
         appDataSync.add(created: newSubtask)
         push(appDataSync: appDataSync)
 
@@ -76,10 +76,10 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertEqual(appDataSync.requestQueue.count, 0, "Queue length must be 0")
 
-        let newTask = WTask(listId: 286646344, title: "Test create task", starred: false)
+        let newTask = appDataSync.makeWTask(listId: 286646344, title: "Test create task", starred: false)
         appDataSync.add(created: newTask)
 
-        let newSubtask = WSubtask(taskId: newTask.id, title: "Test create task")
+        let newSubtask = appDataSync.makeWSubtask(taskId: newTask.id, title: "Test create task")
         appDataSync.add(created: newSubtask)
 
         var modifiedTask = newTask

@@ -7,8 +7,8 @@ import PromiseKit
 
 
 extension WList {
-    public init(title: String) {
-        self.id = -1
+    public init(id: Int, title: String) {
+        self.id = id
         self.revision = 0
         self.title = title
         self.ownerId = nil
@@ -22,8 +22,8 @@ extension WList {
 }
 
 extension WTask {
-    public init(listId: Int, title: String, starred: Bool = false) {
-        self.id = -1
+    public init(id: Int, listId: Int, title: String, starred: Bool = false) {
+        self.id = id
         self.revision = 0
         self.title = title
         self.completed = false
@@ -43,8 +43,8 @@ extension WTask {
 }
 
 extension WSubtask {
-    public init(taskId: Int, title: String) {
-        self.id = -1
+    public init(id: Int, taskId: Int, title: String) {
+        self.id = id
         self.revision = 0
         self.taskId = taskId
         self.title = title
@@ -57,8 +57,8 @@ extension WSubtask {
 }
 
 extension WNote {
-    public init(taskId: Int, content: String) {
-        self.id = -1
+    public init(id: Int, taskId: Int, content: String) {
+        self.id = id
         self.revision = 0
         self.taskId = taskId
         self.content = content
@@ -68,8 +68,8 @@ extension WNote {
 }
 
 extension WTaskComment {
-    public init(taskId: Int, text: String) {
-        self.id = -1
+    public init(id: Int, taskId: Int, text: String) {
+        self.id = id
         self.revision = 0
         self.text = text
         self.taskId = taskId
@@ -81,8 +81,8 @@ extension WTaskComment {
 }
 
 extension WFolder {
-    public init(title: String, listIds: [Int]) {
-        self.id = -1
+    public init(id: Int, title: String, listIds: [Int]) {
+        self.id = id
         self.revision = 0
         self.title = title
         self.listIds = listIds

@@ -253,4 +253,27 @@ extension AppDataSync {
                 log(error: error)
         }
     }
+
+
+    // MARK: Pull network accessors
+    private func get<T: WObject>(_ type: T.Type, id: Int) -> Promise<T> {
+        guard syncState == .pull else { return Promise(error: PMKError.cancelled) }
+        return WAPI.get(type, id: id)
+    }
+
+    private func get<T: WObject>(_ type: T.Type) -> Promise<Set<T>> {
+        guard syncState == .pull else { return Promise(error: PMKError.cancelled) }
+        return WAPI.get(type)
+    }
+
+    private func get<T: WObject>(_ type: T.Type, listId: Int, completed: Bool = false) -> Promise<Set<T>> {
+        guard syncState == .pull else { return Promise(error: PMKError.cancelled) }
+        return WAPI.get(type, listId: listId, completed: completed)
+    }
+
+    private func get<T: WObject>(_ type: T.Type, taskId: Int) -> Promise<Set<T>> {
+        guard syncState == .pull else { return Promise(error: PMKError.cancelled) }
+        return WAPI.get(type, taskId: taskId)
+    }
+
 }
