@@ -160,6 +160,7 @@
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
+		0A651B82229D44C600CEF91F /* CreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A651B81229D44C600CEF91F /* CreateTest.swift */; };
 		0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */; };
 		0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */; };
 		0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */; };
@@ -294,6 +295,7 @@
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPushTests.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
+		0A651B81229D44C600CEF91F /* CreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTest.swift; sourceTree = "<group>"; };
 		0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25833-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25830-dump.json"; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */,
 				0A2349EB2277765C0016CDBC /* PrintContent.swift */,
 				0A2349EC2277765C0016CDBC /* TestService.swift */,
+				0A651B81229D44C600CEF91F /* CreateTest.swift */,
 				0A2349F02277765D0016CDBC /* ViewController.swift */,
 				0A2349ED2277765C0016CDBC /* AppDelegate.swift */,
 				0A2349E42277765C0016CDBC /* Resource */,
@@ -1110,6 +1113,7 @@
 				0A2349F72277765D0016CDBC /* PrintContent.swift in Sources */,
 				0A2349742277715E0016CDBC /* Disk+Codable.swift in Sources */,
 				0A23494E227771550016CDBC /* WReminder.swift in Sources */,
+				0A651B82229D44C600CEF91F /* CreateTest.swift in Sources */,
 				0A23495E227771550016CDBC /* WNote.swift in Sources */,
 				0A234927227771460016CDBC /* APIKeys.swift in Sources */,
 				0A2349712277715E0016CDBC /* Disk+Errors.swift in Sources */,

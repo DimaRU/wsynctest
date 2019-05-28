@@ -5,9 +5,8 @@
 import PromiseKit
 
 
-
 class DumpContentComapact {
-
+    let directory = "logs/dump/"
     var dump = WDump()
 
     func dumpRoot() -> Promise<Void> {
@@ -97,8 +96,8 @@ class DumpContentComapact {
                 self.dump.settings.formUnion(settings)
         }
     }
-    
-    public func all(comment: String) {
+
+    public func dumpPromise(comment: String) -> Promise<Void> {
         self.dump.comment = comment
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .formatted(Date.iso8601FullFormatter)
@@ -107,8 +106,8 @@ class DumpContentComapact {
 
         Disk.customEncoder = encoder
 
-        firstly {
-                self.dumpRoot()
+        return firstly {
+            self.dumpRoot()
             }.then {
                 self.dumpUsers()
             }.then {
@@ -125,11 +124,17 @@ class DumpContentComapact {
                 let root = self.dump.root
                 let userId = root.userId
                 let user = self.dump.users.first(where: { $0.id == userId})!
-                let directory = "logs/dump/"
-                let fileName = "\(directory)\(user.email)/\(root.revision)-dump.json"
+                let fileName = "\(self.directory)\(user.email)/\(root.revision)-dump.json"
                 try Disk.save(self.dump, to: Disk.Directory.developer, as: fileName)
+        }
+
+    }
+
+    public func all(comment: String) {
+        firstly {
+            dumpPromise(comment: comment)
             }.catch { error in
-                print(error)
+                log(error: error)
         }
     }
 }
