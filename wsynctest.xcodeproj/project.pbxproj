@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		005FC457B9FB3571F95CF615 /* Pods_wtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0993F94505715A1E039331 /* Pods_wtest.framework */; };
-		0A0B688422994B49002A3F96 /* 25869-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B687F22994B49002A3F96 /* 25869-dump.json */; };
-		0A0B688522994B49002A3F96 /* 25868-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688022994B49002A3F96 /* 25868-dump.json */; };
-		0A0B688622994B49002A3F96 /* 25866-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688122994B49002A3F96 /* 25866-dump.json */; };
-		0A0B688722994B49002A3F96 /* 25871-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688222994B49002A3F96 /* 25871-dump.json */; };
-		0A0B688822994B49002A3F96 /* 25867-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688322994B49002A3F96 /* 25867-dump.json */; };
-		0A0B688C22994B6F002A3F96 /* createWSubtask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688922994B6F002A3F96 /* createWSubtask.json */; };
-		0A0B688D22994B6F002A3F96 /* updateWTask-5051112471.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688A22994B6F002A3F96 /* updateWTask-5051112471.json */; };
-		0A0B688E22994B6F002A3F96 /* createWTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A0B688B22994B6F002A3F96 /* createWTask.json */; };
 		0A128990229013D700435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
 		0A128991229013DC00435677 /* WDumpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12898F229013D700435677 /* WDumpProvider.swift */; };
 		0A1289952290140E00435677 /* WProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1289942290140D00435677 /* WProviderTests.swift */; };
@@ -160,6 +152,23 @@
 		0A37A710227798FE003FCDE4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348FE2277709C0016CDBC /* KeychainService.swift */; };
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
+		0A54E765229DDBEF003DE7E9 /* createWFolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E75C229DDBEF003DE7E9 /* createWFolder.json */; };
+		0A54E766229DDBEF003DE7E9 /* createWReminder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E75D229DDBEF003DE7E9 /* createWReminder.json */; };
+		0A54E767229DDBEF003DE7E9 /* createWTaskComment.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E75E229DDBEF003DE7E9 /* createWTaskComment.json */; };
+		0A54E768229DDBEF003DE7E9 /* updateWTaskPosition-395139509.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E75F229DDBEF003DE7E9 /* updateWTaskPosition-395139509.json */; };
+		0A54E769229DDBEF003DE7E9 /* updateWList-395139509.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E760229DDBEF003DE7E9 /* updateWList-395139509.json */; };
+		0A54E76A229DDBEF003DE7E9 /* updateWSubtaskPosition-5063637365.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E761229DDBEF003DE7E9 /* updateWSubtaskPosition-5063637365.json */; };
+		0A54E76B229DDBEF003DE7E9 /* createWSubtask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E762229DDBEF003DE7E9 /* createWSubtask.json */; };
+		0A54E76C229DDBEF003DE7E9 /* createWTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E763229DDBEF003DE7E9 /* createWTask.json */; };
+		0A54E76D229DDBEF003DE7E9 /* createWList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E764229DDBEF003DE7E9 /* createWList.json */; };
+		0A54E76F229DDC12003DE7E9 /* 25927-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E76E229DDC11003DE7E9 /* 25927-dump.json */; };
+		0A54E772229DDC19003DE7E9 /* 25938-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E770229DDC19003DE7E9 /* 25938-dump.json */; };
+		0A54E773229DDC19003DE7E9 /* 25936-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E771229DDC19003DE7E9 /* 25936-dump.json */; };
+		0A54E779229DE5D5003DE7E9 /* 25931-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E774229DE5D4003DE7E9 /* 25931-dump.json */; };
+		0A54E77A229DE5D5003DE7E9 /* 25929-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E775229DE5D4003DE7E9 /* 25929-dump.json */; };
+		0A54E77B229DE5D5003DE7E9 /* 25930-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E776229DE5D4003DE7E9 /* 25930-dump.json */; };
+		0A54E77C229DE5D5003DE7E9 /* 25934-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E777229DE5D4003DE7E9 /* 25934-dump.json */; };
+		0A54E77D229DE5D5003DE7E9 /* 25928-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A54E778229DE5D5003DE7E9 /* 25928-dump.json */; };
 		0A651B82229D44C600CEF91F /* CreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A651B81229D44C600CEF91F /* CreateTest.swift */; };
 		0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */; };
 		0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */; };
@@ -190,14 +199,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A0B687F22994B49002A3F96 /* 25869-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25869-dump.json"; sourceTree = "<group>"; };
-		0A0B688022994B49002A3F96 /* 25868-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25868-dump.json"; sourceTree = "<group>"; };
-		0A0B688122994B49002A3F96 /* 25866-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25866-dump.json"; sourceTree = "<group>"; };
-		0A0B688222994B49002A3F96 /* 25871-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25871-dump.json"; sourceTree = "<group>"; };
-		0A0B688322994B49002A3F96 /* 25867-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25867-dump.json"; sourceTree = "<group>"; };
-		0A0B688922994B6F002A3F96 /* createWSubtask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWSubtask.json; sourceTree = "<group>"; };
-		0A0B688A22994B6F002A3F96 /* updateWTask-5051112471.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWTask-5051112471.json"; sourceTree = "<group>"; };
-		0A0B688B22994B6F002A3F96 /* createWTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTask.json; sourceTree = "<group>"; };
 		0A12898F229013D700435677 /* WDumpProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDumpProvider.swift; sourceTree = "<group>"; };
 		0A1289942290140D00435677 /* WProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WProviderTests.swift; sourceTree = "<group>"; };
 		0A128998229021BC00435677 /* CheckAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStore.swift; sourceTree = "<group>"; };
@@ -295,6 +296,23 @@
 		0A2349F02277765D0016CDBC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPushTests.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
+		0A54E75C229DDBEF003DE7E9 /* createWFolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFolder.json; sourceTree = "<group>"; };
+		0A54E75D229DDBEF003DE7E9 /* createWReminder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWReminder.json; sourceTree = "<group>"; };
+		0A54E75E229DDBEF003DE7E9 /* createWTaskComment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTaskComment.json; sourceTree = "<group>"; };
+		0A54E75F229DDBEF003DE7E9 /* updateWTaskPosition-395139509.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWTaskPosition-395139509.json"; sourceTree = "<group>"; };
+		0A54E760229DDBEF003DE7E9 /* updateWList-395139509.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWList-395139509.json"; sourceTree = "<group>"; };
+		0A54E761229DDBEF003DE7E9 /* updateWSubtaskPosition-5063637365.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWSubtaskPosition-5063637365.json"; sourceTree = "<group>"; };
+		0A54E762229DDBEF003DE7E9 /* createWSubtask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWSubtask.json; sourceTree = "<group>"; };
+		0A54E763229DDBEF003DE7E9 /* createWTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTask.json; sourceTree = "<group>"; };
+		0A54E764229DDBEF003DE7E9 /* createWList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWList.json; sourceTree = "<group>"; };
+		0A54E76E229DDC11003DE7E9 /* 25927-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25927-dump.json"; sourceTree = "<group>"; };
+		0A54E770229DDC19003DE7E9 /* 25938-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25938-dump.json"; sourceTree = "<group>"; };
+		0A54E771229DDC19003DE7E9 /* 25936-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25936-dump.json"; sourceTree = "<group>"; };
+		0A54E774229DE5D4003DE7E9 /* 25931-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25931-dump.json"; sourceTree = "<group>"; };
+		0A54E775229DE5D4003DE7E9 /* 25929-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25929-dump.json"; sourceTree = "<group>"; };
+		0A54E776229DE5D4003DE7E9 /* 25930-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25930-dump.json"; sourceTree = "<group>"; };
+		0A54E777229DE5D4003DE7E9 /* 25934-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25934-dump.json"; sourceTree = "<group>"; };
+		0A54E778229DE5D5003DE7E9 /* 25928-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25928-dump.json"; sourceTree = "<group>"; };
 		0A651B81229D44C600CEF91F /* CreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTest.swift; sourceTree = "<group>"; };
 		0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25833-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
@@ -347,21 +365,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A0B687E22994B23002A3F96 /* PushTestsJSON */ = {
-			isa = PBXGroup;
-			children = (
-				0A0B688122994B49002A3F96 /* 25866-dump.json */,
-				0A0B688322994B49002A3F96 /* 25867-dump.json */,
-				0A0B688022994B49002A3F96 /* 25868-dump.json */,
-				0A0B687F22994B49002A3F96 /* 25869-dump.json */,
-				0A0B688222994B49002A3F96 /* 25871-dump.json */,
-				0A0B688922994B6F002A3F96 /* createWSubtask.json */,
-				0A0B688B22994B6F002A3F96 /* createWTask.json */,
-				0A0B688A22994B6F002A3F96 /* updateWTask-5051112471.json */,
-			);
-			path = PushTestsJSON;
-			sourceTree = "<group>";
-		};
 		0A234861227642B80016CDBC = {
 			isa = PBXGroup;
 			children = (
@@ -404,7 +407,7 @@
 				0AAD9CE9229082B30036CA95 /* LoadDump.swift */,
 				0A128998229021BC00435677 /* CheckAppStore.swift */,
 				0A23498C227773850016CDBC /* Info.plist */,
-				0A0B687E22994B23002A3F96 /* PushTestsJSON */,
+				0A54E75B229DDB93003DE7E9 /* AppDataPushTestsJSON */,
 				0A23498D227773850016CDBC /* JSONTestSet */,
 			);
 			path = wsyncTests;
@@ -617,6 +620,30 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
+		0A54E75B229DDB93003DE7E9 /* AppDataPushTestsJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0A54E76E229DDC11003DE7E9 /* 25927-dump.json */,
+				0A54E778229DE5D5003DE7E9 /* 25928-dump.json */,
+				0A54E775229DE5D4003DE7E9 /* 25929-dump.json */,
+				0A54E776229DE5D4003DE7E9 /* 25930-dump.json */,
+				0A54E774229DE5D4003DE7E9 /* 25931-dump.json */,
+				0A54E777229DE5D4003DE7E9 /* 25934-dump.json */,
+				0A54E771229DDC19003DE7E9 /* 25936-dump.json */,
+				0A54E770229DDC19003DE7E9 /* 25938-dump.json */,
+				0A54E75C229DDBEF003DE7E9 /* createWFolder.json */,
+				0A54E764229DDBEF003DE7E9 /* createWList.json */,
+				0A54E75D229DDBEF003DE7E9 /* createWReminder.json */,
+				0A54E762229DDBEF003DE7E9 /* createWSubtask.json */,
+				0A54E763229DDBEF003DE7E9 /* createWTask.json */,
+				0A54E75E229DDBEF003DE7E9 /* createWTaskComment.json */,
+				0A54E760229DDBEF003DE7E9 /* updateWList-395139509.json */,
+				0A54E761229DDBEF003DE7E9 /* updateWSubtaskPosition-5063637365.json */,
+				0A54E75F229DDBEF003DE7E9 /* updateWTaskPosition-395139509.json */,
+			);
+			path = AppDataPushTestsJSON;
+			sourceTree = "<group>";
+		};
 		1E44896FE19D01DB221EE3C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,16 +800,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A0B688622994B49002A3F96 /* 25866-dump.json in Resources */,
-				0A0B688822994B49002A3F96 /* 25867-dump.json in Resources */,
-				0A0B688722994B49002A3F96 /* 25871-dump.json in Resources */,
+				0A54E76B229DDBEF003DE7E9 /* createWSubtask.json in Resources */,
+				0A54E767229DDBEF003DE7E9 /* createWTaskComment.json in Resources */,
+				0A54E76D229DDBEF003DE7E9 /* createWList.json in Resources */,
+				0A54E772229DDC19003DE7E9 /* 25938-dump.json in Resources */,
 				0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */,
-				0A0B688422994B49002A3F96 /* 25869-dump.json in Resources */,
-				0A0B688D22994B6F002A3F96 /* updateWTask-5051112471.json in Resources */,
-				0A0B688E22994B6F002A3F96 /* createWTask.json in Resources */,
-				0A0B688C22994B6F002A3F96 /* createWSubtask.json in Resources */,
+				0A54E76C229DDBEF003DE7E9 /* createWTask.json in Resources */,
+				0A54E77B229DE5D5003DE7E9 /* 25930-dump.json in Resources */,
+				0A54E769229DDBEF003DE7E9 /* updateWList-395139509.json in Resources */,
+				0A54E76F229DDC12003DE7E9 /* 25927-dump.json in Resources */,
+				0A54E77C229DE5D5003DE7E9 /* 25934-dump.json in Resources */,
+				0A54E77D229DE5D5003DE7E9 /* 25928-dump.json in Resources */,
+				0A54E768229DDBEF003DE7E9 /* updateWTaskPosition-395139509.json in Resources */,
+				0A54E76A229DDBEF003DE7E9 /* updateWSubtaskPosition-5063637365.json in Resources */,
 				0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */,
-				0A0B688522994B49002A3F96 /* 25868-dump.json in Resources */,
+				0A54E765229DDBEF003DE7E9 /* createWFolder.json in Resources */,
+				0A54E773229DDC19003DE7E9 /* 25936-dump.json in Resources */,
+				0A54E766229DDBEF003DE7E9 /* createWReminder.json in Resources */,
+				0A54E779229DE5D5003DE7E9 /* 25931-dump.json in Resources */,
+				0A54E77A229DE5D5003DE7E9 /* 25929-dump.json in Resources */,
 				0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */,
 				0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */,
 			);

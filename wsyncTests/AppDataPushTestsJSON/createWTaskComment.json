@@ -1,0 +1,15 @@
+{
+  "author" : {
+    "avatar" : "https:\/\/a.wunderlist.com\/api\/v1\/avatar?user_id=41027896",
+    "id" : 41027896,
+    "name" : "Test User"
+  },
+  "created_at" : "2019-05-28T21:03:34.185Z",
+  "created_by_request_id" : "3662fd0097daf4f3bc3d:d809fef2-5749-54a9-88d4-e8742b20b737:2772abb3-be17-4e3a-a067-acac45ee2e74:41027896:7324a40b-7040-40e6-af61-a1d7960b0b69",
+  "id" : 132197720,
+  "local_created_at" : "2019-05-28T21:03:31.832Z",
+  "revision" : 1,
+  "task_id" : 5063637365,
+  "text" : "Create test comment",
+  "type" : "task_comment"
+}

@@ -28,7 +28,6 @@ extension KeyedDecodingContainer {
         var dictionary = [String: Any]()
 
         for key in allKeys {
-            print(key.stringValue)
             if let boolValue = try? decode(Bool.self, forKey: key) {
                 dictionary[key.stringValue] = boolValue
             } else if let dateValue = try? decode(Date.self, forKey: key) {

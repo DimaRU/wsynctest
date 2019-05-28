@@ -73,6 +73,10 @@ class AppDataSync {
         var created = wobject
         created.storedSyncState = .created
         appData.updateObject(created)
+        if let list = created as? WList {
+            let taskPosition = WTaskPosition(storedSyncState: .created, id: list.id, revision: 0, listId: list.id, values: [])
+            self.appData.taskPositions[list.id].update(with: taskPosition)
+        }
         if let task = created as? WTask {
             let subtaskPosition = WSubtaskPosition(storedSyncState: .created, id: task.id, revision: 0, taskId: task.id, values: [])
             self.appData.subtaskPositions[task.id].update(with: subtaskPosition)

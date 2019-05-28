@@ -1,0 +1,14 @@
+{
+  "created_at" : "2019-05-28T21:03:43.873Z",
+  "created_by_id" : 41027896,
+  "created_by_request_id" : "3662fd0097daf4f3bc3d:d809fef2-5749-54a9-88d4-e8742b20b737:2772abb3-be17-4e3a-a067-acac45ee2e74:41027896:df8637ae-bb71-47b6-bc2f-70e35ca47253",
+  "id" : 13690967,
+  "list_ids" : [
+    395139509
+  ],
+  "revision" : 1,
+  "title" : "Test create folder",
+  "type" : "folder",
+  "updated_at" : "2019-05-28T21:03:43.873Z",
+  "user_id" : 41027896
+}
