@@ -169,6 +169,12 @@
                                                 <action selector="insertButtonPress:" target="Ady-hI-5gd" id="HDK-FU-G8g"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Create test" id="BuP-Or-dhW">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="createTestButtonPress:" target="Ady-hI-5gd" id="ZM6-Wy-MRD"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

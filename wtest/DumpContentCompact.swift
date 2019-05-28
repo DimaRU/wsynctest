@@ -6,8 +6,12 @@ import PromiseKit
 
 
 class DumpContentComapact {
-    let directory = "logs/dump/"
+    let directory: String
     var dump = WDump()
+
+    init(directory: String) {
+        self.directory = directory
+    }
 
     func dumpRoot() -> Promise<Void> {
             return WAPI.getRoot()
@@ -98,6 +102,7 @@ class DumpContentComapact {
     }
 
     public func dumpPromise(comment: String) -> Promise<Void> {
+        self.dump = WDump()
         self.dump.comment = comment
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .formatted(Date.iso8601FullFormatter)

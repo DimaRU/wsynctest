@@ -6,34 +6,39 @@
 import Foundation
 import PromiseKit
 
-struct createTest {
+struct CreateTest {
+    private var directory: String
+    private let dumpContent: DumpContentComapact
 
-    let dumpContent = DumpContentComapact()
+    init(directory: String) {
+        self.directory = directory
+        self.dumpContent = DumpContentComapact(directory: directory)
+    }
 
-    func update<T: WObject>(from: T, to: T) -> Promise<T> {
+    private func update<T: WObject>(from: T, to: T) -> Promise<T> {
         assert(from.id == to.id, "Update object id is't equal")
         let params = to.updateParams(from: from)
         return WAPI.update(T.self, id: from.id, params: params, requestId: UUID().uuidString.lowercased())
     }
 
-    func create<T: WObject & WCreatable>(from wobject: T) -> Promise<T> {
+    private func create<T: WObject & WCreatable>(from wobject: T) -> Promise<T> {
         let params = wobject.createParams()
         return WAPI.create(T.self, params: params, requestId: UUID().uuidString.lowercased())
     }
 
-    func dumpWObject<T: WObject>(prefix: String, object: T) {
+    private func dumpWObject<T: WObject>(prefix: String, object: T) {
+        let fileName = "\(directory)\(prefix)\(String(describing: T.self))-\(object.id).json"
+        try! Disk.save(object, to: Disk.Directory.developer, as: fileName)
 
     }
 
-    func test() {
+    func runTest() {
         var listId = -1
         var taskId = -1
-        var createdList: WList?
 
         let newlist = WList(id: -1, title: "Create test list")
         create(from: newlist)
             .then { list -> Promise<WTask> in
-                createdList = list
                 listId = list.id
                 self.dumpWObject(prefix: "create", object: list)
                 let newTask = WTask(id: -1, listId: list.id, title: "Create test task")
@@ -79,20 +84,24 @@ struct createTest {
                 return self.dumpContent.dumpPromise(comment: "reminder created")
                     .then { self.create(from: folder)
                 }
-            }.then { folder -> Promise<WList> in
+            }.then { folder -> Promise<Void> in
                 self.dumpWObject(prefix: "create", object: folder)
-                var updatedList = createdList!
-                updatedList.title = "Test create list updated title"
                 return self.dumpContent.dumpPromise(comment: "folder created")
-                    .then { self.update(from: createdList!, to: updatedList)
-                }
-            }.then { updatedList -> Promise<Void> in
-                self.dumpWObject(prefix: "update", object: updatedList)
+            }.then {
+                WAPI.get(WList.self, id: listId)
+            }.then { list -> Promise<WList> in
+                var updatedList = list
+                updatedList.title = "Test create list updated title"
+                return self.update(from: list, to: updatedList)
+            }.then { list -> Promise<Void> in
+                self.dumpWObject(prefix: "update", object: list)
                 return self.dumpContent.dumpPromise(comment: "list updated")
-                    .then { WAPI.delete(WList.self, id: updatedList.id, revision: updatedList.revision)
+                    .then { WAPI.delete(WList.self, id: list.id, revision: list.revision)
                 }
-            }.catch{
-                print($0)
+            }.then {
+                self.dumpContent.dumpPromise(comment: "list deleted")
+            }.catch{ error in
+                log(error: error)
         }
     }
 }

@@ -56,7 +56,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         saveDefaults()
     }
     
-    func doOAuthWunderlist(clientId: String, clientSecret: String){
+    func doOAuthWunderlist(clientId: String, clientSecret: String) {
         let oauthswift = OAuth2Swift(
             consumerKey:    clientId,
             consumerSecret: clientSecret,
@@ -101,7 +101,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func DumpButtonPress(_ sender: Any) {
         log("\nDump content\n")
         if compactDump.state == .on {
-            let dumpContent = DumpContentComapact()
+            let dumpContent = DumpContentComapact(directory: "logs/dump/")
             let alert = NSAlert()
             let frame = NSRect(x: 0, y: 0, width: 200, height: 20)
             let textField = NSTextField(frame: frame)
@@ -117,6 +117,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             let dumpContent = DumpContent()
             dumpContent.all()
         }
+    }
+
+    @IBAction func createTestButtonPress(_ sender: Any) {
+        log("\nCreate test\n")
+        let createTest = CreateTest(directory: "logs/create/")
+        createTest.runTest()
     }
 
     @IBAction func runtestsButtonPress(_ sender: Any) {
