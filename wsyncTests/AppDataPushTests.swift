@@ -126,12 +126,12 @@ class AppDataPushTests: XCTestCase {
         let folder = appDataSync.makeWFolder(title: "Test create folder", listIds: [list.id])
         appDataSync.add(created: folder)
 
-//        var updatedList = appDataSync.appData.lists[list.id]!
-//        updatedList.title = "Test create list updated title"
-//        appDataSync.update(updated: updatedList)
+        var updatedList = appDataSync.appData.lists[list.id]!
+        updatedList.title = "Test create list updated title"
+        appDataSync.update(updated: updatedList)
 
-        XCTAssertEqual(appDataSync.requestQueue.count, 8, "Wrong queue length")
-        for i in 1...8 {
+        XCTAssertEqual(appDataSync.requestQueue.count, 9, "Wrong queue length")
+        for i in 1...9 {
             print(i)
             push(appDataSync: appDataSync)
         }
