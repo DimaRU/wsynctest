@@ -72,10 +72,10 @@ extension Queue where T == WRequest {
                 request.params.container["task_id"] = id
             }
             if let values = request.params.container["values"] as? [Int] {
-                request.params.container["values"] = values.map { $0 == fakeId ? id: fakeId }
+                request.params.container["values"] = values.map { $0 == fakeId ? id: $0 }
             }
             if let listIds = request.params.container["list_ids"] as? [Int] {
-                request.params.container["list_ids"] = listIds.map { $0 == fakeId ? id: fakeId }
+                request.params.container["list_ids"] = listIds.map { $0 == fakeId ? id: $0 }
             }
 
             newArray.append(request)
