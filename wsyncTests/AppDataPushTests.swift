@@ -40,19 +40,19 @@ class AppDataPushTests: XCTestCase {
     }
 
     func testPush() {
-        pull(from: "25927-dump", appDataSync: appDataSync)
+        pull(from: "25941-dump", appDataSync: appDataSync)
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
         appDataSync.add(created: appDataSync.makeWList(title: "Create test list"))
         push(appDataSync: appDataSync)
-        guard let list = appDataSync.appData.lists[395139509] else {
+        guard let list = appDataSync.appData.lists[395230577] else {
             XCTFail("WList object not exist")
             return
         }
 
         appDataSync.add(created: appDataSync.makeWTask(listId: list.id, title: "Create test task"))
         push(appDataSync: appDataSync)
-        guard let task = appDataSync.appData.tasks[list.id][5063637365] else {
+        guard let task = appDataSync.appData.tasks[list.id][5066659945] else {
             XCTFail("WTask object not exist")
             return
         }
@@ -75,7 +75,7 @@ class AppDataPushTests: XCTestCase {
         appDataSync.add(created: taskComment)
         push(appDataSync: appDataSync)
 
-        let date = "2019-05-28T21:03:34.249Z".dateFromISO8601!
+        let date = "2019-05-29T18:55:44.059Z".dateFromISO8601!
         let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
         appDataSync.add(created: reminder)
         push(appDataSync: appDataSync)
@@ -91,11 +91,11 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
-        pull(from: "25936-dump", appDataSync: appDataSync)
+        pull(from: "25951-dump", appDataSync: appDataSync)
     }
 
     func testPushLocal() {
-        pull(from: "25927-dump", appDataSync: appDataSync)
+        pull(from: "25941-dump", appDataSync: appDataSync)
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
@@ -119,7 +119,7 @@ class AppDataPushTests: XCTestCase {
         let taskComment = appDataSync.makeWTaskComment(taskId: task.id, text: "Create test comment")
         appDataSync.add(created: taskComment)
 
-        let date = "2019-05-28T21:03:34.249Z".dateFromISO8601!
+        let date = "2019-05-29T18:55:44.059Z".dateFromISO8601!
         let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
         appDataSync.add(created: reminder)
 
@@ -137,6 +137,6 @@ class AppDataPushTests: XCTestCase {
         }
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
-        pull(from: "25936-dump", appDataSync: appDataSync)
+        pull(from: "25951-dump", appDataSync: appDataSync)
     }
 }
