@@ -131,8 +131,7 @@ class AppDataPushTests: XCTestCase {
         appDataSync.update(updated: updatedList)
 
         XCTAssertEqual(appDataSync.requestQueue.count, 9, "Wrong queue length")
-        for i in 1...9 {
-            print(i)
+        for _ in 1...9 {
             push(appDataSync: appDataSync)
         }
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
