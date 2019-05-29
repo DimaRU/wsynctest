@@ -59,10 +59,9 @@ extension Queue where T == WRequest {
         guard !array.isEmpty else { return }
         var newArray: [T] = []
         newArray.reserveCapacity(array.count)
-        let mappingType = MappingType(object: wtype)
         for index in array.indices {
             var request = array[index]
-            if request.type == mappingType, request.id == fakeId {
+            if request.id == fakeId {
                 request.id = id
             }
             request.parentId = request.parentId == fakeId ? id: parentId

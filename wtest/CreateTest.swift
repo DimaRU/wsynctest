@@ -36,9 +36,11 @@ struct CreateTest {
         var listId = -1
         var taskId = -1
 
-        let newlist = WList(id: -1, title: "Create test list")
-        create(from: newlist)
-            .then { list -> Promise<WTask> in
+            self.dumpContent.dumpPromise(comment: "Before create test")
+            .then { _ -> Promise<WList> in
+                let newlist = WList(id: -1, title: "Create test list")
+                return self.create(from: newlist)
+            }.then { list -> Promise<WTask> in
                 listId = list.id
                 self.dumpWObject(prefix: "create", object: list)
                 let newTask = WTask(id: -1, listId: list.id, title: "Create test task")

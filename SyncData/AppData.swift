@@ -214,6 +214,7 @@ extension AppData {
                                              revision: taskPosition.revision,
                                              listId: id,
                                              values: taskPosition.values)
+                taskPositions[fakeId] = []
                 taskPositions[id].update(with: newTaskPosition)
             }
 
