@@ -10,5 +10,5 @@ public protocol JSONAble: Codable {
 }
 
 public protocol Revisionable: JSONAble {
-    var revision: Int { get }
+    var revision: Int { get set }
 }

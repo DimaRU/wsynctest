@@ -7,7 +7,7 @@ import Foundation
 public struct WRevision: WObject {
     public var storedSyncState: WSyncState?
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType
     
 // sourcery:inline:auto:WRevision.property

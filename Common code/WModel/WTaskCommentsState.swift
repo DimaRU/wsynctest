@@ -7,7 +7,7 @@ import Foundation
 public struct WTaskCommentsState: WObject, TaskChild {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .TaskCommentsState
 
     public var taskId: Int

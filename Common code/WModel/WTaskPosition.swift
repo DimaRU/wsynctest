@@ -7,7 +7,7 @@ import Foundation
 public struct WTaskPosition: WObject, ListChild {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .TaskPosition
 
     public var listId: Int

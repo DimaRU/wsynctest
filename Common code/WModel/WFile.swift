@@ -7,11 +7,11 @@ import Foundation
 public struct WFile: WObject, TaskChild {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .File
     public let createdByRequestId: String?
 
-    public let taskId: Int
+    public var taskId: Int
     public let userId: Int
     public let url: URL
     public let contentType: String

@@ -7,7 +7,7 @@ import Foundation
 public struct WMembership: WObject, ListChild, WCreatable {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .Membership
     public let createdByRequestId: String?
 

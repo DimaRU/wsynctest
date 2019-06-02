@@ -7,7 +7,7 @@ import Foundation
 public struct WSetting: WObject {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .Setting
     public let createdByRequestId: String?
 

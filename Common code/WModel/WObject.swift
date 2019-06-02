@@ -29,11 +29,11 @@ public extension WObject {
 }
 
 public protocol ListChild {
-    var listId: Int { get }
+    var listId: Int { get set }
 }
 
 public protocol TaskChild {
-    var taskId: Int { get }
+    var taskId: Int { get set }
 }
 
 public protocol WCreatable {

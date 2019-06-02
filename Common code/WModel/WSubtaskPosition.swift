@@ -7,10 +7,10 @@ import Foundation
 public struct WSubtaskPosition: WObject, TaskChild {
     public var storedSyncState: WSyncState? = .created
     public let id: Int
-    public let revision: Int
+    public var revision: Int
     public let type: MappingType = .SubtaskPosition
 
-    public let taskId: Int
+    public var taskId: Int
     public var values: [Int]
 
 // sourcery:inline:auto:WSubtaskPosition.property
