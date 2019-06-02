@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -284,7 +284,7 @@
 		0A23498C227773850016CDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2349DF227775FA0016CDBC /* SourceryStart.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = SourceryStart.sh; sourceTree = "<group>"; };
 		0A2349E1227775FA0016CDBC /* WObject.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = WObject.stencil; sourceTree = "<group>"; };
-		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../wutest/wutest/MyPlayground.playground; sourceTree = "<group>"; };
+		0A2349E2227776260016CDBC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0A2349E52277765C0016CDBC /* wtest.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = wtest.entitlements; sourceTree = "<group>"; };
 		0A2349E62277765C0016CDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2349E82277765C0016CDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
