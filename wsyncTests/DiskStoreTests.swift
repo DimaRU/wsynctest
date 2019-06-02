@@ -1,9 +1,5 @@
-//
-//  DiskStoreTests.swift
-//  wsyncTests
-//
-//  Created by Dmitriy Borovikov on 06.06.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  DiskStoreTests.swift
 //
 
 import XCTest

@@ -1,5 +1,5 @@
 ////
-///  CheckStore.swift
+///  CheckDiskStore.swift
 //
 
 import Foundation

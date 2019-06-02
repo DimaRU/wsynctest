@@ -1,9 +1,5 @@
-//
-//  DiskStore.swift
-//  wsync
-//
-//  Created by Dmitriy Borovikov on 30.04.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  DiskStore.swift
 //
 
 import Foundation

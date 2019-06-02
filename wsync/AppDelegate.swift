@@ -1,9 +1,5 @@
-//
-//  AppDelegate.swift
-//  wutest
-//
-//  Created by Dmitriy Borovikov on 22.06.17.
-//  Copyright © 2017 Dmitriy Borovikov. All rights reserved.
+////
+///  AppDelegate.swift
 //
 
 import Cocoa

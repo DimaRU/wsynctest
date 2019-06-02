@@ -1,9 +1,5 @@
-//
-//  KeychainService.swift
-//  wutest
-//
-//  Created by Dmitriy Borovikov on 08.07.17.
-//  Copyright © 2017 Dmitriy Borovikov. All rights reserved.
+////
+///  KeychainService.swift
 //
 
 import Foundation

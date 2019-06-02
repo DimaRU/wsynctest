@@ -1,9 +1,5 @@
-//
-//  WJSONAbleCoders.swift
-//  wsync
-//
-//  Created by Dmitriy Borovikov on 07.06.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  WJSONAbleCoders.swift
 //
 
 import Foundation

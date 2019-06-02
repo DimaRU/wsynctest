@@ -1,6 +1,7 @@
 ////
 ///  MappingType.swift
 //
+
 import Foundation
 
 public enum MappingType: String, Codable {

@@ -1,9 +1,5 @@
-//
-//  AppDataSync.swift
-//  wsync
-//
-//  Created by Dmitriy Borovikov on 12.05.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  AppDataSync.swift
 //
 
 import Foundation

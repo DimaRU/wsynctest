@@ -2,7 +2,6 @@
 ///  WRequest.swift
 //
 
-
 import Foundation
 
 struct WParams: Codable {

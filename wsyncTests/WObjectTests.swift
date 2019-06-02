@@ -1,9 +1,5 @@
-//
-//  WObjectTests.swift
-//  wsyncTests
-//
-//  Created by Dmitriy Borovikov on 11/05/2019.
-//  Copyright © 2019 Dmitriy Borovikov. All rights reserved.
+////
+///  WObjectTests.swift
 //
 
 import XCTest

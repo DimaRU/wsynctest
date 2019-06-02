@@ -1,9 +1,5 @@
-//
-//  iso8601date.swift
-//  
-//
-//  Created by Dmitriy Borovikov on 25.01.17.
-//  Copyright © 2017 Dmitriy Borovikov. All rights reserved.
+////
+///  iso8601date.swift
 //
 
 import Foundation

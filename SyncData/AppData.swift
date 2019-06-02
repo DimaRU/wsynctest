@@ -2,7 +2,6 @@
 ///  AppData.swift
 //
 
-
 import Foundation
 
 typealias TaskId = Int

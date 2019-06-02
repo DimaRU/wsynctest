@@ -1,5 +1,5 @@
 ////
-///  DumpContent.swift
+///  DumpContentCompact.swift
 //
 
 import PromiseKit

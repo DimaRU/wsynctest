@@ -1,0 +1,4 @@
+--exclude Pods,"Common code/Disk"
+--rules fileHeader
+--swiftversion 5.0
+--header "////\n///  {file}\n//"

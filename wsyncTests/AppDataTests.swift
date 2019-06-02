@@ -1,9 +1,5 @@
-//
-//  AppDataTests.swift
-//  wsyncTests
-//
-//  Created by Dmitriy Borovikov on 19.05.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  AppDataTests.swift
 //
 
 import XCTest

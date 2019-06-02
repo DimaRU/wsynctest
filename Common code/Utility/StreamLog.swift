@@ -1,9 +1,5 @@
-//
-//  StreamLog.swift
-//  wutest
-//
-//  Created by Dmitriy Borovikov on 05.06.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  StreamLog.swift
 //
 
 import Foundation

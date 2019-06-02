@@ -1,9 +1,5 @@
-//
-//  AppDataSyncPull.swift
-//  wsync
-//
-//  Created by Dmitriy Borovikov on 29.06.2018.
-//  Copyright © 2018 Dmitriy Borovikov. All rights reserved.
+////
+///  AppDataSyncPull.swift
 //
 
 import Foundation

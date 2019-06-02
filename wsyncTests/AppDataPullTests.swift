@@ -2,7 +2,6 @@
 ///  AppDataPullTests.swift
 //
 
-
 import XCTest
 @testable import wsync
 

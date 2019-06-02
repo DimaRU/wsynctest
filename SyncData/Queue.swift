@@ -2,7 +2,6 @@
 ///  Queue.swift
 //
 
-
 public struct Queue<T: Codable> {
     fileprivate var array: [T] = [] {
         didSet {

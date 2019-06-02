@@ -1,5 +1,5 @@
 ////
-///  WunderNetworkError.swift
+///  WNetworkErrorMessage.swift
 //
 
 import Foundation
