@@ -177,6 +177,33 @@ extension AppData {
 }
 
 extension AppData {
+    func updateTouchRevision<T: WObject>(wobject: T, parentId: Int?) {
+        switch wobject {
+        case let listChild as ListChild:
+            let listId = listChild.listId
+            guard var list = lists[listId] else { return }
+            list.revision += 1
+            lists.update(with: list)
+            root.revision += 1
+        case let taskChild as TaskChild:
+            let taskId = taskChild.taskId
+            guard let listId = parentId else { return }
+            guard var task = tasks[listId][taskId] else { return }
+            task.revision += 1
+            tasks[listId].update(with: task)
+            guard var list = lists[listId] else { return }
+            list.revision += 1
+            lists.update(with: list)
+            root.revision += 1
+        default:
+            #warning("Todo: user child")
+            root.revision += 1
+            break
+        }
+
+    }
+
+
     func removeTaskLeaf(taskId: TaskId) {
         subtasks[taskId] = []
         subtaskPositions[taskId] = []
