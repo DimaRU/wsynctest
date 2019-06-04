@@ -186,6 +186,11 @@ extension AppDataSync {
     /// - Returns: Promise<Void>
     private func pullUserLeaf() -> Promise<Void> {
         return pullSettings()
+            .then {
+                self.get(WReminder.self)
+            }.done { reminders in
+                self.syncWObjectSets(new: reminders)
+        }
     }
     
     
@@ -195,14 +200,12 @@ extension AppDataSync {
     /// - Returns: Promise<Void>
     private func pullRootLeaf() -> Promise<Void> {
         return pullLists()
-            .then { _ in
+            .then {
                 when(fulfilled:
                      self.get(WListPosition.self),
-                     self.get(WReminder.self),
                      self.get(WFolder.self))
-            }.done { listPositions, reminders, folders in
+            }.done { listPositions, folders in
                 self.syncWObjectSets(new: listPositions)
-                self.syncWObjectSets(new: reminders)
                 self.syncWObjectSets(new: folders)
         }
     }
@@ -221,7 +224,7 @@ extension AppDataSync {
                 }
                 log("Sync cancelled: Nothing changed", color: .green)
                 throw PMKError.cancelled
-            }.then {(_) -> Promise<Set<WUser>> in
+            }.then {
                 self.get(WUser.self)
             }.then { users -> Promise<Void> in
                 let userId = newRoot.userId
