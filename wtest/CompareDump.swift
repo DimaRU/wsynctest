@@ -41,7 +41,7 @@ struct CompareDump {
         }
         
         let changedString: String = changedIds.reduce(into: "") { (result, id) in
-            result += " \(id):\(old[id]!.revision)->\(new[id]!.revision))"
+            result += " \(id):\(old[id]!.revision)->\(new[id]!.revision)"
         }
 
         var string = "\(T.typeName())"
@@ -57,8 +57,6 @@ struct CompareDump {
 
         log(string)
     }
-
-
 
     static func compareDump(dump1: WDump, dump2: WDump) {
         guard dump1.root.revision != dump2.root.revision else {
@@ -76,11 +74,13 @@ struct CompareDump {
             to = dump1
         }
 
-        log("Compare \(from.comment ?? "") \(to.comment ?? "")")
+        log("Compare: \(from.comment ?? "-") -> \(to.comment ?? "-")")
         log("root: \(from.root.revision) -> \(to.root.revision)")
         let userId = from.root.userId
-        log("user: \(from.users[userId]!.revision) -> \(to.users[userId]!.revision)")
-
+        if from.users[userId]!.revision != to.users[userId]!.revision {
+            log("user: \(from.users[userId]!.revision) -> \(to.users[userId]!.revision)")
+        }
+        
         diffWobjectSets(old: from.folders, new: to.folders)
         diffWobjectSets(old: from.lists, new: to.lists)
         diffWobjectSets(old: from.listPositions, new: to.listPositions)

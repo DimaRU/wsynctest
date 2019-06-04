@@ -174,35 +174,30 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     @IBAction func compareDump(_ sender: Any) {
-        var dump1URL: URL?
-        var dump2URL: URL?
-
-
         let panel = NSOpenPanel()
         panel.allowedFileTypes = ["json"]
-        panel.allowsMultipleSelection = false
+        panel.allowsMultipleSelection = true
         panel.canChooseDirectories = false
         panel.canCreateDirectories = false
         panel.canChooseFiles = true
-        panel.title = "Sele dump file 1"
+        panel.title = "Select two dump files"
 
         let result = panel.runModal()
-        if result == .OK {
-            dump1URL = panel.url
+        if result != .OK {
+            return
         }
-        panel.title = "Sele dump file 2"
-        let result1 = panel.runModal()
-        if result1 == .OK {
-            dump2URL = panel.url
+
+        if panel.urls.count != 2 {
+            log("Please select 2 files")
         }
 
         var dump1 = WDump()
         var dump2 = WDump()
         let decoder = WJSONAbleCoders.decoder
         do {
-            let dump1Data = try Data(contentsOf: dump1URL!)
+            let dump1Data = try Data(contentsOf: panel.urls[0])
             dump1 = try decoder.decode(WDump.self, from: dump1Data)
-            let dump2Data = try Data(contentsOf: dump2URL!)
+            let dump2Data = try Data(contentsOf: panel.urls[1])
             dump2 = try decoder.decode(WDump.self, from: dump2Data)
         } catch {
             log(error: error)
