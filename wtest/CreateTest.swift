@@ -31,11 +31,18 @@ struct CreateTest {
 
     }
 
+    private func dumpAll(comment: String) -> Promise<Void> {
+        return after(seconds: 1.5)
+        .then {
+            self.dumpContent.dumpPromise(comment: comment)
+        }
+    }
+
     func runTest() {
         var listId = -1
         var taskId = -1
 
-            self.dumpContent.dumpPromise(comment: "Before create test")
+            self.dumpAll(comment: "Before create test")
             .then { _ -> Promise<WList> in
                 let newlist = WList(id: -1, title: "Create test list")
                 return self.create(from: newlist)
@@ -43,7 +50,7 @@ struct CreateTest {
                 listId = list.id
                 self.dumpWObject(prefix: "create", object: list)
                 let newTask = WTask(id: -1, listId: list.id, title: "Create test task")
-                return self.dumpContent.dumpPromise(comment: "list created")
+                return self.dumpAll(comment: "list created")
                     .then { self.create(from: newTask)
                 }
             }.then { task -> Promise<WTaskPosition> in
@@ -51,43 +58,43 @@ struct CreateTest {
                 self.dumpWObject(prefix: "create", object: task)
                 let srcTaskPosition = WTaskPosition(storedSyncState: nil, id: listId, revision: 0, listId: listId, values: [])
                 let taskPosition = WTaskPosition(storedSyncState: nil, id: listId, revision: 1, listId: listId, values: [task.id])
-                return self.dumpContent.dumpPromise(comment: "task created")
+                return self.dumpAll(comment: "task created")
                     .then { self.update(from: srcTaskPosition, to: taskPosition)
                 }
             }.then { taskPosition -> Promise<WSubtask> in
                 self.dumpWObject(prefix: "update", object: taskPosition)
                 let subtask = WSubtask(id: -1, taskId: taskId, title: "Create test subtask")
-                return self.dumpContent.dumpPromise(comment: "taskPostition updated")
+                return self.dumpAll(comment: "taskPostition updated")
                     .then { self.create(from: subtask)
                 }
             }.then { subtask -> Promise<WSubtaskPosition> in
                 self.dumpWObject(prefix: "create", object: subtask)
                 let srcsubtaskPosition = WSubtaskPosition(storedSyncState: nil, id: taskId, revision: 0, taskId: taskId, values: [])
                 let subtaskPosition = WSubtaskPosition(storedSyncState: nil, id: taskId, revision: 0, taskId: taskId, values: [subtask.id])
-                return self.dumpContent.dumpPromise(comment: "subtask created")
+                return self.dumpAll(comment: "subtask created")
                     .then { self.update(from: srcsubtaskPosition, to: subtaskPosition)
                 }
             }.then { subtaskPosition -> Promise<WTaskComment> in
                 self.dumpWObject(prefix: "update", object: subtaskPosition)
                 let taskComment = WTaskComment(id: -1, taskId: taskId, text: "Create test comment")
-                return self.dumpContent.dumpPromise(comment: "subtaskPostition updated")
+                return self.dumpAll(comment: "subtaskPostition updated")
                     .then { self.create(from: taskComment)
                 }
             }.then { taskComment -> Promise<WReminder> in
                 self.dumpWObject(prefix: "create", object: taskComment)
                 let reminder = WReminder(id: -1, taskId: taskId, date: Date())
-                return self.dumpContent.dumpPromise(comment: "task comment created")
+                return self.dumpAll(comment: "task comment created")
                     .then { self.create(from: reminder)
                 }
             }.then { reminder -> Promise<WFolder> in
                 self.dumpWObject(prefix: "create", object: reminder)
                 let folder = WFolder(id: -1, title: "Test create folder", listIds: [listId])
-                return self.dumpContent.dumpPromise(comment: "reminder created")
+                return self.dumpAll(comment: "reminder created")
                     .then { self.create(from: folder)
                 }
             }.then { folder -> Promise<Void> in
                 self.dumpWObject(prefix: "create", object: folder)
-                return self.dumpContent.dumpPromise(comment: "folder created")
+                return self.dumpAll(comment: "folder created")
             }.then {
                 WAPI.get(WList.self, id: listId)
             }.then { list -> Promise<WList> in
@@ -96,11 +103,11 @@ struct CreateTest {
                 return self.update(from: list, to: updatedList)
             }.then { list -> Promise<Void> in
                 self.dumpWObject(prefix: "update", object: list)
-                return self.dumpContent.dumpPromise(comment: "list updated")
+                return self.dumpAll(comment: "list updated")
                     .then { WAPI.delete(WList.self, id: list.id, revision: list.revision)
                 }
             }.then {
-                self.dumpContent.dumpPromise(comment: "list deleted")
+                self.dumpAll(comment: "list deleted")
             }.catch{ error in
                 log(error: error)
         }
