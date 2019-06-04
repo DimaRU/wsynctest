@@ -177,8 +177,15 @@ extension AppData {
 }
 
 extension AppData {
-    func updateTouchRevision<T: WObject>(wobject: T, parentId: Int?) {
+    func updatedRevisionTouch<T: WObject>(wobject: T, parentId: Int?) {
         switch wobject {
+        case is WReminder,
+             is WSetting:
+            let userId = root.userId
+            guard var user = users[userId] else { return }
+            user.revision += 1
+            users.update(with: user)
+            root.revision += 1
         case let listChild as ListChild:
             let listId = listChild.listId
             guard var list = lists[listId] else { return }
@@ -196,13 +203,14 @@ extension AppData {
             lists.update(with: list)
             root.revision += 1
         default:
-            #warning("Todo: user child")
             root.revision += 1
             break
         }
-
     }
 
+    func createdRevisionTouch<T: WObject & WCreatable>(wobject: T, parentId: Int?) {
+
+    }
 
     func removeTaskLeaf(taskId: TaskId) {
         subtasks[taskId] = []

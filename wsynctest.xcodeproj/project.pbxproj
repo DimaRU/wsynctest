@@ -176,6 +176,7 @@
 		0A9C8326229F12D500E50815 /* updateWList-395230577-6.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9C831D229F12D400E50815 /* updateWList-395230577-6.json */; };
 		0A9C8327229F12D500E50815 /* createWList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9C831E229F12D400E50815 /* createWList.json */; };
 		0A9C8328229F12D500E50815 /* createWFolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9C831F229F12D500E50815 /* createWFolder.json */; };
+		0AA8EA8722A6E2AF0068E8A5 /* CompareDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8EA8622A6E2AF0068E8A5 /* CompareDump.swift */; };
 		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
 		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0ABD385D2294838200FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
@@ -320,6 +321,7 @@
 		0A9C831D229F12D400E50815 /* updateWList-395230577-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWList-395230577-6.json"; sourceTree = "<group>"; };
 		0A9C831E229F12D400E50815 /* createWList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWList.json; sourceTree = "<group>"; };
 		0A9C831F229F12D500E50815 /* createWFolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFolder.json; sourceTree = "<group>"; };
+		0AA8EA8622A6E2AF0068E8A5 /* CompareDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareDump.swift; sourceTree = "<group>"; };
 		0AAD9CE9229082B30036CA95 /* LoadDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDump.swift; sourceTree = "<group>"; };
 		0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPullTests.swift; sourceTree = "<group>"; };
 		0ABD385C2294838200FAAA74 /* WRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequest.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				0A2349EE2277765D0016CDBC /* DeleteContentService.swift */,
 				0A2349EA2277765C0016CDBC /* DumpContent.swift */,
 				0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */,
+				0AA8EA8622A6E2AF0068E8A5 /* CompareDump.swift */,
 				0A2349EB2277765C0016CDBC /* PrintContent.swift */,
 				0A2349EC2277765C0016CDBC /* TestService.swift */,
 				0A651B81229D44C600CEF91F /* CreateTest.swift */,
@@ -1129,6 +1132,7 @@
 				0A2349F92277765D0016CDBC /* AppDelegate.swift in Sources */,
 				0A23495A227771550016CDBC /* WSetting.swift in Sources */,
 				0ABD38622294923E00FAAA74 /* WRequest.swift in Sources */,
+				0AA8EA8722A6E2AF0068E8A5 /* CompareDump.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

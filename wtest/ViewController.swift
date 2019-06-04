@@ -172,7 +172,46 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
 
     }
-    
+
+    @IBAction func compareDump(_ sender: Any) {
+        var dump1URL: URL?
+        var dump2URL: URL?
+
+
+        let panel = NSOpenPanel()
+        panel.allowedFileTypes = ["json"]
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.canCreateDirectories = false
+        panel.canChooseFiles = true
+        panel.title = "Sele dump file 1"
+
+        let result = panel.runModal()
+        if result == .OK {
+            dump1URL = panel.url
+        }
+        panel.title = "Sele dump file 2"
+        let result1 = panel.runModal()
+        if result1 == .OK {
+            dump2URL = panel.url
+        }
+
+        var dump1 = WDump()
+        var dump2 = WDump()
+        let decoder = WJSONAbleCoders.decoder
+        do {
+            let dump1Data = try Data(contentsOf: dump1URL!)
+            dump1 = try decoder.decode(WDump.self, from: dump1Data)
+            let dump2Data = try Data(contentsOf: dump2URL!)
+            dump2 = try decoder.decode(WDump.self, from: dump2Data)
+        } catch {
+            log(error: error)
+            return
+        }
+
+        CompareDump.compareDump(dump1: dump1, dump2: dump2)
+    }
+
     func ShowNetwork(error: Swift.Error) {
         let printableError = error as CustomStringConvertible
         let alert = NSAlert()

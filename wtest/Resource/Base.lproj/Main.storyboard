@@ -175,6 +175,13 @@
                                                 <action selector="createTestButtonPress:" target="Ady-hI-5gd" id="ZM6-Wy-MRD"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="3Dg-Jd-aT9"/>
+                                        <menuItem title="Compare dump" id="tvs-PK-7KW">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="compareDump:" target="Ady-hI-5gd" id="2rk-Xd-mVu"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
