@@ -180,7 +180,7 @@ extension WProvider {
     //
     fileprivate func retryBadResponce(request: RequestFuture) {
         delay(0.01) {
-            log("Retry bad request")
+            log("Retry bad request \(request.target)")
             self.sendRestRequest(request)
         }
     }
