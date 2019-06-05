@@ -32,7 +32,7 @@ struct CreateTest {
     }
 
     private func dumpAll(comment: String) -> Promise<Void> {
-        return after(seconds: 1.5)
+        return after(seconds: 0.1)
         .then {
             self.dumpContent.dumpPromise(comment: comment)
         }

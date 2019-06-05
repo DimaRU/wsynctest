@@ -169,6 +169,12 @@
                                                 <action selector="insertButtonPress:" target="Ady-hI-5gd" id="HDK-FU-G8g"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="IO Tests" id="oZC-1l-NP9">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="runtestsButtonPress:" target="Ady-hI-5gd" id="kDP-IB-d3d"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Create test" id="BuP-Or-dhW">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -355,10 +361,10 @@
                                 </connections>
                             </textField>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="firstBaseline" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sei-EB-zXl">
-                                <rect key="frame" x="20" y="455" width="520" height="21"/>
+                                <rect key="frame" x="20" y="455" width="390" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-de-ZoW">
-                                        <rect key="frame" x="-6" y="-7" width="133" height="32"/>
+                                        <rect key="frame" x="-6" y="-7" width="134" height="32"/>
                                         <buttonCell key="cell" type="push" title="Print content" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t5a-DH-MX5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -368,7 +374,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6na-ik-P2k" userLabel="Run tests">
-                                        <rect key="frame" x="127" y="-7" width="133" height="32"/>
+                                        <rect key="frame" x="128" y="-7" width="134" height="32"/>
                                         <buttonCell key="cell" type="push" title="Dump content" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RUJ-0e-PgB">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -377,32 +383,25 @@
                                             <action selector="DumpButtonPress:" target="XfG-lQ-9wD" id="DYy-3E-ZoW"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QLV-hP-crx" userLabel="Run tests">
-                                        <rect key="frame" x="260" y="-7" width="133" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Run tests" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rqo-ff-TYx">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="imM-AQ-zrt">
+                                        <rect key="frame" x="262" y="-7" width="134" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Compare dump" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zge-0r-da0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent">g</string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="runtestsButtonPress:" target="XfG-lQ-9wD" id="r1d-4q-h4A"/>
+                                            <action selector="compareDump:" target="XfG-lQ-9wD" id="V5F-yO-MhW"/>
                                         </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="imM-AQ-zrt">
-                                        <rect key="frame" x="393" y="-7" width="133" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Comment tests" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zge-0r-da0">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
                                     </button>
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>

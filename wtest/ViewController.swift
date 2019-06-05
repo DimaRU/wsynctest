@@ -189,6 +189,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
         if panel.urls.count != 2 {
             log("Please select 2 files")
+            return
         }
 
         var dump1 = WDump()
