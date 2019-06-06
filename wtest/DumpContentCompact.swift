@@ -101,7 +101,7 @@ class DumpContentComapact {
         }
     }
 
-    public func dumpPromise(comment: String) -> Promise<Void> {
+    public func dumpPromise(comment: String) -> Promise<WDump> {
         self.dump = WDump()
         self.dump.comment = comment
         let encoder = JSONEncoder()
@@ -125,12 +125,13 @@ class DumpContentComapact {
                 self.dumpListPositions()
             }.then {
                 self.dumpLists()
-            }.done {
+            }.then { _ -> Promise<WDump> in
                 let root = self.dump.root
                 let userId = root.userId
                 let user = self.dump.users.first(where: { $0.id == userId})!
                 let fileName = "\(self.directory)\(user.email)/\(root.revision)-dump.json"
                 try Disk.save(self.dump, to: Disk.Directory.developer, as: fileName)
+                return Promise.value(self.dump)
         }
 
     }

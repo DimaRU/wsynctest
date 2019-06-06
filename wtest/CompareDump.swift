@@ -76,11 +76,9 @@ struct CompareDump {
 
         log("Compare: \(from.comment ?? "-") -> \(to.comment ?? "-")")
         log("root: \(from.root.revision) -> \(to.root.revision)")
-        let userId = from.root.userId
-        if from.users[userId]!.revision != to.users[userId]!.revision {
-            log("user: \(from.users[userId]!.revision) -> \(to.users[userId]!.revision)")
-        }
-        
+
+        diffWobjectSets(old: from.users, new: to.users)
+
         diffWobjectSets(old: from.folders, new: to.folders)
         diffWobjectSets(old: from.lists, new: to.lists)
         diffWobjectSets(old: from.listPositions, new: to.listPositions)
@@ -95,6 +93,5 @@ struct CompareDump {
         diffWobjectSets(old: from.files, new: to.files)
         diffWobjectSets(old: from.taskComments, new: to.taskComments)
         diffWobjectSets(old: from.taskCommentStates, new: to.taskCommentStates)
-        diffWobjectSets(old: from.users, new: to.users)
     }
 }
