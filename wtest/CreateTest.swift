@@ -86,10 +86,16 @@ struct CreateTest {
                 return self.dumpAll(comment: "task comment created")
                     .then { self.create(from: reminder)
                 }
-            }.then { reminder -> Promise<WFolder> in
+            }.then { reminder -> Promise<WNote> in
                 self.dumpWObject(prefix: "create", object: reminder)
-                let folder = WFolder(id: -1, title: "Test create folder", listIds: [listId])
+                let note = WNote(id: -1, taskId: taskId, content: "Create test note")
                 return self.dumpAll(comment: "reminder created")
+                    .then { self.create(from: note)
+                }
+            }.then { note -> Promise<WFolder> in
+                self.dumpWObject(prefix: "create", object: note)
+                let folder = WFolder(id: -1, title: "Test create folder", listIds: [listId])
+                return self.dumpAll(comment: "note created")
                     .then { self.create(from: folder)
                 }
             }.then { folder -> Promise<Void> in
