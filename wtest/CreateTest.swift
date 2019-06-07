@@ -42,7 +42,7 @@ class CreateTest {
     }
 
     private func dumpAll(comment: String) -> Promise<Void> {
-        return after(seconds: 0.1)
+        return after(seconds: 1.1)
             .then {
                 self.dumpContent.dumpPromise(comment: comment)
             }.done { dump in

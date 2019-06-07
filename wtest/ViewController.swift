@@ -95,7 +95,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     @IBAction func DumpButtonPress(_ sender: Any) {
-        log("\nDump content\n")
+        log("\nDump content")
         if compactDump.state == .on {
             let dumpContent = DumpContentComapact(directory: "logs/dump/")
             let alert = NSAlert()
@@ -180,32 +180,36 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         panel.canChooseDirectories = false
         panel.canCreateDirectories = false
         panel.canChooseFiles = true
-        panel.title = "Select two dump files"
+        panel.title = "Select two dump files or more"
 
         let result = panel.runModal()
         if result != .OK {
             return
         }
 
-        if panel.urls.count != 2 {
-            log("Please select 2 files")
+        if panel.urls.count < 2 {
+            log("Please select 2 files or more")
             return
         }
 
-        var dump1 = WDump()
-        var dump2 = WDump()
+        let urls = panel.urls.sorted(by: { $0.lastPathComponent < $1.lastPathComponent})
+        print(urls)
         let decoder = WJSONAbleCoders.decoder
+        var dumps: [WDump] = []
         do {
-            let dump1Data = try Data(contentsOf: panel.urls[0])
-            dump1 = try decoder.decode(WDump.self, from: dump1Data)
-            let dump2Data = try Data(contentsOf: panel.urls[1])
-            dump2 = try decoder.decode(WDump.self, from: dump2Data)
+            dumps = try urls.map { url in
+                let data = try Data(contentsOf: url)
+                return try decoder.decode(WDump.self, from: data)
+            }
         } catch {
             log(error: error)
             return
         }
+        while dumps.count > 1 {
+            CompareDump.compareDump(dump1: dumps[0], dump2: dumps[1])
+            dumps.removeFirst()
+        }
 
-        CompareDump.compareDump(dump1: dump1, dump2: dump2)
     }
 
     func ShowNetwork(error: Swift.Error) {

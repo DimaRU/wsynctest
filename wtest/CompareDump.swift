@@ -74,7 +74,7 @@ struct CompareDump {
             to = dump1
         }
 
-        log("Compare: \(from.comment ?? "-") -> \(to.comment ?? "-")")
+        log("\nCompare: \(from.comment ?? "-") -> \(to.comment ?? "-")")
         log("root: \(from.root.revision) -> \(to.root.revision)")
 
         diffWobjectSets(old: from.users, new: to.users)
