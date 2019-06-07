@@ -36,7 +36,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         token.stringValue        = KeychainService.shared[.token] ?? ""
         backupFile.stringValue   = KeychainService.shared[.backupFile] ?? ""
     }
-    
+
     /// Save text fiels values to keychain
     func saveDefaults() {
         KeychainService.shared[.backupFile] = backupFile.stringValue
@@ -45,7 +45,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             setAvatarImage()
         }
     }
-    
+
     func controlTextDidEndEditing(_ obj: Notification) {
         guard (obj.object as? NSTextField) != nil else { return }
         //print(textField.stringValue)
@@ -116,9 +116,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     @IBAction func createTestButtonPress(_ sender: Any) {
-        log("\nCreate test\n")
-        let createTest = CreateTest(directory: "logs/create/")
-        createTest.runTest()
+        let createTest = RevisionTest()
+        createTest.runTests(directory: "logs/")
     }
 
     @IBAction func runtestsButtonPress(_ sender: Any) {
