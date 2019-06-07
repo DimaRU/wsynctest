@@ -48,11 +48,11 @@ class RevisionTest {
         }
     }
 
-    func runCreateTest() {
+    func runCreateTest() -> Promise<Void> {
         var listId = -1
         var taskId = -1
 
-            self.dumpAll(comment: "Before create test")
+            return self.dumpAll(comment: "Before create test")
             .then { _ -> Promise<WList> in
                 self.create(from: WList(id: -1, title: "Create test list"))
             }.then { list -> Promise<Void> in
@@ -90,16 +90,14 @@ class RevisionTest {
             }.then { folder -> Promise<Void> in
                 self.dumpWObject(dumpType: .create, object: folder)
                 return self.dumpAll(comment: "folder created")
-             }.catch{ error in
-                log(error: error)
         }
     }
 
-    func runUpdateTest() {
+    func runUpdateTest() -> Promise<Void>  {
         var listId = -1
         var taskId = -1
 
-        self.dumpAll(comment: "Before update test")
+        return self.dumpAll(comment: "Before update test")
             .done {
                 let list = self.dump.lists.first(where: { $0.title == "Create test list"} )!
                 listId = list.id
@@ -195,18 +193,21 @@ class RevisionTest {
                 return WAPI.delete(WList.self, id: list.id, revision: list.revision)
             }.then {
                 self.dumpAll(comment: "list deleted")
-            }.catch { error in
-                log(error: error)
         }
     }
 
     func runTests(directory: String) {
         self.directory = directory + "create/"
         log("\nCreate test\n")
+        dumpContent = DumpContentComapact(directory: self.directory)
         runCreateTest()
-        log("\nUpdate test\n")
-        self.directory = directory + "update/"
-        runUpdateTest()
+            .then { _ -> Promise<Void> in
+                log("\nUpdate test\n")
+                self.directory = directory + "update/"
+                self.dumpContent = DumpContentComapact(directory: self.directory)
+                return self.runUpdateTest()
+            }.catch { error in
+                log(error: error)
+        }
     }
-
 }
