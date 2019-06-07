@@ -63,29 +63,15 @@ class CreateTest {
                 return self.dumpAll(comment: "list created")
             }.then {
                 self.create(from: WTask(id: -1, listId: listId, title: "Create test task"))
-            }.then { task -> Promise<WTaskPosition> in
+            }.then { task -> Promise<Void> in
                 taskId = task.id
                 self.dumpWObject(dumpType: .create, object: task)
-                let srcTaskPosition = WTaskPosition(storedSyncState: nil, id: listId, revision: 0, listId: listId, values: [])
-                let taskPosition = WTaskPosition(storedSyncState: nil, id: listId, revision: 1, listId: listId, values: [task.id])
                 return self.dumpAll(comment: "task created")
-                    .then { self.update(from: srcTaskPosition, to: taskPosition)
-                }
-            }.then { taskPosition -> Promise<Void> in
-                self.dumpWObject(dumpType: .update, object: taskPosition)
-                return self.dumpAll(comment: "taskPostition updated")
             }.then {
                 self.create(from: WSubtask(id: -1, taskId: taskId, title: "Create test subtask"))
-            }.then { subtask -> Promise<WSubtaskPosition> in
+            }.then { subtask -> Promise<Void> in
                 self.dumpWObject(dumpType: .create, object: subtask)
-                let srcsubtaskPosition = WSubtaskPosition(storedSyncState: nil, id: taskId, revision: 0, taskId: taskId, values: [])
-                let subtaskPosition = WSubtaskPosition(storedSyncState: nil, id: taskId, revision: 0, taskId: taskId, values: [subtask.id])
                 return self.dumpAll(comment: "subtask created")
-                    .then { self.update(from: srcsubtaskPosition, to: subtaskPosition)
-                }
-            }.then { subtaskPosition -> Promise<Void> in
-                self.dumpWObject(dumpType: .update, object: subtaskPosition)
-                return self.dumpAll(comment: "subtaskPostition updated")
             }.then {
                 self.create(from: WTaskComment(id: -1, taskId: taskId, text: "Create test comment"))
             }.then { taskComment -> Promise<Void> in
@@ -103,19 +89,12 @@ class CreateTest {
                 return self.dumpAll(comment: "note created")
             }.then {
                 self.create(from: WFolder(id: -1, title: "Test create folder", listIds: [listId]))
-            }.then { folder -> Promise<WList> in
+            }.then { folder -> Promise<Void> in
                 self.dumpWObject(dumpType: .create, object: folder)
-                let list = self.dump.lists[listId]!
-                var updatedList = list
-                updatedList.title = "Test create list updated title"
                 return self.dumpAll(comment: "folder created")
-                    .then { self.update(from: list, to: updatedList)
-                }
-            }.then { list -> Promise<Void> in
-                self.dumpWObject(dumpType: .update, object: list)
-                return self.dumpAll(comment: "list updated")
-                    .then { WAPI.delete(WList.self, id: list.id, revision: list.revision)
-                }
+            }.then { _ -> Promise<Void> in
+                let list = self.dump.lists[listId]!
+                return WAPI.delete(WList.self, id: list.id, revision: list.revision)
             }.then {
                 self.dumpAll(comment: "list deleted")
             }.catch{ error in
