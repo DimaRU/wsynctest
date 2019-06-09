@@ -192,7 +192,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
 
         let urls = panel.urls.sorted(by: { $0.lastPathComponent < $1.lastPathComponent})
-        print(urls)
         let decoder = WJSONAbleCoders.decoder
         var dumps: [WDump] = []
         do {

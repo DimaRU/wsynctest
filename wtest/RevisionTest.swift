@@ -212,13 +212,13 @@ class RevisionTest {
             }.then {
                 return self.dumpAll(comment: "Task comment deleted")
             }.then {
-                self.delete(self.dump.reminders.first(where: { $0.taskId == taskId })!)
-            }.then {
-                return self.dumpAll(comment: "Reminder deleted")
-            }.then {
                 self.delete(self.dump.notes.first(where: { $0.taskId == taskId })!)
             }.then {
                 return self.dumpAll(comment: "Note deleted")
+            }.then {
+                self.delete(self.dump.reminders.first(where: { $0.taskId == taskId })!)
+            }.then {
+                return self.dumpAll(comment: "Reminder deleted")
             }.then {
                 self.delete(self.dump.files.first(where: { $0.taskId == taskId })!)
             }.then {
