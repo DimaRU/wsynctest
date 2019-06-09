@@ -47,6 +47,13 @@ class AppData {
         public var set: Set<T> {
             return dictionary.reduce([], { $0.union($1.value) })
         }
+
+        public func getObject(by id: Int) -> T? {
+            for (_, set) in dictionary {
+                if let object = set[id] { return object }
+            }
+            return nil
+        }
     }
     
     var diskStore: DiskStore?
@@ -177,40 +184,152 @@ extension AppData {
 }
 
 extension AppData {
-    func updatedRevisionTouch<T: WObject>(wobject: T, parentId: Int?) {
-        switch wobject {
-        case is WReminder,
-             is WSetting:
-            let userId = root.userId
-            guard var user = users[userId] else { return }
-            user.revision += 1
-            users.update(with: user)
-            root.revision += 1
-        case let listChild as ListChild:
-            let listId = listChild.listId
-            guard var list = lists[listId] else { return }
-            list.revision += 1
-            lists.update(with: list)
-            root.revision += 1
-        case let taskChild as TaskChild:
-            let taskId = taskChild.taskId
-            guard let listId = parentId else { return }
-            guard var task = tasks[listId][taskId] else { return }
+    private func incUserRevision() {
+        guard var user = users[root.userId] else { return }
+        user.revision += 1
+        users.update(with: user)
+    }
+
+    private func incRevision<T: WObject>(type: T.Type, id: Int, parentId: Int?) {
+        switch type {
+        case is WTask.Type:
+            var task = tasks[parentId!][id]!
             task.revision += 1
-            tasks[listId].update(with: task)
-            guard var list = lists[listId] else { return }
+            tasks[parentId!].update(with: task)
+        case is WList.Type:
+            var list = lists[id]!
             list.revision += 1
             lists.update(with: list)
+        case is WMembership.Type:
+            var membership = memberships[parentId!][id]!
+            membership.revision += 1
+            memberships[parentId!].update(with: membership)
+        default:
+            fatalError()
+        }
+
+    }
+
+    func createdRevisionTouch<T: WObject & WCreatable>(wobject: T) {
+        switch wobject {
+        case is WFile,
+             is WNote,
+             is WSubtask:
+            let taskId = (wobject as! TaskChild).taskId
+            let task = tasks.getObject(by: taskId)!
+            incRevision(type: WTask.self, id: task.id, parentId: task.listId)
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case is WFolder:
+            root.revision += 1
+        case is WList:
+            incUserRevision()
+            root.revision += 2
+        case let reminder as WReminder:
+            let task = tasks.getObject(by: reminder.taskId)!
+            let listId = task.listId
+            var membership = memberships[listId].first(where: { $0.userId == root.userId })!
+            membership.revision += 1
+            memberships[listId].update(with: membership)
+            incUserRevision()
+            root.revision += 2
+        case let task as WTask:
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case let taskComment as WTaskComment:
+            let task = tasks.getObject(by: taskComment.taskId)!
+            let listId = task.listId
+            incRevision(type: WTask.self, id: task.id, parentId: task.listId)
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            var membership = memberships[listId].first(where: { $0.userId == root.userId })!
+            membership.revision += 1
+            memberships[listId].update(with: membership)
+            incUserRevision()
+            root.revision += 2
+        default:
+            fatalError()
+        }
+
+    }
+
+    func updatedRevisionTouch<T: WObject>(wobject: T) {
+        switch wobject {
+        case is WFolder.Type,
+             is WList.Type,
+             is WListPosition.Type:
+            root.revision += 1
+        case is WNote,
+             is WSubtask,
+             is WSubtaskPosition:
+            let taskId = (wobject as! TaskChild).taskId
+            let task = tasks.getObject(by: taskId)!
+            incRevision(type: WTask.self, id: task.id, parentId: task.listId)
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case let reminder as WReminder:
+            let task = tasks.getObject(by: reminder.taskId)!
+            let listId = task.listId
+            var membership = memberships[listId].first(where: { $0.userId == root.userId })!
+            membership.revision += 1
+            memberships[listId].update(with: membership)
+            incUserRevision()
+            root.revision += 1
+        case is WSetting.Type:
+            incUserRevision()
+            root.revision += 1
+        case let task as WTask:
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case let taskPosition as WTaskPosition:
+            incRevision(type: WList.self, id: taskPosition.listId, parentId: nil)
             root.revision += 1
         default:
-            root.revision += 1
-            break
+            fatalError()
         }
     }
 
-    func createdRevisionTouch<T: WObject & WCreatable>(wobject: T, parentId: Int?) {
-
+    func deletedRevisionTouch<T: WObject & WCreatable>(wobject: T) {
+        switch wobject {
+        case is WFile,
+             is WNote,
+             is WSubtask:
+            let taskId = (wobject as! TaskChild).taskId
+            let task = tasks.getObject(by: taskId)!
+            incRevision(type: WTask.self, id: task.id, parentId: task.listId)
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case is WFolder:
+            root.revision += 1
+        case is WList:
+            incUserRevision()
+            root.revision += 2
+        case let reminder as WReminder:
+            let task = tasks.getObject(by: reminder.taskId)!
+            let listId = task.listId
+            var membership = memberships[listId].first(where: { $0.userId == root.userId })!
+            membership.revision += 1
+            memberships[listId].update(with: membership)
+            incUserRevision()
+            root.revision += 1
+        case let task as WTask:
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            root.revision += 1
+        case let taskComment as WTaskComment:
+            let task = tasks.getObject(by: taskComment.taskId)!
+            let listId = task.listId
+            incRevision(type: WTask.self, id: task.id, parentId: task.listId)
+            incRevision(type: WList.self, id: task.listId, parentId: nil)
+            var membership = memberships[listId].first(where: { $0.userId == root.userId })!
+            membership.revision += 2
+            memberships[listId].update(with: membership)
+            incUserRevision()
+            incUserRevision()
+            root.revision += 3
+        default:
+            fatalError()
+        }
     }
+
 
     func removeTaskLeaf(taskId: TaskId) {
         subtasks[taskId] = []
