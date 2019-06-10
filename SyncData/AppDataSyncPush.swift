@@ -70,16 +70,28 @@ extension AppDataSync {
             }
         }
 
+        func pullMembership(listId: Int) -> Promise<Void> {
+            return WAPI.get(WMembership.self, listId: listId)
+                .done { memberships in
+                    self.appData.memberships[listId] = memberships
+            }
+        }
+
         func sendCreateRequest<T: WObject & WCreatable>(_ type: T.Type, request: WRequest) {
             let params = request.params.container
 
             WAPI.create(T.self, params: params, requestId: request.uuid)
-                .done { created in
+                .then { created -> Promise<Void> in
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.appData.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
                     self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
                     self.appData.createdRevisionTouch(wobject: created)
                     self.requestQueue.dequeue()
+                    if let list = created as? WList {
+                        return pullMembership(listId: list.id)
+                    } else {
+                        return Promise.value(())
+                    }
                 }.ensure {
                     completion?()
                 }.catch { error in

@@ -13,7 +13,6 @@ extension WList {
         self.title = title
         self.ownerId = nil
         self.ownerType = nil
-        self.listType = nil
         self.`public` = nil
         self.createdAt = Date()
         self.createdByRequestId = nil

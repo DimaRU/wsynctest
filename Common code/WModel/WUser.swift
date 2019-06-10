@@ -22,8 +22,8 @@ public static let storedProperty: [PartialKeyPath<WUser>:String] = [
         \WUser.type :"type",
         \WUser.name :"name",
         \WUser.email :"email",
-        \WUser.createdAt :"created_at",
-        \WUser.updatedAt :"updated_at"
+        \WUser.createdAt :"created_at"
+//        \WUser.updatedAt :"updated_at"
     ]
 
 public static let mutableProperty: [PartialKeyPath<WUser>:String] = [

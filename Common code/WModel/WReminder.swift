@@ -30,7 +30,7 @@ public static let storedProperty: [PartialKeyPath<WReminder>:String] = [
         \WReminder.taskId :"task_id",
         \WReminder.date :"date",
         \WReminder.createdAt :"created_at",
-        \WReminder.updatedAt :"updated_at"
+//        \WReminder.updatedAt :"updated_at"
     ]
 
 public static let mutableProperty: [PartialKeyPath<WReminder>:String] = [

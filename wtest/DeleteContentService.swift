@@ -22,10 +22,10 @@ struct DeleteContentService {
         firstly {
             WAPI.get(WList.self)
             }.then { (lists: Set<WList>) -> Promise<(Set<WTask>, Set<WTask>, Void)> in
-                let inbox = lists.first(where: { $0.listType == "inbox" })!
+                let inbox = lists.first(where: { $0.listType == .inbox })!
                 let inboxPromise = WAPI.get(WTask.self, listId: inbox.id, completed: false)
                 let inboxPromiseCompleted = WAPI.get(WTask.self, listId: inbox.id, completed: true)
-                let deletePomise = when(fulfilled: lists.filter({$0.listType != "inbox"}).map {
+                let deletePomise = when(fulfilled: lists.filter({$0.listType != .inbox}).map {
                     WAPI.delete(WList.self, id: $0.id, revision: $0.revision) })
                 return when(fulfilled: inboxPromise, inboxPromiseCompleted, deletePomise)
             }.then { (tasksUncompleted, taskCompleted, _) -> Promise<Void> in

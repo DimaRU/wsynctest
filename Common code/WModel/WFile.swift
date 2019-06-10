@@ -38,8 +38,8 @@ public static let storedProperty: [PartialKeyPath<WFile>:String] = [
         \WFile.fileIcon :"file_icon",
         \WFile.fileProvider :"file_provider",
         \WFile.localCreatedAt :"local_created_at",
-        \WFile.createdAt :"created_at",
-        \WFile.updatedAt :"updated_at"
+        \WFile.createdAt :"created_at"
+//        \WFile.updatedAt :"updated_at"
     ]
 
 public static let mutableProperty: [PartialKeyPath<WFile>:String] = [

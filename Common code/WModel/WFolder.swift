@@ -14,8 +14,8 @@ public struct WFolder: WObject, WCreatable {
     public var title: String
     public var listIds: [Int]
     public let userId: Int?
-    public let createdAt: Date?
     public let createdById: Int?
+    public let createdAt: Date?
     public let updatedAt: Date?
 
     public static let createFieldList: [PartialKeyPath<WFolder>] = [
@@ -32,9 +32,9 @@ public static let storedProperty: [PartialKeyPath<WFolder>:String] = [
         \WFolder.title :"title",
         \WFolder.listIds :"list_ids",
         \WFolder.userId :"user_id",
-        \WFolder.createdAt :"created_at",
         \WFolder.createdById :"created_by_id",
-        \WFolder.updatedAt :"updated_at"
+        \WFolder.createdAt :"created_at",
+//        \WFolder.updatedAt :"updated_at"
     ]
 
 public static let mutableProperty: [PartialKeyPath<WFolder>:String] = [

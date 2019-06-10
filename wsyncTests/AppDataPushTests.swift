@@ -42,6 +42,10 @@ class AppDataPushTests: XCTestCase {
         pull(from: "26359-dump", appDataSync: appDataSync)
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
+        let bundle = Bundle(for: type(of: self))
+        let wdump = loadDump(bundle: bundle, resource: "26361-dump")
+        WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
+
         appDataSync.add(created: appDataSync.makeWList(title: "Create test list"))
         push(appDataSync: appDataSync)
         guard let list = appDataSync.appData.lists[396217427] else {
@@ -79,9 +83,8 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        let bundle = Bundle(for: type(of: self))
-        let wdump = loadDump(bundle: bundle, resource: "26369-dump")
-        CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump)
+        let wdump1 = loadDump(bundle: bundle, resource: "26369-dump")
+        CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
 
 //        pull(from: "26369-dump", appDataSync: appDataSync)
     }

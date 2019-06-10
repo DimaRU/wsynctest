@@ -15,8 +15,8 @@ class WObjectTests: XCTestCase {
                              title: "Title",
                              listIds: [],
                              userId: 1,
-                             createdAt: nil,
                              createdById: nil,
+                             createdAt: nil,
                              updatedAt: nil)
         var folder1 = folder
         let diff = folder1.updateParams(from: folder)
@@ -38,8 +38,8 @@ class WObjectTests: XCTestCase {
                              title: "Title",
                              listIds: [1,2],
                              userId: 1,
-                             createdAt: nil,
                              createdById: nil,
+                             createdAt: nil,
                              updatedAt: nil)
 
         let params = folder.createParams()

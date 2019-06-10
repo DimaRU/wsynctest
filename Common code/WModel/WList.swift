@@ -5,6 +5,9 @@
 import Foundation
 
 public struct WList: WObject, WCreatable {
+    public enum ListType: String, Codable {
+        case inbox, list
+    }
     public var storedSyncState: WSyncState? = .created
     public let id: Int
     public var revision: Int
@@ -14,7 +17,7 @@ public struct WList: WObject, WCreatable {
     public var title: String
     public let ownerId: Int?
     public let ownerType: String?
-    public let listType: String?
+    public let listType: ListType = .list
     public let `public`: Bool?
     public let createdAt: Date?
 
