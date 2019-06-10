@@ -90,6 +90,12 @@ class RevisionTest {
             }.then { note -> Promise<Void> in
                 self.dumpWObject(dumpType: .create, object: note)
                 return self.dumpAll(comment: "note created")
+            }.then {
+                self.create(from: WFolder(id: -1, title: "Test create folder", listIds: [listId]))
+            }.then { folder -> Promise<Void> in
+                folderId = folder.id
+                self.dumpWObject(dumpType: .create, object: folder)
+                return self.dumpAll(comment: "folder created")
             }.then { _ -> Promise<WFile> in
                 let uploadService = WUploadService()
                 let data = "Test content".data(using: .utf8)!
@@ -97,12 +103,6 @@ class RevisionTest {
             }.then { file -> Promise<Void> in
                 self.dumpWObject(dumpType: .create, object: file)
                 return self.dumpAll(comment: "file created")
-            }.then {
-                self.create(from: WFolder(id: -1, title: "Test create folder", listIds: [listId]))
-            }.then { folder -> Promise<Void> in
-                folderId = folder.id
-                self.dumpWObject(dumpType: .create, object: folder)
-                return self.dumpAll(comment: "folder created")
             }.then {
                 return Promise.value((folderId, listId, taskId))
         }

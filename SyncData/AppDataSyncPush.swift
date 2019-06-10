@@ -78,6 +78,7 @@ extension AppDataSync {
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.appData.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
                     self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
+                    self.appData.createdRevisionTouch(wobject: created)
                     self.requestQueue.dequeue()
                 }.ensure {
                     completion?()
@@ -92,6 +93,7 @@ extension AppDataSync {
             WAPI.update(type, id: request.id, params: params, requestId: request.uuid)
                 .done { updated in
                     self.appData.updateObject(updated)
+                    self.appData.updatedRevisionTouch(wobject: updated)
                     self.requestQueue.dequeue()
                 }.ensure {
                     completion?()
@@ -104,6 +106,7 @@ extension AppDataSync {
             WAPI.delete(type, id: request.id, revision: request.revision)
                 .done {
                     self.appData.deleteObject(type: type, id: request.id, parentId: request.parentId)
+                    self.appData.deletedRevisionTouch(type: type, id: request.id, parentId: request.parentId)
                     self.requestQueue.dequeue()
                 }.ensure {
                     completion?()

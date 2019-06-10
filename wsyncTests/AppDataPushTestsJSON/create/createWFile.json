@@ -1,0 +1,15 @@
+{
+  "content_type" : "text\/plain; charset=utf-8",
+  "created_at" : "2019-06-09T21:10:20.481Z",
+  "created_by_request_id" : "3662fd0097daf4f3bc3d:3bd34e2e-7a39-5939-a429-5070d27920cd:43ebe2d1-2b28-4b7e-a5be-69685bf40110:41027896:da647d76-b08b-4f06-8fdb-18f0b46de6d9",
+  "file_name" : "TestFile.txt",
+  "file_size" : 12,
+  "id" : 62282412,
+  "local_created_at" : "2019-06-09T21:10:20.415Z",
+  "revision" : 1,
+  "task_id" : 5101339791,
+  "type" : "file",
+  "updated_at" : "2019-06-09T21:10:20.589Z",
+  "url" : "https:\/\/download.wunderlist.io\/e8e25610-6d28-0137-cb23-22000a7d86a2-1560114619-235319?AWSAccessKeyId=AKIAJEN6W4AO3LJODOAA&Expires=1562706620&Signature=RpD2ngcPV4QbDHnF5whJXLdoTAo%3D",
+  "user_id" : 41027896
+}

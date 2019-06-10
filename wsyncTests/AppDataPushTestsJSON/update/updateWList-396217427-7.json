@@ -1,0 +1,12 @@
+{
+  "created_at" : "2019-06-09T21:09:54.355Z",
+  "created_by_request_id" : "3662fd0097daf4f3bc3d:3bd34e2e-7a39-5939-a429-5070d27920cd:43ebe2d1-2b28-4b7e-a5be-69685bf40110:41027896:e3881720-c033-4499-bc3e-a45c5f7acaf2",
+  "id" : 396217427,
+  "list_type" : "list",
+  "owner_id" : 41027896,
+  "owner_type" : "user",
+  "public" : false,
+  "revision" : 7,
+  "title" : "Test create list updated title",
+  "type" : "list"
+}

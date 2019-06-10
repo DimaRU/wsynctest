@@ -288,34 +288,36 @@ extension AppData {
         }
     }
 
-    func deletedRevisionTouch<T: WObject & WCreatable>(wobject: T) {
-        switch wobject {
-        case is WFile,
-             is WNote,
-             is WSubtask:
-            let taskId = (wobject as! TaskChild).taskId
+    func deletedRevisionTouch<T: WObject>(type: T.Type, id: Int, parentId: Int?) {
+        switch type {
+        case is WFile.Type,
+             is WNote.Type,
+             is WSubtask.Type:
+            let taskId = parentId!
             let task = tasks.getObject(by: taskId)!
             incRevision(type: WTask.self, id: task.id, parentId: task.listId)
             incRevision(type: WList.self, id: task.listId, parentId: nil)
             root.revision += 1
-        case is WFolder:
+        case is WFolder.Type:
             root.revision += 1
-        case is WList:
+        case is WList.Type:
             incUserRevision()
             root.revision += 2
-        case let reminder as WReminder:
-            let task = tasks.getObject(by: reminder.taskId)!
+        case is WReminder.Type:
+            let task = tasks.getObject(by: parentId!)!
             let listId = task.listId
             var membership = memberships[listId].first(where: { $0.userId == root.userId })!
             membership.revision += 1
             memberships[listId].update(with: membership)
             incUserRevision()
             root.revision += 1
-        case let task as WTask:
-            incRevision(type: WList.self, id: task.listId, parentId: nil)
+        case is WTask.Type:
+            let listId = parentId!
+            incRevision(type: WList.self, id: listId, parentId: nil)
             root.revision += 1
-        case let taskComment as WTaskComment:
-            let task = tasks.getObject(by: taskComment.taskId)!
+        case is WTaskComment.Type:
+            let taskId = parentId!
+            let task = tasks.getObject(by: taskId)!
             let listId = task.listId
             incRevision(type: WTask.self, id: task.id, parentId: task.listId)
             incRevision(type: WList.self, id: task.listId, parentId: nil)

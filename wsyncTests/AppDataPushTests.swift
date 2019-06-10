@@ -38,59 +38,52 @@ class AppDataPushTests: XCTestCase {
         XCTAssertEqual(appDataSync.requestQueue.count, queueCount - 1, "Queue length must be \(queueCount - 1) ")
     }
 
-    func testPush() {
-        pull(from: "25941-dump", appDataSync: appDataSync)
+    func testPushCreate() {
+        pull(from: "26359-dump", appDataSync: appDataSync)
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
         appDataSync.add(created: appDataSync.makeWList(title: "Create test list"))
         push(appDataSync: appDataSync)
-        guard let list = appDataSync.appData.lists[395230577] else {
+        guard let list = appDataSync.appData.lists[396217427] else {
             XCTFail("WList object not exist")
             return
         }
 
         appDataSync.add(created: appDataSync.makeWTask(listId: list.id, title: "Create test task"))
         push(appDataSync: appDataSync)
-        guard let task = appDataSync.appData.tasks[list.id][5066659945] else {
+        guard let task = appDataSync.appData.tasks[list.id][5101339791] else {
             XCTFail("WTask object not exist")
             return
         }
 
-        var taskPosition = appDataSync.appData.taskPositions[list.id].first!
-        taskPosition.values = [task.id]
-        appDataSync.update(updated: taskPosition)
-        push(appDataSync: appDataSync)
-
         let subtask = appDataSync.makeWSubtask(taskId: task.id, title: "Create test subtask")
         appDataSync.add(created: subtask)
-        push(appDataSync: appDataSync)
-
-        var subtaskPosition = appDataSync.appData.subtaskPositions[task.id].first!
-        subtaskPosition.values = [subtask.id]
-        appDataSync.update(updated: subtaskPosition)
         push(appDataSync: appDataSync)
 
         let taskComment = appDataSync.makeWTaskComment(taskId: task.id, text: "Create test comment")
         appDataSync.add(created: taskComment)
         push(appDataSync: appDataSync)
 
-        let date = "2019-05-29T18:55:44.059Z".dateFromISO8601!
+        let date = "2019-06-09T21:10:08.537Z".dateFromISO8601!
         let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
         appDataSync.add(created: reminder)
+        push(appDataSync: appDataSync)
+
+        let note = appDataSync.makeWNote(taskId: task.id, content: "Create test note")
+        appDataSync.add(created: note)
         push(appDataSync: appDataSync)
 
         let folder = appDataSync.makeWFolder(title: "Test create folder", listIds: [list.id])
         appDataSync.add(created: folder)
         push(appDataSync: appDataSync)
 
-        var updatedList = appDataSync.appData.lists[list.id]!
-        updatedList.title = "Test create list updated title"
-        appDataSync.update(updated: updatedList)
-        push(appDataSync: appDataSync)
+        XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
+        let bundle = Bundle(for: type(of: self))
+        let wdump = loadDump(bundle: bundle, resource: "26369-dump")
+        CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump)
 
-        pull(from: "25951-dump", appDataSync: appDataSync)
+//        pull(from: "26369-dump", appDataSync: appDataSync)
     }
 
     func testPushLocal() {
