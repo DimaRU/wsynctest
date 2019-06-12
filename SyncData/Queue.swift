@@ -63,7 +63,9 @@ extension Queue where T == WRequest {
             if request.id == fakeId {
                 request.id = id
             }
-            request.parentId = request.parentId == fakeId ? id: parentId
+            if request.parentId == fakeId {
+                request.parentId = id
+            }
             if (request.params.container["list_id"] as? Int) == fakeId {
                 request.params.container["list_id"] = id
             }
