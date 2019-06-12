@@ -43,6 +43,7 @@ class AppDataSync {
         appStore.localId -= 1
         return appStore.localId
     }
+    
     // MARK: Push accessors
     public func update<T: WObject>(updated wobject: T){
         guard let source = appData.getSource(for: wobject) else {

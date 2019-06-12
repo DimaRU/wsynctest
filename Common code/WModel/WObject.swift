@@ -121,6 +121,13 @@ fileprivate func filterDates(param: Any) -> Any {
 }
 
 extension WObject {
+    public func updatableParams() -> [String: Any] {
+        var dict: [String: Any] = [:]
+
+        Self.mutableProperty.forEach{ dict[$1] = self[keyPath: $0] }
+        return dict
+    }
+
     public func updateParams(from: Self) -> [String: Any] {
         var dict: [String: Any] = [:]
         var deletedList: [String] = []
@@ -143,6 +150,32 @@ extension WObject {
         }
         if !dict.isEmpty {
             dict["revision"] = from.revision
+        }
+        return dict
+    }
+
+    public func updateParams(from source: [String: Any]) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        var deletedList: [String] = []
+
+        let pathList = Self.mutableProperty
+        for (path, key) in pathList {
+            let oldValue = source[key] as Any
+            let newValue = self[keyPath: path]
+            if compareAny(a: oldValue, b: newValue) {
+                continue
+            }
+            if case Optional<Any>.none = newValue {
+                deletedList.append(key)
+            } else {
+                dict[key] = filterDates(param: newValue)
+            }
+        }
+        if !deletedList.isEmpty {
+            dict["remove"] = deletedList
+        }
+        if !dict.isEmpty {
+            dict["revision"] = self.revision
         }
         return dict
     }

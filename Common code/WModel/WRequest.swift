@@ -29,7 +29,6 @@ struct WRequest: Codable {
     let requestType: RequestType
     var id: Int
     var parentId: Int?
-    var revision: Int
     let uuid: String = UUID().uuidString.lowercased()
     var type: MappingType
     var params: WParams
@@ -41,7 +40,6 @@ extension WRequest {
         self.id = wobject.id
         self.params = WParams(params)
         self.type = wobject.type
-        self.revision = wobject.revision
         switch wobject {
         case let wobject as ListChild:
             parentId = wobject.listId
@@ -53,8 +51,7 @@ extension WRequest {
     }
 
     static func create<T: WObject & WCreatable>(wobject: T) -> WRequest {
-        let params = wobject.createParams()
-        return WRequest(.create, wobject: wobject, params: params)
+        return WRequest(.create, wobject: wobject, params: [:])
     }
 
     static func delete<T: WObject>(wobject: T) -> WRequest {
@@ -62,7 +59,7 @@ extension WRequest {
     }
 
     static func update<T: WObject>(wobject: T, updated: T) -> WRequest {
-        let params = updated.updateParams(from: wobject)
+        let params = wobject.updatableParams()
         return WRequest(.update, wobject: wobject, params: params)
     }
 }

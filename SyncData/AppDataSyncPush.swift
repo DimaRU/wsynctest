@@ -28,7 +28,6 @@ extension AppDataSync {
 
         func update(request: WRequest) {
             switch request.type.revisionableClass.self {
-            case let type as WFile.Type: sendUpdateRequest(type, request: request)
             case let type as WFolder.Type: sendUpdateRequest(type, request: request)
             case let type as WList.Type: sendUpdateRequest(type, request: request)
             case let type as WTask.Type: sendUpdateRequest(type, request: request)
@@ -38,11 +37,9 @@ extension AppDataSync {
             case let type as WSetting.Type: sendUpdateRequest(type, request: request)
             case let type as WSubtask.Type: sendUpdateRequest(type, request: request)
             case let type as WTaskComment.Type: sendUpdateRequest(type, request: request)
-            case let type as WTaskCommentsState.Type: sendUpdateRequest(type, request: request)
             case let type as WListPosition.Type: sendUpdateRequest(type, request: request)
             case let type as WTaskPosition.Type: sendUpdateRequest(type, request: request)
             case let type as WSubtaskPosition.Type: sendUpdateRequest(type, request: request)
-            case let type as WUser.Type: sendUpdateRequest(type, request: request)
             default:
                 fatalError()
             }
@@ -60,11 +57,9 @@ extension AppDataSync {
             case let type as WSetting.Type: sendDeleteRequest(type, request: request)
             case let type as WSubtask.Type: sendDeleteRequest(type, request: request)
             case let type as WTaskComment.Type: sendDeleteRequest(type, request: request)
-            case let type as WTaskCommentsState.Type: sendDeleteRequest(type, request: request)
             case let type as WListPosition.Type: sendDeleteRequest(type, request: request)
             case let type as WTaskPosition.Type: sendDeleteRequest(type, request: request)
             case let type as WSubtaskPosition.Type: sendDeleteRequest(type, request: request)
-            case let type as WUser.Type: sendDeleteRequest(type, request: request)
             default:
                 fatalError()
             }
@@ -78,8 +73,11 @@ extension AppDataSync {
         }
 
         func sendCreateRequest<T: WObject & WCreatable>(_ type: T.Type, request: WRequest) {
-            let params = request.params.container
-
+            guard let wobject = appData.getSource(type: type, id: request.id, parentId: request.parentId) else {
+                assertionFailure("No object for create \(type):\(request.id)")
+                return
+            }
+            let params = wobject.createParams()
             WAPI.create(T.self, params: params, requestId: request.uuid)
                 .then { created -> Promise<Void> in
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
@@ -100,7 +98,12 @@ extension AppDataSync {
         }
 
         func sendUpdateRequest<T: WObject>(_ type: T.Type, request: WRequest) {
-            let params = request.params.container
+            guard let wobject = appData.getSource(type: type, id: request.id, parentId: request.parentId) else {
+                assertionFailure("No object for update \(type):\(request.id)")
+                return
+            }
+            let sourceParams = request.params.container
+            let params = wobject.updateParams(from: sourceParams)
 
             WAPI.update(type, id: request.id, params: params, requestId: request.uuid)
                 .done { updated in
@@ -115,7 +118,11 @@ extension AppDataSync {
         }
 
         func sendDeleteRequest<T: WObject>(_ type: T.Type, request: WRequest) {
-            WAPI.delete(type, id: request.id, revision: request.revision)
+            guard let wobject = appData.getSource(type: type, id: request.id, parentId: request.parentId) else {
+                assertionFailure("No object for delete \(type):\(request.id)")
+                return
+            }
+            WAPI.delete(type, id: wobject.id, revision: wobject.revision)
                 .done {
                     self.appData.deleteObject(type: type, id: request.id, parentId: request.parentId)
                     self.appData.deletedRevisionTouch(type: type, id: request.id, parentId: request.parentId)

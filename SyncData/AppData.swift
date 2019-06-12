@@ -482,6 +482,20 @@ extension AppData {
         }
     }
 
+    func getSource<T: WObject>(type: T.Type, id: Int, parentId: Int?) -> T? {
+        switch type {
+        case is ListChild.Type:
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            return self[keyPath: path][parentId!][id]
+        case is TaskChild.Type:
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, WObjectSetDictionary<T>>
+            return self[keyPath: path][parentId!][id]
+        default:
+            let path = keyPath(T.self) as! ReferenceWritableKeyPath<AppData, Set<T>>
+            return self[keyPath: path][id]
+        }
+    }
+
     func replaceObject<T: WObject>(type: T.Type, id: Int, parentId: Int?, to: T) {
         switch type {
         case is ListChild.Type:
