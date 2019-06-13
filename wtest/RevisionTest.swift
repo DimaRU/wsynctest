@@ -96,13 +96,13 @@ class RevisionTest {
                 folderId = folder.id
                 self.dumpWObject(dumpType: .create, object: folder)
                 return self.dumpAll(comment: "folder created")
-            }.then { _ -> Promise<WFile> in
-                let uploadService = WUploadService()
-                let data = "Test content".data(using: .utf8)!
-                return uploadService.upload(data, filename: "TestFile.txt", for: taskId)
-            }.then { file -> Promise<Void> in
-                self.dumpWObject(dumpType: .create, object: file)
-                return self.dumpAll(comment: "file created")
+//            }.then { _ -> Promise<WFile> in
+//                let uploadService = WUploadService()
+//                let data = "Test content".data(using: .utf8)!
+//                return uploadService.upload(data, filename: "TestFile.txt", for: taskId)
+//            }.then { file -> Promise<Void> in
+//                self.dumpWObject(dumpType: .create, object: file)
+//                return self.dumpAll(comment: "file created")
             }.then {
                 return Promise.value((folderId, listId, taskId))
         }
@@ -196,11 +196,7 @@ class RevisionTest {
             }.then { object -> Promise<Void> in
                 self.dumpWObject(dumpType: .update, object: object)
                 return self.dumpAll(comment: "setting updated")
-//            }.then { _ -> Promise<Void> in
-//                let list = self.dump.lists[listId]!
-//                return WAPI.delete(WList.self, id: list.id, revision: list.revision)
-//            }.then {
-//                self.dumpAll(comment: "list deleted")
+
         }
     }
 
@@ -219,10 +215,10 @@ class RevisionTest {
                 self.delete(self.dump.reminders.first(where: { $0.taskId == taskId })!)
             }.then {
                 return self.dumpAll(comment: "Reminder deleted")
-            }.then {
-                self.delete(self.dump.files.first(where: { $0.taskId == taskId })!)
-            }.then {
-                return self.dumpAll(comment: "File deleted")
+//            }.then {
+//                self.delete(self.dump.files.first(where: { $0.taskId == taskId })!)
+//            }.then {
+//                return self.dumpAll(comment: "File deleted")
             }.then {
                 self.delete(self.dump.subtasks.first(where: { $0.taskId == taskId })!)
             }.then {

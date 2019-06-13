@@ -4,8 +4,8 @@
   "created_by_id" : 41027896,
   "created_by_request_id" : "subtask:3662fd0097daf4f3bc3d:3bd34e2e-7a39-5939-a429-5070d27920cd:e4844207-05f5-470e-b6ad-ee8fe476e582:41027896:380e1703-6434-4baf-96c1-7bccbc10d944",
   "id" : 1744214637,
-  "revision" : 1,
+  "revision" : 2,
   "task_id" : 5112132519,
-  "title" : "Create test subtask",
+  "title" : "Subtask title updated",
   "type" : "subtask"
 }

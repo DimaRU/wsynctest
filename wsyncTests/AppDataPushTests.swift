@@ -39,23 +39,23 @@ class AppDataPushTests: XCTestCase {
     }
 
     func testPushCreate() {
-        pull(from: "26359-dump", appDataSync: appDataSync)
+        pull(from: "26439-dump", appDataSync: appDataSync)
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
         let bundle = Bundle(for: type(of: self))
-        let wdump = loadDump(bundle: bundle, resource: "26361-dump")
+        let wdump = loadDump(bundle: bundle, resource: "26441-dump")
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
         appDataSync.add(created: appDataSync.makeWList(title: "Create test list"))
         push(appDataSync: appDataSync)
-        guard let list = appDataSync.appData.lists[396217427] else {
+        guard let list = appDataSync.appData.lists[396563172] else {
             XCTFail("WList object not exist")
             return
         }
 
         appDataSync.add(created: appDataSync.makeWTask(listId: list.id, title: "Create test task"))
         push(appDataSync: appDataSync)
-        guard let task = appDataSync.appData.tasks[list.id][5101339791] else {
+        guard let task = appDataSync.appData.tasks[list.id][5112132519] else {
             XCTFail("WTask object not exist")
             return
         }
@@ -68,7 +68,7 @@ class AppDataPushTests: XCTestCase {
         appDataSync.add(created: taskComment)
         push(appDataSync: appDataSync)
 
-        let date = "2019-06-09T21:10:08.537Z".dateFromISO8601!
+        let date = "2019-06-13T09:58:58.019Z".dateFromISO8601!
         let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
         appDataSync.add(created: reminder)
         push(appDataSync: appDataSync)
@@ -83,12 +83,12 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        let wdump1 = loadDump(bundle: bundle, resource: "26369-dump")
+        let wdump1 = loadDump(bundle: bundle, resource: "26449-dump")
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
 
     func testPushLocal() {
-        pull(from: "26359-dump", appDataSync: appDataSync)
+        pull(from: "26439-dump", appDataSync: appDataSync)
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
@@ -104,7 +104,7 @@ class AppDataPushTests: XCTestCase {
         let taskComment = appDataSync.makeWTaskComment(taskId: task.id, text: "Create test comment")
         appDataSync.add(created: taskComment)
 
-        let date = "2019-06-09T21:10:08.537Z".dateFromISO8601!
+        let date = "2019-06-13T09:58:58.019Z".dateFromISO8601!
         let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
         appDataSync.add(created: reminder)
 
@@ -115,7 +115,7 @@ class AppDataPushTests: XCTestCase {
         appDataSync.add(created: folder)
 
         let bundle = Bundle(for: type(of: self))
-        let wdump = loadDump(bundle: bundle, resource: "26361-dump")
+        let wdump = loadDump(bundle: bundle, resource: "26441-dump")
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
         XCTAssertEqual(appDataSync.requestQueue.count, 7, "Wrong queue length")
@@ -125,7 +125,7 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        let wdump1 = loadDump(bundle: bundle, resource: "26369-dump")
+        let wdump1 = loadDump(bundle: bundle, resource: "26449-dump")
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
 }

@@ -158,31 +158,55 @@
 		0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */; };
 		0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5F022916353003C55D6 /* 25847-dump.json */; };
 		0A995D1A229BFB2D0049BD60 /* AnyDictionaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1799E9229AA0C70013D679 /* AnyDictionaryCodable.swift */; };
-		0A9A451E22ADB50100EC0544 /* update in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A451D22ADB50100EC0544 /* update */; };
-		0A9A452022ADB5A500EC0544 /* delete in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A451F22ADB5A500EC0544 /* delete */; };
-		0A9A453322ADBC8000EC0544 /* 26365-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452222ADBC7D00EC0544 /* 26365-dump.json */; };
-		0A9A453422ADBC8000EC0544 /* 26359-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452322ADBC7D00EC0544 /* 26359-dump.json */; };
-		0A9A453522ADBC8000EC0544 /* 26361-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452422ADBC7D00EC0544 /* 26361-dump.json */; };
-		0A9A453622ADBC8000EC0544 /* 26362-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452522ADBC7D00EC0544 /* 26362-dump.json */; };
-		0A9A453722ADBC8000EC0544 /* 26368-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452622ADBC7D00EC0544 /* 26368-dump.json */; };
-		0A9A453822ADBC8000EC0544 /* 26370-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452722ADBC7E00EC0544 /* 26370-dump.json */; };
-		0A9A453922ADBC8000EC0544 /* createWTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452822ADBC7E00EC0544 /* createWTask.json */; };
-		0A9A453A22ADBC8000EC0544 /* createWFolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452922ADBC7E00EC0544 /* createWFolder.json */; };
-		0A9A453B22ADBC8000EC0544 /* createWNote.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452A22ADBC7E00EC0544 /* createWNote.json */; };
-		0A9A453C22ADBC8000EC0544 /* createWSubtask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452B22ADBC7E00EC0544 /* createWSubtask.json */; };
-		0A9A453D22ADBC8000EC0544 /* 26369-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452C22ADBC7F00EC0544 /* 26369-dump.json */; };
-		0A9A453E22ADBC8000EC0544 /* createWFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452D22ADBC7F00EC0544 /* createWFile.json */; };
-		0A9A453F22ADBC8000EC0544 /* 26363-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452E22ADBC7F00EC0544 /* 26363-dump.json */; };
-		0A9A454022ADBC8000EC0544 /* createWReminder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A452F22ADBC7F00EC0544 /* createWReminder.json */; };
-		0A9A454122ADBC8000EC0544 /* 26367-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A453022ADBC7F00EC0544 /* 26367-dump.json */; };
-		0A9A454222ADBC8000EC0544 /* createWTaskComment.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A453122ADBC7F00EC0544 /* createWTaskComment.json */; };
-		0A9A454322ADBC8000EC0544 /* createWList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A453222ADBC7F00EC0544 /* createWList.json */; };
 		0AA8EA8722A6E2AF0068E8A5 /* CompareDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8EA8622A6E2AF0068E8A5 /* CompareDump.swift */; };
 		0AAD9CEA229082B30036CA95 /* LoadDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CE9229082B30036CA95 /* LoadDump.swift */; };
 		0AAD9CEC229083BF0036CA95 /* AppDataPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */; };
 		0ABD385D2294838200FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
 		0ABD386122948FD800FAAA74 /* WRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD386022948FD800FAAA74 /* WRequestTests.swift */; };
 		0ABD38622294923E00FAAA74 /* WRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD385C2294838200FAAA74 /* WRequest.swift */; };
+		0AE0ACDA22B282220020AF51 /* createWSubtask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACC922B282220020AF51 /* createWSubtask.json */; };
+		0AE0ACDB22B282220020AF51 /* createWFolder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACCA22B282220020AF51 /* createWFolder.json */; };
+		0AE0ACDC22B282220020AF51 /* createWReminder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACCC22B282220020AF51 /* createWReminder.json */; };
+		0AE0ACDD22B282220020AF51 /* createWNote.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACCD22B282220020AF51 /* createWNote.json */; };
+		0AE0ACDE22B282220020AF51 /* 26447-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACCE22B282220020AF51 /* 26447-dump.json */; };
+		0AE0ACDF22B282220020AF51 /* createWTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACCF22B282220020AF51 /* createWTask.json */; };
+		0AE0ACE022B282220020AF51 /* 26441-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD022B282220020AF51 /* 26441-dump.json */; };
+		0AE0ACE122B282220020AF51 /* createWFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD122B282220020AF51 /* createWFile.json */; };
+		0AE0ACE222B282220020AF51 /* 26449-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD222B282220020AF51 /* 26449-dump.json */; };
+		0AE0ACE322B282220020AF51 /* createWList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD322B282220020AF51 /* createWList.json */; };
+		0AE0ACE422B282220020AF51 /* createWTaskComment.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD422B282220020AF51 /* createWTaskComment.json */; };
+		0AE0ACE522B282220020AF51 /* 26442-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD522B282220020AF51 /* 26442-dump.json */; };
+		0AE0ACE622B282220020AF51 /* 26445-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD622B282220020AF51 /* 26445-dump.json */; };
+		0AE0ACE722B282220020AF51 /* 26448-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD722B282220020AF51 /* 26448-dump.json */; };
+		0AE0ACE822B282220020AF51 /* 26439-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD822B282220020AF51 /* 26439-dump.json */; };
+		0AE0ACE922B282220020AF51 /* 26443-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACD922B282220020AF51 /* 26443-dump.json */; };
+		0AE0AD0122B282410020AF51 /* 26452-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACEC22B282410020AF51 /* 26452-dump.json */; };
+		0AE0AD0222B282410020AF51 /* 26454-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACED22B282410020AF51 /* 26454-dump.json */; };
+		0AE0AD0322B282410020AF51 /* 26459-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACEE22B282410020AF51 /* 26459-dump.json */; };
+		0AE0AD0422B282410020AF51 /* 26453-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACEF22B282410020AF51 /* 26453-dump.json */; };
+		0AE0AD0522B282410020AF51 /* 26455-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF022B282410020AF51 /* 26455-dump.json */; };
+		0AE0AD0622B282410020AF51 /* 26460-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF122B282410020AF51 /* 26460-dump.json */; };
+		0AE0AD0722B282410020AF51 /* 26458-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF222B282410020AF51 /* 26458-dump.json */; };
+		0AE0AD0822B282410020AF51 /* 26450-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF322B282410020AF51 /* 26450-dump.json */; };
+		0AE0AD0A22B282410020AF51 /* 26451-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF522B282410020AF51 /* 26451-dump.json */; };
+		0AE0AD0B22B282410020AF51 /* 26457-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF622B282410020AF51 /* 26457-dump.json */; };
+		0AE0AD0C22B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF722B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json */; };
+		0AE0AD0D22B282410020AF51 /* updateWTask-5112132519-5.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF822B282410020AF51 /* updateWTask-5112132519-5.json */; };
+		0AE0AD0E22B282410020AF51 /* updateWSetting-383659134-12.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACF922B282410020AF51 /* updateWSetting-383659134-12.json */; };
+		0AE0AD0F22B282410020AF51 /* updateWNote-319655934-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFA22B282410020AF51 /* updateWNote-319655934-2.json */; };
+		0AE0AD1022B282410020AF51 /* updateWReminder-665399320-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFB22B282410020AF51 /* updateWReminder-665399320-2.json */; };
+		0AE0AD1122B282410020AF51 /* updateWList-396563172-6.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFC22B282410020AF51 /* updateWList-396563172-6.json */; };
+		0AE0AD1222B282410020AF51 /* updateWSubtask-1744214637-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFD22B282410020AF51 /* updateWSubtask-1744214637-2.json */; };
+		0AE0AD1322B282410020AF51 /* updateWFolder-13781081-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFE22B282410020AF51 /* updateWFolder-13781081-2.json */; };
+		0AE0AD1422B282410020AF51 /* updateWListPosition-41027896-86.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0ACFF22B282410020AF51 /* updateWListPosition-41027896-86.json */; };
+		0AE0AD1522B282410020AF51 /* updateWTaskPosition-396563172-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD0022B282410020AF51 /* updateWTaskPosition-396563172-1.json */; };
+		0AE0AD2022B291030020AF51 /* 26467-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1822B291030020AF51 /* 26467-dump.json */; };
+		0AE0AD2122B291030020AF51 /* 26466-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1922B291030020AF51 /* 26466-dump.json */; };
+		0AE0AD2322B291030020AF51 /* 26465-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1B22B291030020AF51 /* 26465-dump.json */; };
+		0AE0AD2422B291030020AF51 /* 26468-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1C22B291030020AF51 /* 26468-dump.json */; };
+		0AE0AD2522B291030020AF51 /* 26463-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1D22B291030020AF51 /* 26463-dump.json */; };
+		0AE0AD2622B291030020AF51 /* 26470-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1E22B291030020AF51 /* 26470-dump.json */; };
+		0AE0AD2722B291030020AF51 /* 26464-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1F22B291030020AF51 /* 26464-dump.json */; };
 		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
 		0AF44A50228DD85A009694B4 /* WDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF44A4F228DD85A009694B4 /* WDump.swift */; };
@@ -304,31 +328,55 @@
 		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25830-dump.json"; sourceTree = "<group>"; };
 		0A8FF5F022916353003C55D6 /* 25847-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25847-dump.json"; sourceTree = "<group>"; };
-		0A9A451D22ADB50100EC0544 /* update */ = {isa = PBXFileReference; lastKnownFileType = folder; path = update; sourceTree = "<group>"; };
-		0A9A451F22ADB5A500EC0544 /* delete */ = {isa = PBXFileReference; lastKnownFileType = folder; path = delete; sourceTree = "<group>"; };
-		0A9A452222ADBC7D00EC0544 /* 26365-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26365-dump.json"; sourceTree = "<group>"; };
-		0A9A452322ADBC7D00EC0544 /* 26359-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26359-dump.json"; sourceTree = "<group>"; };
-		0A9A452422ADBC7D00EC0544 /* 26361-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26361-dump.json"; sourceTree = "<group>"; };
-		0A9A452522ADBC7D00EC0544 /* 26362-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26362-dump.json"; sourceTree = "<group>"; };
-		0A9A452622ADBC7D00EC0544 /* 26368-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26368-dump.json"; sourceTree = "<group>"; };
-		0A9A452722ADBC7E00EC0544 /* 26370-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26370-dump.json"; sourceTree = "<group>"; };
-		0A9A452822ADBC7E00EC0544 /* createWTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTask.json; sourceTree = "<group>"; };
-		0A9A452922ADBC7E00EC0544 /* createWFolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFolder.json; sourceTree = "<group>"; };
-		0A9A452A22ADBC7E00EC0544 /* createWNote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWNote.json; sourceTree = "<group>"; };
-		0A9A452B22ADBC7E00EC0544 /* createWSubtask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWSubtask.json; sourceTree = "<group>"; };
-		0A9A452C22ADBC7F00EC0544 /* 26369-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26369-dump.json"; sourceTree = "<group>"; };
-		0A9A452D22ADBC7F00EC0544 /* createWFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFile.json; sourceTree = "<group>"; };
-		0A9A452E22ADBC7F00EC0544 /* 26363-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26363-dump.json"; sourceTree = "<group>"; };
-		0A9A452F22ADBC7F00EC0544 /* createWReminder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWReminder.json; sourceTree = "<group>"; };
-		0A9A453022ADBC7F00EC0544 /* 26367-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26367-dump.json"; sourceTree = "<group>"; };
-		0A9A453122ADBC7F00EC0544 /* createWTaskComment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTaskComment.json; sourceTree = "<group>"; };
-		0A9A453222ADBC7F00EC0544 /* createWList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWList.json; sourceTree = "<group>"; };
 		0AA8EA8622A6E2AF0068E8A5 /* CompareDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareDump.swift; sourceTree = "<group>"; };
 		0AAD9CE9229082B30036CA95 /* LoadDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDump.swift; sourceTree = "<group>"; };
 		0AAD9CEB229083BF0036CA95 /* AppDataPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPullTests.swift; sourceTree = "<group>"; };
 		0ABD385C2294838200FAAA74 /* WRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequest.swift; sourceTree = "<group>"; };
 		0ABD386022948FD800FAAA74 /* WRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequestTests.swift; sourceTree = "<group>"; };
 		0ADC186C228728ED005B07DD /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = wsynctest.xcworkspace/xcshareddata/IDETemplateMacros.plist; sourceTree = "<group>"; };
+		0AE0ACC922B282220020AF51 /* createWSubtask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWSubtask.json; sourceTree = "<group>"; };
+		0AE0ACCA22B282220020AF51 /* createWFolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFolder.json; sourceTree = "<group>"; };
+		0AE0ACCC22B282220020AF51 /* createWReminder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWReminder.json; sourceTree = "<group>"; };
+		0AE0ACCD22B282220020AF51 /* createWNote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWNote.json; sourceTree = "<group>"; };
+		0AE0ACCE22B282220020AF51 /* 26447-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26447-dump.json"; sourceTree = "<group>"; };
+		0AE0ACCF22B282220020AF51 /* createWTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTask.json; sourceTree = "<group>"; };
+		0AE0ACD022B282220020AF51 /* 26441-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26441-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD122B282220020AF51 /* createWFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWFile.json; sourceTree = "<group>"; };
+		0AE0ACD222B282220020AF51 /* 26449-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26449-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD322B282220020AF51 /* createWList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWList.json; sourceTree = "<group>"; };
+		0AE0ACD422B282220020AF51 /* createWTaskComment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createWTaskComment.json; sourceTree = "<group>"; };
+		0AE0ACD522B282220020AF51 /* 26442-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26442-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD622B282220020AF51 /* 26445-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26445-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD722B282220020AF51 /* 26448-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26448-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD822B282220020AF51 /* 26439-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26439-dump.json"; sourceTree = "<group>"; };
+		0AE0ACD922B282220020AF51 /* 26443-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26443-dump.json"; sourceTree = "<group>"; };
+		0AE0ACEC22B282410020AF51 /* 26452-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26452-dump.json"; sourceTree = "<group>"; };
+		0AE0ACED22B282410020AF51 /* 26454-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26454-dump.json"; sourceTree = "<group>"; };
+		0AE0ACEE22B282410020AF51 /* 26459-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26459-dump.json"; sourceTree = "<group>"; };
+		0AE0ACEF22B282410020AF51 /* 26453-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26453-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF022B282410020AF51 /* 26455-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26455-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF122B282410020AF51 /* 26460-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26460-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF222B282410020AF51 /* 26458-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26458-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF322B282410020AF51 /* 26450-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26450-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF522B282410020AF51 /* 26451-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26451-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF622B282410020AF51 /* 26457-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26457-dump.json"; sourceTree = "<group>"; };
+		0AE0ACF722B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWSubtaskPosition-5112132519-1.json"; sourceTree = "<group>"; };
+		0AE0ACF822B282410020AF51 /* updateWTask-5112132519-5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWTask-5112132519-5.json"; sourceTree = "<group>"; };
+		0AE0ACF922B282410020AF51 /* updateWSetting-383659134-12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWSetting-383659134-12.json"; sourceTree = "<group>"; };
+		0AE0ACFA22B282410020AF51 /* updateWNote-319655934-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWNote-319655934-2.json"; sourceTree = "<group>"; };
+		0AE0ACFB22B282410020AF51 /* updateWReminder-665399320-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWReminder-665399320-2.json"; sourceTree = "<group>"; };
+		0AE0ACFC22B282410020AF51 /* updateWList-396563172-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWList-396563172-6.json"; sourceTree = "<group>"; };
+		0AE0ACFD22B282410020AF51 /* updateWSubtask-1744214637-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWSubtask-1744214637-2.json"; sourceTree = "<group>"; };
+		0AE0ACFE22B282410020AF51 /* updateWFolder-13781081-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWFolder-13781081-2.json"; sourceTree = "<group>"; };
+		0AE0ACFF22B282410020AF51 /* updateWListPosition-41027896-86.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWListPosition-41027896-86.json"; sourceTree = "<group>"; };
+		0AE0AD0022B282410020AF51 /* updateWTaskPosition-396563172-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "updateWTaskPosition-396563172-1.json"; sourceTree = "<group>"; };
+		0AE0AD1822B291030020AF51 /* 26467-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26467-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1922B291030020AF51 /* 26466-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26466-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1B22B291030020AF51 /* 26465-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26465-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1C22B291030020AF51 /* 26468-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26468-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1D22B291030020AF51 /* 26463-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26463-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1E22B291030020AF51 /* 26470-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26470-dump.json"; sourceTree = "<group>"; };
+		0AE0AD1F22B291030020AF51 /* 26464-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26464-dump.json"; sourceTree = "<group>"; };
 		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0AF44A4F228DD85A009694B4 /* WDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDump.swift; sourceTree = "<group>"; };
@@ -630,35 +678,75 @@
 		0A54E75B229DDB93003DE7E9 /* AppDataPushTestsJSON */ = {
 			isa = PBXGroup;
 			children = (
-				0A9A452122ADBC6500EC0544 /* create */,
-				0A9A451F22ADB5A500EC0544 /* delete */,
-				0A9A451D22ADB50100EC0544 /* update */,
+				0AE0ACC822B282220020AF51 /* create */,
+				0AE0AD1622B291030020AF51 /* delete */,
+				0AE0ACEA22B282410020AF51 /* update */,
 			);
 			path = AppDataPushTestsJSON;
 			sourceTree = "<group>";
 		};
-		0A9A452122ADBC6500EC0544 /* create */ = {
+		0AE0ACC822B282220020AF51 /* create */ = {
 			isa = PBXGroup;
 			children = (
-				0A9A452322ADBC7D00EC0544 /* 26359-dump.json */,
-				0A9A452422ADBC7D00EC0544 /* 26361-dump.json */,
-				0A9A452522ADBC7D00EC0544 /* 26362-dump.json */,
-				0A9A452E22ADBC7F00EC0544 /* 26363-dump.json */,
-				0A9A452222ADBC7D00EC0544 /* 26365-dump.json */,
-				0A9A453022ADBC7F00EC0544 /* 26367-dump.json */,
-				0A9A452622ADBC7D00EC0544 /* 26368-dump.json */,
-				0A9A452C22ADBC7F00EC0544 /* 26369-dump.json */,
-				0A9A452722ADBC7E00EC0544 /* 26370-dump.json */,
-				0A9A452D22ADBC7F00EC0544 /* createWFile.json */,
-				0A9A452922ADBC7E00EC0544 /* createWFolder.json */,
-				0A9A453222ADBC7F00EC0544 /* createWList.json */,
-				0A9A452A22ADBC7E00EC0544 /* createWNote.json */,
-				0A9A452F22ADBC7F00EC0544 /* createWReminder.json */,
-				0A9A452B22ADBC7E00EC0544 /* createWSubtask.json */,
-				0A9A452822ADBC7E00EC0544 /* createWTask.json */,
-				0A9A453122ADBC7F00EC0544 /* createWTaskComment.json */,
+				0AE0ACD822B282220020AF51 /* 26439-dump.json */,
+				0AE0ACD022B282220020AF51 /* 26441-dump.json */,
+				0AE0ACD522B282220020AF51 /* 26442-dump.json */,
+				0AE0ACD922B282220020AF51 /* 26443-dump.json */,
+				0AE0ACD622B282220020AF51 /* 26445-dump.json */,
+				0AE0ACCE22B282220020AF51 /* 26447-dump.json */,
+				0AE0ACD722B282220020AF51 /* 26448-dump.json */,
+				0AE0ACD222B282220020AF51 /* 26449-dump.json */,
+				0AE0ACD122B282220020AF51 /* createWFile.json */,
+				0AE0ACCA22B282220020AF51 /* createWFolder.json */,
+				0AE0ACD322B282220020AF51 /* createWList.json */,
+				0AE0ACCD22B282220020AF51 /* createWNote.json */,
+				0AE0ACCC22B282220020AF51 /* createWReminder.json */,
+				0AE0ACC922B282220020AF51 /* createWSubtask.json */,
+				0AE0ACCF22B282220020AF51 /* createWTask.json */,
+				0AE0ACD422B282220020AF51 /* createWTaskComment.json */,
 			);
 			path = create;
+			sourceTree = "<group>";
+		};
+		0AE0ACEA22B282410020AF51 /* update */ = {
+			isa = PBXGroup;
+			children = (
+				0AE0ACF322B282410020AF51 /* 26450-dump.json */,
+				0AE0ACF522B282410020AF51 /* 26451-dump.json */,
+				0AE0ACEC22B282410020AF51 /* 26452-dump.json */,
+				0AE0ACEF22B282410020AF51 /* 26453-dump.json */,
+				0AE0ACED22B282410020AF51 /* 26454-dump.json */,
+				0AE0ACF022B282410020AF51 /* 26455-dump.json */,
+				0AE0ACF622B282410020AF51 /* 26457-dump.json */,
+				0AE0ACF222B282410020AF51 /* 26458-dump.json */,
+				0AE0ACEE22B282410020AF51 /* 26459-dump.json */,
+				0AE0ACF122B282410020AF51 /* 26460-dump.json */,
+				0AE0ACFE22B282410020AF51 /* updateWFolder-13781081-2.json */,
+				0AE0ACFC22B282410020AF51 /* updateWList-396563172-6.json */,
+				0AE0ACFF22B282410020AF51 /* updateWListPosition-41027896-86.json */,
+				0AE0ACFA22B282410020AF51 /* updateWNote-319655934-2.json */,
+				0AE0ACFB22B282410020AF51 /* updateWReminder-665399320-2.json */,
+				0AE0ACF922B282410020AF51 /* updateWSetting-383659134-12.json */,
+				0AE0ACFD22B282410020AF51 /* updateWSubtask-1744214637-2.json */,
+				0AE0ACF722B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json */,
+				0AE0ACF822B282410020AF51 /* updateWTask-5112132519-5.json */,
+				0AE0AD0022B282410020AF51 /* updateWTaskPosition-396563172-1.json */,
+			);
+			path = update;
+			sourceTree = "<group>";
+		};
+		0AE0AD1622B291030020AF51 /* delete */ = {
+			isa = PBXGroup;
+			children = (
+				0AE0AD1D22B291030020AF51 /* 26463-dump.json */,
+				0AE0AD1F22B291030020AF51 /* 26464-dump.json */,
+				0AE0AD1B22B291030020AF51 /* 26465-dump.json */,
+				0AE0AD1922B291030020AF51 /* 26466-dump.json */,
+				0AE0AD1822B291030020AF51 /* 26467-dump.json */,
+				0AE0AD1C22B291030020AF51 /* 26468-dump.json */,
+				0AE0AD1E22B291030020AF51 /* 26470-dump.json */,
+			);
+			path = delete;
 			sourceTree = "<group>";
 		};
 		1E44896FE19D01DB221EE3C6 /* Pods */ = {
@@ -817,29 +905,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9A453322ADBC8000EC0544 /* 26365-dump.json in Resources */,
-				0A9A453F22ADBC8000EC0544 /* 26363-dump.json in Resources */,
-				0A9A453D22ADBC8000EC0544 /* 26369-dump.json in Resources */,
-				0A9A454022ADBC8000EC0544 /* createWReminder.json in Resources */,
-				0A9A453922ADBC8000EC0544 /* createWTask.json in Resources */,
+				0AE0ACDE22B282220020AF51 /* 26447-dump.json in Resources */,
+				0AE0ACDA22B282220020AF51 /* createWSubtask.json in Resources */,
+				0AE0AD0E22B282410020AF51 /* updateWSetting-383659134-12.json in Resources */,
+				0AE0ACE722B282220020AF51 /* 26448-dump.json in Resources */,
+				0AE0AD2522B291030020AF51 /* 26463-dump.json in Resources */,
+				0AE0AD0222B282410020AF51 /* 26454-dump.json in Resources */,
+				0AE0AD0522B282410020AF51 /* 26455-dump.json in Resources */,
+				0AE0AD1022B282410020AF51 /* updateWReminder-665399320-2.json in Resources */,
+				0AE0AD0C22B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json in Resources */,
+				0AE0ACE422B282220020AF51 /* createWTaskComment.json in Resources */,
+				0AE0AD2122B291030020AF51 /* 26466-dump.json in Resources */,
+				0AE0ACDD22B282220020AF51 /* createWNote.json in Resources */,
+				0AE0AD0422B282410020AF51 /* 26453-dump.json in Resources */,
+				0AE0AD2622B291030020AF51 /* 26470-dump.json in Resources */,
+				0AE0ACE622B282220020AF51 /* 26445-dump.json in Resources */,
+				0AE0AD1522B282410020AF51 /* updateWTaskPosition-396563172-1.json in Resources */,
 				0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */,
-				0A9A454322ADBC8000EC0544 /* createWList.json in Resources */,
-				0A9A453722ADBC8000EC0544 /* 26368-dump.json in Resources */,
-				0A9A454122ADBC8000EC0544 /* 26367-dump.json in Resources */,
-				0A9A453622ADBC8000EC0544 /* 26362-dump.json in Resources */,
-				0A9A453A22ADBC8000EC0544 /* createWFolder.json in Resources */,
+				0AE0AD2722B291030020AF51 /* 26464-dump.json in Resources */,
+				0AE0ACE222B282220020AF51 /* 26449-dump.json in Resources */,
+				0AE0AD2022B291030020AF51 /* 26467-dump.json in Resources */,
+				0AE0AD1322B282410020AF51 /* updateWFolder-13781081-2.json in Resources */,
 				0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */,
-				0A9A453E22ADBC8000EC0544 /* createWFile.json in Resources */,
+				0AE0ACDB22B282220020AF51 /* createWFolder.json in Resources */,
+				0AE0AD0122B282410020AF51 /* 26452-dump.json in Resources */,
+				0AE0AD1222B282410020AF51 /* updateWSubtask-1744214637-2.json in Resources */,
+				0AE0AD2322B291030020AF51 /* 26465-dump.json in Resources */,
+				0AE0AD0D22B282410020AF51 /* updateWTask-5112132519-5.json in Resources */,
+				0AE0AD0F22B282410020AF51 /* updateWNote-319655934-2.json in Resources */,
+				0AE0ACE022B282220020AF51 /* 26441-dump.json in Resources */,
+				0AE0AD2422B291030020AF51 /* 26468-dump.json in Resources */,
+				0AE0ACDF22B282220020AF51 /* createWTask.json in Resources */,
+				0AE0ACDC22B282220020AF51 /* createWReminder.json in Resources */,
+				0AE0AD0722B282410020AF51 /* 26458-dump.json in Resources */,
+				0AE0AD1122B282410020AF51 /* updateWList-396563172-6.json in Resources */,
+				0AE0ACE922B282220020AF51 /* 26443-dump.json in Resources */,
+				0AE0AD1422B282410020AF51 /* updateWListPosition-41027896-86.json in Resources */,
+				0AE0AD0822B282410020AF51 /* 26450-dump.json in Resources */,
+				0AE0AD0322B282410020AF51 /* 26459-dump.json in Resources */,
 				0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */,
-				0A9A453B22ADBC8000EC0544 /* createWNote.json in Resources */,
-				0A9A453422ADBC8000EC0544 /* 26359-dump.json in Resources */,
-				0A9A453822ADBC8000EC0544 /* 26370-dump.json in Resources */,
-				0A9A453522ADBC8000EC0544 /* 26361-dump.json in Resources */,
-				0A9A453C22ADBC8000EC0544 /* createWSubtask.json in Resources */,
-				0A9A454222ADBC8000EC0544 /* createWTaskComment.json in Resources */,
+				0AE0ACE822B282220020AF51 /* 26439-dump.json in Resources */,
+				0AE0ACE522B282220020AF51 /* 26442-dump.json in Resources */,
+				0AE0ACE322B282220020AF51 /* createWList.json in Resources */,
+				0AE0AD0B22B282410020AF51 /* 26457-dump.json in Resources */,
+				0AE0AD0A22B282410020AF51 /* 26451-dump.json in Resources */,
 				0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */,
-				0A9A451E22ADB50100EC0544 /* update in Resources */,
-				0A9A452022ADB5A500EC0544 /* delete in Resources */,
+				0AE0AD0622B282410020AF51 /* 26460-dump.json in Resources */,
+				0AE0ACE122B282220020AF51 /* createWFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
