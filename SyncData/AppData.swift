@@ -254,9 +254,9 @@ extension AppData {
 
     func updatedRevisionTouch<T: WObject>(wobject: T) {
         switch wobject {
-        case is WFolder.Type,
-             is WList.Type,
-             is WListPosition.Type:
+        case is WFolder,
+             is WList,
+             is WListPosition:
             root.revision += 1
         case is WNote,
              is WSubtask,
@@ -274,7 +274,7 @@ extension AppData {
             memberships[listId].update(with: membership)
             incUserRevision()
             root.revision += 1
-        case is WSetting.Type:
+        case is WSetting:
             incUserRevision()
             root.revision += 1
         case let task as WTask:

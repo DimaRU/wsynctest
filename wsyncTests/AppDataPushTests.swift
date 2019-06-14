@@ -128,4 +128,67 @@ class AppDataPushTests: XCTestCase {
         let wdump1 = loadDump(bundle: bundle, resource: "26449-dump")
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
+
+func testPushUpdates() {
+    pull(from: "26449-dump", appDataSync: appDataSync)
+    XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
+
+    let listId = 396563172
+    let taskId = 5112132519
+    let folderId = 13781081
+
+    var folder = appDataSync.appData.folders[folderId]!
+    folder.title = "Test create folder updated"
+    appDataSync.update(updated: folder)
+
+    var list = appDataSync.appData.lists[listId]!
+    list.title = "Test create list updated title"
+    appDataSync.update(updated: list)
+
+    var listPosition = appDataSync.appData.listPositions.first!
+    var values = listPosition.values.filter{ $0 != listId}
+    values.insert(listId, at: 0)
+    listPosition.values = values
+    appDataSync.update(updated: listPosition)
+
+    var task = appDataSync.appData.tasks[listId][taskId]!
+    task.title = "Test create task modified"
+    appDataSync.update(updated: task)
+
+    var taskPosition = appDataSync.appData.taskPositions[listId].first!
+    taskPosition.values = [taskId]
+    appDataSync.update(updated: taskPosition)
+
+    var note = appDataSync.appData.notes[taskId].first!
+    note.content = "Modified task note"
+    appDataSync.update(updated: note)
+
+    var reminder = appDataSync.appData.reminders.first(where: { $0.taskId == taskId })!
+    let date = "2019-06-13T09:59:43.385Z".dateFromISO8601!
+    reminder.date = date
+    appDataSync.update(updated: reminder)
+
+    var subtask = appDataSync.appData.subtasks[taskId].first!
+    subtask.title = "Subtask title updated"
+    appDataSync.update(updated: subtask)
+
+    var subtaskPosition = appDataSync.appData.subtaskPositions[taskId].first!
+    subtaskPosition.values = [subtask.id]
+    appDataSync.update(updated: subtaskPosition)
+
+    var setting = appDataSync.appData.settings.first(where: { $0.key == .soundCheckoffEnabled })!
+    setting.value = setting.value == "true" ? "false" : "true"
+    appDataSync.update(updated: setting)
+
+    XCTAssertEqual(appDataSync.requestQueue.count, 10, "Wrong queue length")
+    for _ in 1...10 {
+        push(appDataSync: appDataSync)
+    }
+
+    XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
+
+    let bundle = Bundle(for: type(of: self))
+    let wdump1 = loadDump(bundle: bundle, resource: "26460-dump")
+    CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
+    }
 }

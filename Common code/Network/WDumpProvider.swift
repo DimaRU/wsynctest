@@ -143,8 +143,8 @@ extension WProvider {
                     let data = try! Data(contentsOf: url)
                     return .networkResponse(200, data)
                 case .updateWObject(let type, let id, let params, _):
-                    guard let revision = params["revision"] else { fatalError("Must have revision") }
-                    guard let url = bundle.url(forResource: "update\(type)-\(id)-\(revision)", withExtension: "json") else {
+                    guard let revision = params["revision"] as? Int else { fatalError("Must have revision") }
+                    guard let url = bundle.url(forResource: "update\(type)-\(id)-\(revision+1)", withExtension: "json") else {
                         return .networkResponse(409, Data())
                     }
                     let data = try! Data(contentsOf: url)

@@ -158,9 +158,15 @@ extension WObject {
         var dict: [String: Any] = [:]
         var deletedList: [String] = []
 
+        let sourceKeys = source.keys
         let pathList = Self.mutableProperty
         for (path, key) in pathList {
-            let oldValue = source[key] as Any
+            let oldValue: Any
+            if sourceKeys.contains(key) {
+                oldValue = source[key]!
+            } else {
+                oldValue = source[key] as Any
+            }
             let newValue = self[keyPath: path]
             if compareAny(a: oldValue, b: newValue) {
                 continue
