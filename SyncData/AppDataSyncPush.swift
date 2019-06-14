@@ -51,7 +51,6 @@ extension AppDataSync {
             case let type as WFolder.Type: sendDeleteRequest(type, request: request)
             case let type as WList.Type: sendDeleteRequest(type, request: request)
             case let type as WTask.Type: sendDeleteRequest(type, request: request)
-            case let type as WMembership.Type: sendDeleteRequest(type, request: request)
             case let type as WNote.Type: sendDeleteRequest(type, request: request)
             case let type as WReminder.Type: sendDeleteRequest(type, request: request)
             case let type as WSubtask.Type: sendDeleteRequest(type, request: request)
