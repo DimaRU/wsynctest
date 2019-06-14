@@ -54,8 +54,8 @@ class AppDataPullTests: XCTestCase {
     }
 
     func testPullList() {
-        pull(from: "25941-dump", appDataSync: appDataSync)
-        pull(from: "25943-dump", appDataSync: appDataSync)
+        pull(from: "26439-dump", appDataSync: appDataSync)
+        pull(from: "26441-dump", appDataSync: appDataSync)
     }
 
 }
