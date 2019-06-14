@@ -54,12 +54,8 @@ extension AppDataSync {
             case let type as WMembership.Type: sendDeleteRequest(type, request: request)
             case let type as WNote.Type: sendDeleteRequest(type, request: request)
             case let type as WReminder.Type: sendDeleteRequest(type, request: request)
-            case let type as WSetting.Type: sendDeleteRequest(type, request: request)
             case let type as WSubtask.Type: sendDeleteRequest(type, request: request)
             case let type as WTaskComment.Type: sendDeleteRequest(type, request: request)
-            case let type as WListPosition.Type: sendDeleteRequest(type, request: request)
-            case let type as WTaskPosition.Type: sendDeleteRequest(type, request: request)
-            case let type as WSubtaskPosition.Type: sendDeleteRequest(type, request: request)
             default:
                 fatalError()
             }
@@ -125,7 +121,7 @@ extension AppDataSync {
             WAPI.delete(type, id: wobject.id, revision: wobject.revision)
                 .done {
                     self.appData.deleteObject(type: type, id: request.id, parentId: request.parentId)
-                    self.appData.deletedRevisionTouch(type: type, id: request.id, parentId: request.parentId)
+                    self.appData.deletedRevisionTouch(wobject: wobject)
                     self.requestQueue.dequeue()
                 }.ensure {
                     completion?()
