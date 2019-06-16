@@ -40,7 +40,7 @@ class WunderUploader {
             nextTick {
                 let httpResponse = response as? HTTPURLResponse
                 if let error = error {
-                    self.resolver.reject(error)
+                    self.resolver.reject(WNetworkError.networkError(underlying: error))
                     return
                 }
                 if let statusCode = httpResponse?.statusCode {
@@ -48,10 +48,10 @@ class WunderUploader {
                         self.resolver.fulfill(self.upload)
                     }
                     else {
-                        self.resolver.reject(WNetworkError.upload(code: statusCode))
+                        self.resolver.reject(WNetworkError.serverError(code: statusCode, data: nil))
                     }
                 } else {
-                    self.resolver.reject(WNetworkError.upload(code: 0))
+                    self.resolver.reject(WNetworkError.serverError(code: 0, data: nil))
                 }
             }
         })

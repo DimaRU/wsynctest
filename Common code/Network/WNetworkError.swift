@@ -9,9 +9,9 @@ enum WNetworkError: Error {
     case notFound
     case conflict
     case replyError(code: Int, message: WNetworkErrorMessage?)
+    case unprocessable(message: WNetworkErrorMessage?)
     case serverError(code: Int, data: String?)
     case networkError(underlying: Error)
     case replyDataError(underlying: Error)
-    case upload(code: Int)
     case unreachable(underlying: Error)
 }
