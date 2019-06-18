@@ -143,7 +143,7 @@ extension WProvider {
                 }
             case 409:
                 request.reject(WNetworkError.conflict)
-            case 400, 405:
+            case 400, 405, 415:
                 let errorMessage = WNetworkErrorMessage(data: data)
                 request.reject(WNetworkError.replyError(code: statusCode, message: errorMessage))
             case 422:

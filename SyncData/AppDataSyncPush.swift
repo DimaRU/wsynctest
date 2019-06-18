@@ -16,7 +16,6 @@ extension AppDataSync {
             case let type as WFolder.Type: sendCreateRequest(type, request: request)
             case let type as WList.Type: sendCreateRequest(type, request: request)
             case let type as WTask.Type: sendCreateRequest(type, request: request)
-            case let type as WMembership.Type: sendCreateRequest(type, request: request)
             case let type as WNote.Type: sendCreateRequest(type, request: request)
             case let type as WReminder.Type: sendCreateRequest(type, request: request)
             case let type as WSubtask.Type: sendCreateRequest(type, request: request)
@@ -67,6 +66,35 @@ extension AppDataSync {
             }
         }
 
+
+        func recoveryCreatedId<T: WObject & WCreatable>(_ type: T.Type, request: WRequest) -> Promise<T> {
+            let promise: Promise<Set<T>>
+            switch type {
+            case is WFolder.Type,
+                 is WList.Type,
+                 is WReminder.Type:
+                promise = WAPI.get(type)
+            case is WTask.Type: sendCreateRequest(type, request: request)
+                promise = WAPI.get(type, listId: request.parentId!)
+            case is WNote.Type,
+                 is WSubtask.Type,
+                 is WTaskComment.Type:
+                promise = WAPI.get(type, taskId: request.parentId!)
+            default:
+                fatalError()
+            }
+
+            return promise
+                .then { wobjects -> Promise<T> in
+                    print(wobjects)
+                    if let wobject = wobjects.first(where: { $0.createdByRequestId == request.uuid }) {
+                        return Promise.value(wobject)
+                    } else {
+                        return Promise(error: PMKError.cancelled)
+                    }
+            }
+        }
+
         func sendCreateRequest<T: WObject & WCreatable>(_ type: T.Type, request: WRequest) {
             guard let wobject = appData.getSource(type: type, id: request.id, parentId: request.parentId) else {
                 assertionFailure("No object for create \(type):\(request.id)")
@@ -74,7 +102,14 @@ extension AppDataSync {
             }
             let params = wobject.createParams()
             WAPI.create(T.self, params: params, requestId: request.uuid)
-                .then { created -> Promise<Void> in
+                .recover { error -> Promise<T> in
+                    if case WNetworkError.unprocessable = error {
+                        // Already created
+                        return recoveryCreatedId(type, request: request)
+                    } else {
+                        throw error
+                    }
+                }.then { created -> Promise<Void> in
                     self.appData.replaceObject(type: type, id: request.id, parentId: request.parentId, to: created)
                     self.appData.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
                     self.requestQueue.replaceId(for: type, fakeId: request.id, id: created.id, parentId: request.parentId)
