@@ -7,7 +7,7 @@ import Moya
 
 extension WProvider {
 
-    fileprivate static func testableClosure(_ wdump: WDump, bundle: Bundle)  -> (_ target: WunderAPI) -> Endpoint {
+    fileprivate static func testableClosure(_ wdump: WDump, bundle: Bundle, code: Int?) -> (_ target: WunderAPI) -> Endpoint {
         func getWObjectData<T: WObject>(from wobjectSet: Set<T>, target: WunderAPI) -> Data? {
             let encoder = WJSONAbleCoders.encoder
 
@@ -136,7 +136,11 @@ extension WProvider {
                      .upload,
                      .uploadFinish:
                     return .networkResponse(422, Data())
+                    // Push
                 case .createWObject(let type, _, _):
+                    if let code = code {
+                        return .networkResponse(code, Data())
+                    }
                     guard let url = bundle.url(forResource: "create\(type)", withExtension: "json") else {
                         return .networkResponse(422, Data())
                     }
@@ -164,8 +168,7 @@ extension WProvider {
     }
 
 
-    static func WDumpProvider(wdump: WDump, bundle: Bundle) -> MoyaProvider<WunderAPI> {
-        return MoyaProvider<WunderAPI>(endpointClosure: WProvider.testableClosure(wdump, bundle: bundle),
-                                       stubClosure: MoyaProvider.immediatelyStub)
+    static func WDumpProvider(wdump: WDump, bundle: Bundle, code: Int? = nil) -> MoyaProvider<WunderAPI> {
+        return MoyaProvider<WunderAPI>(endpointClosure: WProvider.testableClosure(wdump, bundle: bundle, code: code), stubClosure: MoyaProvider.immediatelyStub)
     }
 }

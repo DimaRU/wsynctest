@@ -12,7 +12,7 @@ public struct WList: WObject, WCreatable {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .List
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public var title: String
     public let ownerId: Int?

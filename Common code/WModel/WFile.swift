@@ -9,7 +9,7 @@ public struct WFile: WObject, TaskChild {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .File
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public var taskId: Int
     public let userId: Int

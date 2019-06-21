@@ -37,7 +37,7 @@ public protocol TaskChild {
 }
 
 public protocol WCreatable {
-    var createdByRequestId: String? { get }
+    var createdByRequestId: WRequestId? { get }
     static var createFieldList: [PartialKeyPath<Self>] { get }
 }
 

@@ -9,7 +9,7 @@ public struct WSubtask: WObject, TaskChild, WCreatable {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .Subtask
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public var taskId: Int
     public var title: String

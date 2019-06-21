@@ -9,7 +9,7 @@ public struct WTaskComment: WObject, TaskChild, WCreatable {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .TaskComment
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public var text: String
     public var taskId: Int

@@ -9,7 +9,7 @@ public struct WTask: WObject, ListChild, WCreatable {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .Task
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public var title: String
     public var completed: Bool

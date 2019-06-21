@@ -211,6 +211,8 @@
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
 		0AF44A50228DD85A009694B4 /* WDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF44A4F228DD85A009694B4 /* WDump.swift */; };
 		0AF44A51228DD8A3009694B4 /* WDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF44A4F228DD85A009694B4 /* WDump.swift */; };
+		0AFA961D22B9577100179F87 /* WRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA961C22B9577100179F87 /* WRequestId.swift */; };
+		0AFA961E22B95B1900179F87 /* WRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA961C22B9577100179F87 /* WRequestId.swift */; };
 		3B5F1608830C851455B55A4A /* Pods_wsyncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842E240B5FFFE16F4DF275E2 /* Pods_wsyncTests.framework */; };
 		E975C18AACD9A8F84717C9DB /* Pods_wsync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F8A7604B7A49ED6367167E /* Pods_wsync.framework */; };
 /* End PBXBuildFile section */
@@ -380,6 +382,7 @@
 		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0AF44A4F228DD85A009694B4 /* WDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDump.swift; sourceTree = "<group>"; };
+		0AFA961C22B9577100179F87 /* WRequestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRequestId.swift; sourceTree = "<group>"; };
 		1163DA89DA55CE837A8D78F0 /* Pods-wsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.release.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.release.xcconfig"; sourceTree = "<group>"; };
 		6079958FD361E2CF0C820C29 /* Pods-wsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wsync.debug.xcconfig"; path = "Target Support Files/Pods-wsync/Pods-wsync.debug.xcconfig"; sourceTree = "<group>"; };
 		6B0993F94505715A1E039331 /* Pods_wtest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wtest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -589,6 +592,7 @@
 				0A2348DA2277709C0016CDBC /* WUnreadActivityCount.swift */,
 				0A2348EF2277709C0016CDBC /* WUpload.swift */,
 				0A2348DE2277709C0016CDBC /* WUser.swift */,
+				0AFA961C22B9577100179F87 /* WRequestId.swift */,
 			);
 			path = WModel;
 			sourceTree = "<group>";
@@ -1117,6 +1121,7 @@
 				0A23491E227771450016CDBC /* WuWSSProvider.swift in Sources */,
 				0A2349842277717E0016CDBC /* AppSetup.swift in Sources */,
 				0A23491F227771450016CDBC /* WNetworkError.swift in Sources */,
+				0AFA961D22B9577100179F87 /* WRequestId.swift in Sources */,
 				0A234921227771450016CDBC /* AvatarService.swift in Sources */,
 				0A23493B227771540016CDBC /* WUser.swift in Sources */,
 				0A23496C2277715D0016CDBC /* Disk+Helpers.swift in Sources */,
@@ -1206,6 +1211,7 @@
 				0A234954227771550016CDBC /* WDesktopNotification.swift in Sources */,
 				0A23495B227771550016CDBC /* WFeature.swift in Sources */,
 				0A234950227771550016CDBC /* WSubtaskPosition.swift in Sources */,
+				0AFA961E22B95B1900179F87 /* WRequestId.swift in Sources */,
 				0A2349102277713A0016CDBC /* iso8601date.swift in Sources */,
 				0A23495D227771550016CDBC /* WTaskPosition.swift in Sources */,
 				0A234956227771550016CDBC /* WUser.swift in Sources */,

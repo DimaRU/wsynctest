@@ -85,8 +85,7 @@ extension AppDataSync {
 
             return promise
                 .then { wobjects -> Promise<T> in
-                    print(wobjects)
-                    if let wobject = wobjects.first(where: { $0.createdByRequestId == request.uuid }) {
+                    if let wobject = wobjects.first(where: { $0.createdByRequestId?.UUIDstring == request.uuid }) {
                         return Promise.value(wobject)
                     } else {
                         return Promise(error: PMKError.cancelled)

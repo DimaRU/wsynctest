@@ -9,7 +9,7 @@ public struct WSetting: WObject {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .Setting
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public let key: SettingsKey
     public var value: String

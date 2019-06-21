@@ -9,7 +9,7 @@ public struct WFeature: WObject {
     public let id: Int
     public var revision: Int
     public let type: MappingType = .Feature
-    public let createdByRequestId: String?
+    public let createdByRequestId: WRequestId?
 
     public let name: String
     public let variant: String

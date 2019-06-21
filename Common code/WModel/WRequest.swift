@@ -29,7 +29,7 @@ struct WRequest: Codable {
     let requestType: RequestType
     var id: Int
     var parentId: Int?
-    let uuid: String = UUID().uuidString.lowercased()
+    var uuid: String = UUID().uuidString.lowercased()
     var type: MappingType
     var params: WParams
 }

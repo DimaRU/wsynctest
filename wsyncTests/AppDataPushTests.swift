@@ -6,6 +6,7 @@ import XCTest
 @testable import wsync
 
 class AppDataPushTests: XCTestCase {
+    let bundle = Bundle(for: AppDataPushTests.self)
     var appDataSync = AppDataSync(appData: AppData(diskStore: nil))
 
     override func setUp() {
@@ -15,7 +16,6 @@ class AppDataPushTests: XCTestCase {
     }
 
     func pull(from dump: String, appDataSync: AppDataSync) {
-        let bundle = Bundle(for: type(of: self))
         let wdump = loadDump(bundle: bundle, resource: dump)
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
@@ -42,7 +42,6 @@ class AppDataPushTests: XCTestCase {
         pull(from: "26439-dump", appDataSync: appDataSync)
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
 
-        let bundle = Bundle(for: type(of: self))
         let wdump = loadDump(bundle: bundle, resource: "26441-dump")
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
@@ -114,7 +113,6 @@ class AppDataPushTests: XCTestCase {
         let folder = appDataSync.makeWFolder(title: "Test create folder", listIds: [list.id])
         appDataSync.add(created: folder)
 
-        let bundle = Bundle(for: type(of: self))
         let wdump = loadDump(bundle: bundle, resource: "26441-dump")
         WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
 
@@ -187,7 +185,6 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        let bundle = Bundle(for: type(of: self))
         let wdump1 = loadDump(bundle: bundle, resource: "26460-dump")
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
@@ -228,8 +225,70 @@ class AppDataPushTests: XCTestCase {
 
         XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
 
-        let bundle = Bundle(for: type(of: self))
         let wdump1 = loadDump(bundle: bundle, resource: "26470-dump")
+        CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
+    }
+
+    func testPushRecoveryCreate() {
+        let uuidDict: [MappingType: String] = [
+            MappingType.List: "58a950a2-1197-481c-9870-60e35ffc8495",
+            MappingType.Task: "51901f58-04ab-48c6-8e59-c3eb4cc41cc1",
+            MappingType.Subtask: "380e1703-6434-4baf-96c1-7bccbc10d944",
+            MappingType.TaskComment: "1d442427-0dbd-4c5f-b1ef-59f60a50c23d",
+            MappingType.Reminder: "668019c6-1890-403f-8359-0d2c2f894340",
+            MappingType.Note: "cd44a505-96da-4081-846b-10a7c5572942",
+            MappingType.Folder: "ed25bfce-e92b-4b56-8d33-e10ba33a38c0"
+        ]
+
+        let dumpDict: [MappingType: String] = [
+            MappingType.List: "26441-dump",
+            MappingType.Task: "26442-dump",
+            MappingType.Subtask: "26443-dump",
+            MappingType.TaskComment: "26445-dump",
+            MappingType.Reminder: "26447-dump",
+            MappingType.Note: "26448-dump",
+            MappingType.Folder: "26449-dump"
+        ]
+
+        pull(from: "26439-dump", appDataSync: appDataSync)
+
+        let list = appDataSync.makeWList(title: "Create test list")
+        appDataSync.add(created: list)
+
+        let task = appDataSync.makeWTask(listId: list.id, title: "Create test task", starred: false)
+        appDataSync.add(created: task)
+
+        let subtask = appDataSync.makeWSubtask(taskId: task.id, title: "Create test subtask")
+        appDataSync.add(created: subtask)
+
+        let taskComment = appDataSync.makeWTaskComment(taskId: task.id, text: "Create test comment")
+        appDataSync.add(created: taskComment)
+
+        let date = "2019-06-13T09:58:58.019Z".dateFromISO8601!
+        let reminder = appDataSync.makeWReminder(taskId: task.id, date: date)
+        appDataSync.add(created: reminder)
+
+        let note = appDataSync.makeWNote(taskId: task.id, content: "Create test note")
+        appDataSync.add(created: note)
+
+        let folder = appDataSync.makeWFolder(title: "Test create folder", listIds: [list.id])
+        appDataSync.add(created: folder)
+
+        XCTAssertEqual(appDataSync.requestQueue.count, 7, "Wrong queue length")
+        for _ in 1...7 {
+            var request = appDataSync.requestQueue.front!
+            request.uuid = uuidDict[request.type]!
+            appDataSync.requestQueue.replaceFirst(request)
+            let dumpName = dumpDict[request.type]!
+            let wdump = loadDump(bundle: bundle, resource: dumpName)
+            WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle, code: 422)
+
+            push(appDataSync: appDataSync)
+        }
+
+        XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue must be empty")
+
+        let wdump1 = loadDump(bundle: bundle, resource: "26449-dump")
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
 
