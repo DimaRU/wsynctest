@@ -159,7 +159,7 @@ import AuthenticationServices
             let key = UUID().uuidString
 
             observers[key] = OAuthSwift.notificationCenter.addObserver(
-                forName: NSNotification.Name.OAuthSwiftHandleCallbackURL,
+                forName: OAuthSwift.didHandleCallbackURL,
                 object: nil,
                 queue: OperationQueue.main,
                 using: { [weak self] _ in
@@ -220,5 +220,23 @@ open class ExtensionContextURLHandler: OAuthSwiftURLHandlerType {
 
     @objc open func handle(_ url: URL) {
         extensionContext.open(url, completionHandler: nil)
+    }
+}
+
+// MARK: Proxy
+open class OAuthSwiftURLHandlerProxy: OAuthSwiftURLHandlerType {
+    weak var proxiable: OAuthSwiftURLHandlerType?
+    public init(_ proxiable: OAuthSwiftURLHandlerType) {
+        self.proxiable = proxiable
+    }
+    open func handle(_ url: URL) {
+        proxiable?.handle(url)
+    }
+}
+
+extension OAuthSwiftURLHandlerType {
+
+    public func weak() -> OAuthSwiftURLHandlerType {
+        return OAuthSwiftURLHandlerProxy(self)
     }
 }

@@ -7,7 +7,7 @@ PODS:
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
-  - OAuthSwift (1.4.0)
+  - OAuthSwift (1.4.1)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
     - PromiseKit/Foundation (= 6.8.4)
@@ -25,7 +25,7 @@ DEPENDENCIES:
   - KeychainAccess (= 3.2.0)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Moya (= 13.0.1)
-  - OAuthSwift (from `https://github.com/DimaRU/OAuthSwift.git`, commit `f8ee2b1`)
+  - OAuthSwift (= 1.4.1)
   - PromiseKit (= 6.8.4)
   - PromiseKit/Alamofire (= 6.8.4)
   - Starscream (from `https://github.com/DimaRU/Starscream.git`, commit `1dc60d8`)
@@ -35,23 +35,18 @@ SPEC REPOS:
     - Alamofire
     - KeychainAccess
     - Moya
+    - OAuthSwift
     - PromiseKit
     - Result
 
 EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
-  OAuthSwift:
-    :commit: f8ee2b1
-    :git: https://github.com/DimaRU/OAuthSwift.git
   Starscream:
     :commit: 1dc60d8
     :git: https://github.com/DimaRU/Starscream.git
 
 CHECKOUT OPTIONS:
-  OAuthSwift:
-    :commit: f8ee2b1
-    :git: https://github.com/DimaRU/OAuthSwift.git
   Starscream:
     :commit: 1dc60d8
     :git: https://github.com/DimaRU/Starscream.git
@@ -61,11 +56,11 @@ SPEC CHECKSUMS:
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  OAuthSwift: 120c21d9437e0aa09e509c7d4378a34dd760c13d
+  OAuthSwift: f86a25d96cfc179e5943122b0f85b99b96f92299
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
 
-PODFILE CHECKSUM: 097bea9f839172ecd80e511defde32157c5b2dd8
+PODFILE CHECKSUM: 3f94fe8a134fcd39923aea2ba5ec912f6e7d1d81
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.2
