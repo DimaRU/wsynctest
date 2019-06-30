@@ -292,4 +292,21 @@ class AppDataPushTests: XCTestCase {
         CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
     }
 
+    func testUpdateCollision() {
+        pull(from: "26484-dump", appDataSync: appDataSync)
+        XCTAssertTrue(appDataSync.requestQueue.isEmpty, "Queue length must be empty")
+
+        var note = appDataSync.appData.notes.getObject(by: 318621151)!
+        note.content = "Test note"
+        appDataSync.update(updated: note)
+
+        let wdump = loadDump(bundle: bundle, resource: "26485-dump")
+        WProvider.moya = WProvider.WDumpProvider(wdump: wdump, bundle: bundle)
+
+        push(appDataSync: appDataSync)
+
+        let wdump1 = loadDump(bundle: bundle, resource: "26486-dump")
+        CheckAppStore.compareAppData(appData: appDataSync.appData, wdump: wdump1)
+
+    }
 }
