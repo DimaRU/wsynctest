@@ -153,6 +153,10 @@
 		0A37A71122779901003FCDE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2348BE2277709C0016CDBC /* Logger.swift */; };
 		0A404EE62286225A0048E591 /* WObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A404EE52286225A0048E591 /* WObjectTests.swift */; };
 		0A651B82229D44C600CEF91F /* RevisionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A651B81229D44C600CEF91F /* RevisionTest.swift */; };
+		0A8B43CA22C9E1AC0057E0DA /* 26494-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B43C722C9E1AC0057E0DA /* 26494-dump.json */; };
+		0A8B43CB22C9E1AC0057E0DA /* 26492-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B43C822C9E1AC0057E0DA /* 26492-dump.json */; };
+		0A8B43CC22C9E1AC0057E0DA /* 26493-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B43C922C9E1AC0057E0DA /* 26493-dump.json */; };
+		0A8B43CE22C9E2EF0057E0DA /* updateWTask-5167653628-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B43CD22C9E2EF0057E0DA /* updateWTask-5167653628-3.json */; };
 		0A8FF5E82290BD4D003C55D6 /* 25833-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */; };
 		0A8FF5E92290BD4D003C55D6 /* 25835-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */; };
 		0A8FF5EA2290BD4D003C55D6 /* 25830-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */; };
@@ -207,9 +211,6 @@
 		0AE0AD2522B291030020AF51 /* 26463-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1D22B291030020AF51 /* 26463-dump.json */; };
 		0AE0AD2622B291030020AF51 /* 26470-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1E22B291030020AF51 /* 26470-dump.json */; };
 		0AE0AD2722B291030020AF51 /* 26464-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE0AD1F22B291030020AF51 /* 26464-dump.json */; };
-		0AEC135022C9197900BF8076 /* 26484-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC134D22C9197800BF8076 /* 26484-dump.json */; };
-		0AEC135122C9197900BF8076 /* 26485-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC134E22C9197900BF8076 /* 26485-dump.json */; };
-		0AEC135222C9197900BF8076 /* 26486-dump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC134F22C9197900BF8076 /* 26486-dump.json */; };
 		0AED57AD228DB20C0006DBBD /* DumpContentCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */; };
 		0AEDF7E5228B3F66001B7D7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDF7E4228B3F66001B7D7C /* main.swift */; };
 		0AF44A50228DD85A009694B4 /* WDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF44A4F228DD85A009694B4 /* WDump.swift */; };
@@ -329,6 +330,10 @@
 		0A3599DD2296EBED00EC7E1E /* AppDataPushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataPushTests.swift; sourceTree = "<group>"; };
 		0A404EE52286225A0048E591 /* WObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WObjectTests.swift; sourceTree = "<group>"; };
 		0A651B81229D44C600CEF91F /* RevisionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionTest.swift; sourceTree = "<group>"; };
+		0A8B43C722C9E1AC0057E0DA /* 26494-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "26494-dump.json"; path = "../../../../../logs/dump/wunderlist@looksnvisions.com/26494-dump.json"; sourceTree = "<group>"; };
+		0A8B43C822C9E1AC0057E0DA /* 26492-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "26492-dump.json"; path = "../../../../../logs/dump/wunderlist@looksnvisions.com/26492-dump.json"; sourceTree = "<group>"; };
+		0A8B43C922C9E1AC0057E0DA /* 26493-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "26493-dump.json"; path = "../../../../../logs/dump/wunderlist@looksnvisions.com/26493-dump.json"; sourceTree = "<group>"; };
+		0A8B43CD22C9E2EF0057E0DA /* updateWTask-5167653628-3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "updateWTask-5167653628-3.json"; sourceTree = "<group>"; };
 		0A8FF5E42290BD4C003C55D6 /* 25833-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25833-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E52290BD4C003C55D6 /* 25835-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25835-dump.json"; sourceTree = "<group>"; };
 		0A8FF5E62290BD4C003C55D6 /* 25830-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "25830-dump.json"; sourceTree = "<group>"; };
@@ -382,9 +387,6 @@
 		0AE0AD1D22B291030020AF51 /* 26463-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26463-dump.json"; sourceTree = "<group>"; };
 		0AE0AD1E22B291030020AF51 /* 26470-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26470-dump.json"; sourceTree = "<group>"; };
 		0AE0AD1F22B291030020AF51 /* 26464-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26464-dump.json"; sourceTree = "<group>"; };
-		0AEC134D22C9197800BF8076 /* 26484-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26484-dump.json"; sourceTree = "<group>"; };
-		0AEC134E22C9197900BF8076 /* 26485-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26485-dump.json"; sourceTree = "<group>"; };
-		0AEC134F22C9197900BF8076 /* 26486-dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26486-dump.json"; sourceTree = "<group>"; };
 		0AED57AC228DB20C0006DBBD /* DumpContentCompact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumpContentCompact.swift; sourceTree = "<group>"; };
 		0AEDF7E4228B3F66001B7D7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0AF44A4F228DD85A009694B4 /* WDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDump.swift; sourceTree = "<group>"; };
@@ -763,9 +765,10 @@
 		0AEC134C22C9195F00BF8076 /* collision */ = {
 			isa = PBXGroup;
 			children = (
-				0AEC134D22C9197800BF8076 /* 26484-dump.json */,
-				0AEC134E22C9197900BF8076 /* 26485-dump.json */,
-				0AEC134F22C9197900BF8076 /* 26486-dump.json */,
+				0A8B43C822C9E1AC0057E0DA /* 26492-dump.json */,
+				0A8B43C922C9E1AC0057E0DA /* 26493-dump.json */,
+				0A8B43C722C9E1AC0057E0DA /* 26494-dump.json */,
+				0A8B43CD22C9E2EF0057E0DA /* updateWTask-5167653628-3.json */,
 			);
 			path = collision;
 			sourceTree = "<group>";
@@ -928,7 +931,6 @@
 			files = (
 				0AE0ACDE22B282220020AF51 /* 26447-dump.json in Resources */,
 				0AE0ACDA22B282220020AF51 /* createWSubtask.json in Resources */,
-				0AEC135022C9197900BF8076 /* 26484-dump.json in Resources */,
 				0AE0AD0E22B282410020AF51 /* updateWSetting-383659134-12.json in Resources */,
 				0AE0ACE722B282220020AF51 /* 26448-dump.json in Resources */,
 				0AE0AD2522B291030020AF51 /* 26463-dump.json in Resources */,
@@ -938,12 +940,15 @@
 				0AE0AD0C22B282410020AF51 /* updateWSubtaskPosition-5112132519-1.json in Resources */,
 				0AE0ACE422B282220020AF51 /* createWTaskComment.json in Resources */,
 				0AE0AD2122B291030020AF51 /* 26466-dump.json in Resources */,
+				0A8B43CB22C9E1AC0057E0DA /* 26492-dump.json in Resources */,
 				0AE0ACDD22B282220020AF51 /* createWNote.json in Resources */,
 				0AE0AD0422B282410020AF51 /* 26453-dump.json in Resources */,
 				0AE0AD2622B291030020AF51 /* 26470-dump.json in Resources */,
 				0AE0ACE622B282220020AF51 /* 26445-dump.json in Resources */,
 				0AE0AD1522B282410020AF51 /* updateWTaskPosition-396563172-1.json in Resources */,
 				0A8FF5F122916353003C55D6 /* 25847-dump.json in Resources */,
+				0A8B43CE22C9E2EF0057E0DA /* updateWTask-5167653628-3.json in Resources */,
+				0A8B43CC22C9E1AC0057E0DA /* 26493-dump.json in Resources */,
 				0AE0AD2722B291030020AF51 /* 26464-dump.json in Resources */,
 				0AE0ACE222B282220020AF51 /* 26449-dump.json in Resources */,
 				0AE0AD2022B291030020AF51 /* 26467-dump.json in Resources */,
@@ -954,9 +959,7 @@
 				0AE0AD1222B282410020AF51 /* updateWSubtask-1744214637-2.json in Resources */,
 				0AE0AD2322B291030020AF51 /* 26465-dump.json in Resources */,
 				0AE0AD0D22B282410020AF51 /* updateWTask-5112132519-5.json in Resources */,
-				0AEC135122C9197900BF8076 /* 26485-dump.json in Resources */,
 				0AE0AD0F22B282410020AF51 /* updateWNote-319655934-2.json in Resources */,
-				0AEC135222C9197900BF8076 /* 26486-dump.json in Resources */,
 				0AE0ACE022B282220020AF51 /* 26441-dump.json in Resources */,
 				0AE0AD2422B291030020AF51 /* 26468-dump.json in Resources */,
 				0AE0ACDF22B282220020AF51 /* createWTask.json in Resources */,
@@ -964,6 +967,7 @@
 				0AE0AD0722B282410020AF51 /* 26458-dump.json in Resources */,
 				0AE0AD1122B282410020AF51 /* updateWList-396563172-6.json in Resources */,
 				0AE0ACE922B282220020AF51 /* 26443-dump.json in Resources */,
+				0A8B43CA22C9E1AC0057E0DA /* 26494-dump.json in Resources */,
 				0AE0AD1422B282410020AF51 /* updateWListPosition-41027896-86.json in Resources */,
 				0AE0AD0822B282410020AF51 /* 26450-dump.json in Resources */,
 				0AE0AD0322B282410020AF51 /* 26459-dump.json in Resources */,

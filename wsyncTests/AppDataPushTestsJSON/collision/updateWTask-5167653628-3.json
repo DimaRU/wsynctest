@@ -1,0 +1,12 @@
+{
+    "completed" : false,
+    "created_at" : "2019-07-01T06:33:18.550Z",
+    "created_by_id" : 41027896,
+    "created_by_request_id" : "lw17fa3f161e3353136c7f854ac0f0a3",
+    "id" : 5167653628,
+    "list_id" : 394200629,
+    "revision" : 3,
+    "starred" : true,
+    "title" : "Task 1 list 3 changed",
+    "type" : "task"
+}
