@@ -143,6 +143,10 @@ extension AppDataSync {
                 .recover { error -> Promise<T> in
                     if case WNetworkError.conflict = error {
                         return recoveryUpdate(type, request: request, params: params)
+                            .then { _ -> Promise<T> in
+                            self.requestQueue.dequeue()
+                            throw PMKError.cancelled
+                        }
                     } else {
                         throw error
                     }
